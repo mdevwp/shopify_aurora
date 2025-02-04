@@ -1,0 +1,69 @@
+<div class="custom-product-properties">
+
+{% for property in product.metafields.custom.properties.value %}
+    <div class="custom-product-property">
+        <div class="custom-product-property__image" data-property-name="{{ property | downcase }}"></div>
+        <span class="custom-product-property__title">{{ property }}</span>
+    </div>
+{% endfor %}
+
+</div>
+
+<style type="text/css">
+  .custom-product-properties {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+  }
+
+  @media screen and (max-width: 490px) {
+    .custom-product-properties {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .custom-product-properties .custom-product-property {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .custom-product-properties .custom-product-property .custom-product-property__image {
+    aspect-ratio: 1.1 / 1;
+    height: 50px;
+  }
+
+  .custom-product-properties .custom-product-property .custom-product-property__title {
+    font-size: 13px;
+  }
+  
+  [data-property-name="haltbar"] {
+    background: url('https://cdn.shopify.com/s/files/1/0810/8874/1711/files/durable_Icon_1f62db0d-043b-414f-a79a-0695232650ca.svg?v=1717966527');
+    background-size: cover;    
+  }
+  [data-property-name="handmade"] {
+    background: url('https://cdn.shopify.com/s/files/1/0810/8874/1711/files/made_in_eu_Icon_5c1876b4-d9c7-46c0-abd2-158ed94f096b.svg?v=1717966536');
+    background-size: cover;
+  }
+  [data-property-name="hypoallergen"] {
+    background: url('https://cdn.shopify.com/s/files/1/0810/8874/1711/files/hypoallergenic_Icon_2badcbb2-1742-4336-9886-b21f97dcb913.svg?v=1717966528');
+    background-size: cover;
+  }
+  [data-property-name="less waste"] {
+    background: url('https://cdn.shopify.com/s/files/1/0810/8874/1711/files/less_waste_Icon_c5ec86bb-c31b-4327-b0c0-06670efdf236.svg?v=1717966528');
+    background-size: cover;
+  }
+  [data-property-name="plastikfrei"] {
+    background: url('https://cdn.shopify.com/s/files/1/0810/8874/1711/files/plasticfree_Icon_58b580f4-a9d9-4ee0-baa4-492dff49639e.svg?v=1717966528');
+    background-size: cover;
+  }
+  [data-property-name="upcycling"] {
+    background: url('https://cdn.shopify.com/s/files/1/0810/8874/1711/files/upcycling_Icon_7466170e-d153-4cbe-b3e7-f09b90aa7e11.svg?v=1717966529');
+    background-size: cover;
+  }
+  [data-property-name="wasserfest"] {
+    background: url('https://cdn.shopify.com/s/files/1/0810/8874/1711/files/waterproof_Icon_352dd629-987e-42c0-aab6-877cc9e1c28e.svg?v=1717966528');
+    background-size: cover;
+  }
+</style>

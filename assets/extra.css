@@ -1,0 +1,128 @@
+.testimonials__container  {
+  max-width: 1120px;
+  overflow: hidden;
+  margin: auto;
+}
+
+.testimonials__container .quote__text p {
+  font-size: 16px;
+}
+
+.logo-list__container {
+   max-width: 1120px;
+}
+
+.footer__title {
+  color: #F73B6D;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+input[placeholder="E-Mail-Adresse"] {
+  background-color: white;
+  border: none;
+}
+
+input[placeholder="E-Mail-Adresse"] + button {
+  background: #F73B6D;
+  color: white;
+}
+
+input[placeholder="E-Mail-Adresse"] + button:hover {
+  background: black !important;
+  color: white;
+}
+
+.header__nav {
+  text-transform: uppercase;
+}
+
+.header__nav .header__dropdown {
+  text-transform: initial;
+}
+
+shape-swatch[data-color="Mehrfarbig"]::before {
+  background: url('https://cdn.shopify.com/s/files/1/0810/8874/1711/files/bunt-150x150.png?v=1717979839');
+  background-size: cover;
+}
+
+#MainContent .shopify-policy__container {
+  max-width: 800px;
+  padding-bottom: 40px;
+  width: 100%;
+}
+#MainContent .shopify-policy__title {
+  padding: 20px 0 60px;
+}
+@media screen and (max-width: 420px) {
+  #MainContent .shopify-policy__title h1 {
+     font-size: 24px;
+  }
+  #MainContent .shopify-policy__container h2 {
+      font-size: 20px;
+  }
+}
+
+form div.panels + p {
+  visibility: hidden;
+}
+
+
+@media screen and (min-width: 768px) {
+  .product-details .container.container--with-video-grid {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row;
+    flex-flow: row;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
+
+  .product-details .container.container--with-video-grid  .product-details__container {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    padding-right: min(4.8rem, 4.8rem - var(--gsc-container-padding));
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 4.8rem;
+  }
+  
+  .product-details .container.container--with-video-grid .product-details__video-container {
+    width: calc((100% / 12)* 7);
+  }
+  
+  .product-details .container.container--with-video-grid  .product-details__video {
+    position: sticky;
+    top: 4rem;
+  }
+
+  .product-details .container.container--with-video-grid .product-details__container .accordeon-plus {
+    width: 40rem;
+    margin: 0 auto;
+  }
+}
+
+.product-details .container.container--with-video-grid .product-details__video {
+  width: 100%;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  text-transform: initial;
+}
+
+.globo-form-control .help-block.error {
+  color: #ffc9c9 !important;
+}
+
+shopify-paypal-button {
+  position: relative;
+}
+
+.cart-drawer__in-cart-related-products-heading {
+  color: rgb(247 58 109);
+}
