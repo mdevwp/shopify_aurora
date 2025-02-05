@@ -135,3 +135,9 @@ shopify-paypal-button {
   line-height: 50px;
   color: #232323;
 }
+.carousel__container .image-banner__title.h1{
+  font-weight: 500;
+  font-size: 44px;
+  line-height: 56px;
+  color: #fff;
+}
