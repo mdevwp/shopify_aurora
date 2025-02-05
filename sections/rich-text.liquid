@@ -44,6 +44,14 @@
   <div class='section-spacing rich-text rich-text--section container container--{{ container_size }}'>
     <div class='rich-text__container {% unless enable_background_around_container %} rich-text__container--with-aside-spacing section color-{{ color_scheme }}{% endunless %}'>
       <div class='rich-text__content rich-text__content--with-{{ content_align }}-align'>
+
+        {%- if content_for_header contains 'has_h1' -%}
+          {%- assign has_h1 = true -%}
+        {%- else -%}
+          {%- assign has_h1 = false -%}
+          {%- capture content_for_header -%}has_h1{%- endcapture -%}
+        {%- endif -%}
+
         {%- for block in section.blocks -%}
           {%- liquid
             assign options = block.settings
@@ -88,9 +96,16 @@
               {%- endif -%}
             {%- when 'heading' -%}
               {%- if title != blank -%}
-                <h2 class='rte block-{{block.id}} {{ heading_size }} rich-text__heading' {{ block.shopify_attributes }}>
+
+              {%- assign tag = 'h2' -%}
+              {%- if has_h1 == false -%}
+                {%- assign tag = 'h1' -%}
+                {%- assign has_h1 = true -%}
+              {%- endif -%}
+
+                <{{ tag }} class='rte block-{{block.id}} {{ heading_size }} rich-text__heading' {{ block.shopify_attributes }}>
                   {{ title }}
-                </h2>
+                </{{ tag }}>
               {%- endif -%}
             {%- when 'text' -%}
               {%- if text != blank or text_2 != blank or text_3 != blank -%}
