@@ -126,3 +126,11 @@ shopify-paypal-button {
 .cart-drawer__in-cart-related-products-heading {
   color: rgb(247 58 109);
 }
+
+.h1.rich-text__heading {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 50px;
+  color: #232323;
+}
