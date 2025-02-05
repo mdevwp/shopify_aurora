@@ -766,7 +766,7 @@
     "custom_css": [
       ".sticky-cart-button:before {background: #f73a6d;}",
       ".sticky-cart-button__icon {color: white;}",
-      ".widget_container_stars_badge iframe {transform: scale(0.5); margin-left: -50px; border-radius: 5px;}"
+      ".widget_container_stars_badge iframe {transform: scale(0.5); margin-left: auto; border-radius: 5px; bottom: 0px !important; right: -50px !important;}"
     ]
   }
 }
