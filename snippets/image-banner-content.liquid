@@ -25,7 +25,11 @@
         <div class='caption image-banner__caption {% if desktop_content_background == 'solid' %} desktop-body-color {% endif %}'>{{ caption }}</div>
       {%- endif -%}
       {%- if title != blank -%}
-        <h2 class='image-banner__title {{ heading_size }}'>{{ title }}</h2>
+          {%- assign tag = 'h2' -%}
+          {%- if heading_size == 'h1' -%}
+              {%- assign tag = 'h1' -%}
+          {%- endif -%}
+            <{{ tag }} class='image-banner__title {{ heading_size }}'>{{ title }}</{{ tag }}>
       {%- endif -%}
       {%- if text != blank -%}
         <div class='rte {{ body_size }} {% if desktop_content_background == 'solid' and title != blank %} desktop-body-color {% endif %} image-banner__text body-font-weight-from-global-settings'>

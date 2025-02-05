@@ -127,6 +127,7 @@ shopify-paypal-button {
   color: rgb(247 58 109);
 }
 
+.image-banner__title.h1,
 .h1.rich-text__heading {
   text-transform: uppercase;
   font-weight: bold;
