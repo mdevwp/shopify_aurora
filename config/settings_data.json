@@ -766,7 +766,9 @@
     "custom_css": [
       ".sticky-cart-button:before {background: #f73a6d;}",
       ".sticky-cart-button__icon {color: white;}",
-      ".widget_container_stars_badge iframe {transform: scale(0.5); margin-left: auto; border-radius: 5px; bottom: 0px !important; right: -50px !important;}"
+      ".widget_container_stars_badge iframe {transform: scale(0.5); margin-left: auto; border-radius: 5px; bottom: 0px !important; right: -50px !important;}",
+      "div#trustami-stars-badge-mobile-view iframe {transform: scale(0.7); background-color: white; bottom: -7px !important; margin-right: -55px;}",
+      "div#taCloseBtnStarsMobile>div {transform: scale(0.7) !important; margin-right: -10px ! Important;}"
     ]
   }
 }
