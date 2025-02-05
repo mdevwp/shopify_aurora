@@ -45,6 +45,12 @@
     <div class='rich-text__container {% unless enable_background_around_container %} rich-text__container--with-aside-spacing section color-{{ color_scheme }}{% endunless %}'>
       <div class='rich-text__content rich-text__content--with-{{ content_align }}-align'>
 
+        {%- if content_for_header contains 'has_h1' -%}
+          {%- assign has_h1 = true -%}
+        {%- else -%}
+          {%- assign has_h1 = false -%}
+          {%- capture content_for_header -%}has_h1{%- endcapture -%}
+        {%- endif -%}
 
         {%- for block in section.blocks -%}
           {%- liquid
