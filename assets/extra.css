@@ -144,11 +144,10 @@ shopify-paypal-button {
 
 /*****widget styles***/
 .widget_container_stars_badge iframe {
-  transform: scale(0.5);
-  margin-left: auto;
+  transform: scale(.5);
+  margin-left: -55px;
   border-radius: 5px;
-  bottom: 0px !important;
-  right: -50px !important;
+  bottom: 68px !important;
 }
 #trustami-stars-badge-mobile-view iframe {
   transform: scale(0.6);
