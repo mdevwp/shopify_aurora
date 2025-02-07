@@ -160,3 +160,9 @@ shopify-paypal-button {
   margin-right: -10px !important;
   margin-top: 7px !important;
 }
+
+@media screen and (max-width: 767px) {
+  .cc-floating.cc-bottom.cc-right.cc-default.cc-window.isense-cc-window {
+    bottom: 25px;
+  }
+}
