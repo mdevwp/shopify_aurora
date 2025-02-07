@@ -1,47 +1,47 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
-    "ff03a7f7-70a4-4aa2-8e65-56be8e7dbefc": {
-      "type": "breadcrumbs",
-      "settings": {
-        "color_scheme": "default",
-        "container_size": "medium",
-        "show_breadcrumbs_product_title": true,
-        "add_side_paddings": true,
-        "section_spacing_top": 16,
-        "section_spacing_bottom": 0
-      }
-    },
     "main": {
       "type": "product",
       "blocks": {
         "vendor": {
           "type": "vendor",
-          "disabled": true,
           "settings": {}
         },
         "title": {
           "type": "title",
           "settings": {
-            "heading_size": "caption1"
+            "heading_size": "h2"
           }
         },
         "price": {
           "type": "price",
           "settings": {
-            "price_size": "xs",
+            "price_size": "sm",
             "show_tax_status": false,
             "show_sale_amount_badge": true,
             "highlight_sale_price": true
           }
         },
-        "custom_liquid_4dwLpJ": {
-          "type": "custom_liquid",
+        "inventory_status": {
+          "type": "inventory_status",
           "settings": {
-            "style": "static",
-            "title": "",
-            "heading_size": "caption3",
-            "custom_liquid": "<span style=\"color:#52AC82; font-size: 13px;\"><i class=\"fas fa-shipping-fast\"><\/i> In 2-5 Tagen bei dir zu Hause\n<\/span>",
-            "icon": "none"
+            "show_inventory_status": "always",
+            "inventory_threshhold": 11,
+            "text_when_many_in_stock": "Many in stock",
+            "text_when_few_in_stock": "Act now, few in stock!",
+            "show_inventory_counter": false,
+            "high_level_indicator_color": "#00c853",
+            "low_level_indicator_color": "#ff3d3d",
+            "color_inventory_label": false
           }
         },
         "28586830-d855-4547-8946-94914bac9e85": {
@@ -49,7 +49,7 @@
           "settings": {
             "title": "",
             "heading_size": "caption3",
-            "body_size": "body4",
+            "body_size": "body3",
             "block_style": "static",
             "icon": "none"
           }
@@ -58,27 +58,14 @@
           "type": "variant_picker",
           "settings": {
             "option_type": "button-solid",
-            "primary_swatch_option_type": "swatches",
+            "primary_swatch_option_type": "variant-images",
             "secondary_swatch_option_type": "swatches",
-            "hide_single_value_options": true,
+            "hide_single_value_options": false,
             "option_name": "",
             "information_drawer_button_label": "",
             "text": "",
             "page": "",
             "image_width": 60
-          }
-        },
-        "inventory_status": {
-          "type": "inventory_status",
-          "settings": {
-            "show_inventory_status": "always",
-            "inventory_threshhold": 11,
-            "text_when_many_in_stock": "Verfügbarkeit: Vorrätig",
-            "text_when_few_in_stock": "Verfügbarkeit: Vorrätig",
-            "show_inventory_counter": false,
-            "high_level_indicator_color": "#00c853",
-            "low_level_indicator_color": "#00c853",
-            "color_inventory_label": false
           }
         },
         "quantity_selector": {
@@ -92,25 +79,66 @@
             "enable_pickup_availability": false,
             "enable_gift_card": false,
             "add_to_cart_btn_style": "solid",
-            "checkout_btn_style": "solid"
+            "checkout_btn_style": "outline"
           }
         },
-        "product_properties_PGJA6C": {
-          "type": "product_properties",
-          "settings": {}
+        "c9188b10-e29c-4c63-b385-a3faa860d64a": {
+          "type": "information_tag",
+          "settings": {
+            "tag_style": "solid",
+            "heading": "Information tag",
+            "heading_size": "caption3",
+            "body": "<p>Tell more about your product, add care instructions, country of origin, or manufacturer information.</p>",
+            "body_size": "body4",
+            "content_alignment": "left",
+            "icon": "none",
+            "icon_size": 24,
+            "icon_position": "inline",
+            "tag_background_color": "#e9ffcd",
+            "tag_text_color": "#141416",
+            "enable_drawer": true,
+            "drawer_text": "<p>Tell more about your product, add care instructions, country of origin, or manufacturer information.</p>",
+            "drawer_page": "",
+            "drawer_body_size": "body3",
+            "drawer_media_size": 60
+          }
+        },
+        "29040344-ce22-4d9d-aab8-1dcb43bb2ab5": {
+          "type": "product_drawer_with_tabs",
+          "settings": {
+            "btn_style": "text",
+            "popup_link_text": "Drawer with tabs",
+            "heading_size": "caption3",
+            "icon": "shipping-box",
+            "icon_size": 24,
+            "button_background_color": "#e9ffcd",
+            "button_text_color": "#141416",
+            "tab_1_title": "Tab 1",
+            "tab_1_text": "<p>Tell more about your product, care instructions, country of origin, manufacturer information, matching colors and accessories.</p>",
+            "tab_1_page": "",
+            "tab_1_body_size": "body3",
+            "tab_2_title": "Tab 2",
+            "tab_2_text": "<p>Tell more about your product, care instructions, country of origin, manufacturer information, matching colors and accessories.</p>",
+            "tab_2_page": "",
+            "tab_2_body_size": "body3",
+            "tab_3_title": "Tab 3",
+            "tab_3_text": "<p>Tell more about your product, care instructions, country of origin, manufacturer information, matching colors and accessories.</p>",
+            "tab_3_page": "",
+            "tab_3_body_size": "body3"
+          }
         }
       },
       "block_order": [
         "vendor",
         "title",
         "price",
-        "custom_liquid_4dwLpJ",
+        "inventory_status",
         "28586830-d855-4547-8946-94914bac9e85",
         "d3d427d0-4e7d-4f81-9057-c64f65a4f183",
-        "inventory_status",
         "quantity_selector",
         "buy_buttons",
-        "product_properties_PGJA6C"
+        "c9188b10-e29c-4c63-b385-a3faa860d64a",
+        "29040344-ce22-4d9d-aab8-1dcb43bb2ab5"
       ],
       "settings": {
         "color_scheme": "default",
@@ -119,8 +147,8 @@
         "desktop_space_between_media": 20,
         "thumbnails_size": 88,
         "mobile_layout": "thumbnails-right",
-        "img_ratio": "square",
-        "show_only_selected_variants": true,
+        "img_ratio": "portrait",
+        "show_only_selected_variants": false,
         "enable_image_zoom": true,
         "enable_video_looping": true,
         "enable_video_autoplay": true,
@@ -136,79 +164,184 @@
         "eaea97df-77ab-4b25-ab4d-7127a70f662c": {
           "type": "description",
           "settings": {
-            "title": "Beschreibung",
-            "heading_size": "caption2",
-            "body_size": "body4",
+            "title": "Description",
+            "heading_size": "caption3",
+            "body_size": "body3",
             "icon": "none"
           }
         },
-        "collapsible_row_3xKGAK": {
+        "860566f2-5be2-4ed8-9964-b27e88c6c92b": {
           "type": "collapsible_row",
           "settings": {
-            "title": "Größenguide",
+            "title": "Content tab",
             "heading_size": "caption3",
             "icon": "none",
-            "text": "<p>{{ product.metafields.custom.groessenguide.value }}<\/p>",
+            "text": "<p>Pair image with text to tell more about your product: care instructions, country of origin, manufacturer information, matching colors and accessories.</p>",
             "page": "",
-            "body_size": "body4",
+            "body_size": "body3",
             "image_width": 100
           }
         },
-        "collapsible_row_jdX6UQ": {
+        "5594cd3a-1c1c-436c-82e1-5acc9d0e8bcf": {
           "type": "collapsible_row",
           "settings": {
-            "title": "Nutzung & Pflege",
+            "title": "Content tab",
             "heading_size": "caption3",
             "icon": "none",
-            "text": "<p>{{ product.metafields.custom.nutzung_pflege.value }}<\/p>",
+            "text": "<p>Pair image with text to tell more about your product: care instructions, country of origin, manufacturer information, matching colors and accessories.</p>",
             "page": "",
-            "body_size": "body4",
+            "body_size": "body3",
             "image_width": 100
           }
         },
-        "collapsible_row_Mea7ga": {
+        "4987e3cf-fed0-4e1b-921a-99aaa4edfc74": {
           "type": "collapsible_row",
           "settings": {
-            "title": "Garantie",
+            "title": "Content tab",
             "heading_size": "caption3",
             "icon": "none",
-            "text": "<p>Wir bieten <strong>24 Monate Garantie<\/strong> auf alle ALEXASCHA Schmuckstücke ab Kaufdatum an.<\/p><p>Sollte Dein Schmuckstück innerhalb dieser Zeit trotz Beachtung der <a href=\"\/pages\/pflegehinweise\" title=\"pflegehinweise\">Pflegehinweise<\/a> dennoch kaputt gehen, sich stark verändern oder andere Schäden aufweisen, senden wir Dir kostenfrei ein Neues zu. Die Details dazu findest Du im Bereich <a href=\"\/pages\/garantie-reklamation\" target=\"_blank\" title=\"garantie-reklamation\">Garantie & Reklamation.<\/a><\/p>",
+            "text": "<p>Pair image with text to tell more about your product: care instructions, country of origin, manufacturer information, matching colors and accessories.</p>",
             "page": "",
-            "body_size": "body4",
-            "image_width": 100
-          }
-        },
-        "collapsible_row_fqNthM": {
-          "type": "collapsible_row",
-          "settings": {
-            "title": "Versand & Rücksendung",
-            "heading_size": "caption3",
-            "icon": "none",
-            "text": "<p>Innerhalb Deutschlands liegen die Versandkosten pro Bestellung bei 3,00€ und die Versanddauer beträgt 1-2 Werktage.<\/p><p>Versandkosten in andere Länder liegen im Regelfall bei 4,00€. Die Versanddauer variiert je nach Land, genauso wie die Preise für den Express-Versand. Bei Bestellungen ab 50,-€ verschicken wir versandkostenfrei.<\/p><p>Mehr Infos zu Lieferzeiten und den Versandpreisen findest Du im Bereich <a href=\"\/pages\/bezahlmoeglichkeiten\" target=\"_blank\" title=\"bezahlmoeglichkeiten\">Versand & Zahlung.<\/a><\/p><p><strong>Sitzt das Schmuckstück doch nicht wie geplant? Kein Problem!<\/strong><br\/>Wir nehmen unsere geschätzten Produkte gern zurück. Das Einzige, worum Du Dich kümmern musst, ist die Rücksendung selbst. Die Details dazu findest Du im Bereich <a href=\"\/pages\/rueckversand\" target=\"_blank\" title=\"rueckversand\">Rückversand & Umtausch.<\/a><\/p>",
-            "page": "",
-            "body_size": "body4",
+            "body_size": "body3",
             "image_width": 100
           }
         }
       },
       "block_order": [
         "eaea97df-77ab-4b25-ab4d-7127a70f662c",
-        "collapsible_row_3xKGAK",
-        "collapsible_row_jdX6UQ",
-        "collapsible_row_Mea7ga",
-        "collapsible_row_fqNthM"
+        "860566f2-5be2-4ed8-9964-b27e88c6c92b",
+        "5594cd3a-1c1c-436c-82e1-5acc9d0e8bcf",
+        "4987e3cf-fed0-4e1b-921a-99aaa4edfc74"
       ],
       "settings": {
         "color_scheme": "default",
         "enable_background_around_container": true,
         "container_size": "large",
-        "style": "collapsible-rows",
-        "expand_first_collapsible_row": true,
-        "collapse_other_rows": true,
+        "style": "tabs",
+        "expand_first_collapsible_row": false,
+        "collapse_other_rows": false,
         "add_side_paddings": true,
-        "section_spacing_top": 18,
-        "section_spacing_bottom": 64,
-        "show_product_video": true
+        "section_spacing_top": 96,
+        "section_spacing_bottom": 96,
+        "show_product_video": false
+      }
+    },
+    "1c58a53e-d2dd-4e5c-b684-b7aecf54a6be": {
+      "type": "collage",
+      "blocks": {
+        "534bf55b-7398-4fa0-ac15-dc87ef799863": {
+          "type": "image",
+          "settings": {
+            "color_scheme": "white",
+            "desktop_columns": 2,
+            "desktop_rows": 2,
+            "overlay_opacity": 20,
+            "caption": "IMAGE",
+            "title": "Image with text",
+            "heading_size": "h6",
+            "text": "<p>Fill in the text to tell customers by what your products are inspired.</p>",
+            "body_size": "body3",
+            "link_text": "Link label",
+            "link": "",
+            "btn_style": "link",
+            "content_position": "center-center",
+            "mobile_position": "bottom-center",
+            "hover_effect": "zoom"
+          }
+        },
+        "3e1d9eaf-4579-49c0-9cfd-19c26e8bf3d6": {
+          "type": "image",
+          "settings": {
+            "color_scheme": "white",
+            "desktop_columns": 2,
+            "desktop_rows": 2,
+            "overlay_opacity": 20,
+            "caption": "IMAGE",
+            "title": "Image with text",
+            "heading_size": "h6",
+            "text": "<p>Fill in the text to tell customers by what your products are inspired.</p>",
+            "body_size": "body3",
+            "link_text": "Link label",
+            "link": "",
+            "btn_style": "link",
+            "content_position": "center-center",
+            "mobile_position": "bottom-center",
+            "hover_effect": "zoom"
+          }
+        }
+      },
+      "block_order": [
+        "534bf55b-7398-4fa0-ac15-dc87ef799863",
+        "3e1d9eaf-4579-49c0-9cfd-19c26e8bf3d6"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "default",
+        "container_size": "full-screen",
+        "title": "",
+        "heading_size": "h5",
+        "alignment": "center",
+        "columns": 4,
+        "desktop_space_between_cards": 12,
+        "mobile_layout": "carousel",
+        "mobile_row_height": 500,
+        "mobile_space_between_cards": 16,
+        "add_side_paddings": true,
+        "section_spacing_top": 48,
+        "section_spacing_bottom": 48
+      }
+    },
+    "35a80c75-d4b0-4340-9552-75a9f11586de": {
+      "type": "images-with-text",
+      "blocks": {
+        "template--16729789563121__35a80c75-d4b0-4340-9552-75a9f11586de-1681824353e40c4786-0": {
+          "type": "image",
+          "settings": {}
+        },
+        "template--16729789563121__35a80c75-d4b0-4340-9552-75a9f11586de-1681824353e40c4786-1": {
+          "type": "image",
+          "settings": {}
+        },
+        "template--16729789563121__35a80c75-d4b0-4340-9552-75a9f11586de-1681824353e40c4786-2": {
+          "type": "image",
+          "settings": {}
+        },
+        "template--16729789563121__35a80c75-d4b0-4340-9552-75a9f11586de-1681824353e40c4786-3": {
+          "type": "image",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "template--16729789563121__35a80c75-d4b0-4340-9552-75a9f11586de-1681824353e40c4786-0",
+        "template--16729789563121__35a80c75-d4b0-4340-9552-75a9f11586de-1681824353e40c4786-1",
+        "template--16729789563121__35a80c75-d4b0-4340-9552-75a9f11586de-1681824353e40c4786-2",
+        "template--16729789563121__35a80c75-d4b0-4340-9552-75a9f11586de-1681824353e40c4786-3"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "default",
+        "container_size": "large",
+        "content_layout": "left",
+        "image_layout": "collage",
+        "img_ratio": 1.3,
+        "rotate_images": false,
+        "icon": "none",
+        "subheading": "IMAGES WITH TEXT",
+        "heading": "Promo with featured images",
+        "heading_size": "h2",
+        "body": "<p>Share information about your brand with your customers. Describe a product, make announcements or welcome customers to your store.</p>",
+        "body_size": "body3",
+        "content_alignment": "left",
+        "desktop_content_width": 440,
+        "first_button_text": "Button label",
+        "first_button_link": "",
+        "first_button_style": "solid",
+        "second_button_text": "",
+        "second_button_link": "",
+        "second_button_style": "solid",
+        "add_side_paddings": true,
+        "section_spacing_top": 48,
+        "section_spacing_bottom": 80
       }
     },
     "product-recommendations": {
@@ -235,15 +368,16 @@
         "autoplay_mode": "disabled",
         "autoplay_interval": 3,
         "add_side_paddings": true,
-        "section_spacing_top": 48,
-        "section_spacing_bottom": 48
+        "section_spacing_top": 80,
+        "section_spacing_bottom": 80
       }
     }
   },
   "order": [
-    "ff03a7f7-70a4-4aa2-8e65-56be8e7dbefc",
     "main",
     "product-details",
+    "1c58a53e-d2dd-4e5c-b684-b7aecf54a6be",
+    "35a80c75-d4b0-4340-9552-75a9f11586de",
     "product-recommendations"
   ]
 }
