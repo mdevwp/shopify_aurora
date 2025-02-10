@@ -252,6 +252,7 @@
   {% for product in collection.products %}
     {% for variant in product.variants %}
       {% for option in variant.options %}
+         <p>{{ option }}</p>
         {% if option == 'Gold' %}
           {% assign filtered_products = filtered_products | push: variant %}
           {% break %}
