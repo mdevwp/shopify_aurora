@@ -17,10 +17,10 @@
   endif
 %}
 
-  {% if filter == "Gold" %}
-   <pre>{{ product.option1 | json }}</pre>
+  {%# if filter == "Gold" %}
+   <pre>{{ filter | json }}</pre>
  
-  {% endif %}
+  {%# endif %}
   
 {% liquid
   assign custom_badge_1_tag_downcase = settings.product_card_custom_badge_1_tag | downcase
