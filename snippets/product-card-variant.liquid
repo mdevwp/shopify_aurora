@@ -664,7 +664,7 @@
                 href='{{ variant.url }}'
                 aria-label='{{ variant.title | strip_html | escape }}'
               >
-                {{ product.title }} &mdash; &mdash; &mdash; {% for option in variant.options %}{{ option }}{% unless forloop.last %}, {% endunless %}{% endfor %}
+                {{ product.title }} &mdash; {{ filter | json }}{% for option in variant.options %}{{ option }}{% unless forloop.last %}, {% endunless %}{% endfor %}
               </a>
               {%- if show_vendor -%}
                 <a
