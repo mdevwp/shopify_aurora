@@ -91,10 +91,9 @@
 {% if product.id != blank %}
   {% for variant in product.variants %}
 
-    {% liquid if filter_option != blank and variant.options[0] != filter_option
-           break
-        endif
-    %}
+ 
+           <pre>{{ variant.options[0] | json }}</pre>
+
   
     {% liquid
       assign price = variant.price | default: 0
