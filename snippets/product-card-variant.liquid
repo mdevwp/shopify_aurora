@@ -1,5 +1,4 @@
 {% liquid
-  break
   assign price = product.price | default: 0
   if settings.show_currency_code
     assign money_price = price | money_with_currency
@@ -17,10 +16,6 @@
   endif
 %}
 
-
-   <pre>{{ product.title | json }}</pre>
-
-  
 {% liquid
   assign custom_badge_1_tag_downcase = settings.product_card_custom_badge_1_tag | downcase
   assign custom_badge_2_tag_downcase = settings.product_card_custom_badge_2_tag | downcase
