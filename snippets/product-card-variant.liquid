@@ -1,8 +1,4 @@
 {% liquid
-
-  if filter != "Gold"
-   break
-  endif
   
   assign price = product.price | default: 0
   if settings.show_currency_code
@@ -21,6 +17,11 @@
   endif
 %}
 
+  {% if filter == "Gold" %}
+   <pre>{{ product | json }}</pre>
+ 
+  {% endif %}
+  
 {% liquid
   assign custom_badge_1_tag_downcase = settings.product_card_custom_badge_1_tag | downcase
   assign custom_badge_2_tag_downcase = settings.product_card_custom_badge_2_tag | downcase
