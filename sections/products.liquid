@@ -246,8 +246,8 @@
                 {% endif %}
                 
 
-                {% assign filtered_products = '' %}
 
+{% assign filtered_products = '' | split: ',' %}
 {% if collection.title contains 'gold' or collection.title contains 'Gold' %}
   {% for product in collection.products %}
     {% for variant in product.variants %}
@@ -255,8 +255,6 @@
         
         {% if option == 'Gold' %}
           {% assign filtered_products = filtered_products | push: variant %}
-           <p>{{ option }}</p>
-          <pre>{{ variant | json }}</pre>
           {% break %}
         {% endif %}
       {% endfor %}
