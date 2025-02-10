@@ -242,6 +242,23 @@
                   {% assign filtered_products = collection.products | where: 'variants', 'Gold' %}
                 {% endif %}
 
+{% assign all_options = '' %}
+
+{% for product in collection.products %}
+  {% for variant in product.variants %}
+    {% for option in variant.options %}
+      {% unless all_options contains option %}
+        {% capture all_options %}{{ all_options }}, {{ option }}{% endcapture %}
+      {% endunless %}
+    {% endfor %}
+  {% endfor %}
+{% endfor %}
+
+<h3>Доступные опции для всех товаров в коллекции:</h3>
+<p>{{ all_options }}</p>
+
+                
+
 
                 {%- for product in filtered_products -%}
                     {%
