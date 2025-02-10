@@ -234,40 +234,8 @@
         {%- paginate collection.products by product_per_page -%}
           {%- if collection.products.size > 0 -%}
             <div class='shop__products-grid-wrap'>
-              <div class='shop__products-grid' id='ShopProductsGrid'>
-
-
-                {% assign filtered_products = collection.products %}
-                {% if collection.title contains 'gold' or collection.title contains 'Gold' %}
-
-
-                  
-                  {%# assign filtered_products = collection.products | where: 'variants', 'Gold' #%}
-                {% endif %}
-                
-
-
-{% assign filtered_products = '' | split: ',' %}
-{% if collection.title contains 'gold' or collection.title contains 'Gold' %}
-  {% for product in collection.products %}
-    {% for variant in product.variants %}
-      {% for option in variant.options %}
-        
-        {% if option == 'Gold' %}
-          {% assign filtered_products = filtered_products | concat: product %}
-          {%# assign filtered_products = collection.products | slice: forloop.index0 | concat: filtered_products #%}
-           <pre>{{ variant | json }}</pre>
-          {% break %}
-        {% endif %}
-      {% endfor %}
-    {% endfor %}
-  {% endfor %}
-{% else %}
-  {% assign filtered_products = collection.products %}
-{% endif %}
-                
-
-                {%- for product in filtered_products -%}
+              <div class='shop__products-grid' id='ShopProductsGrid'>       
+                {%- for product in collection.products -%}
                     {%
                       render 'product-card-variant',
                       with_bottom_spacing: true,
