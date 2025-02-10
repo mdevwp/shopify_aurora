@@ -92,7 +92,8 @@
   {% for variant in product.variants %}
 
       {% if filter_option != blank and variant.options[0] != blank and variant.options[0] != filter_option %}
-          <pre>{{ variant.options[0] | json }}</pre>
+          {% continue %}
+
       {% endif %}
   
   
