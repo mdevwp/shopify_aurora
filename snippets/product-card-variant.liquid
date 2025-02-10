@@ -1,4 +1,9 @@
 {% liquid
+
+  if filter != "Gold"
+   break
+  endif
+  
   assign price = product.price | default: 0
   if settings.show_currency_code
     assign money_price = price | money_with_currency
