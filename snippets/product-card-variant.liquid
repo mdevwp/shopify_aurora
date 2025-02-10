@@ -91,17 +91,11 @@
 {% if product.id != blank %}
   {% for variant in product.variants %}
 
-    {% liquid
-
-    
-  if variant.options[0] != filter
-     break
-  endif
-
-%}
-
-
-    
+    {% liquid if filter != blank and variant.options[0] != filter
+           break
+        endif
+    %}
+  
     {% liquid
       assign price = variant.price | default: 0
       if settings.show_currency_code
