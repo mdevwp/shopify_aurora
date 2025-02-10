@@ -166,3 +166,13 @@ shopify-paypal-button {
     bottom: 25px;
   }
 }
+
+.shopify-section-header {
+  opacity: 1 !important;
+}
+.header__menu-item-label {
+  white-space: nowrap;
+}
+float-element.header__menu {
+  top: -5px !important;
+}
