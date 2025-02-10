@@ -255,7 +255,7 @@
         
         {% if option == 'Gold' %}
           {% assign filtered_products = filtered_products | concat: variant %}
-           {{ variant | json }} 
+           <pre>{{ variant | json }}</pre>
           {% break %}
         {% endif %}
       {% endfor %}
