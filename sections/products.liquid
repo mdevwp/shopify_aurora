@@ -234,12 +234,20 @@
         {%- paginate collection.products by product_per_page -%}
           {%- if collection.products.size > 0 -%}
             <div class='shop__products-grid-wrap'>
-              <div class='shop__products-grid' id='ShopProductsGrid'>       
+              <div class='shop__products-grid' id='ShopProductsGrid'> 
+
+
+                {% assign filter = '' %}
+                {% if collection.title contains 'gold' or collection.title contains 'Gold' %}
+                  {% assign filter = 'Gold' %}
+                {% endif %}
+                
                 {%- for product in collection.products -%}
                     {%
                       render 'product-card-variant',
                       with_bottom_spacing: true,
                       product: product,
+                      filter: filter,
                       img_ratio: img_ratio,
                       show_mobile_carousel: true,
                       product_card_align: product_card_align,
