@@ -92,7 +92,7 @@
   {% for variant in product.variants %}
 
  
-           <pre>{{ variant.options[0] | json }}</pre>
+           <pre>{{ variant.options[0] != filter_option | json }}</pre>
 
   
     {% liquid
