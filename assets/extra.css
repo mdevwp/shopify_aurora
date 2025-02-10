@@ -173,9 +173,11 @@ shopify-paypal-button {
 .header__menu-item-label {
   white-space: nowrap;
 }
-float-element.header__menu {
+/*float-element.header__menu {}*/
+.header__wide-menu float-element.header__menu:nth-child(-n+2) {
   top: -5px !important;
 }
+
 .header__menu-item--small,
 .header__menu-item--medium {
   padding: 6px 0;
