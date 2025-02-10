@@ -247,22 +247,23 @@
                 
 
 
-{% assign filtered_products = '' | split: ',' %}
+
+
 {% if collection.title contains 'gold' or collection.title contains 'Gold' %}
+  {% assign filtered_products = "" | split: "" %}
   {% for product in collection.products %}
+    {% assign has_gold_variant = false %}
     {% for variant in product.variants %}
-      {% for option in variant.options %}
-        
-        {% if option == 'Gold' %}
-          {% assign filtered_products = filtered_products | concat: variant %}
-           <pre>{{ variant | json }}</pre>
-          {% break %}
-        {% endif %}
-      {% endfor %}
+      {% if variant.option1 == 'Gold' %}
+        {% assign has_gold_variant = true %}
+        {% break %}
+      {% endif %}
     {% endfor %}
+    {% if has_gold_variant %}
+      {% assign filtered_products = collection.products | slice: forloop.index0 | concat: filtered_products %}
+    {% endif %}
   {% endfor %}
-{% else %}
-  {% assign filtered_products = collection.products %}
+  {% assign filtered_products = filtered_products | reverse %}
 {% endif %}
                 
 
