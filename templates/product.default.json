@@ -164,21 +164,21 @@
         "eaea97df-77ab-4b25-ab4d-7127a70f662c": {
           "type": "description",
           "settings": {
-            "title": "Description",
-            "heading_size": "caption3",
-            "body_size": "body3",
+            "title": "Beschreibung",
+            "heading_size": "caption2",
+            "body_size": "body4",
             "icon": "none"
           }
         },
         "860566f2-5be2-4ed8-9964-b27e88c6c92b": {
           "type": "collapsible_row",
           "settings": {
-            "title": "Content tab",
+            "title": "Größenguide",
             "heading_size": "caption3",
             "icon": "none",
-            "text": "<p>Pair image with text to tell more about your product: care instructions, country of origin, manufacturer information, matching colors and accessories.</p>",
+            "text": "",
             "page": "",
-            "body_size": "body3",
+            "body_size": "body4",
             "image_width": 100
           }
         },
@@ -217,13 +217,13 @@
         "color_scheme": "default",
         "enable_background_around_container": true,
         "container_size": "large",
-        "style": "tabs",
-        "expand_first_collapsible_row": false,
-        "collapse_other_rows": false,
+        "style": "collapsible-rows",
+        "expand_first_collapsible_row": true,
+        "collapse_other_rows": true,
         "add_side_paddings": true,
-        "section_spacing_top": 96,
-        "section_spacing_bottom": 96,
-        "show_product_video": false
+        "section_spacing_top": 18,
+        "section_spacing_bottom": 64,
+        "show_product_video": true
       }
     },
     "1c58a53e-d2dd-4e5c-b684-b7aecf54a6be": {
