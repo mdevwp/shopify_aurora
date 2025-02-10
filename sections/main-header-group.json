@@ -186,7 +186,7 @@
         "enable_border": false,
         "enable_transparent": false,
         "menu": "header-main",
-        "menu_type": "mega",
+        "menu_type": "drawer",
         "grid": "1",
         "menu_trigger": "hover",
         "color_menu_items": "Item 1:#E32417, Item 2:#F1C232",
