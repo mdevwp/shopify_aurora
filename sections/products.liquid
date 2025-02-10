@@ -237,29 +237,21 @@
               <div class='shop__products-grid' id='ShopProductsGrid'>
 
 
-               
+                {% assign filtered_products = collection.products %}
+                {% if collection.title contains 'gold' or collection.title contains 'Gold' %}
+                  {%# assign filtered_products = collection.products | where: 'variants', 'Gold' #%}
+                {% endif %}
 
-{% assign filtered_products = '' %}
 
-{% if collection.title contains 'gold' or collection.title contains 'Gold' %}
-  {% for product in collection.products %}
-    {% assign has_gold_variant = false %}
-    
-    {% for variant in product.variants %}
-      {% if variant.option1 == 'Gold' %}
-        {% assign has_gold_variant = true %}
-        {% break %}
-      {% endif %}
+                {% for product in collection.products %}
+  <h3>{{ product.title }}</h3>
+  {% for variant in product.variants %}
+    <p>Вариант: {{ variant.title }}</p>
+    {% for option in variant.options %}
+      <p>Опция: {{ option }}</p>
     {% endfor %}
-    
-    {% if has_gold_variant %}
-      {% assign filtered_products = filtered_products | push: product %}
-    {% endif %}
   {% endfor %}
-{% else %}
-  {% assign filtered_products = collection.products %}
-{% endif %}
-
+{% endfor %}
 
                 
 
