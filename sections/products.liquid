@@ -237,10 +237,7 @@
               <div class='shop__products-grid' id='ShopProductsGrid'>
 
 
-                {% assign filtered_products = collection.products %}
-                {% if collection.title contains 'gold' or collection.title contains 'Gold' %}
-                  {%# assign filtered_products = collection.products | where: 'variants', 'Gold' #%}
-                {% endif %}
+          
 
 
 {% assign filtered_products = '' %}
