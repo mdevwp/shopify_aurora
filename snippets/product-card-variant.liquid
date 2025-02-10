@@ -1,10 +1,9 @@
 {% liquid
 
-  if variant.options[0] != filter
-     break
-  endif
+
 
 %}
+{{ variant.options[0] | json }}
 {% liquid
   assign price = product.price | default: 0
   if settings.show_currency_code
