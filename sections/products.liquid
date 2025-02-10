@@ -256,6 +256,7 @@
         {% if option == 'Gold' %}
           {% assign filtered_products = filtered_products | push: variant %}
            <p>{{ option }}</p>
+          <pre>{{ variant | inspect }}</pre>
           {% break %}
         {% endif %}
       {% endfor %}
