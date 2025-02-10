@@ -254,7 +254,7 @@
       {% for option in variant.options %}
         
         {% if option == 'Gold' %}
-          {% assign filtered_products = filtered_products | push: variant %}
+          {% assign filtered_products = filtered_products | concat: variant %}
           {% break %}
         {% endif %}
       {% endfor %}
