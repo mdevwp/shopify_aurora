@@ -247,10 +247,26 @@
                 
 
 
+{% assign filtered_products = '' | split: ',' %}
+{% if collection.title contains 'gold' or collection.title contains 'Gold' %}
+  {% for product in collection.products %}
+    {% for variant in product.variants %}
+      {% for option in variant.options %}
+        
+        {% if option == 'Gold' %}
+          {% assign filtered_products = filtered_products | concat: product %}
+          {%# assign filtered_products = collection.products | slice: forloop.index0 | concat: filtered_products #%}
+           <pre>{{ variant | json }}</pre>
+          {% break %}
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  {% endfor %}
+{% else %}
+  {% assign filtered_products = collection.products %}
+{% endif %}
+                
 
-                
- <pre>{{ filtered_products | json }}</pre>
-                
                 {%- for product in filtered_products -%}
                     {%
                       render 'product-card-variant',
