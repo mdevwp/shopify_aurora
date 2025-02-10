@@ -176,3 +176,7 @@ shopify-paypal-button {
 float-element.header__menu {
   top: -5px !important;
 }
+.header__menu-item--small,
+.header__menu-item--medium {
+  padding: 6px 0;
+}
