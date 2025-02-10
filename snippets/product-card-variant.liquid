@@ -91,13 +91,11 @@
 {% if product.id != blank %}
   {% for variant in product.variants %}
 
+    
       {% if filter_option != blank and variant.options[0] != blank and variant.options[0] != filter_option %}
           {% continue %}
-
       {% endif %}
-  
-  
-
+    
   
     {% liquid
       assign price = variant.price | default: 0
