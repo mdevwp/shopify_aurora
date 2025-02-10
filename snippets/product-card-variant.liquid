@@ -1,10 +1,4 @@
 {% liquid
-
-
-
-%}
-{{ variant.options[0] | json }}
-{% liquid
   assign price = product.price | default: 0
   if settings.show_currency_code
     assign money_price = price | money_with_currency
@@ -96,6 +90,18 @@
 
 {% if product.id != blank %}
   {% for variant in product.variants %}
+
+    {% liquid
+
+    
+  if variant.options[0] != filter
+     break
+  endif
+
+%}
+
+
+    
     {% liquid
       assign price = variant.price | default: 0
       if settings.show_currency_code
