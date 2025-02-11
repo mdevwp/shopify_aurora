@@ -93,6 +93,7 @@
 
     
     {% if filter_metal != blank and variant.options[0] != blank and variant.options[0] != filter_metal %}
+      <pre>{{ variant.options[0] | json }}</pre>
         {% continue %}
     {% endif %}
     
