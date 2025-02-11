@@ -257,7 +257,8 @@
                   Grün:grün, 
                   Lila:lavend
                 {% endcapture %}
-                {% assign colors = colors_list | strip_newlines | split: ", " %}
+                
+                {% assign colors = colors_list | strip | split: ", " %}
 
                 {% for color in colors %}
                   {% assign parts = color | split: ":" %}
