@@ -84,6 +84,7 @@
         },
         "c9188b10-e29c-4c63-b385-a3faa860d64a": {
           "type": "information_tag",
+          "disabled": true,
           "settings": {
             "tag_style": "solid",
             "heading": "Information tag",
@@ -103,29 +104,9 @@
             "drawer_media_size": 60
           }
         },
-        "29040344-ce22-4d9d-aab8-1dcb43bb2ab5": {
-          "type": "product_drawer_with_tabs",
-          "settings": {
-            "btn_style": "text",
-            "popup_link_text": "Drawer with tabs",
-            "heading_size": "caption3",
-            "icon": "shipping-box",
-            "icon_size": 24,
-            "button_background_color": "#e9ffcd",
-            "button_text_color": "#141416",
-            "tab_1_title": "Tab 1",
-            "tab_1_text": "<p>Tell more about your product, care instructions, country of origin, manufacturer information, matching colors and accessories.</p>",
-            "tab_1_page": "",
-            "tab_1_body_size": "body3",
-            "tab_2_title": "Tab 2",
-            "tab_2_text": "<p>Tell more about your product, care instructions, country of origin, manufacturer information, matching colors and accessories.</p>",
-            "tab_2_page": "",
-            "tab_2_body_size": "body3",
-            "tab_3_title": "Tab 3",
-            "tab_3_text": "<p>Tell more about your product, care instructions, country of origin, manufacturer information, matching colors and accessories.</p>",
-            "tab_3_page": "",
-            "tab_3_body_size": "body3"
-          }
+        "product_properties_AX3DJi": {
+          "type": "product_properties",
+          "settings": {}
         }
       },
       "block_order": [
@@ -138,7 +119,7 @@
         "quantity_selector",
         "buy_buttons",
         "c9188b10-e29c-4c63-b385-a3faa860d64a",
-        "29040344-ce22-4d9d-aab8-1dcb43bb2ab5"
+        "product_properties_AX3DJi"
       ],
       "settings": {
         "color_scheme": "default",
