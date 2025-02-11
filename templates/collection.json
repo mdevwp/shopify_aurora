@@ -50,7 +50,7 @@
         "enable_sorting": true,
         "show_product_count": false,
         "show_column_count_switcher": true,
-        "enable_filtering": false,
+        "enable_filtering": true,
         "filters_position": "left",
         "filter_style": "open-embed",
         "categories_style": "static",
