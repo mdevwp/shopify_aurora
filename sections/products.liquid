@@ -237,17 +237,17 @@
               <div class='shop__products-grid' id='ShopProductsGrid'> 
 
 
-                {% assign filter_option = '' %}
+                {% assign filter_metal = '' %}
                 {% assign metals = "Gold, Roségold, Silber" | split: ", " %}
                 
                 {% for metal in metals %}
                   {% if collection.title contains metal %}
-                    {% assign filter_option = metal %}
+                    {% assign filter_metal = metal %}
                   {% endif %}
                 {% endfor %}
 
                 {% assign filter_color = '' %}
-                {% assign colors = "
+                {% capture colors_list %}
                   Weiß:weiß, 
                   Gelb:gelb,
                   Blau:blau, 
@@ -256,7 +256,8 @@
                   Schwarz:schwarz, 
                   Grün:grün, 
                   Lila:lavend
-                  "| strip_newlines | split: ", " %}
+                {% endcapture %}
+                {% assign colors = colors_list | strip_newlines | split: ", " %}
 
                 {% for color in colors %}
                   {% assign parts = color | split: ":" %}
@@ -271,7 +272,7 @@
                       render 'product-card-variant',
                       with_bottom_spacing: true,
                       product: product,
-                      filter_option: filter_option,
+                      filter_metal: filter_metal,
                       filter_color: filter_color,
                       img_ratio: img_ratio,
                       show_mobile_carousel: true,
