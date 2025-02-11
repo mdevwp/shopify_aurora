@@ -238,18 +238,24 @@
 
 
                 {% assign filter_option = '' %}
-                {% assign filter_color = '' %}
-                {% if collection.title contains 'Gold' %}
-                  {% assign filter_option = 'Gold' %}
-                {% endif %}
-                {% if collection.title contains 'Roségold' %}
-                  {% assign filter_option = 'Roségold' %}
-                {% endif %}
-                {% if collection.title contains 'Silber' %}
-                  {% assign filter_option = 'Silber' %}
-                {% endif %}
+                 {% assign metals = "Gold:Gold, Roségold:Roségold, Silber:Silber" | split: ", " %}
+                {% for metal in metals %}
+                  {% assign parts = metal | split: ":" %}
+                  {% if collection.title contains parts[0] %}
+                    {% assign filter_option = parts[1] %}
+                  {% endif %}
+                {% endfor %}
 
-                {% assign colors = "Weiß:weiß, Gelb:gelb, Blau:blau, Orang:apricot, Rosa:rosa, Schwarz:schwarz, Grün:grün" | split: ", " %}
+                {% assign filter_color = '' %}
+                {% assign colors = "
+                  Weiß:weiß,
+                  Gelb:gelb,
+                  Blau:blau,
+                  Orang:apricot,
+                  Rosa:rosa,
+                  Schwarz:schwarz,
+                  Grün:grün
+                " | strip_newlines | split: ", " %}
 
                 {% for color in colors %}
                   {% assign parts = color | split: ":" %}
