@@ -95,7 +95,7 @@
     {% if filter_option != blank and variant.options[0] != blank and variant.options[0] != filter_option %}
         {% continue %}
     {% endif %}
-
+    
     {% if filter_color != blank and variant.options[0] != blank %}
     {% unless variant.options[0] contains filter_color %}
       {% continue %}
