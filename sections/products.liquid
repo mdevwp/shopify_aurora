@@ -256,7 +256,7 @@
                   Schwarz:schwarz, 
                   Grün:grün, 
                   Lila:lavend
-                  " | split: ", " %}
+                  "| strip_newlines | split: ", " %}
 
                 {% for color in colors %}
                   {% assign parts = color | split: ":" %}
