@@ -238,11 +238,11 @@
 
 
                 {% assign filter_option = '' %}
-                 {% assign metals = "Gold:Gold, Roségold:Roségold, Silber:Silber" | split: ", " %}
+                {% assign metals = "Gold, Roségold, Silber" | split: ", " %}
+                
                 {% for metal in metals %}
-                  {% assign parts = metal | split: ":" %}
-                  {% if collection.title contains parts[0] %}
-                    {% assign filter_option = parts[1] %}
+                  {% if collection.title contains metal %}
+                    {% assign filter_option = metal %}
                   {% endif %}
                 {% endfor %}
 
