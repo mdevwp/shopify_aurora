@@ -502,7 +502,6 @@
       {%- if menu != blank and menu.links != blank and menu_type != 'drawer' -%}
         <div class='header__nav' data-desktop-nav>
           {%- for link in menu.links -%}
-            {{ link | json }}
             {%- liquid
               assign link_title_downcase = link.title | downcase
               assign has_menu = false
