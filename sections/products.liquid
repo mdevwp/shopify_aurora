@@ -249,7 +249,7 @@
                   Orang:safrangelb,Rosa:rosa,Schwarz:schwarz, 
                   Grün:grün,Lila:lavend,Rote:rot,Beige:sandbraun" | strip_newlines | split: "," %}
                 {% for color in colors %}
-                  {% assign parts = color | split: ":" %}
+                  {% assign parts = color | split: ":" | strip %}
                   {% if collection.title contains parts[0] %}
                     {% assign filter_color = parts[1]  %}
                   {% endif %}
