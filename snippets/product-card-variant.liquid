@@ -96,8 +96,9 @@
     {% endif %}
     
     {% if filter_color != blank and variant.options[0] != blank %}
-    {% assign option_downcased = variant.options[0] | downcase %}
-    {% unless option_downcased contains filter_color %}
+    {% assign option0_downcased = variant.options[0] | downcase %}
+    {% assign option1_downcased = variant.options[1] | downcase %}
+    {% unless option0_downcased contains filter_color or option1_downcased contains filter_color %}
       {% continue %}
     {% endunless %}
     {% endif %}
