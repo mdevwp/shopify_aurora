@@ -245,9 +245,9 @@
                   {% endif %}
                 {% endfor %}
 
-                {% assign colors = "Weiß:weiß, Gelb:gelb, Blau:blau, 
-                  Orang:safrangelb, Rosa:rosa, Schwarz:schwarz, 
-                  Grün:grün, Lila:lavend, Rote:rot, Beige:sandbraun" | strip_newlines | split: "," %}
+                {% assign colors = "Weiß:weiß,Gelb:gelb, Blau:blau, 
+                  Orang:safrangelb,Rosa:rosa,Schwarz:schwarz, 
+                  Grün:grün,Lila:lavend,Rote:rot,Beige:sandbraun" | strip_newlines | split: "," %}
                 {% for color in colors %}
                   {% assign parts = color | split: ":" %}
                   {% if collection.title contains parts[0] %}
