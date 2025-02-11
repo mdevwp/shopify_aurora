@@ -247,16 +247,7 @@
                 {% endfor %}
 
                 {% assign filter_color = '' %}
-                {% assign colors = "
-                  Weiß:weiß,
-                  Gelb:gelb,
-                  Blau:blau,
-                  Orang:apricot,
-                  Rosa:rosa,
-                  Schwarz:schwarz,
-                  Grün:grün,
-                  Lila:lavand
-                " | strip_newlines | split: ", " %}
+                {% assign colors = "Weiß:weiß, Gelb:gelb, Blau:blau, Orang:apricot, Rosa:rosa, Schwarz:schwarz, Grün:grün, Lila:lavand" | strip_newlines | split: ", " %}
 
                 {% for color in colors %}
                   {% assign parts = color | split: ":" %}
