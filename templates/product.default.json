@@ -148,7 +148,7 @@
         "thumbnails_size": 88,
         "mobile_layout": "thumbnails-right",
         "img_ratio": "portrait",
-        "show_only_selected_variants": false,
+        "show_only_selected_variants": true,
         "enable_image_zoom": true,
         "enable_video_looping": true,
         "enable_video_autoplay": true,

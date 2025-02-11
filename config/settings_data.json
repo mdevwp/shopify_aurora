@@ -765,8 +765,7 @@
   "platform_customizations": {
     "custom_css": [
       ".sticky-cart-button:before {background: #f73a6d;}",
-      ".sticky-cart-button__icon {color: white;}",
-      ".collection__container pre{display:none;}"
+      ".sticky-cart-button__icon {color: white;}"
     ]
   }
 }
