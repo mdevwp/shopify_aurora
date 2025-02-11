@@ -238,6 +238,7 @@
 
 
                 {% assign filter_option = '' %}
+                {% assign filter_color = '' %}
                 {% if collection.title contains 'Gold' %}
                   {% assign filter_option = 'Gold' %}
                 {% endif %}
@@ -249,7 +250,7 @@
                 {% endif %}
 
                 {% if collection.title contains 'Weiß' %}
-                  {% assign filter_option = 'weiß' %}
+                  {% assign filter_color = 'weiß' %}
                 {% endif %}
                 
                 
@@ -259,6 +260,7 @@
                       with_bottom_spacing: true,
                       product: product,
                       filter_option: filter_option,
+                      filter_color: filter_color,
                       img_ratio: img_ratio,
                       show_mobile_carousel: true,
                       product_card_align: product_card_align,
