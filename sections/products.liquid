@@ -234,7 +234,7 @@
         {%- paginate collection.products by product_per_page -%}
           {%- if collection.products.size > 0 -%}
             <div class='shop__products-grid-wrap'>
-              <div class='shop__products-grid' id='ShopProductsGrid'>
+              <div class='shop__products-grid' id='ShopProductsGrid'> 
 
 
                 {% assign filter_option = '' %}
@@ -248,6 +248,11 @@
                   {% assign filter_option = 'Silber' %}
                 {% endif %}
 
+                {% if collection.title contains 'Weiß' %}
+                  {% assign filter_option = 'Weiß' %}
+                {% endif %}
+                
+                
                 {%- for product in collection.products -%}
                     {%
                       render 'product-card-variant',
