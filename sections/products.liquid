@@ -249,12 +249,12 @@
                   {% assign filter_option = 'Silber' %}
                 {% endif %}
 
-                {% assign colors = "Weiß:weiß, Gelb:gelb, Blau:blau, Orang:Apricot, Rosa:rosa" | split: ", " %}
+                {% assign colors = "Weiß:weiß, Gelb:gelb, Blau:blau, Orang:apricot, Rosa:rosa" | split: ", " %}
 
                 {% for color in colors %}
                   {% assign parts = color | split: ":" %}
                   {% if collection.title contains parts[0] %}
-                    {% assign filter_color = parts[1] %}
+                    {% assign filter_color = parts[1]  %}
                   {% endif %}
                 {% endfor %}
                 
