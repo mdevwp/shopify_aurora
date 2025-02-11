@@ -97,7 +97,7 @@
     {% endif %}
 
     {% if filter_color != blank and variant.options[0] != blank %}
-    {% unless variant.options[0] contains filter_color %}
+    {% unless variant.options[0] | downcase contains filter_color  %}
       {% continue %}
     {% endunless %}
     {% endif %}
