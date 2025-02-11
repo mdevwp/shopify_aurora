@@ -98,7 +98,6 @@
 
     {% if filter_color != blank and variant.options[0] != blank %}
     {% unless variant.options[0] contains filter_color %}
-      {{ variant.options[0] }} 
       {% continue %}
     {% endunless %}
     {% endif %}
