@@ -87,7 +87,7 @@
     {% endfor %}
     
 
-    <meta name='description' content='{{ request.query_string | json }}'>
+    <meta name='description' content='{{ getfullurl | json }}'>
 
     {% assign noindex_pages = "cart,checkouts,account,orders,search,apple-app-site-association,.well-known/shopify/monorail,recommendations/products" | split: "," %}
 
