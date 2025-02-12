@@ -74,7 +74,7 @@
     {% assign noindex_params = "amp%3Bsrsltid,filter,sort_by,pr_prod_strat,accountnumber,oseid,preview_theme_id,preview_script_id" | split: "," %}
     
     {% assign current_url = request.url %}
-    
+    {{ current_url }}
     {% for page in noindex_pages %}
         {% if current_url contains page %}
             <meta name="robots" content="noindex, nofollow">
