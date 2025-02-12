@@ -74,23 +74,15 @@
       capture content_for_query_string
         echo content_for_header
       endcapture
-      assign getfullurl = content_for_query_string | split: '"pageurl":"' | last | split: '"' | first | replace: '\/', '/' | replace: '%20', ' ' | replace: '\u0026', '&'
+      assign getfullurl = content_for_query_string | split: '"pageurl":"' | last | split: '"' | first | replace: '\/', '/' | replace: '\u0026', '&'
+      assign noindex_data = "cart,checkouts,account,orders,search,apple-app-site-association,.well-known/shopify/monorail,recommendations/products,amp%3Bsrsltid,filter,sort_by,pr_prod_strat,accountnumber,oseid,preview_theme_id,preview_script_id" | split: ","
     %}
-
-    {% assign noindex_pages = "cart,checkouts,account,orders,search,apple-app-site-association,.well-known/shopify/monorail,recommendations/products" | split: "," %}
-    {% assign noindex_params = "amp%3Bsrsltid,filter,sort_by,pr_prod_strat,accountnumber,oseid,preview_theme_id,preview_script_id" | split: "," %}
     
-    {% for param in noindex_params %}
-      {% if getfullurl contains param %}
+    {% for item in noindex_data %}
+      {% if request.path contains item or getfullurl contains item %}
         <meta name="robots" content="noindex, nofollow">
         {% break %}
       {% endif %}
-    {% endfor %}
-
-    {% for page in noindex_pages %}
-        {% if request.path contains page %}
-            <meta name="robots" content="noindex, nofollow">
-        {% endif %}
     {% endfor %}
 
 
