@@ -69,6 +69,20 @@
     {{ content_for_header }}
 
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    {% assign noindex_pages = "cart,checkouts,account,orders,search,apple-app-site-association,.well-known/shopify/monorail,recommendations/products" | split: "," %}
+    {% assign noindex_params = "amp%3Bsrsltid,filter,sort_by,pr_prod_strat,accountnumber,oseid,preview_theme_id,preview_script_id" | split: "," %}
+    {% for page in noindex_pages %}
+      {% if request.path contains page %}
+        <meta name="robots" content="noindex, nofollow">
+      {% endif %}
+    {% endfor %}
+    {% for param in noindex_params %}
+      {% if request.query_string contains param %}
+        <meta name="robots" content="noindex, nofollow">
+      {% endif %}
+    {% endfor %}
+
   </head>
   <body class='color-{{ settings.default_color_scheme }} round-level-{{ settings.round_level }} {% if settings.round_level != "0" %} round-style {% endif %}'>
     <a id='SkipContent' class='visually-hidden skip-to-content-link btn btn--lg btn--solid' href='#MainContent'>
