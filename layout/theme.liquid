@@ -72,7 +72,7 @@
 
     {%- liquid
       capture content_for_query_string
-        echo content_for_header
+        #echo content_for_header
       endcapture
       assign getfullurl = content_for_query_string | split: '"pageurl":"' | last | split: '"' | first | replace: '\/', '/' | replace: '%20', ' ' | replace: '\u0026', '&'
     %}
