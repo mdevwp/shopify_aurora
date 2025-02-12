@@ -70,6 +70,23 @@
 
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
+    {%- liquid
+      capture content_for_query_string
+        echo content_for_header
+      endcapture
+      assign getfullurl = content_for_query_string | split: '"pageurl":"' | last | split: '"' | first | replace: '\/', '/' | replace: '%20', ' ' | replace: '\u0026', '&'
+    %}
+    
+    {% assign noindex_params = "amp%3Bsrsltid,filter,sort_by,pr_prod_strat,accountnumber,oseid,preview_theme_id,preview_script_id" | split: "," %}
+    
+    {% for param in noindex_params %}
+      {% if getfullurl contains param %}
+        <meta name="robots" content="noindex, nofollow">
+        {% break %}
+      {% endif %}
+    {% endfor %}
+    
+
     <meta name='description' content='{{ request.query_string | json }}'>
 
     {% assign noindex_pages = "cart,checkouts,account,orders,search,apple-app-site-association,.well-known/shopify/monorail,recommendations/products" | split: "," %}
