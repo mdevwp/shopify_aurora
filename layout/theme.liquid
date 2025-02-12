@@ -72,13 +72,15 @@
 
     {% assign noindex_pages = "cart,checkouts,account,orders,search,apple-app-site-association,.well-known/shopify/monorail,recommendations/products" | split: "," %}
     {% assign noindex_params = "amp%3Bsrsltid,filter,sort_by,pr_prod_strat,accountnumber,oseid,preview_theme_id,preview_script_id" | split: "," %}
+
     {% for page in noindex_pages %}
       {% if request.path contains page %}
         <meta name="robots" content="noindex, nofollow">
       {% endif %}
     {% endfor %}
+
     {% for param in noindex_params %}
-      {% if request.query_string contains param %}
+      {% if request.url contains param %}
         <meta name="robots" content="noindex, nofollow">
       {% endif %}
     {% endfor %}
