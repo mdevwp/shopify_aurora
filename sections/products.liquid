@@ -267,12 +267,8 @@
                 
                 {% assign all_variants = all_variants | split: '||' %}
 
-                {%################%}
 
-                
-                {%- for product in all_variants -%} 
-
-                  {% for i in (start_index..end_index) %}
+                 {% for i in (start_index..end_index) %}
   {% assign variant = all_variants[i] %}
   {% if variant != blank %}
     <div class="variant-card">
@@ -281,7 +277,11 @@
     </div>
   {% endif %}
 {% endfor %}
+                
+                {%################%}
 
+                
+                {%- for product in all_variants -%} 
                     {%
                       render 'product-card-variant',
                       with_bottom_spacing: true,
