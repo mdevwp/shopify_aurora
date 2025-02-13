@@ -251,6 +251,7 @@
 {% endfor %}
 
 {% assign all_variants = all_variants | split: '||' %}
+{% assign variant_count = all_variants.size | divided_by: 4 %}
 
 {% assign product_per_page = 10 %}
 {% assign current_page = request.query_params.page | default: 1 %}
@@ -281,7 +282,7 @@
   {% endfor %}
 </div>
 
-{% assign total_pages = all_variants.size | divided_by: 4 | divided_by: product_per_page | ceil %}
+{% assign total_pages = variant_count | divided_by: product_per_page | ceil %}
 
 <div class="pagination">
   {% if current_page > 1 %}
