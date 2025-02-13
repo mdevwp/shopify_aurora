@@ -231,9 +231,22 @@
         %}
       {%- endif -%}
       <div class='shop__products' id='ShopProducts'>
+
+
+        {% assign all_variants = '' %}
+
+        {% for product in collection.products %}
+          {% for variant in product.variants %}
+            {% assign variant_json = variant | json %}
+            {% assign all_variants = all_variants | append: variant_json | append: '||' %}
+          {% endfor %}
+        {% endfor %}
         
-        {%- paginate collection.products by product_per_page -%}
-          {%- if collection.products.size > 0 -%}
+        {% assign all_variants = all_variants | split: '||' %}
+        
+        
+        {%- paginate all_variants by product_per_page -%}
+          {%- if all_variants.size > 0 -%}
             <div class='shop__products-grid-wrap'>
               <div class='shop__products-grid' id='ShopProductsGrid'> 
                 
