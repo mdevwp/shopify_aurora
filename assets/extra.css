@@ -194,3 +194,10 @@ ul.classic-pagination__list>li a{
     text-decoration: none;
     font-weight: 600;
 }
+ul.classic-pagination__list {
+    display: flex;
+    justify-content: center;
+}
+pagination-component.classic-pagination.shop__classic-pagination {
+    display: none;
+}
