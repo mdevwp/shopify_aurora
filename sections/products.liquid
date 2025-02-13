@@ -258,16 +258,18 @@
 
                 {% assign all_variants = '' %}
 
-{% for product in collection.products %}
-  {% for variant in product.variants %}
-    {% assign all_variants = all_variants | append: variant | append: '||' %}
-  {% endfor %}
-{% endfor %}
-
-{% assign all_variants = all_variants | split: '||' %}
+                {% for product in collection.products %}
+                  {% for variant in product.variants %}
+                    {% assign variant_object = variant | json %}
+                    {% assign all_variants = all_variants | append: variant_object | append: '||' %}
+                  {% endfor %}
+                {% endfor %}
+                
+                {% assign all_variants = all_variants | split: '||' %}
 
                 {%################%}
 
+                {{ all_variants | json }}
                 
                 {%- for product in all_variants -%} 
 
