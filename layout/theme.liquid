@@ -27,39 +27,8 @@
     <link rel='preconnect' href='https://cdn.shopify.com' crossorigin>
     <link rel='preconnect' href='https://fonts.shopifycdn.com' crossorigin>
 
-    {%- if request.path == '/collections' %}
-      <title>Bijouterie ᐉ Modeschmuck voller Farbe und Persönlichkeit</title>
-      <meta name="description" content="Bijouterie von ALEXASCHA ➠ Entdecke stilvolle Bijouterie ✔️ Nachhaltiger Modeschmuck ✔️ Kreative Designs und faire Herstellung">
-      
-    {%- elsif request.path == '/policies/legal-notice' %}
-      <title>Impressum ᐉ Rechtliche Hinweise zu Alexascha</title>
-      <meta name="description" content="Finde alle rechtlichen Angaben zu ALEXASCHA ➠ Verantwortlicher Anbieter ✔️ Kontaktinformationen ✔️ Transparente Kommunikation ✔️ Jetzt ansehen!">
-      
-    {%- elsif request.path == '/policies/terms-of-service' %}
-      <title>Allgemeine Geschäftsbedingungen (AGB) ᐉ Transparente Geschäftsbedingungen</title>
-      <meta name="description" content="Lies die Allgemeinen Geschäftsbedingungen von Alexascha ➠ Klare Regeln für Bestellungen, Versand, Rückgabe und mehr ✔️ Jetzt informieren!">
-      
-    {%- elsif request.path == '/policies/privacy-policy' %}
-      <title>Datenschutz ᐉ Wir schützen Deine Daten bei Alexascha</title>
-      <meta name="description" content="Erfahre, wie wir Deine Daten sicher und vertraulich behandeln ➠ Datenschutz ist uns wichtig ✔️ Transparente Richtlinien ✔️ Vertraue uns!">
-      
-    {%- elsif request.path == '/policies/refund-policy' %}
-      <title>Widerrufsbelehrung ᐉ Dein Widerrufsrecht beim Online-Kauf</title>
-      <meta name="description" content="Informiere dich über Dein Widerrufsrecht bei Alexascha ➠ Rückgabe und Stornierung leicht gemacht ✔️ Klare Richtlinien für Deinen Schutz ✔️ Jetzt lesen!">
-      
-    {%- else -%}
-      {%- if page_description -%}
-        <meta name='description' content='{{ page_description | escape }}'>
-      {%- endif -%}
-
-      <title>
-        {{ page_title }}
-        {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
-        {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
-        {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
-      </title>
-    {%- endif -%}
-
+    {% ############ %}
+    
     {% render 'css-variables' %}
     {{ 'bundle.js' | asset_url | preload_tag: as: 'script' }}
     {{ 'bundle.css' | asset_url | stylesheet_tag: preload: true }}
@@ -70,6 +39,7 @@
 
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
+    {% ############ %}
     {%- liquid
       capture content_for_query_string
         echo content_for_header
@@ -77,31 +47,55 @@
       assign getfullurl = content_for_query_string | split: '"pageurl":"' | last | split: '"' | first | replace: '\/', '/' | replace: '\u0026', '&'
       assign noindex_data = "cart,checkouts,account,orders,search,apple-app-site-association,.well-known/shopify/monorail,recommendations/products,amp%3Bsrsltid,filter,sort_by,pr_prod_strat,accountnumber,oseid,preview_theme_id,preview_script_id" | split: ","
 
-
-      #assign page_param = getfullurl | split: '?page=' | last | split: '&' | first
-      #assign current_page = page_param | plus: 0
-      #if current_page == 0
-        #assign current_page = 1
-      #endif
-
-        assign page_param = getfullurl | split: '?page=' | last | split: '&' | first
-        assign current_page = page_param | plus: 0
-      
-        if current_page == 0
-          assign current_page = 1
-        endif
-      -%}
-      
-      {%- if current_page > 1 -%}
-        <title>{{ page_title }} ― Seite {{ current_page }}</title>
-        <meta name="description" content="{{ page_description }} ― Seite {{ current_page }}">
-      {%- else -%}
-        <title>{{ page_title }}</title>
-        <meta name="description" content="{{ page_description }}">
-      {%- endif -%}
     
+      assign page_param = getfullurl | split: '?page=' | last | split: '&' | first
+      assign current_page = page_param | plus: 0
     
-    %}
+      if current_page == 0
+        assign current_page = 1
+      endif
+    -%}
+    
+    {%- if current_page > 1 -%}
+      <title>{{ page_title }} ― Seite {{ current_page }}</title>
+      <meta name="description" content="{{ page_description }} ― Seite {{ current_page }}">
+    {%- else -%}
+
+        {%- if request.path == '/collections' %}
+          <title>Bijouterie ᐉ Modeschmuck voller Farbe und Persönlichkeit</title>
+          <meta name="description" content="Bijouterie von ALEXASCHA ➠ Entdecke stilvolle Bijouterie ✔️ Nachhaltiger Modeschmuck ✔️ Kreative Designs und faire Herstellung">
+          
+        {%- elsif request.path == '/policies/legal-notice' %}
+          <title>Impressum ᐉ Rechtliche Hinweise zu Alexascha</title>
+          <meta name="description" content="Finde alle rechtlichen Angaben zu ALEXASCHA ➠ Verantwortlicher Anbieter ✔️ Kontaktinformationen ✔️ Transparente Kommunikation ✔️ Jetzt ansehen!">
+          
+        {%- elsif request.path == '/policies/terms-of-service' %}
+          <title>Allgemeine Geschäftsbedingungen (AGB) ᐉ Transparente Geschäftsbedingungen</title>
+          <meta name="description" content="Lies die Allgemeinen Geschäftsbedingungen von Alexascha ➠ Klare Regeln für Bestellungen, Versand, Rückgabe und mehr ✔️ Jetzt informieren!">
+          
+        {%- elsif request.path == '/policies/privacy-policy' %}
+          <title>Datenschutz ᐉ Wir schützen Deine Daten bei Alexascha</title>
+          <meta name="description" content="Erfahre, wie wir Deine Daten sicher und vertraulich behandeln ➠ Datenschutz ist uns wichtig ✔️ Transparente Richtlinien ✔️ Vertraue uns!">
+          
+        {%- elsif request.path == '/policies/refund-policy' %}
+          <title>Widerrufsbelehrung ᐉ Dein Widerrufsrecht beim Online-Kauf</title>
+          <meta name="description" content="Informiere dich über Dein Widerrufsrecht bei Alexascha ➠ Rückgabe und Stornierung leicht gemacht ✔️ Klare Richtlinien für Deinen Schutz ✔️ Jetzt lesen!">
+          
+        {%- else -%}
+          {%- if page_description -%}
+            <meta name='description' content='{{ page_description | escape }}'>
+          {%- endif -%}
+    
+          <title>
+            {{ page_title }}
+            {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
+            {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
+            {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+          </title>
+        {%- endif -%}
+
+    {%- endif -%}
+   
     
     {% for item in noindex_data %}
       {% if request.path contains item or getfullurl contains item %}
