@@ -89,6 +89,8 @@
 -%}
 
 {% if product.id != blank %}
+
+  {% assign custom_index = 0 %}
   
   {% for variant in product.variants %}
     
@@ -105,10 +107,11 @@
       
     {% endunless %}
     {% endif %}
-    
-    {%# if custom_index > 24 %}
-        {%# break %}
-    {%# endif %}   
+
+    {% assign custom_index = custom_index | plus: 1 %}
+    {% if custom_index > 24 %}
+        {% break %}
+    {% endif %}   
 
     {% liquid
       assign price = variant.price | default: 0
