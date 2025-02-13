@@ -109,7 +109,7 @@
     {% endunless %}
     {% endif %}
 
-    {% if plus_index %}
+    {% if plus_index != false %}
       {% assign custom_index = custom_index | plus: 1 %}
     {% endif %}   
     {% if custom_index > 24 %}
