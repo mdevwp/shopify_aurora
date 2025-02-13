@@ -89,8 +89,7 @@
 -%}
 
 {% if product.id != blank %}
-  {% assign custom_index = 1 %}
-  
+  {% assign custom_index = 0 %}
   {% for variant in product.variants %}
     
     {% if filter_metal != blank and variant.options[0] != blank and variant.options[0] != filter_metal %}      
