@@ -90,7 +90,7 @@
 
 {% if product.id != blank %}
   {% assign custom_index = 0 %}
-  {% for variant in product.variants %}
+  {% for variant in product %}
     
     {% if filter_metal != blank and variant.options[0] != blank and variant.options[0] != filter_metal %}      
         {% continue %}
@@ -111,7 +111,6 @@
          {% continue %}
     {% endif %}   
 
-{{ custom_index }}
     
     {% liquid
       assign price = variant.price | default: 0
