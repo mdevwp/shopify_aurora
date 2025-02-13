@@ -261,6 +261,7 @@
 
  {% for product in productList %}
      {{ product | json }}
+   {% break %}
  {% endfor %}
 
 
