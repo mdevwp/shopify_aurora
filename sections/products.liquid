@@ -368,7 +368,7 @@
 
           
           {%- liquid
-            if paginate.pages > 999
+            if paginate.pages > 1
               case pagination_type
                 when 'load-button-pagination'
                   render 'load-button-pagination', class: 'shop__load-button-pagination', paginate: paginate, target: 'shop__grid-item', container_id: 'ShopProductsGrid', all_count: collection.products_count, current_size: paginate.page_size
