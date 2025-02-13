@@ -234,14 +234,13 @@
 
 
 
+
 <div class="pagination">
   {% if current_page > 1 %}
     <a href="?page={{ current_page | minus: 1 }}">Назад</a>
   {% endif %}
   <span>Страница {{ current_page }}</span>
-  {% if end < productList.size %}
-    <a href="?page={{ current_page | plus: 1 }}">Вперед</a>
-  {% endif %}
+  <a href="?page={{ current_page | plus: 1 }}">Вперед</a>
 </div>
 
 
