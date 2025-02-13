@@ -1,15 +1,22 @@
 # we use Shopify as our ecommerce platform
-{%- comment -%}
-# Caution! Please read https://help.shopify.com/en/manual/promoting-marketing/seo/editing-robots-txt before proceeding to make changes to this file.
-{% endcomment %}
-{% for group in robots.default_groups %}
-  {{- group.user_agent -}}
+User-agent: *
+Disallow: *amp%3Bsrsltid*
+Disallow: *filter*
+Disallow: *sort_by*
+Disallow: */search*
+Disallow: */checkouts*
+Disallow: *pr_prod_strat*
+Disallow: *accountnumber*
+Disallow: */cart*
+Disallow: */orders*
+Disallow: */account*
+Disallow: *oseid=*
+Disallow: *preview_theme_id*
+Disallow: *preview_script_id*
+Disallow: */apple-app-site-association*
+Disallow: */.well-known/shopify/monorail*
+Disallow: */recommendations/products*
 
-  {% for rule in group.rules %}
-    {{- rule -}}
-  {% endfor %}
+Sitemap: {{ shop.url }}/sitemap.xml
 
-  {%- if group.sitemap != blank -%}
-    {{ group.sitemap }}
-  {%- endif -%}
-{% endfor %}
+
