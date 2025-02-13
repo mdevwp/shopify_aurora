@@ -234,23 +234,22 @@
 
 
 
- {{ collection.products | json }}
-        
-
 {% assign all_variants = '' %}
 
 {% for product in collection.products %}
   {% for variant in product.variants %}
-    {% assign image_src = variant.featured_image.src | default: '' %}
+    {% assign variant_name = variant.name %}
+    {% assign variant_price = variant.price | money %}
+    {% assign variant_image = variant.featured_image.src | default: '' %}
+    {% assign variant_id = variant.id %}
+    
     {% assign all_variants = all_variants 
-      | append: variant.id | append: '||' 
-      | append: variant.name | append: '||' 
-      | append: variant.price | append: '||' 
-      | append: image_src | append: '||' %}
+      | append: variant_id | append: '||' 
+      | append: variant_name | append: '||' 
+      | append: variant_price | append: '||' 
+      | append: variant_image | append: '||' %}
   {% endfor %}
 {% endfor %}
-
-       
 
 {% assign all_variants = all_variants | split: '||' %}
 {% assign variant_count = all_variants.size | divided_by: 4 %}
@@ -277,7 +276,7 @@
         <div class="variant-card">
           <img src="{{ variant_image }}" alt="{{ variant_name }}" style="max-width: 200px;">
           <h3>{{ variant_name }}</h3>
-          <p>Цена: {{ variant_price | money }}</p>
+          <p>Цена: {{ variant_price }}</p>
         </div>
       {% endif %}
     {% endif %}
