@@ -251,8 +251,6 @@
         {% assign start_index = product_per_page | times: current_page | minus: product_per_page %}
         {% assign end_index = start_index | plus: product_per_page %}
 
-
-        {{ all_variants }}
         
         {% for i in (start_index..end_index) %}
           {% assign variant = all_variants[i] | parse_json %}
