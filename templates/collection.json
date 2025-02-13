@@ -65,7 +65,7 @@
         "desktop_space_between_cards": 12,
         "mobile_columns": "2",
         "mobile_space_between_cards": 8,
-        "pagination_type": "infinite-scroll",
+        "pagination_type": "classic-pagination",
         "add_side_paddings": true,
         "section_spacing_top": 48,
         "section_spacing_bottom": 48
