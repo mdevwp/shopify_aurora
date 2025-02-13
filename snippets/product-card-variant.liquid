@@ -105,16 +105,10 @@
       
     {% endunless %}
     {% endif %}
-
-    {% assign custom_index = custom_index | plus: 1 %}
-    {% assign content_for_header = content_for_header | append: 'custom_index=' | append: custom_index | append: '&' %}
-
-    {{ custom_index }}
     
-    {% if custom_index > 24 %}
-        {% break %}
-    {% endif %}   
-
+    {%# if custom_index > 24 %}
+        {%# break %}
+    {%# endif %}   
 
     {% liquid
       assign price = variant.price | default: 0
