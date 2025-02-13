@@ -252,7 +252,7 @@
 
 <div class="pagination">
   {%- if current_page > 1 -%}
-    <a href="?page={{ current_page | minus: 1 }}" class="prev-page">&lt;</a>
+    <a href="?page={{ current_page | minus: 1 }}" class="classic-pagination__item classic-pagination__link"> < </a>
   {%- endif -%}
 
   {%- assign range = 2 -%}
@@ -275,7 +275,7 @@
 
   {%- for page in (start_page..end_page) -%}
     {%- if page == current_page -%}
-      <span class="current">{{ page }}</span>
+      <span class="classic-pagination__item classic-pagination__link active">{{ page }}</span>
     {%- else -%}
       <a href="?page={{ page }}">{{ page }}</a>
     {%- endif -%}
@@ -290,7 +290,7 @@
   {%- endif -%}
 
   {%- if current_page < total_pages -%}
-    <a href="?page={{ current_page | plus: 1 }}" class="next-page">&gt;</a>
+    <a href="?page={{ current_page | plus: 1 }}" class="classic-pagination__item classic-pagination__link"> > </a>
   {%- endif -%}
 </div>
 
