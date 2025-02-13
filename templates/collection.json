@@ -60,7 +60,7 @@
         "enable_uppercase_title": true,
         "img_ratio": "square",
         "product_card_align": "center",
-        "product_per_page": 2,
+        "product_per_page": 28,
         "desktop_columns": "4",
         "desktop_space_between_cards": 12,
         "mobile_columns": "2",
