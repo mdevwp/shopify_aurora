@@ -237,6 +237,8 @@
               <div class='shop__products-grid' id='ShopProductsGrid'> 
 
 
+                {{ product_per_page }}
+                
                 {% assign filter_metal = '' %}
                 {% assign metals = "Gold, Roségold, Silber" | split: ", " %} 
                 {% for metal in metals %}
