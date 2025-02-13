@@ -232,7 +232,7 @@
       {%- endif -%}
       <div class='shop__products' id='ShopProducts'>
         
-        {%- paginate collection.products by 15 -%}
+        {%- paginate collection.products by product_per_page -%}
           {%- if collection.products.size > 0 -%}
             <div class='shop__products-grid-wrap'>
               <div class='shop__products-grid' id='ShopProductsGrid'> 
@@ -256,7 +256,7 @@
                 
                 {%- for product in collection.products -%}
                     {%
-                      render 'product-card',
+                      render 'product-card-variant',
                       with_bottom_spacing: true,
                       product: product,
                       filter_metal: filter_metal,
