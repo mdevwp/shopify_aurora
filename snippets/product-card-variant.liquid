@@ -110,7 +110,9 @@
     {% if custom_index > 23 %}
         {% break %}
     {% endif %}   
-  
+
+{{ custom_index }}
+    
     {% liquid
       assign price = variant.price | default: 0
       if settings.show_currency_code
