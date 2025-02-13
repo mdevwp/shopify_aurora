@@ -284,7 +284,7 @@
 {{ '---------------------------------------------------------' }}
         
 
-        {%- paginate collection.products by 1 -%}
+        {%- paginate collection.products by product_per_page -%}
           {%- if collection.products.size > 0 -%}
             <div class='shop__products-grid-wrap'>
               <div class='shop__products-grid' id='ShopProductsGrid'> 
