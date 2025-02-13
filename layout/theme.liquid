@@ -83,6 +83,22 @@
       #if current_page == 0
         #assign current_page = 1
       #endif
+
+        assign page_param = getfullurl | split: '?page=' | last | split: '&' | first
+        assign current_page = page_param | plus: 0
+      
+        if current_page == 0
+          assign current_page = 1
+        endif
+      -%}
+      
+      {%- if current_page > 1 -%}
+        <title>{{ page_title }} ― Seite {{ current_page }}</title>
+        <meta name="description" content="{{ page_description }} ― Seite {{ current_page }}">
+      {%- else -%}
+        <title>{{ page_title }}</title>
+        <meta name="description" content="{{ page_description }}">
+      {%- endif -%}
     
     
     %}
