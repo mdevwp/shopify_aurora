@@ -272,6 +272,16 @@
                 
                 {%- for product in all_variants -%} 
 
+                  {% for i in (start_index..end_index) %}
+  {% assign variant = all_variants[i] %}
+  {% if variant != blank %}
+    <div class="variant-card">
+      <h3>{{ variant.title }}</h3>
+      <p>Цена: {{ variant.price | money }}</p>
+    </div>
+  {% endif %}
+{% endfor %}
+
                     {%
                       render 'product-card-variant',
                       with_bottom_spacing: true,
