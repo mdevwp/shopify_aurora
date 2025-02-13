@@ -271,7 +271,17 @@
 
 {%- for i in (start..end) -%}
   {% assign variant = productList[i] %}
-  {% render 'product-card-variant', product: variant %}
+  {%
+                      render 'product-card-variant',
+                      with_bottom_spacing: true,
+                      product: product,
+                      img_ratio: img_ratio,
+                      show_mobile_carousel: true,
+                      product_card_align: product_card_align,
+                      add_side_paddings: add_side_paddings,
+                      primary_custom_colors_and_patterns: primary_custom_colors_and_patterns,
+                      section_background_color: section_background_color
+                    %}
 {%- endfor -%}
 
 <div class="pagination">
