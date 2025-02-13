@@ -259,10 +259,18 @@
 
 {% assign productList = slice %}
 
- {% for product in productList %}
-     {{ product | json }}
-   {% break %}
- {% endfor %}
+ {%- for variant in productList -%} 
+  {% render 'product-card-variant',
+    with_bottom_spacing: true,
+    product: variant,
+    img_ratio: img_ratio,
+    show_mobile_carousel: true,
+    product_card_align: product_card_align,
+    add_side_paddings: add_side_paddings,
+    primary_custom_colors_and_patterns: primary_custom_colors_and_patterns,
+    section_background_color: section_background_color
+  %}
+{%- endfor -%}
 
 
 {% unless end > maxSize %}
@@ -273,10 +281,10 @@
 
 
 
-
+{{ '---------------------------------------------------------' }}
         
 
-        {%- paginate collection.products by product_per_page -%}
+        {%- paginate collection.products by 1 -%}
           {%- if collection.products.size > 0 -%}
             <div class='shop__products-grid-wrap'>
               <div class='shop__products-grid' id='ShopProductsGrid'> 
