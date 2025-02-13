@@ -232,36 +232,6 @@
       {%- endif -%}
       <div class='shop__products' id='ShopProducts'>
 
-
-        {% assign all_variants = '' %}
-
-        {% for product in collection.products %}
-          {% for variant in product.variants %}
-            {% assign variant_json = variant | json %}
-            {% assign all_variants = all_variants | append: variant_json | append: '||' %}
-          {% endfor %}
-        {% endfor %}
-        
-        {% assign all_variants = all_variants | split: '||' %}
-
-        {% assign product_per_page = 10 %}
-        {% assign current_page = request.query_params.page | default: 1 %}
-        {% assign start_index = product_per_page | times: current_page | minus: product_per_page %}
-        {% assign end_index = start_index | plus: product_per_page %}
-
-
-        {% for i in (start_index..end_index) %}
-          {% assign variant = all_variants[i] | parse_json %}
-          {% if variant != blank %}
-            <div class="variant-card">
-              <h3>{{ variant.title }}</h3>
-              <p>Цена: {{ variant.price | money }}</p>
-            </div>
-          {% endif %}
-        {% endfor %}
-        
-        
-        
         {%- paginate collection.products by product_per_page -%}
           {%- if collection.products.size > 0 -%}
             <div class='shop__products-grid-wrap'>
