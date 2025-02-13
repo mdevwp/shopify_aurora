@@ -234,7 +234,7 @@
 
 
 
-
+ {{ collection.products | json }}
         
 
 {% assign all_variants = '' %}
@@ -250,7 +250,7 @@
   {% endfor %}
 {% endfor %}
 
-        {{ all_variants | json }}
+       
 
 {% assign all_variants = all_variants | split: '||' %}
 {% assign variant_count = all_variants.size | divided_by: 4 %}
