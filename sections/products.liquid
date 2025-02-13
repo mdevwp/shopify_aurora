@@ -254,7 +254,7 @@
                 {% endfor %}
 
 
-                {%################%}
+                {%####%}
 
                 {% assign all_variants = '' %}
 
@@ -266,11 +266,12 @@
                 {% endfor %}
                 
                 {% assign all_variants = all_variants | split: '||' %}
-                
-                {%################%}
+
+
 
                 
-                {%- for product in all_variants -%} 
+                {%- for product in collection.products -%} 
+
                     {%
                       render 'product-card-variant',
                       with_bottom_spacing: true,
