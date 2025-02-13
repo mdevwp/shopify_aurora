@@ -295,7 +295,7 @@
             if paginate.pages > 1
               case pagination_type
                 when 'load-button-pagination'
-                  render 'load-button-pagination', class: 'shop__load-button-pagination', paginate: paginate, target: 'shop__grid-item', container_id: 'ShopProductsGrid', all_count: 20, current_size: paginate.page_size
+                  render 'load-button-pagination', class: 'shop__load-button-pagination', paginate: paginate, target: 'shop__grid-item', container_id: 'ShopProductsGrid', all_count: collection.products_count, current_size: paginate.page_size
                 when 'classic-pagination'
                   render 'classic-pagination', class: 'shop__classic-pagination', paginate: paginate, overlay_id: 'ShopProductsOverlay', container_id: 'ShopProductsGrid'
                 when 'infinite-scroll'
