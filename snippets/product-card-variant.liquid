@@ -102,7 +102,10 @@
       {% continue %}
     {% endunless %}
     {% endif %}
-    
+
+    {% if forloop.index > 24 %}
+        {% break %}
+    {% endif %}   
   
     {% liquid
       assign price = variant.price | default: 0
