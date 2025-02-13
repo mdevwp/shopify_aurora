@@ -234,32 +234,62 @@
 
 
 
-        {% assign all_variants = '' %}
-
-        {% for product in collection.products %}
-          {% for variant in product.variants %}
-            {% assign variant_json = variant | json %}
-            {% assign all_variants = all_variants | append: variant_json | append: '||' %}
-          {% endfor %}
-        {% endfor %}
-        
-        {% assign all_variants = all_variants | split: '||' %}
-
-
-        {% assign product_per_page = 10 %}
-        {% assign current_page = request.query_params.page | default: 1 %}
-        {% assign start_index = product_per_page | times: current_page | minus: product_per_page %}
-        {% assign end_index = start_index | plus: product_per_page %}
 
         
-        {% for i in (start_index..end_index) %}
-          {% assign variant = all_variants[i] | parse_json %}
-          {% if variant != blank %}
-            <div class="variant-card">
-              <h3>{{ variant.name }}</h3>
-            </div>
-          {% endif %}
-        {% endfor %}
+
+{% assign all_variants = '' %}
+
+{% for product in collection.products %}
+  {% for variant in product.variants %}
+    {% assign all_variants = all_variants 
+      | append: variant.id | append: '||' 
+      | append: variant.name | append: '||' 
+      | append: variant.price | append: '||' %}
+  {% endfor %}
+{% endfor %}
+
+{% assign all_variants = all_variants | split: '||' %}
+
+{% assign product_per_page = 10 %}
+{% assign current_page = request.query_params.page | default: 1 %}
+{% assign start_index = product_per_page | times: current_page | minus: product_per_page | times: 3 %}
+{% assign end_index = start_index | plus: product_per_page | times: 3 %}
+
+<div class="variant-list">
+  {% for i in (start_index..end_index) %}
+    {% if i < all_variants.size %}
+      {% assign check_modulo = i | modulo: 3 %}
+      {% if check_modulo == 0 %}
+        {% assign next_index = i | plus: 1 %}
+        {% assign price_index = i | plus: 2 %}
+
+        {% assign variant_id = all_variants[i] %}
+        {% assign variant_name = all_variants[next_index] %}
+        {% assign variant_price = all_variants[price_index] %}
+
+        <div class="variant-card">
+          <h3>{{ variant_name }}</h3>
+          <p>Цена: {{ variant_price | money }}</p>
+        </div>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+</div>
+
+{% assign total_pages = all_variants.size | divided_by: 3 | divided_by: product_per_page | ceil %}
+
+<div class="pagination">
+  {% if current_page > 1 %}
+    <a href="?page={{ current_page | minus: 1 }}">Назад</a>
+  {% endif %}
+
+  <span>Страница {{ current_page }} из {{ total_pages }}</span>
+
+  {% if current_page < total_pages %}
+    <a href="?page={{ current_page | plus: 1 }}">Вперёд</a>
+  {% endif %}
+</div>
+
 
 
         
