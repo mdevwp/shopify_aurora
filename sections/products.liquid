@@ -246,6 +246,8 @@
         
         {% assign all_variants = all_variants | split: '||' %}
 
+         {{ all_variants | json }}
+
         
         {%- paginate all_variants by product_per_page -%}
           {%- if all_variants.size > 0 -%}
