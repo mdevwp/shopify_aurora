@@ -78,11 +78,11 @@
       assign noindex_data = "cart,checkouts,account,orders,search,apple-app-site-association,.well-known/shopify/monorail,recommendations/products,amp%3Bsrsltid,filter,sort_by,pr_prod_strat,accountnumber,oseid,preview_theme_id,preview_script_id" | split: ","
 
 
-      assign page_param = getfullurl | split: '?page=' | last | split: '&' | first
-      assign current_page = page_param | plus: 0
-      if current_page == 0
-        assign current_page = 1
-      endif
+      #assign page_param = getfullurl | split: '?page=' | last | split: '&' | first
+      #assign current_page = page_param | plus: 0
+      #if current_page == 0
+        #assign current_page = 1
+      #endif
     
     
     %}
