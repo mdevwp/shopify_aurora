@@ -232,6 +232,59 @@
       {%- endif -%}
       <div class='shop__products' id='ShopProducts'>
 
+{% assign productList = "" | split: "" %}
+{% assign counter = 0 %}
+{% assign variantLimit = 30 %}
+
+{% for product in collection.products %}
+  {% assign productList = productList | concat: product.variants %}
+  {% assign counter = counter | plus: product.variants.size %}
+{% endfor %}
+
+{% assign maxSize = productList.size %}
+
+
+{% assign start = current_page | minus: 1 | times: variantLimit %}
+{% assign end = current_page | times: variantLimit | minus: 1 %}
+
+{% if end > maxSize %}
+  {% assign end = productList.size | modulo: variantLimit %}
+{% endif %}
+
+{% assign slice = "" | split: "" %}
+{% for i in (start..end) %}
+  {% assign temp = productList[i] | where: "available", true %}
+  {% assign slice = slice | concat: temp %}
+{% endfor %}
+
+{% assign productList = slice %}
+
+ {% for product in productList %}
+     {%
+        render 'product-card-variant',
+        with_bottom_spacing: true,
+        product: product,
+        img_ratio: img_ratio,
+        show_mobile_carousel: true,
+        product_card_align: product_card_align,
+        add_side_paddings: add_side_paddings,
+        primary_custom_colors_and_patterns: primary_custom_colors_and_patterns,
+        section_background_color: section_background_color
+      %}
+ {% endfor %}
+
+
+{% unless end > maxSize %}
+    <a href="?page={{current_page | plus: 1}}">Next Page</a>
+ {% endunless %}
+
+
+
+
+
+
+        
+
         {%- paginate collection.products by product_per_page -%}
           {%- if collection.products.size > 0 -%}
             <div class='shop__products-grid-wrap'>
