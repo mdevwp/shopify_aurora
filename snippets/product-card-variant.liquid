@@ -90,13 +90,11 @@
 
 {% if product.id != blank %}
   
-  {% assign plus_index = true %}
-  
   {% for variant in product.variants %}
     
     {% if filter_metal != blank and variant.options[0] != blank and variant.options[0] != filter_metal %}      
         {% continue %}
-        {% assign plus_index = false %}
+         {% assign custom_index = custom_index | minus: 1 %}
     {% endif %}
     
     {% if filter_color != blank and variant.options[0] != blank %}
@@ -104,13 +102,10 @@
     {% assign option_1 = variant.options[1] | downcase %}
     {% unless option_0 contains filter_color or option_1 contains filter_color %}
       {% continue %}
-      {% assign plus_index = false %}
+       {% assign custom_index = custom_index | minus: 1 %}
     {% endunless %}
     {% endif %}
-
-    {% if plus_index != false %}
-      {% assign custom_index = custom_index | plus: 1 %}
-    {% endif %}   
+  
     {% if custom_index > 24 %}
         {% break %}
     {% endif %}   
