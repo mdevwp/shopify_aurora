@@ -12,7 +12,7 @@
     {%- for part in paginate.parts -%}
       <li>
         {%- if part.is_link -%}
-          <a href="="{{ part.url }}"">
+          <a href={{ part.url }}>
           <pagination-link data-url="{{ part.url }}" tabindex="0" class="classic-pagination__item classic-pagination__link">{{ part.title }}</pagination-link>
           </a>
         {%- else -%}
