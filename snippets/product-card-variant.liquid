@@ -108,7 +108,7 @@
 
     {% assign custom_index = custom_index | plus: 1 %}
     {% if custom_index > 23 %}
-        {% break %}
+         {% continue %}
     {% endif %}   
 
 {{ custom_index }}
