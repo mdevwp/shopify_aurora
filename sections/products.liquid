@@ -310,8 +310,27 @@
               </div>
             {%- endif -%}
           {%- endif -%}
+ 
+          {%- liquid
+            if paginate.pages > 1
+              case pagination_type
+                when 'load-button-pagination'
+                  render 'load-button-pagination', class: 'shop__load-button-pagination', paginate: paginate, target: 'shop__grid-item', container_id: 'ShopProductsGrid', all_count: collection.products_count, current_size: paginate.page_size
+                when 'classic-pagination'
+                  render 'classic-pagination', class: 'shop__classic-pagination', paginate: paginate, overlay_id: 'ShopProductsOverlay', container_id: 'ShopProductsGrid'
+                when 'infinite-scroll'
+                  render 'infinite-scroll-pagination', class: '', paginate: paginate, target: 'shop__grid-item', container_id: 'ShopProductsGrid'
+              endcase
+            endif
+          -%}
+        {%- endpaginate -%}
+      </div>
+    </div>
+  </div>
+</shop-component>
 
 
+        
 {% #############Pagination################### %}          
 
 
@@ -368,26 +387,7 @@
   {%- endif -%}
 </ul>
 
-
-          
-          {%- liquid
-            if paginate.pages > 1
-              case pagination_type
-                when 'load-button-pagination'
-                  render 'load-button-pagination', class: 'shop__load-button-pagination', paginate: paginate, target: 'shop__grid-item', container_id: 'ShopProductsGrid', all_count: collection.products_count, current_size: paginate.page_size
-                when 'classic-pagination'
-                  render 'classic-pagination', class: 'shop__classic-pagination', paginate: paginate, overlay_id: 'ShopProductsOverlay', container_id: 'ShopProductsGrid'
-                when 'infinite-scroll'
-                  render 'infinite-scroll-pagination', class: '', paginate: paginate, target: 'shop__grid-item', container_id: 'ShopProductsGrid'
-              endcase
-            endif
-          -%}
-        {%- endpaginate -%}
-      </div>
-    </div>
-  </div>
-</shop-component>
-
+        
 <script>
   localStorage.setItem(
     'prevCollectionPage',
