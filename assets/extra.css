@@ -188,3 +188,9 @@ ul.sub-menu li {
   margin: 0 auto;
   font-weight: 600;
 }
+
+ul.classic-pagination__list>li,  
+ul.classic-pagination__list>li a{
+    text-decoration: none;
+    font-weight: 600;
+}
