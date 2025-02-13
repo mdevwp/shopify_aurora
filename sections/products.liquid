@@ -239,7 +239,8 @@
 
         {% for product in collection.products %}
           {% for variant in product.variants %}
-            {% assign all_variants = all_variants | append: variant | append: '||' %}
+            {% assign variant_object = variant | json %}
+            {% assign all_variants = all_variants | append: variant_object | append: '||' %}
           {% endfor %}
         {% endfor %}
         
