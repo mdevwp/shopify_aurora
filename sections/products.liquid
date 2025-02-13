@@ -234,13 +234,17 @@
 
 
 
-{{ all_variants | json }}
+
         
 
 {% assign all_variants = '' %}
 
 {% for product in collection.products %}
   {% for variant in product.variants %}
+
+    {{ variant | json }}
+
+    
     {% assign all_variants = all_variants 
       | append: variant.id | append: '||' 
       | append: variant.title | append: '||' 
