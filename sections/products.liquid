@@ -252,6 +252,8 @@
         {% assign end_index = start_index | plus: product_per_page %}
 
 
+        {{ all_variants }}
+        
         {% for i in (start_index..end_index) %}
           {% assign variant = all_variants[i] | parse_json %}
           {% if variant != blank %}
