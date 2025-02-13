@@ -234,7 +234,6 @@
 
 
 
-
 {%- liquid
   capture content_for_query_string
     echo content_for_header
@@ -247,12 +246,15 @@
     assign current_page = 1
   endif
 
-  assign total_pages = collection.products.size | divided_by: variantLimit | ceil
+  assign total_pages = productList.size | divided_by: variantLimit | ceil
+  assign last_page_minus_one = total_pages | minus: 1
 -%}
 
-<div class="pagination">
+<ul class="classic-pagination__list">
   {%- if current_page > 1 -%}
-    <a href="?page={{ current_page | minus: 1 }}" class="classic-pagination__item classic-pagination__link"> < </a>
+    <li>
+      <a href="?page={{ current_page | minus: 1 }}" class="classic-pagination__item classic-pagination__link">&lt;</a>
+    </li>
   {%- endif -%}
 
   {%- assign range = 2 -%}
@@ -267,32 +269,40 @@
   {%- endif -%}
 
   {%- if start_page > 1 -%}
-    <a href="?page=1">1</a>
+    <li>
+      <a href="?page=1" class="classic-pagination__item classic-pagination__link">1</a>
+    </li>
     {%- if start_page > 2 -%}
-      <span class="dots">...</span>
+      <li><span class="classic-pagination__item">...</span></li>
     {%- endif -%}
   {%- endif -%}
 
   {%- for page in (start_page..end_page) -%}
-    {%- if page == current_page -%}
-      <span class="classic-pagination__item classic-pagination__link active">{{ page }}</span>
-    {%- else -%}
-      <a href="?page={{ page }}">{{ page }}</a>
-    {%- endif -%}
+    <li>
+      {%- if page == current_page -%}
+        <span class="classic-pagination__item classic-pagination__link active">{{ page }}</span>
+      {%- else -%}
+        <a href="?page={{ page }}" class="classic-pagination__item classic-pagination__link">{{ page }}</a>
+      {%- endif -%}
+    </li>
   {%- endfor -%}
 
   {%- if end_page < total_pages -%}
-    {%- assign last_page_minus_one = total_pages | minus: 1 -%}
     {%- if end_page < last_page_minus_one -%}
-      <span class="dots">...</span>
+      <li><span class="classic-pagination__item">...</span></li>
     {%- endif -%}
-    <a href="?page={{ total_pages }}">{{ total_pages }}</a>
+    <li>
+      <a href="?page={{ total_pages }}" class="classic-pagination__item classic-pagination__link">{{ total_pages }}</a>
+    </li>
   {%- endif -%}
 
   {%- if current_page < total_pages -%}
-    <a href="?page={{ current_page | plus: 1 }}" class="classic-pagination__item classic-pagination__link"> > </a>
+    <li>
+      <a href="?page={{ current_page | plus: 1 }}" class="classic-pagination__item classic-pagination__link">&gt;</a>
+    </li>
   {%- endif -%}
-</div>
+</ul>
+
 
 
 
