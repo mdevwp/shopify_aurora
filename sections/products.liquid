@@ -230,9 +230,21 @@
           results: collection
         %}
       {%- endif -%}
+
+      {% assign all_variants = '' %}
+
+      {% for product in collection.products %}
+        {% for variant in product.variants %}
+          {% assign all_variants = all_variants | append: variant.id | append: ',' %}
+        {% endfor %}
+      {% endfor %}
+      
+      {% assign all_variants = all_variants | split: ',' %}
+
+      
       <div class='shop__products' id='ShopProducts'>
-        {%- paginate collection.variants by product_per_page -%}
-          {%- if collection.variants.size > 0 -%}
+        {%- paginate all_variants by product_per_page -%}
+          {%- if all_variants.size > 0 -%}
             <div class='shop__products-grid-wrap'>
               <div class='shop__products-grid' id='ShopProductsGrid'> 
 
