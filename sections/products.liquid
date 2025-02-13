@@ -260,17 +260,7 @@
 {% assign productList = slice %}
 
  {% for product in productList %}
-     {%
-        render 'product-card-variant',
-        with_bottom_spacing: true,
-        product: product,
-        img_ratio: img_ratio,
-        show_mobile_carousel: true,
-        product_card_align: product_card_align,
-        add_side_paddings: add_side_paddings,
-        primary_custom_colors_and_patterns: primary_custom_colors_and_patterns,
-        section_background_color: section_background_color
-      %}
+     {{ product | json }}
  {% endfor %}
 
 
@@ -285,7 +275,78 @@
 
         
 
-       
+        {%- paginate collection.products by product_per_page -%}
+          {%- if collection.products.size > 0 -%}
+            <div class='shop__products-grid-wrap'>
+              <div class='shop__products-grid' id='ShopProductsGrid'> 
+                
+                {% assign filter_metal = '' %}
+                {% assign metals = "Gold, Roségold, Silber" | split: ", " %} 
+                {% for metal in metals %}
+                  {% if collection.title contains metal %}
+                    {% assign filter_metal = metal %}
+                  {% endif %}
+                {% endfor %}
+
+                {% assign colors = "Weiß:weiß, Gelb:gelb, Blau:blau, Orang:safrangelb, Rosa:rosa, Schwarz:schwarz, Grün:grün, Lila:lavend, Violet:lavend, Rote:rot, Braun:braun, Beige:sandbraun, Graue:grau" | split: ", " %}
+                {% for color in colors %}
+                  {% assign parts = color | split: ":" %}
+                  {% if collection.title contains parts[0] %}
+                    {% assign filter_color = parts[1]  %}
+                  {% endif %}
+                {% endfor %}
+
+                
+                {%- for product in collection.products -%} 
+                    {%
+                      render 'product-card-variant',
+                      with_bottom_spacing: true,
+                      product: product,
+                      filter_metal: filter_metal,
+                      filter_color: filter_color,
+                      img_ratio: img_ratio,
+                      show_mobile_carousel: true,
+                      product_card_align: product_card_align,
+                      add_side_paddings: add_side_paddings,
+                      primary_custom_colors_and_patterns: primary_custom_colors_and_patterns,
+                      section_background_color: section_background_color
+                    %}
+                {%- endfor -%}
+              </div>
+              {% render 'loading-overlay', class: 'shop__loading-overlay', id: 'ShopProductsOverlay' %}
+            </div>
+          {%- else -%}
+            {%- if active_filter_count > 0 -%}
+              <div class='shop__products-stub'>
+                <span>{{ 'shop.store_front.text_for_no_results_found_in_stub' | t }}</span>
+                <span>
+                  {{- 'shop.store_front.text_for_use_another_filters' | t }}
+                  <filter-remove-btn class='shop__filters-reset' data-url='{{ collection.url }}'>
+                    {{- 'shop.store_front.text_for_clear_all_in_stub' | t -}}
+                  </filter-remove-btn></span
+                >
+                {% render 'loading-overlay', class: 'shop__loading-overlay', id: 'ShopProductsOverlay' %}
+              </div>
+            {%- else -%}
+              <div class='shop__products-stub'>
+                <span>{{ 'shop.store_front.text_for_change_query' | t }}</span>
+                {% render 'loading-overlay', class: 'shop__loading-overlay', id: 'ShopProductsOverlay' %}
+              </div>
+            {%- endif -%}
+          {%- endif -%}
+          {%- liquid
+            if paginate.pages > 1
+              case pagination_type
+                when 'load-button-pagination'
+                  render 'load-button-pagination', class: 'shop__load-button-pagination', paginate: paginate, target: 'shop__grid-item', container_id: 'ShopProductsGrid', all_count: collection.products_count, current_size: paginate.page_size
+                when 'classic-pagination'
+                  render 'classic-pagination', class: 'shop__classic-pagination', paginate: paginate, overlay_id: 'ShopProductsOverlay', container_id: 'ShopProductsGrid'
+                when 'infinite-scroll'
+                  render 'infinite-scroll-pagination', class: '', paginate: paginate, target: 'shop__grid-item', container_id: 'ShopProductsGrid'
+              endcase
+            endif
+          -%}
+        {%- endpaginate -%}
       </div>
     </div>
   </div>
