@@ -3,7 +3,7 @@
     <ul class="classic-pagination__list">
     {%- if paginate.previous -%}
       <li>
-        <pagination-link href="{{ paginate.previous.url }}" data-url="{{ paginate.previous.url }}" tabindex="0" class="classic-pagination__item classic-pagination__link">
+        <pagination-link data-url="{{ paginate.previous.url }}" tabindex="0" class="classic-pagination__item classic-pagination__link">
           <
         </pagination-link>
       </li>
@@ -12,7 +12,9 @@
     {%- for part in paginate.parts -%}
       <li>
         {%- if part.is_link -%}
-          <pagination-link href="{{ part.url }}" data-url="{{ part.url }}" tabindex="0" class="classic-pagination__item classic-pagination__link">{{ part.title }}</pagination-link>
+          <a href="="{{ part.url }}"">
+          <pagination-link data-url="{{ part.url }}" tabindex="0" class="classic-pagination__item classic-pagination__link">{{ part.title }}</pagination-link>
+          </a>
         {%- else -%}
           {%- if part.title == paginate.current_page -%}
             <span class="classic-pagination__item classic-pagination__link active">{{ part.title }}</span>
