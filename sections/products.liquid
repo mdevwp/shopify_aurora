@@ -243,7 +243,7 @@
   {% for variant in product.variants %}
     {% assign all_variants = all_variants 
       | append: variant.id | append: '||' 
-      | append: variant.name | append: '||' 
+      | append: variant.title | append: '||' 
       | append: variant.price | append: '||' %}
   {% endfor %}
 {% endfor %}
