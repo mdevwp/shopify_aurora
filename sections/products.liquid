@@ -246,7 +246,7 @@
     assign current_page = 1
   endif
 
-  assign total_pages = productList.size | divided_by: variantLimit | ceil
+  assign total_pages = collection.products.size | divided_by: 2
   assign last_page_minus_one = total_pages | minus: 1
 -%}
 
