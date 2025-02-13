@@ -15,7 +15,7 @@
   assign mobile_space_between_cards = options.mobile_space_between_cards | times: 0.1
   assign desktop_space_between_cards = options.desktop_space_between_cards | times: 0.1
   assign option_style = options.option_style
-  assign product_per_page = options.product_per_page 
+  assign product_per_page = options.product_per_page | times: 1.0
   assign show_product_count = options.show_product_count
   assign show_column_count_switcher = options.show_column_count_switcher
   assign enable_sorting = options.enable_sorting
@@ -230,26 +230,16 @@
           results: collection
         %}
       {%- endif -%}
-
-      {% assign all_variants = '' %}
-
-      {% for product in collection.products %}
-        {% for variant in product.variants %}
-          {% assign all_variants = all_variants | append: variant.id | append: ',' %}
-        {% endfor %}
-      {% endfor %}
-      
-      {% assign all_variants = all_variants | split: ',' %}
-
-      
       <div class='shop__products' id='ShopProducts'>
-        {%- paginate all_variants by product_per_page -%}
-          {%- if all_variants.size > 0 -%}
+
+
+            {{ collection.products | json }}
+
+        
+        {%- paginate collection.products by product_per_page -%}
+          {%- if collection.products.size > 0 -%}
             <div class='shop__products-grid-wrap'>
               <div class='shop__products-grid' id='ShopProductsGrid'> 
-
-
-                {{ product_per_page }}
                 
                 {% assign filter_metal = '' %}
                 {% assign metals = "Gold, Roségold, Silber" | split: ", " %} 
