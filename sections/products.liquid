@@ -245,8 +245,8 @@
         {% assign all_variants = all_variants | split: '||' %}
         
         
-        {%- paginate all_variants by product_per_page -%}
-          {%- if all_variants.size > 0 -%}
+        {%- paginate collection.products by product_per_page -%}
+          {%- if collection.products.size > 0 -%}
             <div class='shop__products-grid-wrap'>
               <div class='shop__products-grid' id='ShopProductsGrid'> 
                 
@@ -267,7 +267,7 @@
                 {% endfor %}
 
                 
-                {%- for product in all_variants -%} 
+                {%- for product in collection.products -%} 
                     {%
                       render 'product-card-variant',
                       with_bottom_spacing: true,
