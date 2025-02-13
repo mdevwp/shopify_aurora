@@ -259,23 +259,30 @@
 
 {% assign productList = slice %}
 
- {%- for variant in productList -%} 
-  {% render 'product-card-variant',
-    with_bottom_spacing: true,
-    product: variant,
-    img_ratio: img_ratio,
-    show_mobile_carousel: true,
-    product_card_align: product_card_align,
-    add_side_paddings: add_side_paddings,
-    primary_custom_colors_and_patterns: primary_custom_colors_and_patterns,
-    section_background_color: section_background_color
-  %}
+
+
+
+        {% assign variantLimit = 30 %}
+{% assign start = current_page | minus: 1 | times: variantLimit %}
+{% assign end = current_page | times: variantLimit | minus: 1 %}
+{% if end > productList.size %}
+  {% assign end = productList.size | minus: 1 %}
+{% endif %}
+
+{%- for i in (start..end) -%}
+  {% assign variant = productList[i] %}
+  {% render 'product-card-variant', product: variant %}
 {%- endfor -%}
 
-
-{% unless end > maxSize %}
-    <a href="?page={{current_page | plus: 1}}">Next Page</a>
- {% endunless %}
+<div class="pagination">
+  {% if current_page > 1 %}
+    <a href="?page={{ current_page | minus: 1 }}">Назад</a>
+  {% endif %}
+  <span>Страница {{ current_page }}</span>
+  {% if end < productList.size %}
+    <a href="?page={{ current_page | plus: 1 }}">Вперед</a>
+  {% endif %}
+</div>
 
 
 
