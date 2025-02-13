@@ -253,14 +253,16 @@
                   {% endif %}
                 {% endfor %}
                 
-                
-                {%- for product in collection.products -%}
+                {% assign custom_index = 0 %}
+                {%- for product in collection.products -%} 
+                    {% assign custom_index = custom_index | plus: 1 %}
                     {%
                       render 'product-card-variant',
                       with_bottom_spacing: true,
                       product: product,
                       filter_metal: filter_metal,
                       filter_color: filter_color,
+                      custom_index: custom_index,
                       img_ratio: img_ratio,
                       show_mobile_carousel: true,
                       product_card_align: product_card_align,
