@@ -252,6 +252,23 @@
                     {% assign filter_color = parts[1]  %}
                   {% endif %}
                 {% endfor %}
+
+
+                {%################%}
+
+                {% assign all_variants = '' %}
+
+                {% for product in collection.products %}
+                  {% for variant in product.variants %}
+                    {% assign variant_object = variant | json %}
+                    {% assign all_variants = all_variants | append: variant_object | append: '||' %}
+                  {% endfor %}
+                {% endfor %}
+                
+                {% assign all_variants = all_variants | split: '||' %}
+
+                {%################%}
+
                 
                 {%- for product in collection.products -%} 
 
