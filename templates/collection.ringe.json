@@ -1,1 +1,158 @@
-{"sections":{"collection-hero-banner":{"type":"collection-hero-banner","custom_css":[".h2 {text-transform: uppercase; font-weight: bold;}"],"settings":{"color_scheme":"white","enable_background_around_container":false,"container_size":"full-screen","desktop_ratio":0.2,"mobile_ratio":1,"show_collection_image":true,"show_breadcrumbs":false,"show_collection_title":true,"show_collection_description":true,"image":"shopify:\/\/shop_images\/Ringe_Kategorie.svg","desktop_overlay_opacity":10,"mobile_overlay_opacity":10,"heading_size":"h2","body_size":"body3","desktop_content_position":"align-items:center;justify-content:center;","desktop_content_align":"center","content_max_width":528,"content_spacing":48,"mobile_content_position":"align-items:center;","mobile_content_align":"center","add_side_paddings":false,"section_spacing_top":0,"section_spacing_bottom":0}},"products":{"type":"products","custom_css":["shape-swatch {box-shadow: inset 0 0 0 2px darkgray;}"],"settings":{"color_scheme":"default","container_size":"page-width","enable_sorting":true,"show_product_count":false,"show_column_count_switcher":true,"enable_filtering":true,"filters_position":"left","filter_style":"open-embed","categories_style":"static","option_style":"checkbox-solid","show_color_swatches":true,"show_divider":true,"enable_uppercase_title":true,"img_ratio":"square","product_card_align":"center","product_per_page":2,"desktop_columns":"4","desktop_space_between_cards":12,"mobile_columns":"2","mobile_space_between_cards":8,"pagination_type":"infinite-scroll","add_side_paddings":true,"section_spacing_top":48,"section_spacing_bottom":48}},"multicolumn_BMDG4G":{"type":"multicolumn","blocks":{"column_with_icon_EDqhF6":{"type":"column_with_icon","settings":{"icon":"none","icon_size":64,"title":"<b>Dein treuer Begleiter:Edelstahlringe von ALEXASCHA<\/b>","text":"<p>Schmuck setzt Akzente, unterstreicht Deinen Stil und bringt Deine Persönlichkeit an die Oberfläche. Gerade Ringe können Deinem Outfit und Deinem Style das gewisse Etwas verleihen – hier hast Du bereits beim Material die Wahl! Die Klassiker kennst Du sicher, sie werden aus Gold oder Silber gefertigt und sind relativ teuer. Es gibt allerdings auch eine günstige Alternative: Edelstahlringe, die in der Qualität den Originalen in nichts nachstehen.<br\/>Wenn Du auf der Suche nach einem Ring für Deinen Everyday-Look bist, schau Dir auf jeden Fall die Edelstahlringe von ALEXASCHA an. Sie halten Dir durch ihr robustes Material lange die Treue und begleiten dich bei all Deinen Abenteuern! Sie sind nahezu kratzfest und können Deinen Alltag auch bei kleinen Herausforderungen wie dem Hausputz bestehen. Zudem ist das Material überaus hautfreundlich und durch den minimalen Nickelanteil auch von Allergiker:innen gut verträglich. <\/p>","link_text":"","link_url":""}},"column_with_icon_CYCiUT":{"type":"column_with_icon","settings":{"icon":"none","icon_size":64,"title":"<b>Zwei Kollektionen, endlose Looks:Finde Deinen Edelstahlring!​<\/b>","text":"<p>Ringlein wechsel dich: Bei uns findest Du verschiedene Kollektionen, die ihren ganz eigenen Charakter haben. Trag sie passend zu Deinen Outfits, Deiner Laune und Deinem Leben! Die Edelstahlringe aus der AVA Kollektion bestechen durch ihren minimalistischen Look, der gold und silber sprechen lässt. Entscheide dich für die Ringe, wenn Du auf der Suche nach einem schlichten Teil bist, dass Du endlos kombinieren kannst. <br\/>Unsere PURE FORM Kollektion ist hingegen all about the colors! Sie ist genau das richtige für Dich, wenn Du den Bauhausstil in die Moderne tragen möchtest, da sie gekonnt mit Formen und Farben spielt. Die PURE FORM Edelstahlringe sind mit einem Schmuckstein verziert, der aus upgecycelten Mosaiken besteht – bei mehr als 20 Farbvarianten findest Du sicherlich einen Ton, der Dir gefällt. Pssst: Übrigens sind die Ringe größenverstellbar!<\/p>","link_text":"","link_url":""}},"column_with_icon_BfAX7T":{"type":"column_with_icon","settings":{"icon":"none","icon_size":64,"title":"<b>Mehr als nur Ring:Der grüne Gedanke hinter der Marke<\/b>","text":"<p>Die Marke ALEXASCHA wird ausschließlich durch Frauen vertreten, denen Nachhaltigkeit und ansprechendes Design am Herzen liegt. Wir setzen bei unserem Schmuck auf hohe Qualität sowie eine faire Produktion. Also sind auch unsere Edelstahlringe mit Bedacht auf Mutter Natur gefertigt. Wir arbeiten nach dem Less-Waste-Prinzip und nutzen für die Herstellung der Ringe lose Mosaiksteine in leuchtenden Farben, die in der Industrie keine Verwendung mehr finden. Unser Wunsch ist es, Bewusstsein beim Thema Shoppen zu schaffen aber nicht auf strahlende Accessoires verzichten zu müssen.<br\/>Dir gefällt dieser Ansatz? Dann start noch heute und übernimm Verantwortung für unseren Planeten: Schließe Dich der Less-Waste-Bewegung an und shoppe nachhaltige Edelstahlringe von ALEXASCHA. Solltest Du direkt Dein ganzes Schmuckkästchen upgraden wollen, dann empfehlen wir Dir auch die Ohrringe, Armbänder und Ketten in unserem Shop anzusehen. So kannst Du dir direkt ein Duo oder Trio sichern.<\/p>","link_text":"","link_url":""}}},"block_order":["column_with_icon_EDqhF6","column_with_icon_CYCiUT","column_with_icon_BfAX7T"],"settings":{"color_scheme":"default","container_size":"large","desktop_layout":"grid","mobile_layout":"one-column-grid","title":"","heading_size":"h6","text":"","body_size":"body3","content_alignment":"left","column_heading_size":"caption3","column_body_size":"body6","column_alignment":"left","desktop_columns":3,"desktop_space_between_cards":24,"desktop_content_spacing":24,"mobile_space_between_cards":16,"mobile_content_spacing":24,"show_column_background":false,"show_navigation_on_hover":true,"disable_mobile_version":false,"align_media_center":false,"media_min_height":120,"disable_desktop":false,"disable_mobile":false,"btn_text":"","btn_url":"","btn_style":"outline","autoplay_mode":"disabled","autoplay_interval":3,"add_side_paddings":true,"section_spacing_top":80,"section_spacing_bottom":80}}},"order":["collection-hero-banner","products","multicolumn_BMDG4G"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "collection-hero-banner": {
+      "type": "collection-hero-banner",
+      "custom_css": [
+        ".h2 {text-transform: uppercase; font-weight: bold;}"
+      ],
+      "settings": {
+        "color_scheme": "white",
+        "enable_background_around_container": false,
+        "container_size": "full-screen",
+        "desktop_ratio": 0.2,
+        "mobile_ratio": 1,
+        "show_collection_image": true,
+        "show_breadcrumbs": false,
+        "show_collection_title": true,
+        "show_collection_description": true,
+        "image": "shopify://shop_images/Ringe_Kategorie.svg",
+        "desktop_overlay_opacity": 10,
+        "mobile_overlay_opacity": 10,
+        "heading_size": "h2",
+        "body_size": "body3",
+        "desktop_content_position": "align-items:center;justify-content:center;",
+        "desktop_content_align": "center",
+        "content_max_width": 528,
+        "content_spacing": 48,
+        "mobile_content_position": "align-items:center;",
+        "mobile_content_align": "center",
+        "add_side_paddings": false,
+        "section_spacing_top": 0,
+        "section_spacing_bottom": 0
+      }
+    },
+    "products": {
+      "type": "products",
+      "custom_css": [
+        "shape-swatch {box-shadow: inset 0 0 0 2px darkgray;}"
+      ],
+      "settings": {
+        "color_scheme": "default",
+        "container_size": "page-width",
+        "enable_sorting": true,
+        "show_product_count": false,
+        "show_column_count_switcher": true,
+        "enable_filtering": true,
+        "filters_position": "left",
+        "filter_style": "open-embed",
+        "categories_style": "static",
+        "option_style": "checkbox-solid",
+        "show_color_swatches": true,
+        "show_divider": true,
+        "enable_uppercase_title": true,
+        "img_ratio": "square",
+        "product_card_align": "center",
+        "product_per_page": 1,
+        "desktop_columns": "4",
+        "desktop_space_between_cards": 12,
+        "mobile_columns": "2",
+        "mobile_space_between_cards": 8,
+        "pagination_type": "infinite-scroll",
+        "add_side_paddings": true,
+        "section_spacing_top": 48,
+        "section_spacing_bottom": 48
+      }
+    },
+    "multicolumn_BMDG4G": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_with_icon_EDqhF6": {
+          "type": "column_with_icon",
+          "settings": {
+            "icon": "none",
+            "icon_size": 64,
+            "title": "<b>Dein treuer Begleiter:Edelstahlringe von ALEXASCHA</b>",
+            "text": "<p>Schmuck setzt Akzente, unterstreicht Deinen Stil und bringt Deine Persönlichkeit an die Oberfläche. Gerade Ringe können Deinem Outfit und Deinem Style das gewisse Etwas verleihen – hier hast Du bereits beim Material die Wahl! Die Klassiker kennst Du sicher, sie werden aus Gold oder Silber gefertigt und sind relativ teuer. Es gibt allerdings auch eine günstige Alternative: Edelstahlringe, die in der Qualität den Originalen in nichts nachstehen.<br/>Wenn Du auf der Suche nach einem Ring für Deinen Everyday-Look bist, schau Dir auf jeden Fall die Edelstahlringe von ALEXASCHA an. Sie halten Dir durch ihr robustes Material lange die Treue und begleiten dich bei all Deinen Abenteuern! Sie sind nahezu kratzfest und können Deinen Alltag auch bei kleinen Herausforderungen wie dem Hausputz bestehen. Zudem ist das Material überaus hautfreundlich und durch den minimalen Nickelanteil auch von Allergiker:innen gut verträglich. </p>",
+            "link_text": "",
+            "link_url": ""
+          }
+        },
+        "column_with_icon_CYCiUT": {
+          "type": "column_with_icon",
+          "settings": {
+            "icon": "none",
+            "icon_size": 64,
+            "title": "<b>Zwei Kollektionen, endlose Looks:Finde Deinen Edelstahlring!​</b>",
+            "text": "<p>Ringlein wechsel dich: Bei uns findest Du verschiedene Kollektionen, die ihren ganz eigenen Charakter haben. Trag sie passend zu Deinen Outfits, Deiner Laune und Deinem Leben! Die Edelstahlringe aus der AVA Kollektion bestechen durch ihren minimalistischen Look, der gold und silber sprechen lässt. Entscheide dich für die Ringe, wenn Du auf der Suche nach einem schlichten Teil bist, dass Du endlos kombinieren kannst. <br/>Unsere PURE FORM Kollektion ist hingegen all about the colors! Sie ist genau das richtige für Dich, wenn Du den Bauhausstil in die Moderne tragen möchtest, da sie gekonnt mit Formen und Farben spielt. Die PURE FORM Edelstahlringe sind mit einem Schmuckstein verziert, der aus upgecycelten Mosaiken besteht – bei mehr als 20 Farbvarianten findest Du sicherlich einen Ton, der Dir gefällt. Pssst: Übrigens sind die Ringe größenverstellbar!</p>",
+            "link_text": "",
+            "link_url": ""
+          }
+        },
+        "column_with_icon_BfAX7T": {
+          "type": "column_with_icon",
+          "settings": {
+            "icon": "none",
+            "icon_size": 64,
+            "title": "<b>Mehr als nur Ring:Der grüne Gedanke hinter der Marke</b>",
+            "text": "<p>Die Marke ALEXASCHA wird ausschließlich durch Frauen vertreten, denen Nachhaltigkeit und ansprechendes Design am Herzen liegt. Wir setzen bei unserem Schmuck auf hohe Qualität sowie eine faire Produktion. Also sind auch unsere Edelstahlringe mit Bedacht auf Mutter Natur gefertigt. Wir arbeiten nach dem Less-Waste-Prinzip und nutzen für die Herstellung der Ringe lose Mosaiksteine in leuchtenden Farben, die in der Industrie keine Verwendung mehr finden. Unser Wunsch ist es, Bewusstsein beim Thema Shoppen zu schaffen aber nicht auf strahlende Accessoires verzichten zu müssen.<br/>Dir gefällt dieser Ansatz? Dann start noch heute und übernimm Verantwortung für unseren Planeten: Schließe Dich der Less-Waste-Bewegung an und shoppe nachhaltige Edelstahlringe von ALEXASCHA. Solltest Du direkt Dein ganzes Schmuckkästchen upgraden wollen, dann empfehlen wir Dir auch die Ohrringe, Armbänder und Ketten in unserem Shop anzusehen. So kannst Du dir direkt ein Duo oder Trio sichern.</p>",
+            "link_text": "",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_with_icon_EDqhF6",
+        "column_with_icon_CYCiUT",
+        "column_with_icon_BfAX7T"
+      ],
+      "settings": {
+        "color_scheme": "default",
+        "container_size": "large",
+        "desktop_layout": "grid",
+        "mobile_layout": "one-column-grid",
+        "title": "",
+        "heading_size": "h6",
+        "text": "",
+        "body_size": "body3",
+        "content_alignment": "left",
+        "column_heading_size": "caption3",
+        "column_body_size": "body6",
+        "column_alignment": "left",
+        "desktop_columns": 3,
+        "desktop_space_between_cards": 24,
+        "desktop_content_spacing": 24,
+        "mobile_space_between_cards": 16,
+        "mobile_content_spacing": 24,
+        "show_column_background": false,
+        "show_navigation_on_hover": true,
+        "disable_mobile_version": false,
+        "align_media_center": false,
+        "media_min_height": 120,
+        "disable_desktop": false,
+        "disable_mobile": false,
+        "btn_text": "",
+        "btn_url": "",
+        "btn_style": "outline",
+        "autoplay_mode": "disabled",
+        "autoplay_interval": 3,
+        "add_side_paddings": true,
+        "section_spacing_top": 80,
+        "section_spacing_bottom": 80
+      }
+    }
+  },
+  "order": [
+    "collection-hero-banner",
+    "products",
+    "multicolumn_BMDG4G"
+  ]
+}
