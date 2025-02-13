@@ -89,12 +89,12 @@
 -%}
 
 {% if product.id != blank %}
-  {% assign custom_index = 0 %}
+  
   {% for variant in product.variants %}
     
     {% if filter_metal != blank and variant.options[0] != blank and variant.options[0] != filter_metal %}      
         {% continue %}
-        {% assign custom_index = custom_index | minus: 1 %}
+
     {% endif %}
     
     {% if filter_color != blank and variant.options[0] != blank %}
@@ -102,11 +102,13 @@
     {% assign option_1 = variant.options[1] | downcase %}
     {% unless option_0 contains filter_color or option_1 contains filter_color %}
       {% continue %}
-      {% assign custom_index = custom_index | minus: 1 %}
+      
     {% endunless %}
     {% endif %}
 
     {% assign custom_index = custom_index | plus: 1 %}
+    {% assign content_for_header = content_for_header | append: 'custom_index=' | append: custom_index | append: '&' %}
+  
     {% if custom_index > 24 %}
         {% break %}
     {% endif %}   
