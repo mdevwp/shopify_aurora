@@ -232,21 +232,7 @@
       {%- endif -%}
       <div class='shop__products' id='ShopProducts'>
         
-{% ##################### %}
-        {% assign handle = collection.handle %}
-
-        {% assign handles = "lila-ohrringe,schwarze-ohrringe,ketten-in-goldfarbe,ketten-in-rosegoldfarbe,silberfarbene-ketten,rote-ohrringe" | split: "," %}
-        {% if handles contains handle %}
-          {% assign product_per_page = 10 %}
-        {% endif %}
-        {% assign handles = "braune-ohrringe,rosa-ohrringe,weisse-ohrringe,ohrstecker-in-goldfarbe,ohrstecker-in-rosegoldfarbe,silberfarbene-ohrstecker,edelstahlschmuck" | split: "," %}
-        {% if handles contains handle %}
-          {% assign product_per_page = 4 %}
-        {% endif %}
-         {% assign handles = "blaue-ohrringe,blaue-ohrringe,ketten,ketten-sind-hypoallergen,ohrringe-in-goldfarbe" | split: "," %}
-        {% if handles contains handle %}
-          {% assign product_per_page = 3 %}
-        {% endif %}    
+{% ##################### %}  
         
         
         {%- liquid
@@ -311,26 +297,6 @@
     {% endif %}
   {% endfor %}
 {% endfor %}
-
-<div class="pagination">
-  {% if current_page > 1 %}
-    <a href="?page={{ current_page | minus: 1 }}" class="classic-pagination__item classic-pagination__link"><</a>
-  {% endif %}
-
-  {% assign total_pages = variant_index | divided_by: variant_limit | ceil %}
-  
-  {% for i in (1..total_pages) %}
-    {% if i == current_page %}
-      <span class="classic-pagination__item classic-pagination__link active">{{ i }}</span>
-    {% else %}
-      <a href="?page={{ i }}" class="classic-pagination__item classic-pagination__link">{{ i }}</a>
-    {% endif %}
-  {% endfor %}
-
-  {% if current_page < total_pages %}
-    <a href="?page={{ current_page | plus: 1 }}" class="classic-pagination__item classic-pagination__link">></a>
-  {% endif %}
-</div>
 
 
       
