@@ -130,7 +130,13 @@
             </div>
           {%- endif -%}
           {%- if show_collection_title and title != blank -%}
+
+          {%- if current_page > 1 -%}
+            <h1>{{ collection.title }}{%- if current_page > 1 -%} ― Seite {{ current_page }}{%- endif -%}</h1>
+          {%- else -%}
             <h1 class='collection-hero__title {{ section.settings.heading_size }}'>{{ title }}</h1>
+          {%- endif -%}
+
           {%- endif -%}
           {%- if show_collection_description and description != blank -%}
             <div class='body-color collection-hero__description body-font-weight-from-global-settings  {{ section.settings.body_size }}'>{{ description }}</div>
