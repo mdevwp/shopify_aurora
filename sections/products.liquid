@@ -232,24 +232,24 @@
       {%- endif -%}
       <div class='shop__products' id='ShopProducts'>
         
-
-{%- liquid
-  capture content_for_query_string
-    echo content_for_header
-  endcapture
-  assign getfullurl = content_for_query_string | split: '"pageurl":"' | last | split: '"' | first | replace: '\/', '/' | replace: '\u0026', '&'
-
-  assign page_param = getfullurl | split: '?page=' | last | split: '&' | first
-  assign current_page = page_param | plus: 0
-  if current_page == 0
-    assign current_page = 1
-  endif
-
-  assign total_pages = collection.products.size | divided_by: 2
-  assign last_page_minus_one = total_pages | minus: 1
--%}
-
+{% ##################### %}
+        {%- liquid
+          capture content_for_query_string
+            echo content_for_header
+          endcapture
+          assign getfullurl = content_for_query_string | split: '"pageurl":"' | last | split: '"' | first | replace: '\/', '/' | replace: '\u0026', '&'
         
+          assign page_param = getfullurl | split: '?page=' | last | split: '&' | first
+          assign current_page = page_param | plus: 0
+          if current_page == 0
+            assign current_page = 1
+          endif
+        
+          assign total_pages = collection.products.size | divided_by: 2
+          assign last_page_minus_one = total_pages | minus: 1
+        -%}
+
+    {{ collection.products[0].size }}    
 
         {%- paginate collection.products by product_per_page -%}
           {%- if collection.products.size > 0 -%}
