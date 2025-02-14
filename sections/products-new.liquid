@@ -250,7 +250,7 @@
           assign productList = '' | split: ''
 
           for product in collection.products
-            assign productList = productList | concat: product.variants
+           assign productList = productList | concat: product.variants
          endfor 
       
           assign total_pages = productList.size | divided_by: 40 | ceil
@@ -258,18 +258,6 @@
         -%}
 {% ##################### %}
 
-        {% assign per_page = 40 %}
-{% assign start_index = current_page | minus: 1 | times: per_page %}
-{% assign end_index = start_index | plus: per_page | minus: 1 %}
-
-{% assign paginated_variants = '' | split: '' %}
-{% for i in (start_index..end_index) %}
-  {% if productList[i] %}
-    {% assign paginated_variants = paginated_variants | push: productList[i] %}
-  {% endif %}
-{% endfor %}
-
-        
 {%- liquid
   assign variant_limit = 40
 
@@ -283,21 +271,18 @@
   endif
 
   assign start_index = variant_limit | times: current_page | minus: variant_limit
-  assign end_index = start_index | plus: variant_limit | minus: 1
-
-  assign productList = '' | split: ''
-
-  for product in collection.products
-    assign productList = productList | concat: product.variants
-  endfor
+  assign end_index = start_index | plus: variant_limit
+  assign variant_index = 0
 -%}
 
 {% assign displayed_variants = 0 %}
-<div class='shop__products-grid-wrap'>
-  <div class='shop__products-grid' id='ShopProductsGrid'>   
-    {% for i in (start_index..end_index) %}
-      {% if productList[i] %}
-        {% assign variant = productList[i] %}
+ <div class='shop__products-grid-wrap'>
+              <div class='shop__products-grid' id='ShopProductsGrid'>   
+{% for product in collection.products %}
+  {% for variant in product.variants %}
+    {% assign variant_index = variant_index | plus: 1 %}
+
+        {% if variant_index > start_index and variant_index <= end_index %}
               {%
                 render 'product-card-variant-new',
                 with_bottom_spacing: true,
@@ -317,7 +302,7 @@
       {% break %}
     {% endif %}
   {% endfor %}
-
+{% endfor %}
 
 
       
