@@ -266,7 +266,26 @@
         -%}
 {% ##################### %}
 
-        {%- paginate collection.products by product_per_page -%}
+{%- liquid
+  assign variant_limit = 40
+  assign per_page = 0
+  assign variant_count = 0
+
+  for product in collection.products
+    assign variant_count = variant_count | plus: product.variants.size
+    assign per_page = per_page | plus: 1
+    if variant_count >= variant_limit
+      break
+    endif
+  endfor
+
+  if per_page < 1
+    assign per_page = 1
+  endif
+-%}
+
+        
+        {%- paginate collection.products by per_page -%}
           {%- if collection.products.size > 0 -%}
             <div class='shop__products-grid-wrap'>
               <div class='shop__products-grid' id='ShopProductsGrid'> 
@@ -287,8 +306,12 @@
                   {% endif %}
                 {% endfor %}
 
-                
+                {% assign displayed_variants = 0 %}
                 {%- for product in collection.products -%} 
+                   
+
+                  {% for variant in product.variants %}
+                    {% if displayed_variants < variant_limit %}
                     {%
                       render 'product-card-variant',
                       with_bottom_spacing: true,
@@ -302,7 +325,10 @@
                       primary_custom_colors_and_patterns: primary_custom_colors_and_patterns,
                       section_background_color: section_background_color
                     %}
+                      {% assign displayed_variants = displayed_variants | plus: 1 %}
+                      {% endif %}
                 {%- endfor -%}
+                {% endfor %}
               </div>
               {% render 'loading-overlay', class: 'shop__loading-overlay', id: 'ShopProductsOverlay' %}
             </div>
