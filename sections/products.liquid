@@ -239,8 +239,8 @@
         {% if handles contains handle %}
           {% assign product_per_page = 10 %}
         {% endif %}
-        {% assign handles = "braune-ohrringe,rosa-ohrringe,weisse-ohrringe" | split: "," %}
-        {% if handles contains handle %}
+        {% assign handles2 = "braune-ohrringe,rosa-ohrringe,weisse-ohrringe" | split: "," %}
+        {% if handles2 contains handle %}
           {% assign product_per_page = 4 %}
         {% endif %}
         {% if handle == 'blaue-ohrringe' or handle == 'blaue-ohrringe' or handle == 'ketten-sind-hypoallergen' %}
