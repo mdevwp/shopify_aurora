@@ -9,7 +9,10 @@ function togglePagination() {
 setTimeout(togglePagination, 500);
 
 document.addEventListener('click', function(event) {
-    if (event.target.matches('.shape-swatch, .checkbox__span')) {
-        setTimeout(togglePagination, 500);
-    }
+  setTimeout(function(){
+     if (event.target.matches('.shape-swatch, .checkbox__span')) {
+       togglePagination();
+     },500);
+  }
+   
 });
