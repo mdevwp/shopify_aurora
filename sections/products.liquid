@@ -234,7 +234,9 @@
         
 {% ##################### %}
         {% assign handle = collection.handle %}
-        {% if handle == 'lila-ohrringe' or handle == 'schwarze-ohrringe'  or handle == 'ketten-in-goldfarbe' %}
+
+        {% assign handles = "lila-ohrringe,schwarze-ohrringe,ketten-in-goldfarbe,ketten-in-rosegoldfarbe" | split: "," %}
+        {% if handles contains handle %}
           {% assign product_per_page = 10 %}
         {% endif %}
         {% if handle == 'blaue-ohrringe' or handle == 'blaue-ohrringe' %}
