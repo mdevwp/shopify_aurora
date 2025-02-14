@@ -45,7 +45,32 @@
       "custom_css": [
         "shape-swatch {box-shadow: inset 0 0 0 2px darkgray;}"
       ],
-      "settings": {}
+      "settings": {
+        "color_scheme": "default",
+        "container_size": "page-width",
+        "enable_sorting": true,
+        "show_product_count": false,
+        "show_column_count_switcher": true,
+        "enable_filtering": true,
+        "filters_position": "left",
+        "filter_style": "open-embed",
+        "categories_style": "static",
+        "option_style": "checkbox-solid",
+        "show_color_swatches": true,
+        "show_divider": true,
+        "enable_uppercase_title": true,
+        "img_ratio": "square",
+        "product_card_align": "left",
+        "product_per_page": 2,
+        "desktop_columns": "4",
+        "desktop_space_between_cards": 12,
+        "mobile_columns": "2",
+        "mobile_space_between_cards": 8,
+        "pagination_type": "classic-pagination",
+        "add_side_paddings": true,
+        "section_spacing_top": 48,
+        "section_spacing_bottom": 48
+      }
     },
     "multicolumn_UTpxr9": {
       "type": "multicolumn",
