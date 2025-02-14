@@ -8,11 +8,10 @@ function togglePagination() {
 
 setTimeout(togglePagination, 500);
 
-document.addEventListener('click', function(event) {
-  setTimeout(function(){
+setTimeout(function(){
+  document.addEventListener('click', function(event) {
      if (event.target.matches('.shape-swatch, .checkbox__span')) {
-       togglePagination();
-     },500);
-  }
-   
-});
+        togglePagination();
+      } 
+  });
+},500);
