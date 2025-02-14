@@ -93,7 +93,8 @@
   {% assign custom_index = 0 %}
   
   {%# for variant in product.variants %}
-      {{ variant | json }}
+  {% assign  variant = product %}
+
     {% if filter_metal != blank and variant.options[0] != blank and variant.options[0] != filter_metal %}      
         {% continue %}
 
