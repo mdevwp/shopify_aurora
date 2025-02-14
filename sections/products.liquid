@@ -250,7 +250,7 @@
         -%}
 
        
-            {{ collection.name }}    
+            {{ collection | json }}    
      
 
         {%- paginate collection.products by product_per_page -%}
