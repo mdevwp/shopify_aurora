@@ -267,15 +267,24 @@
 {% ##################### %}
 {%- liquid
   assign variant_limit = 40
-  assign variant_index = 0
-  assign start_index = variant_limit | times: paginate.current_page | minus: variant_limit
-  assign end_index = start_index | plus: variant_limit
--%}
-        
-        {%- paginate collection.products by collection.products.size -%}
-          {%- if collection.products.size > 0 -%}
 
-            {% assign displayed_variants = 0 %}
+  capture content_for_query_string
+    echo content_for_header
+  endcapture
+
+  assign current_page = content_for_query_string | split: '"page":"' | last | split: '"' | first | plus: 0
+  if current_page < 1
+    assign current_page = 1
+  endif
+
+  assign start_index = variant_limit | times: current_page | minus: variant_limit
+  assign end_index = start_index | plus: variant_limit
+  assign variant_index = 0
+-%}
+
+{% assign displayed_variants = 0 %}
+        
+
             
             <div class='shop__products-grid-wrap'>
               <div class='shop__products-grid' id='ShopProductsGrid'> 
@@ -331,39 +340,8 @@
               </div>
               {% render 'loading-overlay', class: 'shop__loading-overlay', id: 'ShopProductsOverlay' %}
             </div>
-          {%- else -%}
-            {%- if active_filter_count > 0 -%}
-              <div class='shop__products-stub'>
-                <span>{{ 'shop.store_front.text_for_no_results_found_in_stub' | t }}</span>
-                <span>
-                  {{- 'shop.store_front.text_for_use_another_filters' | t }}
-                  <filter-remove-btn class='shop__filters-reset' data-url='{{ collection.url }}'>
-                    {{- 'shop.store_front.text_for_clear_all_in_stub' | t -}}
-                  </filter-remove-btn></span
-                >
-                {% render 'loading-overlay', class: 'shop__loading-overlay', id: 'ShopProductsOverlay' %}
-              </div>
-            {%- else -%}
-              <div class='shop__products-stub'>
-                <span>{{ 'shop.store_front.text_for_change_query' | t }}</span>
-                {% render 'loading-overlay', class: 'shop__loading-overlay', id: 'ShopProductsOverlay' %}
-              </div>
-            {%- endif -%}
-          {%- endif -%}
- 
-          {%- liquid
-            if paginate.pages > 1
-              case pagination_type
-                when 'load-button-pagination'
-                  render 'load-button-pagination', class: 'shop__load-button-pagination', paginate: paginate, target: 'shop__grid-item', container_id: 'ShopProductsGrid', all_count: collection.products_count, current_size: paginate.page_size
-                when 'classic-pagination'
-                  render 'classic-pagination', class: 'shop__classic-pagination', paginate: paginate, overlay_id: 'ShopProductsOverlay', container_id: 'ShopProductsGrid'
-                when 'infinite-scroll'
-                  render 'infinite-scroll-pagination', class: '', paginate: paginate, target: 'shop__grid-item', container_id: 'ShopProductsGrid'
-              endcase
-            endif
-          -%}
-        {%- endpaginate -%}
+          
+          
       </div>
     </div>
   </div>
