@@ -11,7 +11,7 @@ setTimeout(togglePagination, 500);
 setTimeout(function(){
   document.addEventListener('click', function(event) {
      if (event.target.matches('shape-swatch, .checkbox__span')) {
-        togglePagination();
+        document.querySelectorAll('.classic-pagination__list').forEach(el => el.style.display = 'none');
       } 
   });
 },1000);
