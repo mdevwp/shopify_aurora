@@ -92,7 +92,9 @@
 
   {% assign custom_index = 0 %}
   
-  {% for variant in product.variants %}
+  {%# for variant in product.variants %}
+    {% assign variant = product %}
+    
     {%# {{ custom_index }} %} 
     {% if filter_metal != blank and variant.options[0] != blank and variant.options[0] != filter_metal %}      
         {% continue %}
@@ -774,7 +776,7 @@
       </product-card>
     </div>
   </div>
-  {% endfor %}
+  {%# endfor %}
 {% else %}
   <div
     class='product-card product-card--{{ card_style }} {% if settings.img_hover != 'none' %} product-card--{{ settings.img_hover }} {% endif %} {{ class }} {% if product_card_align == 'center' %}product-card--center-alignment{% endif %}'
