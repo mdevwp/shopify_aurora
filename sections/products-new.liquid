@@ -247,6 +247,12 @@
             assign current_page = 1
           endif
         
+          assign productList = '' | split: ''
+
+          for product in collection.products
+            assign productList = productList | concat: product.variants
+         endfor 
+      
           assign total_pages = productList.size | divided_by: 40 | ceil
           assign last_page_minus_one = total_pages | minus: 1
         -%}
