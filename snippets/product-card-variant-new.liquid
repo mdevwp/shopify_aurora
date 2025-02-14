@@ -92,7 +92,7 @@
 
   {% assign custom_index = 0 %}
 
-  {% for variant in product %}
+  {%# for variant in product %}
 
    
     {%# assign variant = product    {{  product | json }} %}
@@ -778,7 +778,7 @@
       </product-card>
     </div>
   </div>
-  {% endfor %}
+  {%# endfor %}
 {% else %}
   <div
     class='product-card product-card--{{ card_style }} {% if settings.img_hover != 'none' %} product-card--{{ settings.img_hover }} {% endif %} {{ class }} {% if product_card_align == 'center' %}product-card--center-alignment{% endif %}'
