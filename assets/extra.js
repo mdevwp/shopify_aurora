@@ -1,7 +1,7 @@
 setTimeout(function() {
     if (window.location.search.includes('?filter')) {
-        $('.classic-pagination__list').hide();
+        document.querySelectorAll('.classic-pagination__list').forEach(el => el.style.display = 'none');
     } else {
-        $('.classic-pagination__list').show();
+        document.querySelectorAll('.classic-pagination__list').forEach(el => el.style.display = '');
     }
 }, 500);
