@@ -346,59 +346,61 @@
 
 
         
-{% #############Pagination################### %}          
-<ul class="classic-pagination__list">
-  {%- if current_page > 1 -%}
-    <li>
-      <a href="?page={{ current_page | minus: 1 }}" class="classic-pagination__item classic-pagination__link">&lt;</a>
-    </li>
-  {%- endif -%}
-
-  {%- assign range = 2 -%}
-  {%- assign start_page = current_page | minus: range -%}
-  {%- if start_page < 1 -%}
-    {%- assign start_page = 1 -%}
-  {%- endif -%}
-
-  {%- assign end_page = current_page | plus: range -%}
-  {%- if end_page > total_pages -%}
-    {%- assign end_page = total_pages -%}
-  {%- endif -%}
-
-  {%- if start_page > 1 -%}
-    <li>
-      <a href="?page=1" class="classic-pagination__item classic-pagination__link">1</a>
-    </li>
-    {%- if start_page > 2 -%}
-      <li><span class="classic-pagination__item">...</span></li>
+{% #############Pagination################### %} 
+{% if total_pages > 1 %}
+  <ul class="classic-pagination__list">
+    {%- if current_page > 1 -%}
+      <li>
+        <a href="?page={{ current_page | minus: 1 }}" class="classic-pagination__item classic-pagination__link">&lt;</a>
+      </li>
     {%- endif -%}
-  {%- endif -%}
-
-  {%- for page in (start_page..end_page) -%}
-    <li>
-      {%- if page == current_page -%}
-        <span class="classic-pagination__item classic-pagination__link active">{{ page }}</span>
-      {%- else -%}
-        <a href="?page={{ page }}" class="classic-pagination__item classic-pagination__link">{{ page }}</a>
+  
+    {%- assign range = 2 -%}
+    {%- assign start_page = current_page | minus: range -%}
+    {%- if start_page < 1 -%}
+      {%- assign start_page = 1 -%}
+    {%- endif -%}
+  
+    {%- assign end_page = current_page | plus: range -%}
+    {%- if end_page > total_pages -%}
+      {%- assign end_page = total_pages -%}
+    {%- endif -%}
+  
+    {%- if start_page > 1 -%}
+      <li>
+        <a href="?page=1" class="classic-pagination__item classic-pagination__link">1</a>
+      </li>
+      {%- if start_page > 2 -%}
+        <li><span class="classic-pagination__item">...</span></li>
       {%- endif -%}
-    </li>
-  {%- endfor -%}
-
-  {%- if end_page < total_pages -%}
-    {%- if end_page < last_page_minus_one -%}
-      <li><span class="classic-pagination__item">...</span></li>
     {%- endif -%}
-    <li>
-      <a href="?page={{ total_pages }}" class="classic-pagination__item classic-pagination__link">{{ total_pages }}</a>
-    </li>
-  {%- endif -%}
-
-  {%- if current_page < total_pages -%}
-    <li>
-      <a href="?page={{ current_page | plus: 1 }}" class="classic-pagination__item classic-pagination__link">&gt;</a>
-    </li>
-  {%- endif -%}
-</ul>
+  
+    {%- for page in (start_page..end_page) -%}
+      <li>
+        {%- if page == current_page -%}
+          <span class="classic-pagination__item classic-pagination__link active">{{ page }}</span>
+        {%- else -%}
+          <a href="?page={{ page }}" class="classic-pagination__item classic-pagination__link">{{ page }}</a>
+        {%- endif -%}
+      </li>
+    {%- endfor -%}
+  
+    {%- if end_page < total_pages -%}
+      {%- if end_page < last_page_minus_one -%}
+        <li><span class="classic-pagination__item">...</span></li>
+      {%- endif -%}
+      <li>
+        <a href="?page={{ total_pages }}" class="classic-pagination__item classic-pagination__link">{{ total_pages }}</a>
+      </li>
+    {%- endif -%}
+  
+    {%- if current_page < total_pages -%}
+      <li>
+        <a href="?page={{ current_page | plus: 1 }}" class="classic-pagination__item classic-pagination__link">&gt;</a>
+      </li>
+    {%- endif -%}
+  </ul>
+ {%- endif -%}
 {% #################################### %}
         
 <script>
