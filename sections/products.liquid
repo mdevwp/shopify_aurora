@@ -249,7 +249,9 @@
           assign last_page_minus_one = total_pages | minus: 1
         -%}
 
-    {{ collection.products.size }}    
+         {%- for product in collection.products -%} 
+            {{ product.variants.size }}    
+         {%- endfor -%}
 
         {%- paginate collection.products by product_per_page -%}
           {%- if collection.products.size > 0 -%}
