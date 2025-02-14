@@ -201,3 +201,6 @@ ul.classic-pagination__list {
 pagination-component.classic-pagination.shop__classic-pagination {
     display: none;
 }
+.collection-hero__title.h2 {
+  white-space: nowrap;
+}
