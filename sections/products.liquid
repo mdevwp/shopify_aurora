@@ -305,7 +305,7 @@
                       {% assign variant_index = variant_index | plus: 1 %}
       
                       {% if variant_index > start_index and variant_index <= end_index %}
-                        
+                        {{ variant | json }}
                     {%
                       render 'product-card-variant',
                       with_bottom_spacing: true,
