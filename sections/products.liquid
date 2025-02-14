@@ -239,15 +239,14 @@
         {% if handles contains handle %}
           {% assign product_per_page = 10 %}
         {% endif %}
-        {% if handle == 'blaue-ohrringe' or handle == 'blaue-ohrringe' or handle == 'ketten-sind-hypoallergen' %}
-          {% assign product_per_page = 3 %}
-        {% endif %}    
         {% if handle == 'braune-ohrringe' or handle == 'rosa-ohrringe' or handle == 'weisse-ohrringe' %}
           {% assign product_per_page = 4 %}
         {% endif %}
+        {% if handle == 'blaue-ohrringe' or handle == 'blaue-ohrringe' or handle == 'ketten-sind-hypoallergen' %}
+          {% assign product_per_page = 3 %}
+        {% endif %}    
 
-        
- 
+{{ product_per_page }}
         
         {%- liquid
           capture content_for_query_string
