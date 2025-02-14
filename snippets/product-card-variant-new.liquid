@@ -92,13 +92,13 @@
 
   {% assign custom_index = 0 %}
 
-
+   {{ product | json }}
   {% assign single_variant = product %}
   {% assign single_variant_array = "" | split: "" %}
   {% assign single_variant_array = single_variant_array | concat: single_variant %}
   {% for variant in single_variant_array %}
 
-   {{ variant | json }}
+
     {%# assign variant = product %}
     
     {%# {{ custom_index }} %} 
