@@ -251,7 +251,7 @@
             assign current_page = 1
           endif
         
-          assign total_pages = collection.products.size | divided_by: product_per_page
+          assign total_pages = collection.products.size | divided_by: product_per_page | ceil
           assign last_page_minus_one = total_pages | minus: 1
         -%}
 {% ##################### %}
