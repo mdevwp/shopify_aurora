@@ -266,29 +266,30 @@
         -%}
 {% ##################### %}
 
-        {%- paginate collection.products by product_per_page -%}
-          {%- if collection.products.size > 0 -%}
-            <div class='shop__products-grid-wrap'>
-              <div class='shop__products-grid' id='ShopProductsGrid'> 
-                
-                {% assign filter_metal = '' %}
-                {% assign metals = "Gold, Roségold, Silber" | split: ", " %} 
-                {% for metal in metals %}
-                  {% if collection.title contains metal %}
-                    {% assign filter_metal = metal %}
-                  {% endif %}
-                {% endfor %}
+{%- liquid
+  assign variant_limit = 40
 
-                {% assign colors = "Weiß:weiß, Gelb:gelb, Blau:blau, Orang:safrangelb, Rosa:rosa, Schwarz:schwarz, Grün:grün, Lila:lavend, Violet:lavend, Rote:rot, Braun:braun, Beige:sandbraun, Graue:grau" | split: ", " %}
-                {% for color in colors %}
-                  {% assign parts = color | split: ":" %}
-                  {% if collection.title contains parts[0] %}
-                    {% assign filter_color = parts[1]  %}
-                  {% endif %}
-                {% endfor %}
+  capture content_for_query_string
+    echo content_for_header
+  endcapture
 
-                
-                {%- for product in collection.products -%} 
+  assign current_page = content_for_query_string | split: '"page":"' | last | split: '"' | first | plus: 0
+  if current_page < 1
+    assign current_page = 1
+  endif
+
+  assign start_index = variant_limit | times: current_page | minus: variant_limit
+  assign end_index = start_index | plus: variant_limit
+  assign variant_index = 0
+-%}
+
+{% assign displayed_variants = 0 %}
+  
+{% for product in collection.products %}
+  {% for variant in product.variants %}
+    {% assign variant_index = variant_index | plus: 1 %}
+
+    {% if variant_index > start_index and variant_index <= end_index %}
                     {%
                       render 'product-card-variant-new',
                       with_bottom_spacing: true,
@@ -302,43 +303,37 @@
                       primary_custom_colors_and_patterns: primary_custom_colors_and_patterns,
                       section_background_color: section_background_color
                     %}
-                {%- endfor -%}
-              </div>
-              {% render 'loading-overlay', class: 'shop__loading-overlay', id: 'ShopProductsOverlay' %}
-            </div>
-          {%- else -%}
-            {%- if active_filter_count > 0 -%}
-              <div class='shop__products-stub'>
-                <span>{{ 'shop.store_front.text_for_no_results_found_in_stub' | t }}</span>
-                <span>
-                  {{- 'shop.store_front.text_for_use_another_filters' | t }}
-                  <filter-remove-btn class='shop__filters-reset' data-url='{{ collection.url }}'>
-                    {{- 'shop.store_front.text_for_clear_all_in_stub' | t -}}
-                  </filter-remove-btn></span
-                >
-                {% render 'loading-overlay', class: 'shop__loading-overlay', id: 'ShopProductsOverlay' %}
-              </div>
-            {%- else -%}
-              <div class='shop__products-stub'>
-                <span>{{ 'shop.store_front.text_for_change_query' | t }}</span>
-                {% render 'loading-overlay', class: 'shop__loading-overlay', id: 'ShopProductsOverlay' %}
-              </div>
-            {%- endif -%}
-          {%- endif -%}
- 
-          {%- liquid
-            if paginate.pages > 1
-              case pagination_type
-                when 'load-button-pagination'
-                  render 'load-button-pagination', class: 'shop__load-button-pagination', paginate: paginate, target: 'shop__grid-item', container_id: 'ShopProductsGrid', all_count: collection.products_count, current_size: paginate.page_size
-                when 'classic-pagination'
-                  render 'classic-pagination', class: 'shop__classic-pagination', paginate: paginate, overlay_id: 'ShopProductsOverlay', container_id: 'ShopProductsGrid'
-                when 'infinite-scroll'
-                  render 'infinite-scroll-pagination', class: '', paginate: paginate, target: 'shop__grid-item', container_id: 'ShopProductsGrid'
-              endcase
-            endif
-          -%}
-        {%- endpaginate -%}
+              {% assign displayed_variants = displayed_variants | plus: 1 %}
+    {% endif %}
+
+    {% if displayed_variants >= variant_limit %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+
+<div class="pagination">
+  {% if current_page > 1 %}
+    <a href="?page={{ current_page | minus: 1 }}" class="classic-pagination__item classic-pagination__link"><</a>
+  {% endif %}
+
+  {% assign total_pages = variant_index | divided_by: variant_limit | ceil %}
+  
+  {% for i in (1..total_pages) %}
+    {% if i == current_page %}
+      <span class="classic-pagination__item classic-pagination__link active">{{ i }}</span>
+    {% else %}
+      <a href="?page={{ i }}" class="classic-pagination__item classic-pagination__link">{{ i }}</a>
+    {% endif %}
+  {% endfor %}
+
+  {% if current_page < total_pages %}
+    <a href="?page={{ current_page | plus: 1 }}" class="classic-pagination__item classic-pagination__link">></a>
+  {% endif %}
+</div>
+
+
+      
       </div>
     </div>
   </div>
