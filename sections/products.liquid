@@ -250,7 +250,9 @@
         -%}
 
        
-            {{ collection.title | json }}    
+        {% if collection.title == 'Lila Ohrringe' %}
+          {% assign product_per_page = 4 %}
+        {% endif %}
      
 
         {%- paginate collection.products by product_per_page -%}
