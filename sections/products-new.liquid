@@ -271,18 +271,21 @@
   endif
 
   assign start_index = variant_limit | times: current_page | minus: variant_limit
-  assign end_index = start_index | plus: variant_limit
-  assign variant_index = 0
+  assign end_index = start_index | plus: variant_limit | minus: 1
+
+  assign productList = '' | split: ''
+
+  for product in collection.products
+    assign productList = productList | concat: product.variants
+  endfor
 -%}
 
 {% assign displayed_variants = 0 %}
- <div class='shop__products-grid-wrap'>
-              <div class='shop__products-grid' id='ShopProductsGrid'>   
-{% for product in collection.products %}
-  {% for variant in product.variants %}
-    {% assign variant_index = variant_index | plus: 1 %}
-
-        {% if variant_index > start_index and variant_index <= end_index %}
+<div class='shop__products-grid-wrap'>
+  <div class='shop__products-grid' id='ShopProductsGrid'>   
+    {% for i in (start_index..end_index) %}
+      {% if productList[i] %}
+        {% assign variant = productList[i] %}
               {%
                 render 'product-card-variant-new',
                 with_bottom_spacing: true,
@@ -295,14 +298,9 @@
                 primary_custom_colors_and_patterns: primary_custom_colors_and_patterns,
                 section_background_color: section_background_color
               %}
-              {% assign displayed_variants = displayed_variants | plus: 1 %}
-        {% endif %}
+            {% endif %}
+    {% endfor %}
 
-    {% if displayed_variants >= variant_limit %}
-      {% break %}
-    {% endif %}
-  {% endfor %}
-{% endfor %}
 
 
       
