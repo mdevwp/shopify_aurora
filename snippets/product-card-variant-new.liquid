@@ -100,24 +100,7 @@
     {%# assign variant = product %}
     
     {%# {{ custom_index }} %} 
-    {% if filter_metal != blank and variant.options[0] != blank and variant.options[0] != filter_metal %}      
-        {% continue %}
-
-    {% endif %}
-    
-    {% if filter_color != blank and variant.options[0] != blank %}
-    {% assign option_0 = variant.options[0] | downcase %}
-    {% assign option_1 = variant.options[1] | downcase %}
-    {% unless option_0 contains filter_color or option_1 contains filter_color %}
-      {% continue %}
-      
-    {% endunless %}
-    {% endif %}
-
-    {% assign custom_index = custom_index | plus: 1 %}
-    {% if custom_index > 23 %}
-        {%# break %}
-    {% endif %}   
+   
 
     {% liquid
       assign price = variant.price | default: 0
