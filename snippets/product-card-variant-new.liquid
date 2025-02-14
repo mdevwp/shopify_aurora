@@ -91,10 +91,12 @@
 {% if product.id != blank %}
 
   {% assign custom_index = 0 %}
-       
+
+   {{  product | json }}
+  
   {% for variant in product %}
 
-     {{  variant | json }}
+    
     {%# assign variant = product %}
     
     {%# {{ custom_index }} %} 
