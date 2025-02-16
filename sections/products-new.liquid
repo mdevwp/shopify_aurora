@@ -235,25 +235,9 @@
 {% ##################### %}  
         
         
-   {%- liquid
+  {%- liquid
   assign variant_limit = 40
-
-  capture content_for_query_string
-    echo content_for_header
-  endcapture
-
-  assign current_page = content_for_query_string | split: '"page":"' | last | split: '"' | first | plus: 0
-  if current_page < 1
-    assign current_page = 1
-  endif
-
-  assign productList = '' | split: ''
-
-  for product in collection.products
-    assign productList = productList | concat: product.variants
-  endfor
-
-  assign total_pages = productList.size | divided_by: variant_limit | ceil
+  assign current_page = request.query.page | default: 1 | plus: 0
   assign start_index = variant_limit | times: current_page | minus: variant_limit
   assign end_index = start_index | plus: variant_limit
   assign variant_index = 0
