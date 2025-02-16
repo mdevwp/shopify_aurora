@@ -233,37 +233,41 @@
       <div class='shop__products' id='ShopProducts'>
         
 {% ##################### %}  
-        
-        
-  {%- liquid
+{%- liquid
   assign variant_limit = 40
-  assign all_variants = '' | split: ''
+  assign all_variants = ''
 
   for product in collection.products
     for variant in product.variants
-     assign all_variants = all_variants | concat: variant
+      capture all_variants
+        echo all_variants | append: product.id | append: '|' | append: variant.id | append: ','
+      endcapture
     endfor
   endfor
+
+  assign all_variants = all_variants | split: ','
 
   assign total_variants = all_variants.size
   assign total_pages = total_variants | divided_by: variant_limit | ceil
   assign current_page = request.query.page | default: 1 | plus: 0
   assign start_index = variant_limit | times: current_page | minus: variant_limit
   assign end_index = start_index | plus: variant_limit
+
+  assign displayed_variants = all_variants | slice: start_index, variant_limit
 -%}
 
-        Всего продуктов: {{ collection.products.size }} <br>
-Всего вариаций: {{ all_variants.size }} <br>
+<div class='shop__products-grid-wrap'>
+  <div class='shop__products-grid' id='ShopProductsGrid'>   
+    {% for variant_info in displayed_variants %}
+      {%- liquid
+        assign parts = variant_info | split: '|'
+        assign product_id = parts[0] | plus: 0
+        assign variant_id = parts[1] | plus: 0
+        assign product = all_products[product_id]
+      -%}
 
-{% for variant in all_variants %}
-  {{ variant.title }} <br>
-{% endfor %}
-        
-<div class='shop__products-grid'>
-  {% for variant_index in (start_index..end_index) %}
-    {% assign variant = all_variants[variant_index] %}
-    {% if variant %}
-              {%
+      {% for variant in product.variants %}
+        {% if variant.id == variant_id %}
                 render 'product-card-variant-new',
                 with_bottom_spacing: true,
                 product: variant.product,
@@ -275,31 +279,69 @@
                 primary_custom_colors_and_patterns: primary_custom_colors_and_patterns,
                 section_background_color: section_background_color
               %}
-           {% endif %}
-  {% endfor %}
+          {% endif %}
+      {% endfor %}
+    {% endfor %}
+  </div>
 </div>
 
+{% ################### Пагинация ################### %} 
 {% if total_pages > 1 %}
   <ul class="classic-pagination__list">
-    {% if current_page > 1 %}
-      <li><a href="?page={{ current_page | minus: 1 }}">&lt;</a></li>
-    {% endif %}
-
-    {% for page in (1..total_pages) %}
+    {%- if current_page > 1 -%}
       <li>
-        {% if page == current_page %}
-          <span class="active">{{ page }}</span>
-        {% else %}
-          <a href="?page={{ page }}">{{ page }}</a>
-        {% endif %}
+        <a href="?page={{ current_page | minus: 1 }}" class="classic-pagination__item classic-pagination__link">&lt;</a>
       </li>
-    {% endfor %}
-
-    {% if current_page < total_pages %}
-      <li><a href="?page={{ current_page | plus: 1 }}">&gt;</a></li>
-    {% endif %}
+    {%- endif -%}
+  
+    {%- assign range = 2 -%}
+    {%- assign start_page = current_page | minus: range -%}
+    {%- if start_page < 1 -%}
+      {%- assign start_page = 1 -%}
+    {%- endif -%}
+  
+    {%- assign end_page = current_page | plus: range -%}
+    {%- if end_page > total_pages -%}
+      {%- assign end_page = total_pages -%}
+    {%- endif -%}
+  
+    {%- if start_page > 1 -%}
+      <li>
+        <a href="?page=1" class="classic-pagination__item classic-pagination__link">1</a>
+      </li>
+      {%- if start_page > 2 -%}
+        <li><span class="classic-pagination__item">...</span></li>
+      {%- endif -%}
+    {%- endif -%}
+  
+    {%- for page in (start_page..end_page) -%}
+      <li>
+        {%- if page == current_page -%}
+          <span class="classic-pagination__item classic-pagination__link active">{{ page }}</span>
+        {%- else -%}
+          <a href="?page={{ page }}" class="classic-pagination__item classic-pagination__link">{{ page }}</a>
+        {%- endif -%}
+      </li>
+    {%- endfor -%}
+  
+    {%- if end_page < total_pages -%}
+      {%- assign last_page_minus_one = total_pages | minus: 1 -%}
+        {%- if end_page < last_page_minus_one -%}
+        <li><span class="classic-pagination__item">...</span></li>
+      {%- endif -%}
+      <li>
+        <a href="?page={{ total_pages }}" class="classic-pagination__item classic-pagination__link">{{ total_pages }}</a>
+      </li>
+    {%- endif -%}
+  
+    {%- if current_page < total_pages -%}
+      <li>
+        <a href="?page={{ current_page | plus: 1 }}" class="classic-pagination__item classic-pagination__link">&gt;</a>
+      </li>
+    {%- endif -%}
   </ul>
 {% endif %}
+        
 {% #################################### %}
         
 <script>
