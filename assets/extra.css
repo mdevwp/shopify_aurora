@@ -198,9 +198,10 @@ ul.classic-pagination__list {
     display: flex;
     justify-content: center;
 }
+/*
 pagination-component.classic-pagination.shop__classic-pagination {
     display: none;
-}
+}*/
 .seite {
   white-space: nowrap!important;
   text-transform: none!important;
