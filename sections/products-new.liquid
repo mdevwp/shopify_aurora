@@ -232,20 +232,23 @@
       {%- endif -%}
       <div class='shop__products' id='ShopProducts'>
         
+{% ##################### %}  
+        
+{%- liquid
+          
+      assign productList = '' | split: ''
 
+      for product in collection.products
+      assign productList = productList | concat: product.variants 
+     endfor 
+  
+      assign total_pages = productList.size | divided_by: 40 | ceil
+      assign last_page_minus_one = total_pages | minus: 1
+-%}
 {% ##################### %}
 
 {%- liquid
   assign variant_limit = 40
-
-  capture content_for_query_string
-    echo content_for_header
-  endcapture
-
-  assign current_page = content_for_query_string | split: '"page":"' | last | split: '"' | first | plus: 0
-  if current_page < 1
-    assign current_page = 1
-  endif
 
   assign start_index = variant_limit | times: current_page | minus: variant_limit
   assign end_index = start_index | plus: variant_limit | minus: 1
