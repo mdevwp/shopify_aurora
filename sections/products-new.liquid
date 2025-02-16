@@ -261,9 +261,11 @@
 
 <div class='shop__products-grid-wrap'>
   <div class='shop__products-grid' id='ShopProductsGrid'>
-    {%- for variant in productList -%}
-      {%- assign variant_index = variant_index | plus: 1 -%}
-      {%- if variant_index > start_index and variant_index <= end_index -%}
+    {% for product in collection.products %}
+  {% for variant in product.variants %}
+    {% assign variant_index = variant_index | plus: 1 %}
+
+    {% if variant_index > start_index and variant_index <= end_index %}
               {%
                 render 'product-card-variant-new',
                 with_bottom_spacing: true,
@@ -277,6 +279,7 @@
                 section_background_color: section_background_color
               %}
              {%- endif -%}
+     {%- endfor -%}
     {%- endfor -%}
   </div>
 </div>
