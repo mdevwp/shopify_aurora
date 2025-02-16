@@ -252,6 +252,13 @@
   assign end_index = start_index | plus: variant_limit
 -%}
 
+        Всего продуктов: {{ collection.products.size }} <br>
+Всего вариаций: {{ all_variants.size }} <br>
+
+{% for variant in all_variants %}
+  {{ variant.title }} <br>
+{% endfor %}
+        
 <div class='shop__products-grid'>
   {% for variant_index in (start_index..end_index) %}
     {% assign variant = all_variants[variant_index] %}
