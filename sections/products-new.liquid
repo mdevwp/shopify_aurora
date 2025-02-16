@@ -233,41 +233,58 @@
       <div class='shop__products' id='ShopProducts'>
         
 {% ##################### %}  
+        
+        
+        {%- liquid
+          capture content_for_query_string
+            echo content_for_header
+          endcapture
+          assign getfullurl = content_for_query_string | split: '"pageurl":"' | last | split: '"' | first | replace: '\/', '/' | replace: '\u0026', '&'
+        
+          assign page_param = getfullurl | split: '?page=' | last | split: '&' | first
+          assign current_page = page_param | plus: 0
+          if current_page == 0
+            assign current_page = 1
+          endif
+        
+          assign productList = '' | split: ''
+
+          for product in collection.products
+          assign productList = productList | concat: product.variants 
+         endfor 
+      
+          assign total_pages = productList.size | divided_by: 40 | ceil
+          assign last_page_minus_one = total_pages | minus: 1
+        -%}
+{% ##################### %}
+
 {%- liquid
   assign variant_limit = 40
-  assign all_variants = ''
 
-  for product in collection.products
-    for variant in product.variants
-      capture all_variants
-        echo all_variants | append: product.id | append: '|' | append: variant.id | append: ','
-      endcapture
-    endfor
-  endfor
+  capture content_for_query_string
+    echo content_for_header
+  endcapture
 
-  assign all_variants = all_variants | split: ','
+  assign current_page = content_for_query_string | split: '"page":"' | last | split: '"' | first | plus: 0
+  if current_page < 1
+    assign current_page = 1
+  endif
 
-  assign total_variants = all_variants.size
-  assign total_pages = total_variants | divided_by: variant_limit | ceil
-  assign current_page = request.query.page | default: 1 | plus: 0
   assign start_index = variant_limit | times: current_page | minus: variant_limit
-  assign end_index = start_index | plus: variant_limit
+  assign end_index = start_index | plus: variant_limit | minus: 1
 
-  assign displayed_variants = all_variants | slice: start_index, variant_limit
+  assign variant_index = 0
 -%}
 
+{% assign displayed_variants = 0 %}
 <div class='shop__products-grid-wrap'>
   <div class='shop__products-grid' id='ShopProductsGrid'>   
-    {% for variant_info in displayed_variants %}
-      {%- liquid
-        assign parts = variant_info | split: '|'
-        assign product_id = parts[0] | plus: 0
-        assign variant_id = parts[1] | plus: 0
-        assign product = all_products[product_id]
-      -%}
-
+    {% for product in collection.products %}
       {% for variant in product.variants %}
-        {% if variant.id == variant_id %}
+        {% assign variant_index = variant_index | plus: 1 %}
+
+        {% if variant_index > start_index and variant_index <= end_index %}
+              {%
                 render 'product-card-variant-new',
                 with_bottom_spacing: true,
                 product: product,
@@ -279,13 +296,25 @@
                 primary_custom_colors_and_patterns: primary_custom_colors_and_patterns,
                 section_background_color: section_background_color
               %}
-          {% endif %}
-      {% endfor %}
-    {% endfor %}
-  </div>
-</div>
+              {% assign displayed_variants = displayed_variants | plus: 1 %}
+        {% endif %}
 
-{% ################### Пагинация ################### %} 
+    {% if displayed_variants >= variant_limit %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+
+
+      
+    
+    </div>
+  </div>
+</shop-component>
+
+
+        
+{% #############Pagination################### %} 
 {% if total_pages > 1 %}
   <ul class="classic-pagination__list">
     {%- if current_page > 1 -%}
@@ -325,8 +354,7 @@
     {%- endfor -%}
   
     {%- if end_page < total_pages -%}
-      {%- assign last_page_minus_one = total_pages | minus: 1 -%}
-        {%- if end_page < last_page_minus_one -%}
+      {%- if end_page < last_page_minus_one -%}
         <li><span class="classic-pagination__item">...</span></li>
       {%- endif -%}
       <li>
@@ -340,8 +368,7 @@
       </li>
     {%- endif -%}
   </ul>
-{% endif %}
-        
+ {%- endif -%}
 {% #################################### %}
         
 <script>
