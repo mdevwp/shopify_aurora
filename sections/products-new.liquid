@@ -235,30 +235,7 @@
 {% ##################### %}  
         
         
-        {%- liquid
-          capture content_for_query_string
-            echo content_for_header
-          endcapture
-          assign getfullurl = content_for_query_string | split: '"pageurl":"' | last | split: '"' | first | replace: '\/', '/' | replace: '\u0026', '&'
-        
-          assign page_param = getfullurl | split: '?page=' | last | split: '&' | first
-          assign current_page = page_param | plus: 0
-          if current_page == 0
-            assign current_page = 1
-          endif
-        
-          assign productList = '' | split: ''
-
-          for product in collection.products
-          assign productList = productList | concat: product.variants 
-         endfor 
-      
-          assign total_pages = productList.size | divided_by: 40 | ceil
-          assign last_page_minus_one = total_pages | minus: 1
-        -%}
-{% ##################### %}
-
-{%- liquid
+   {%- liquid
   assign variant_limit = 40
 
   capture content_for_query_string
@@ -270,20 +247,23 @@
     assign current_page = 1
   endif
 
-  assign start_index = variant_limit | times: current_page | minus: variant_limit
-  assign end_index = start_index | plus: variant_limit | minus: 1
+  assign productList = '' | split: ''
 
+  for product in collection.products
+    assign productList = productList | concat: product.variants
+  endfor
+
+  assign total_pages = productList.size | divided_by: variant_limit | ceil
+  assign start_index = variant_limit | times: current_page | minus: variant_limit
+  assign end_index = start_index | plus: variant_limit
   assign variant_index = 0
 -%}
 
-{% assign displayed_variants = 0 %}
 <div class='shop__products-grid-wrap'>
-  <div class='shop__products-grid' id='ShopProductsGrid'>   
-    {% for product in collection.products %}
-      {% for variant in product.variants %}
-        {% assign variant_index = variant_index | plus: 1 %}
-
-        {% if variant_index > start_index and variant_index <= end_index %}
+  <div class='shop__products-grid' id='ShopProductsGrid'>
+    {%- for variant in productList -%}
+      {%- assign variant_index = variant_index | plus: 1 -%}
+      {%- if variant_index > start_index and variant_index <= end_index -%}
               {%
                 render 'product-card-variant-new',
                 with_bottom_spacing: true,
@@ -296,16 +276,11 @@
                 primary_custom_colors_and_patterns: primary_custom_colors_and_patterns,
                 section_background_color: section_background_color
               %}
-            {% endif %}
-      {% endfor %}
-    {% endfor %}
+             {%- endif -%}
+    {%- endfor -%}
   </div>
 </div>
-</shop-component>
 
-
-        
-{% #############Pagination################### %} 
 {% if total_pages > 1 %}
   <ul class="classic-pagination__list">
     {%- if current_page > 1 -%}
@@ -313,18 +288,18 @@
         <a href="?page={{ current_page | minus: 1 }}" class="classic-pagination__item classic-pagination__link">&lt;</a>
       </li>
     {%- endif -%}
-  
+
     {%- assign range = 2 -%}
     {%- assign start_page = current_page | minus: range -%}
     {%- if start_page < 1 -%}
       {%- assign start_page = 1 -%}
     {%- endif -%}
-  
+
     {%- assign end_page = current_page | plus: range -%}
     {%- if end_page > total_pages -%}
       {%- assign end_page = total_pages -%}
     {%- endif -%}
-  
+
     {%- if start_page > 1 -%}
       <li>
         <a href="?page=1" class="classic-pagination__item classic-pagination__link">1</a>
@@ -333,7 +308,7 @@
         <li><span class="classic-pagination__item">...</span></li>
       {%- endif -%}
     {%- endif -%}
-  
+
     {%- for page in (start_page..end_page) -%}
       <li>
         {%- if page == current_page -%}
@@ -343,23 +318,24 @@
         {%- endif -%}
       </li>
     {%- endfor -%}
-  
+
     {%- if end_page < total_pages -%}
-      {%- if end_page < last_page_minus_one -%}
+      {% assign last_page_minus_one = total_pages | minus: 1 %}
+      {% if end_page < last_page_minus_one  %}
         <li><span class="classic-pagination__item">...</span></li>
       {%- endif -%}
       <li>
         <a href="?page={{ total_pages }}" class="classic-pagination__item classic-pagination__link">{{ total_pages }}</a>
       </li>
     {%- endif -%}
-  
+
     {%- if current_page < total_pages -%}
       <li>
         <a href="?page={{ current_page | plus: 1 }}" class="classic-pagination__item classic-pagination__link">&gt;</a>
       </li>
     {%- endif -%}
   </ul>
- {%- endif -%}
+{% endif %}
 {% #################################### %}
         
 <script>
