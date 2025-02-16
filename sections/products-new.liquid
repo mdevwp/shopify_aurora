@@ -241,6 +241,18 @@
   assign start_index = variant_limit | times: current_page | minus: variant_limit
   assign end_index = start_index | plus: variant_limit
   assign variant_index = 0
+
+
+  assign productList = '' | split: ''
+
+  for product in collection.products
+    assign productList = productList | concat: product.variants
+  endfor
+
+  assign total_pages = productList.size | divided_by: variant_limit | ceil
+  assign start_index = variant_limit | times: current_page | minus: variant_limit
+  assign end_index = start_index | plus: variant_limit
+  assign variant_index = 0
 -%}
 
 <div class='shop__products-grid-wrap'>
