@@ -241,7 +241,7 @@
 
   for product in collection.products
     for variant in product.variants
-      assign all_variants = all_variants | push: variant
+     assign all_variants = all_variants | concat: variant
     endfor
   endfor
 
@@ -251,11 +251,6 @@
   assign start_index = variant_limit | times: current_page | minus: variant_limit
   assign end_index = start_index | plus: variant_limit
 -%}
-
-{% comment %}Отладочный вывод{% endcomment %}
-{% for variant in all_variants %}
-  {{ variant.title }} <br>
-{% endfor %}
 
 <div class='shop__products-grid'>
   {% for variant_index in (start_index..end_index) %}
