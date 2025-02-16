@@ -234,6 +234,30 @@
         
 {% ##################### %}  
         
+        
+        {%- liquid
+          capture content_for_query_string
+            echo content_for_header
+          endcapture
+          assign getfullurl = content_for_query_string | split: '"pageurl":"' | last | split: '"' | first | replace: '\/', '/' | replace: '\u0026', '&'
+        
+          assign page_param = getfullurl | split: '?page=' | last | split: '&' | first
+          assign current_page = page_param | plus: 0
+          if current_page == 0
+            assign current_page = 1
+          endif
+        
+          assign productList = '' | split: ''
+
+          for product in collection.products
+          assign productList = productList | concat: product.variants 
+         endfor 
+      
+          assign total_pages = productList.size | divided_by: 40 | ceil
+          assign last_page_minus_one = total_pages | minus: 1
+        -%}
+{% ##################### %}
+
 {%- liquid
   assign variant_limit = 40
 
@@ -247,21 +271,18 @@
   endif
 
   assign start_index = variant_limit | times: current_page | minus: variant_limit
-  assign end_index = start_index | plus: variant_limit | minus: 1
-
-  assign productList = '' | split: ''
-
-  for product in collection.products
-    assign productList = productList | concat: product.variants
-  endfor
+  assign end_index = start_index | plus: variant_limit
+  assign variant_index = 0
 -%}
 
 {% assign displayed_variants = 0 %}
-<div class='shop__products-grid-wrap'>
-  <div class='shop__products-grid' id='ShopProductsGrid'>   
-    {% for i in (start_index..end_index) %}
-      {% if productList[i] %}
-        {% assign variant = productList[i] %}
+ <div class='shop__products-grid-wrap'>
+              <div class='shop__products-grid' id='ShopProductsGrid'>   
+{% for product in collection.products %}
+  {% for variant in product.variants %}
+    {% assign variant_index = variant_index | plus: 1 %}
+
+        {% if variant_index > start_index and variant_index <= end_index %}
               {%
                 render 'product-card-variant-new',
                 with_bottom_spacing: true,
@@ -274,10 +295,20 @@
                 primary_custom_colors_and_patterns: primary_custom_colors_and_patterns,
                 section_background_color: section_background_color
               %}
-             {% endif %}
-    {% endfor %}
+              {% assign displayed_variants = displayed_variants | plus: 1 %}
+        {% endif %}
+
+    {% if displayed_variants >= variant_limit %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+
+
+      
+    
+    </div>
   </div>
-</div>
 </shop-component>
 
 
