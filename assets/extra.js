@@ -17,11 +17,3 @@ setTimeout(function(){
 },1000);
 
 
-document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll(".classic-pagination__link").forEach(function (link) {
-    link.addEventListener("click", function (e) {
-      e.preventDefault();
-      window.location.href = this.getAttribute("href");
-    });
-  });
-});
