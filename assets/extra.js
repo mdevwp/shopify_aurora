@@ -1,3 +1,4 @@
+/*
 function togglePagination() {
     if (window.location.search.includes('?filter')) {
         document.querySelectorAll('.classic-pagination__list').forEach(el => el.style.display = 'none');
@@ -15,5 +16,5 @@ setTimeout(function(){
       } 
   });
 },1000);
-
+*/
 
