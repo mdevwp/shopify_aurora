@@ -255,45 +255,39 @@
   assign variant_index = 0
 -%}
 
-{% assign displayed_variants = 0 %}
-<div class='shop__products-grid-wrap'>
-  <div class='shop__products-grid' id='ShopProductsGrid'>   
-    {% for product in collection.products %}
-      {% for variant in product.variants %}
-        {% assign variant_index = variant_index | plus: 1 %}
-
-        {% if variant_index > start_index and variant_index <= end_index %}
-              {%
-                render 'product-card-variant-new',
-                with_bottom_spacing: true,
-                product: product,
-                variant: variant,
-                img_ratio: img_ratio,
-                show_mobile_carousel: true,
-                product_card_align: product_card_align,
-                add_side_paddings: add_side_paddings,
-                primary_custom_colors_and_patterns: primary_custom_colors_and_patterns,
-                section_background_color: section_background_color
-              %}
-              {% assign displayed_variants = displayed_variants | plus: 1 %}
-        {% endif %}
-
-    {% if displayed_variants >= variant_limit %}
-      {% break %}
-    {% endif %}
-  {% endfor %}
-{% endfor %}
+      {% assign displayed_variants = 0 %}
+      <div class='shop__products-grid-wrap'>
+        <div class='shop__products-grid' id='ShopProductsGrid'>   
+          {% for product in collection.products %}
+            {% for variant in product.variants %}
+              {% assign variant_index = variant_index | plus: 1 %}
+      
+              {% if variant_index > start_index and variant_index <= end_index %}
+                    {%
+                      render 'product-card-variant-new',
+                      with_bottom_spacing: true,
+                      product: product,
+                      variant: variant,
+                      img_ratio: img_ratio,
+                      show_mobile_carousel: true,
+                      product_card_align: product_card_align,
+                      add_side_paddings: add_side_paddings,
+                      primary_custom_colors_and_patterns: primary_custom_colors_and_patterns,
+                      section_background_color: section_background_color
+                    %}
+                    {% assign displayed_variants = displayed_variants | plus: 1 %}
+              {% endif %}
+      
+          {% if displayed_variants >= variant_limit %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
 
 
       
     
     </div>
-
-  <div class="loading-overlay shop__loading-overlay hidden" id="ShopProductsOverlay">
-  <div class="loading-spinner loading-spinner "></div>
-</div>
-
-  
   </div>
 </shop-component>
 
