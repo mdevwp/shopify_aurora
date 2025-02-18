@@ -205,3 +205,6 @@ pagination-component.classic-pagination.shop__classic-pagination {
   white-space: nowrap!important;
   text-transform: none!important;
 }
+.loo-wishlist-item-title {
+    font-size: 20px;
+}
