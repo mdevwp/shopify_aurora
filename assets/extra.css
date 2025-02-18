@@ -211,3 +211,7 @@ h2.loo-popup-title {
 .loo-wishlist-item-title {
     font-size: 20px;
 }
+.coder-comparable-button.coder-comparable-button-right.coder-comparable-button-showed {
+    right: 0;
+    bottom: 150px;
+}
