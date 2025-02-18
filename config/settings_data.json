@@ -238,6 +238,11 @@
           "popup_link": "#121212",
           "popup_backdrop": "#FDF2F4"
         }
+      },
+      "5453205021265478182": {
+        "type": "shopify://apps/em-selectpro-product-compare/blocks/productCardEmbbed/3436dd65-3b03-4da5-8da8-67b622f672e6",
+        "disabled": false,
+        "settings": {}
       }
     }
   },

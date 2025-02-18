@@ -83,14 +83,20 @@
           "type": "quantity_selector",
           "settings": {}
         },
+        "em_selectpro_product_compare_section_button_dtgHWd": {
+          "type": "shopify://apps/em-selectpro-product-compare/blocks/section_button/3436dd65-3b03-4da5-8da8-67b622f672e6",
+          "settings": {
+            "product": "{{product}}"
+          }
+        },
         "basic_wishlist_buttons_FNVCby": {
           "type": "shopify://apps/basic-wishlist/blocks/buttons/1611f065-e251-4250-8609-2fa2f1877c57",
           "settings": {
             "text_color": "#121212",
             "added_text_color": "#121212",
             "text_size": 16,
-            "icon_color": "#EA3C53",
-            "added_icon_color": "#EA3C53",
+            "icon_color": "#ea3c53",
+            "added_icon_color": "#ea3c53",
             "icon_width": 20
           }
         },
@@ -140,6 +146,7 @@
         "28586830-d855-4547-8946-94914bac9e85",
         "d3d427d0-4e7d-4f81-9057-c64f65a4f183",
         "quantity_selector",
+        "em_selectpro_product_compare_section_button_dtgHWd",
         "basic_wishlist_buttons_FNVCby",
         "buy_buttons",
         "c9188b10-e29c-4c63-b385-a3faa860d64a",
