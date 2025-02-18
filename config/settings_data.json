@@ -239,14 +239,14 @@
           "popup_backdrop": "#FDF2F4"
         }
       },
-      "5453205021265478182": {
-        "type": "shopify://apps/em-selectpro-product-compare/blocks/productCardEmbbed/3436dd65-3b03-4da5-8da8-67b622f672e6",
-        "disabled": false,
-        "settings": {}
-      },
       "16917865729555786121": {
         "type": "shopify://apps/em-selectpro-product-compare/blocks/floating_sample/3436dd65-3b03-4da5-8da8-67b622f672e6",
-        "disabled": false,
+        "disabled": true,
+        "settings": {}
+      },
+      "5453205021265478182": {
+        "type": "shopify://apps/em-selectpro-product-compare/blocks/productCardEmbbed/3436dd65-3b03-4da5-8da8-67b622f672e6",
+        "disabled": true,
         "settings": {}
       }
     }
