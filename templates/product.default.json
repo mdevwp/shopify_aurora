@@ -171,29 +171,6 @@
         "section_spacing_bottom": 48
       }
     },
-    "1739907752bf502633": {
-      "type": "apps",
-      "blocks": {
-        "comparexpert_app_block_Q6D4DV": {
-          "type": "shopify://apps/comparexpert/blocks/app-block/c855b225-94ed-4209-962c-0fcdc53b09bf",
-          "settings": {
-            "title": "Top comparison",
-            "show_number": 5
-          }
-        }
-      },
-      "block_order": [
-        "comparexpert_app_block_Q6D4DV"
-      ],
-      "settings": {
-        "color_scheme": "default",
-        "container_size": "large",
-        "custom_liquid": "",
-        "add_side_paddings": true,
-        "section_spacing_top": 48,
-        "section_spacing_bottom": 48
-      }
-    },
     "product-details": {
       "type": "product-details",
       "blocks": {
@@ -411,7 +388,6 @@
   },
   "order": [
     "main",
-    "1739907752bf502633",
     "product-details",
     "1c58a53e-d2dd-4e5c-b684-b7aecf54a6be",
     "35a80c75-d4b0-4340-9552-75a9f11586de",
