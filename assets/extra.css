@@ -205,6 +205,9 @@ pagination-component.classic-pagination.shop__classic-pagination {
   white-space: nowrap!important;
   text-transform: none!important;
 }
+h2.loo-popup-title {
+    margin-bottom: 15px;
+}
 .loo-wishlist-item-title {
     font-size: 20px;
 }
