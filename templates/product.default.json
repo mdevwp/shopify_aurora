@@ -33,6 +33,7 @@
         },
         "inventory_status": {
           "type": "inventory_status",
+          "disabled": true,
           "settings": {
             "show_inventory_status": "always",
             "inventory_threshhold": 11,
@@ -42,6 +43,16 @@
             "high_level_indicator_color": "#00c853",
             "low_level_indicator_color": "#ff3d3d",
             "color_inventory_label": false
+          }
+        },
+        "custom_liquid_kQCX96": {
+          "type": "custom_liquid",
+          "settings": {
+            "style": "static",
+            "title": "",
+            "heading_size": "caption3",
+            "custom_liquid": "<span style=\"color:#52AC82; font-size: 13px;\"><i class=\"fas fa-shipping-fast\"></i> In 2-5 Tagen bei dir zu Hause\n</span>",
+            "icon": "none"
           }
         },
         "28586830-d855-4547-8946-94914bac9e85": {
@@ -125,6 +136,7 @@
         "title",
         "price",
         "inventory_status",
+        "custom_liquid_kQCX96",
         "28586830-d855-4547-8946-94914bac9e85",
         "d3d427d0-4e7d-4f81-9057-c64f65a4f183",
         "quantity_selector",
