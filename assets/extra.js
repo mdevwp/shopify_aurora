@@ -18,24 +18,25 @@ setTimeout(function(){
 },1000);
 */
 
-document.addEventListener("DOMContentLoaded", function () {
-    let container = document.querySelector(".loo-prodpage-buttons-container");
-    if (container) {
-        let variantID = document.querySelector("[name='id']")?.value;
-        if (variantID) {
-            container.setAttribute("data-product-id", variantID);
-            console.log("Wishlist product ID updated on page load:", variantID);
-        }
-    }
-
-    // Если пользователь меняет вариацию — обновляем ID снова
-    document.body.addEventListener("change", function (event) {
-        if (event.target.matches("[name='id']")) {
-            let newVariantID = event.target.value;
-            if (container) {
-                container.setAttribute("data-product-id", newVariantID);
-                console.log("Wishlist product ID updated on variant change:", newVariantID);
+(function() {
+    let originalFetch = window.fetch;
+    window.fetch = function(input, options) {
+        if (typeof input === "string" && input.includes("wishlist.oldev.net/api/a") && options && options.body) {
+            let data = JSON.parse(options.body);
+            let variantID = document.querySelector("[name='id']")?.value;
+            
+            if (variantID && data.products) {
+                let oldProductID = Object.keys(data.products)[0]; 
+                data.products = {
+                    [variantID]: {
+                        ...data.products[oldProductID], 
+                        id: variantID
+                    }
+                };
+                options.body = JSON.stringify(data);
+                console.log("Modified wishlist request:", data);
             }
         }
-    });
-});
+        return originalFetch.apply(this, arguments);
+    };
+})();
