@@ -226,7 +226,7 @@ h2.loo-popup-title {
   }
 }
 .intrada-wishlist--button svg {
-   transform: scale(2);
+   transform: scale(1.5);
 }
 .intrada-wishlist--button.intrada-wishlist--active svg path {
     fill: #f73a6d!important;
