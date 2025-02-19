@@ -225,7 +225,12 @@ h2.loo-popup-title {
       margin-top: 25px !important;
   }
 }
-
+.intrada-wishlist--button svg {
+    height: 50px;
+}
+.intrada-wishlist--button.intrada-wishlist--active svg path {
+    fill: #f73a6d;
+}
 button.intrada-wishlist--trigger-icon.intrada-wishlist--rendered {
     position: fixed;
     right: 20px;
