@@ -24,15 +24,22 @@ setTimeout(function(){
         if (typeof input === "string" && input.includes("wishlist.oldev.net/api/a") && options && options.body) {
             let data = JSON.parse(options.body);
             let variantID = document.querySelector("[name='id']")?.value;
+            let variantImage = document.querySelector(".product__media img")?.src; 
+            let currentURL = new URL(window.location.href);
             
             if (variantID && data.products) {
                 let oldProductID = Object.keys(data.products)[0]; 
+                let newURL = `${currentURL.pathname}?variant=${variantID}`;
+                
                 data.products = {
                     [variantID]: {
                         ...data.products[oldProductID], 
-                        id: variantID
+                        id: variantID,
+                        url: newURL,
+                        image: variantImage || data.products[oldProductID].image
                     }
                 };
+
                 options.body = JSON.stringify(data);
                 console.log("Modified wishlist request:", data);
             }
