@@ -215,3 +215,12 @@ h2.loo-popup-title {
     right: 0;
     bottom: 150px;
 }
+
+@media screen and (max-width: 768px) {
+  .loo-centerright {
+      top: 50%;
+      margin-top: 25px !important;
+      transform: scale(0.7);
+      right: -30px;
+  }
+}
