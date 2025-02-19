@@ -107,6 +107,10 @@
             "custom_liquid": ""
           }
         },
+        "gropulse_wishlist_gropulse_wishlist_button_zMyDjx": {
+          "type": "shopify://apps/gropulse-wishlist/blocks/gropulse-wishlist-button/d606b448-832c-4b0a-adbb-21c7fa132df1",
+          "settings": {}
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -156,6 +160,7 @@
         "em_selectpro_product_compare_section_button_dtgHWd",
         "basic_wishlist_buttons_FNVCby",
         "swishlist_simple_wishlist_wishlist_product_button_rDX49y",
+        "gropulse_wishlist_gropulse_wishlist_button_zMyDjx",
         "buy_buttons",
         "c9188b10-e29c-4c63-b385-a3faa860d64a",
         "product_properties_AX3DJi"
