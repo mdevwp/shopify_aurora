@@ -235,9 +235,35 @@
           "custom_css": ""
         }
       },
+      "10012068959737676665": {
+        "type": "shopify://apps/gropulse-wishlist/blocks/gropulse-wishlist/d606b448-832c-4b0a-adbb-21c7fa132df1",
+        "disabled": true,
+        "settings": {}
+      },
+      "3192664013427500466": {
+        "type": "shopify://apps/wishcraft-ultimate-wishlist/blocks/wishlist-render/f2e93a20-20d3-4e28-9abb-b5ab07f852bf",
+        "disabled": false,
+        "settings": {
+          "default_title": "Your Favourites",
+          "enable_multiple_wishlists": true,
+          "colour_scheme": "light",
+          "success_content": "<p><b>[product_name]</b> has been added to your wishlist.</p><p>You can <b>access your wishlist</b> via the heart in the header.</p>"
+        }
+      },
+      "5063685679717592333": {
+        "type": "shopify://apps/wishcraft-ultimate-wishlist/blocks/floating-wishlist-button/f2e93a20-20d3-4e28-9abb-b5ab07f852bf",
+        "disabled": false,
+        "settings": {
+          "title": "Add Product",
+          "added_title": "Product Added",
+          "icon": "",
+          "style": "with-label",
+          "position": "middle-left"
+        }
+      },
       "10583289249535060075": {
         "type": "shopify://apps/basic-wishlist/blocks/popup/1611f065-e251-4250-8609-2fa2f1877c57",
-        "disabled": false,
+        "disabled": true,
         "settings": {
           "icon_width": 40,
           "icon": "regular",
@@ -265,11 +291,6 @@
           "popup_link": "#121212",
           "popup_backdrop": "#fdf2f4"
         }
-      },
-      "10012068959737676665": {
-        "type": "shopify://apps/gropulse-wishlist/blocks/gropulse-wishlist/d606b448-832c-4b0a-adbb-21c7fa132df1",
-        "disabled": true,
-        "settings": {}
       }
     }
   },
