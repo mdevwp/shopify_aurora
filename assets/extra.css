@@ -229,7 +229,7 @@ h2.loo-popup-title {
     height: 50px;
 }
 .intrada-wishlist--button.intrada-wishlist--active svg path {
-    fill: #f73a6d;
+    fill: #f73a6d!important;
 }
 button.intrada-wishlist--trigger-icon.intrada-wishlist--rendered {
     position: fixed;
