@@ -101,6 +101,12 @@
             "icon_width": 20
           }
         },
+        "swishlist_simple_wishlist_wishlist_product_button_rDX49y": {
+          "type": "shopify://apps/swishlist-simple-wishlist/blocks/wishlist_product_button/bfcb80f2-f00d-42ae-909a-9f00c726327b",
+          "settings": {
+            "custom_liquid": ""
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -149,6 +155,7 @@
         "quantity_selector",
         "em_selectpro_product_compare_section_button_dtgHWd",
         "basic_wishlist_buttons_FNVCby",
+        "swishlist_simple_wishlist_wishlist_product_button_rDX49y",
         "buy_buttons",
         "c9188b10-e29c-4c63-b385-a3faa860d64a",
         "product_properties_AX3DJi"
