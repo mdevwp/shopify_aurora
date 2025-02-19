@@ -17,7 +17,7 @@ setTimeout(function(){
   });
 },1000);
 */
-
+/*
 (function() {
     let originalFetch = window.fetch;
     window.fetch = function(input, options) {
@@ -47,3 +47,4 @@ setTimeout(function(){
         return originalFetch.apply(this, arguments);
     };
 })();
+*/
