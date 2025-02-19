@@ -265,6 +265,11 @@
           "popup_link": "#121212",
           "popup_backdrop": "#fdf2f4"
         }
+      },
+      "10012068959737676665": {
+        "type": "shopify://apps/gropulse-wishlist/blocks/gropulse-wishlist/d606b448-832c-4b0a-adbb-21c7fa132df1",
+        "disabled": false,
+        "settings": {}
       }
     }
   },
