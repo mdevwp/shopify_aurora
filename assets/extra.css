@@ -225,3 +225,10 @@ h2.loo-popup-title {
       margin-top: 25px !important;
   }
 }
+
+button.intrada-wishlist--trigger-icon.intrada-wishlist--rendered {
+    position: fixed;
+    right: 20px;
+    top: 30%;
+    background: #f73a6d;
+}
