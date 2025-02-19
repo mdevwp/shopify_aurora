@@ -116,10 +116,17 @@
           "settings": {
             "title": "Add to Wishlist",
             "added_title": "Added to Wishlist",
-            "icon": ""
+            "icon": "@@@"
           }
         },
         "wishcraft_ultimate_wishlist_wishlist_trigger_icon_grYKLm": {
+          "type": "shopify://apps/wishcraft-ultimate-wishlist/blocks/wishlist-trigger-icon/f2e93a20-20d3-4e28-9abb-b5ab07f852bf",
+          "settings": {
+            "icon_color": "dark",
+            "icon": ""
+          }
+        },
+        "wishcraft_ultimate_wishlist_wishlist_trigger_icon_UbtegP": {
           "type": "shopify://apps/wishcraft-ultimate-wishlist/blocks/wishlist-trigger-icon/f2e93a20-20d3-4e28-9abb-b5ab07f852bf",
           "settings": {
             "icon_color": "dark",
@@ -178,6 +185,7 @@
         "gropulse_wishlist_gropulse_wishlist_button_zMyDjx",
         "wishcraft_ultimate_wishlist_inline_wishlist_button_yVnyQz",
         "wishcraft_ultimate_wishlist_wishlist_trigger_icon_grYKLm",
+        "wishcraft_ultimate_wishlist_wishlist_trigger_icon_UbtegP",
         "buy_buttons",
         "c9188b10-e29c-4c63-b385-a3faa860d64a",
         "product_properties_AX3DJi"
