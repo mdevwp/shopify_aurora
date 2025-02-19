@@ -19,25 +19,22 @@ setTimeout(function(){
 */
 
 document.addEventListener("DOMContentLoaded", function () {
-    document.body.addEventListener("click", function (event) {
-        let button = event.target.closest("loo-prodpage-button[data-key='loo-wishlist']");
-        if (button) {
-            event.preventDefault();
-            let container = button.closest(".loo-prodpage-buttons-container");
+    let container = document.querySelector(".loo-prodpage-buttons-container");
+    if (container) {
+        let variantID = document.querySelector("[name='id']")?.value;
+        if (variantID) {
+            container.setAttribute("data-product-id", variantID);
+            console.log("Wishlist product ID updated on page load:", variantID);
+        }
+    }
+
+    // Если пользователь меняет вариацию — обновляем ID снова
+    document.body.addEventListener("change", function (event) {
+        if (event.target.matches("[name='id']")) {
+            let newVariantID = event.target.value;
             if (container) {
-                let variantID = document.querySelector("[name='id']").value;
-                // Обновление data-product-id
-                container.setAttribute("data-product-id", variantID);
-                
-                // Создаем синтетическое событие
-                let newEvent = new MouseEvent('click', {
-                    bubbles: true,
-                    cancelable: true
-                });
-                
-                // Имитация клика
-                button.dispatchEvent(newEvent);
-                console.log("Wishlist updated with variant:", variantID);
+                container.setAttribute("data-product-id", newVariantID);
+                console.log("Wishlist product ID updated on variant change:", newVariantID);
             }
         }
     });
