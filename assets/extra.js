@@ -26,9 +26,18 @@ document.addEventListener("DOMContentLoaded", function () {
             let container = button.closest(".loo-prodpage-buttons-container");
             if (container) {
                 let variantID = document.querySelector("[name='id']").value;
+                // Обновление data-product-id
                 container.setAttribute("data-product-id", variantID);
+                
+                // Создаем синтетическое событие
+                let newEvent = new MouseEvent('click', {
+                    bubbles: true,
+                    cancelable: true
+                });
+                
+                // Имитация клика
+                button.dispatchEvent(newEvent);
                 console.log("Wishlist updated with variant:", variantID);
-                button.click();
             }
         }
     });
