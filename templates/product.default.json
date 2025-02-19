@@ -111,22 +111,7 @@
           "type": "shopify://apps/gropulse-wishlist/blocks/gropulse-wishlist-button/d606b448-832c-4b0a-adbb-21c7fa132df1",
           "settings": {}
         },
-        "wishcraft_ultimate_wishlist_inline_wishlist_button_yVnyQz": {
-          "type": "shopify://apps/wishcraft-ultimate-wishlist/blocks/inline-wishlist-button/f2e93a20-20d3-4e28-9abb-b5ab07f852bf",
-          "settings": {
-            "title": "Add to Wishlist",
-            "added_title": "Added to Wishlist",
-            "icon": "@@@"
-          }
-        },
         "wishcraft_ultimate_wishlist_wishlist_trigger_icon_grYKLm": {
-          "type": "shopify://apps/wishcraft-ultimate-wishlist/blocks/wishlist-trigger-icon/f2e93a20-20d3-4e28-9abb-b5ab07f852bf",
-          "settings": {
-            "icon_color": "dark",
-            "icon": ""
-          }
-        },
-        "wishcraft_ultimate_wishlist_wishlist_trigger_icon_UbtegP": {
           "type": "shopify://apps/wishcraft-ultimate-wishlist/blocks/wishlist-trigger-icon/f2e93a20-20d3-4e28-9abb-b5ab07f852bf",
           "settings": {
             "icon_color": "dark",
@@ -168,6 +153,14 @@
         "product_properties_AX3DJi": {
           "type": "product_properties",
           "settings": {}
+        },
+        "wishcraft_ultimate_wishlist_inline_wishlist_button_yVnyQz": {
+          "type": "shopify://apps/wishcraft-ultimate-wishlist/blocks/inline-wishlist-button/f2e93a20-20d3-4e28-9abb-b5ab07f852bf",
+          "settings": {
+            "title": "Add to Wishlist",
+            "added_title": "Added to Wishlist",
+            "icon": ""
+          }
         }
       },
       "block_order": [
@@ -183,12 +176,11 @@
         "basic_wishlist_buttons_FNVCby",
         "swishlist_simple_wishlist_wishlist_product_button_rDX49y",
         "gropulse_wishlist_gropulse_wishlist_button_zMyDjx",
-        "wishcraft_ultimate_wishlist_inline_wishlist_button_yVnyQz",
         "wishcraft_ultimate_wishlist_wishlist_trigger_icon_grYKLm",
-        "wishcraft_ultimate_wishlist_wishlist_trigger_icon_UbtegP",
         "buy_buttons",
         "c9188b10-e29c-4c63-b385-a3faa860d64a",
-        "product_properties_AX3DJi"
+        "product_properties_AX3DJi",
+        "wishcraft_ultimate_wishlist_inline_wishlist_button_yVnyQz"
       ],
       "settings": {
         "color_scheme": "default",
