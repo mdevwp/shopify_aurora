@@ -215,12 +215,13 @@ h2.loo-popup-title {
     right: 0;
     bottom: 150px;
 }
-
+.shopify-app-block .loo-centerright {
+    transform: scale(0.7);
+    right: -30px;
+}
 @media screen and (max-width: 768px) {
   .shopify-app-block .loo-centerright {
       top: 50%!important;
       margin-top: 25px !important;
-      transform: scale(0.7);
-      right: -30px;
   }
 }
