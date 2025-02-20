@@ -1,4 +1,4 @@
-/*
+
 function togglePagination() {
     if (window.location.search.includes('?filter')) {
         document.querySelectorAll('.classic-pagination__list').forEach(el => el.style.display = 'none');
@@ -16,35 +16,24 @@ setTimeout(function(){
       } 
   });
 },1000);
-*/
-/*
-(function() {
-    let originalFetch = window.fetch;
-    window.fetch = function(input, options) {
-        if (typeof input === "string" && input.includes("wishlist.oldev.net/api/a") && options && options.body) {
-            let data = JSON.parse(options.body);
-            let variantID = document.querySelector("[name='id']")?.value;
-            let variantImage = document.querySelector(".product__media img")?.src; 
-            let currentURL = new URL(window.location.href);
-            
-            if (variantID && data.products) {
-                let oldProductID = Object.keys(data.products)[0]; 
-                let newURL = `${currentURL.pathname}?variant=${variantID}`;
-                
-                data.products = {
-                    [variantID]: {
-                        ...data.products[oldProductID], 
-                        id: variantID,
-                        url: newURL,
-                        image: variantImage || data.products[oldProductID].image
-                    }
-                };
 
-                options.body = JSON.stringify(data);
-                console.log("Modified wishlist request:", data);
-            }
+/*
+document.addEventListener("DOMContentLoaded", function() {
+    document.body.addEventListener("click", function(event) {
+        let button = event.target.closest(".basic-wishlist-button");
+        if (button) {
+            event.preventDefault(); 
+            let variantID = document.querySelector('[name="id"]').value;
+            let formData = new FormData();
+            formData.append("product_id", variantID); 
+
+            fetch("/apps/wishlist/add", {
+                method: "POST",
+                body: formData
+            }).then(response => response.json())
+              .then(data => console.log("Added to wishlist:", data))
+              .catch(error => console.error("Wishlist error:", error));
         }
-        return originalFetch.apply(this, arguments);
-    };
-})();
+    });
+});
 */
