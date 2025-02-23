@@ -237,3 +237,6 @@ button.intrada-wishlist--trigger-icon.intrada-wishlist--rendered {
     top: 50%;
     background: #f73a6d;
 }
+a:visited {
+    color: darkblue;
+}
