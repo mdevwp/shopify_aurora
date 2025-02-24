@@ -10,7 +10,7 @@ function addRelAttr(){
   });
 }
 
-setTimeout(addRelAttr, 500);
+setTimeout(addRelAttr, 2500);
 
 function togglePagination() {
     if (window.location.search.includes('?filter')) {
