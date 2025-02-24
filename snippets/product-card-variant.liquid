@@ -108,10 +108,10 @@
     {% endunless %}
     {% endif %}
 
-    {% assign custom_index = custom_index | plus: 1 %}
-    {% if custom_index > 23 %}
+    {%# assign custom_index = custom_index | plus: 1 %}
+    {%# if custom_index > 23 %}
         {%# break %}
-    {% endif %}   
+    {%# endif %}   
 
     {% liquid
       assign price = variant.price | default: 0
