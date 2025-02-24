@@ -1,3 +1,12 @@
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll('a[href]').forEach(function (link) {
+        const url = new URL(link.href, window.location.origin);
+        if (url.origin !== window.location.origin && !link.hasAttribute('rel')) {
+            link.setAttribute('rel', 'nofollow');
+            link.setAttribute('target', '_blank');
+        }
+    });
+});
 
 function togglePagination() {
     if (window.location.search.includes('?filter')) {
