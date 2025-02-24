@@ -225,6 +225,7 @@ h2.loo-popup-title {
       margin-top: 25px !important;
   }
 }
+/*
 .intrada-wishlist--button svg {
    transform: scale(1.5);
 }
@@ -237,6 +238,7 @@ button.intrada-wishlist--trigger-icon.intrada-wishlist--rendered {
     top: 50%;
     background: #f73a6d;
 }
+*/
 a:visited:not(.product-card__title):not(.header__item):not(.btn):not(.header__dropdown a):not(.classic-pagination__link) {
     color: darkblue;
 }
