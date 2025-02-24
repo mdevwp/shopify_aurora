@@ -255,6 +255,10 @@
           endcapture
           assign getfullurl = content_for_query_string | split: '"pageurl":"' | last | split: '"' | first | replace: '\/', '/' | replace: '\u0026', '&'
         
+          if getfullurl contains '?filter' 
+             assign product_per_page = 39
+          endif
+           
           assign page_param = getfullurl | split: '?page=' | last | split: '&' | first
           assign current_page = page_param | plus: 0
           if current_page == 0
