@@ -9,8 +9,8 @@ function addRelAttr(){
     });
   });
 }
-
-setTimeout(addRelAttr, 2500);
+addRelAtt();
+//setTimeout(addRelAttr, 2500);
 
 function togglePagination() {
     if (window.location.search.includes('?filter')) {
