@@ -9,7 +9,7 @@ function addRelAttr(){
     });
   });
 }
-addRelAtt();
+addRelAttr();
 //setTimeout(addRelAttr, 2500);
 
 function togglePagination() {
