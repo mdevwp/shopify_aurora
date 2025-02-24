@@ -269,6 +269,11 @@
           "colour_scheme": "light",
           "success_content": "<p><strong>[product_name]</strong> has been added to your wishlist.</p><p>You can <strong>access your wishlist</strong> via the heart in the header.</p>"
         }
+      },
+      "2153490007123654574": {
+        "type": "shopify://apps/consentmo-gdpr/blocks/gdpr_cookie_consent/4fbe573f-a377-4fea-9801-3ee0858cae41",
+        "disabled": false,
+        "settings": {}
       }
     }
   },
