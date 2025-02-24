@@ -28,7 +28,11 @@ setTimeout(togglePagination, 500);
 setTimeout(function(){
   document.addEventListener('click', function(event) {
      if (event.target.matches('shape-swatch, .checkbox__span')) {
-        //document.querySelectorAll('.classic-pagination__list').forEach(el => el.style.display = 'none');
+       setTimeout(function(){
+         if(window.location.href.includes('?filter')){
+           document.querySelectorAll('.classic-pagination__list').forEach(el => el.style.display = 'none');
+         }
+       }, 500)     
       } 
   });
 },1000);
