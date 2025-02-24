@@ -249,25 +249,25 @@
           "popup_backdrop": "#fdf2f4"
         }
       },
-      "3192664013427500466": {
-        "type": "shopify://apps/wishcraft-ultimate-wishlist/blocks/wishlist-render/f2e93a20-20d3-4e28-9abb-b5ab07f852bf",
-        "disabled": true,
-        "settings": {
-          "default_title": "Your Favourites",
-          "enable_multiple_wishlists": true,
-          "colour_scheme": "light",
-          "success_content": "<p><strong>[product_name]</strong> has been added to your wishlist.</p><p>You can <strong>access your wishlist</strong> via the heart in the header.</p>"
-        }
-      },
       "5063685679717592333": {
         "type": "shopify://apps/wishcraft-ultimate-wishlist/blocks/floating-wishlist-button/f2e93a20-20d3-4e28-9abb-b5ab07f852bf",
-        "disabled": true,
+        "disabled": false,
         "settings": {
           "title": "Add Product",
           "added_title": "Product Added",
           "icon": "",
           "style": "with-label",
           "position": "middle-left"
+        }
+      },
+      "3192664013427500466": {
+        "type": "shopify://apps/wishcraft-ultimate-wishlist/blocks/wishlist-render/f2e93a20-20d3-4e28-9abb-b5ab07f852bf",
+        "disabled": false,
+        "settings": {
+          "default_title": "Your Favourites",
+          "enable_multiple_wishlists": true,
+          "colour_scheme": "light",
+          "success_content": "<p><strong>[product_name]</strong> has been added to your wishlist.</p><p>You can <strong>access your wishlist</strong> via the heart in the header.</p>"
         }
       }
     }
