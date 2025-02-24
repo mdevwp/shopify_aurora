@@ -238,5 +238,5 @@ button.intrada-wishlist--trigger-icon.intrada-wishlist--rendered {
     background: #f73a6d;
 }
 a:visited:not(.product-card__title):not(.header__item) {
-    color: darkviolet;
+    color: darkblue;
 }
