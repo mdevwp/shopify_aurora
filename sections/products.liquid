@@ -232,7 +232,9 @@
       {%- endif -%}
       <div class='shop__products' id='ShopProducts'>
         
-{% ##################### %}
+
+
+
         {% assign handle = collection.handle %}
 
         {% assign handles = "lila-ohrringe,schwarze-ohrringe,ketten-in-goldfarbe,ketten-in-rosegoldfarbe,silberfarbene-ketten,rote-ohrringe" | split: "," %}
@@ -268,7 +270,11 @@
           assign total_pages = collection.products.size | divided_by: product_per_page | ceil
           assign last_page_minus_one = total_pages | minus: 1
         -%}
-{% ##################### %}
+
+
+
+
+
 
         {%- paginate collection.products by product_per_page -%}
           {%- if collection.products.size > 0 -%}
@@ -350,7 +356,8 @@
 
 
         
-{% #############Pagination################### %} 
+
+
 {% if total_pages > 1 %}
   <ul class="classic-pagination__list">
     {%- if current_page > 1 -%}
@@ -405,7 +412,9 @@
     {%- endif -%}
   </ul>
  {%- endif -%}
-{% #################################### %}
+
+
+
         
 <script>
   localStorage.setItem(
@@ -472,7 +481,7 @@
     'value': "{{ collection.title }}", 
     'items': [
       {
-        'id': {{ collection.id }},
+        'id': "{{ collection.id }}",
         'google_business_vertical': 'retail'
       }
     ] 
