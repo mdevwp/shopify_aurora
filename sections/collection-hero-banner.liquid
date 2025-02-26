@@ -131,6 +131,11 @@
           {%- endif -%}
           {%- if show_collection_title and title != blank -%}
 
+            {%- assign delimiter = 'ᐉ' -%}
+            {%- if title contains delimiter -%}
+              {%- assign title = title | split: delimiter | first -%}
+            {%- endif -%}
+
             <h1 class='collection-hero__title {{ section.settings.heading_size }}'>{{ title }}{%- if current_page > 1 -%}&nbsp; - <span class="seite">Seite {{ current_page }}</span>{%- endif -%}</h1>
 
           {%- endif -%}
