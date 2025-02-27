@@ -250,7 +250,7 @@ a:visited:not(.product-card__title):not(.header__item):not(.btn):not(.header__dr
 .collection-hero.section {
     overflow: visible !important;
 }
-.menu {
+.content-menu {
     position: relative;
     display: inline-block;
 }
@@ -263,7 +263,7 @@ a:visited:not(.product-card__title):not(.header__item):not(.btn):not(.header__dr
     padding: 10px 15px;
 }
 
-.sub-menu {
+.content-menu .sub-menu {
     position: absolute;
     top: 100%;
     left: 0;
@@ -276,22 +276,22 @@ a:visited:not(.product-card__title):not(.header__item):not(.btn):not(.header__dr
     list-style: none;
 }
 
-.sub-menu li {
+.content-menu .sub-menu li {
     padding: 5px 10px;
 }
 
-.sub-menu li a {
+.content-menu .sub-menu li a {
     text-decoration: none;
     color: black;
     display: block;
     padding: 5px 0;
 }
 
-.sub-menu li a:hover {
+.content-menu .sub-menu li a:hover {
     text-decoration: underline;
 }
 
-.menu:hover .sub-menu,
-.menu.active .sub-menu {
+.content-menu:hover .sub-menu,
+.content-menu.active .sub-menu {
     display: block;
 }
