@@ -242,7 +242,7 @@ button.intrada-wishlist--trigger-icon.intrada-wishlist--rendered {
 a:visited:not(.product-card__title):not(.header__item):not(.btn):not(.header__dropdown a):not(.classic-pagination__link):not(.social-list__item-link){
     color: darkblue;
 }
-.content-menu a:visited{
+.content-menu .sub-menu li a:visited{
     color: darkgray;
 }
 /************************/
