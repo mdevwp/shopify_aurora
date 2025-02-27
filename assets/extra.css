@@ -244,7 +244,8 @@ a:visited:not(.product-card__title):not(.header__item):not(.btn):not(.header__dr
 }
 /************************/
 .shopify-section.place-under-transparent-header{
-  z-index: 9999;  
+   overflow: visible !important;
+    z-index: 9999;  
 }
 .collection-hero.section {
     overflow: visible !important;
