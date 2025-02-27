@@ -185,7 +185,7 @@ shopify-paypal-button {
 
 ul.sub-menu li {
   width: max-content;
-  margin: 0 auto;
+  /*margin: 0 auto;*/
   font-weight: 600;
 }
 
