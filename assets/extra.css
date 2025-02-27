@@ -243,12 +243,12 @@ a:visited:not(.product-card__title):not(.header__item):not(.btn):not(.header__dr
     color: darkblue;
 }
 /************************/
-/*
+
 .shopify-section.place-under-transparent-header{
    overflow: visible !important;
-    z-index: 9999;  
+    z-index: 99;  
 }
-*/
+
 .collection-hero.section {
     overflow: visible !important;
 }
