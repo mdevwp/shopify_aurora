@@ -37,6 +37,23 @@ setTimeout(function(){
   });
 },1000);
 
+
+document.addEventListener("DOMContentLoaded", function () {
+    const menu = document.querySelector(".menu");
+    const button = document.querySelector(".menu-button");
+
+    button.addEventListener("click", function () {
+        menu.classList.toggle("active");
+    });
+
+    document.addEventListener("click", function (event) {
+        if (!menu.contains(event.target)) {
+            menu.classList.remove("active");
+        }
+    });
+});
+
+
 /*
 document.addEventListener("DOMContentLoaded", function() {
     document.body.addEventListener("click", function(event) {
