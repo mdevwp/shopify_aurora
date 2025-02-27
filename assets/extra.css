@@ -242,3 +242,49 @@ button.intrada-wishlist--trigger-icon.intrada-wishlist--rendered {
 a:visited:not(.product-card__title):not(.header__item):not(.btn):not(.header__dropdown a):not(.classic-pagination__link):not(.social-list__item-link){
     color: darkblue;
 }
+/************************/
+.menu {
+    position: relative;
+    display: inline-block;
+}
+
+.menu-button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 10px 15px;
+}
+
+.sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: none;
+    min-width: 220px;
+    padding: 10px;
+    list-style: none;
+}
+
+.sub-menu li {
+    padding: 5px 10px;
+}
+
+.sub-menu li a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    padding: 5px 0;
+}
+
+.sub-menu li a:hover {
+    text-decoration: underline;
+}
+
+.menu:hover .sub-menu,
+.menu.active .sub-menu {
+    display: block;
+}
