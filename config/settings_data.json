@@ -834,8 +834,7 @@
   "platform_customizations": {
     "custom_css": [
       ".sticky-cart-button:before {background: #f73a6d;}",
-      ".sticky-cart-button__icon {color: white;}",
-      "a:visited:not(.product-card__title):not(.header__item):not(.btn){color: darkblue!important;}"
+      ".sticky-cart-button__icon {color: white;}"
     ]
   }
 }
