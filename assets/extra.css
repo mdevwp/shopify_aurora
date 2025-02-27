@@ -289,7 +289,7 @@ float-element#HeaderDropdownMenu-ohrringe,
 }
 
 .content-menu .sub-menu li a {
-    text-decoration: none;
+    text-decoration: underline;
     color: black;
     display: block;
     padding: 5px 0;
