@@ -39,7 +39,7 @@ setTimeout(function(){
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    const menu = document.querySelector(".menu");
+    const menu = document.querySelector(".content-menu");
     const button = document.querySelector(".menu-button");
 
     button.addEventListener("click", function () {
