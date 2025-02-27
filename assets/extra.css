@@ -248,6 +248,9 @@ a:visited:not(.product-card__title):not(.header__item):not(.btn):not(.header__dr
    overflow: visible !important;
    z-index: 1;  
 }
+.product-card__inner {
+    z-index: 0;
+}
 float-element#HeaderDropdownMenu-ohrringe,
 .header__dropdown-menu {
     z-index: 9999!important;
