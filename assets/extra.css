@@ -274,7 +274,7 @@ float-element#HeaderDropdownMenu-ohrringe,
 .content-menu .sub-menu {
     position: absolute;
     top: 55%;
-    left: -10px;
+    left: 0px;
     background: white;
     border: 1px solid #ccc;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
