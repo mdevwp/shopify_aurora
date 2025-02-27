@@ -245,8 +245,8 @@ a:visited:not(.product-card__title):not(.header__item):not(.btn):not(.header__dr
 /************************/
 
 .shopify-section.place-under-transparent-header{
-   /*overflow: visible !important;*/
-    z-index: 99;  
+   overflow: visible !important;
+   z-index: 99;  
 }
 float-element#HeaderDropdownMenu-ohrringe,
 .header__dropdown-menu {
