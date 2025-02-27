@@ -243,6 +243,9 @@ a:visited:not(.product-card__title):not(.header__item):not(.btn):not(.header__dr
     color: darkblue;
 }
 /************************/
+.collection-hero.section {
+    overflow: visible !important;
+}
 .menu {
     position: relative;
     display: inline-block;
