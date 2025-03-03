@@ -308,6 +308,7 @@ float-element#HeaderDropdownMenu-ohrringe,
     display: block;
 }
 #SidebarFiltersDesktop-loadingOverlay,
+.shop__loading-overlay,
 .product-card__dots-spinner-wrap{
   display: none!important;
 }
