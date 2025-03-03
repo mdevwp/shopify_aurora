@@ -59,17 +59,17 @@
     {%- capture meta_title -%}
         {%- case request.path -%}
             {%- when '/' -%}
-                {{ 'homepage.meta_title.homepage' | t }}
+                {{ 'meta_tags.homepage.title' | t }}
             {%- when '/collections' -%}
-                {{ 'collections.meta_title' | t }}
+                {{ 'meta_tags.collections.title' | t }}
             {%- when '/policies/legal-notice' -%}
-                {{ 'policies.legal_notice.meta_title' | t }}
+                {{ 'meta_tags.policies.legal_notice.title' | t }}
             {%- when '/policies/terms-of-service' -%}
-                {{ 'policies.terms_of_service.meta_title' | t }}
+                {{ 'meta_tags.policies.terms_of_service.title' | t }}
             {%- when '/policies/privacy-policy' -%}
-                {{ 'policies.privacy_policy.meta_title' | t }}
+                {{ 'meta_tags.policies.privacy_policy.title' | t }}
             {%- when '/policies/refund-policy' -%}
-                {{ 'policies.refund_policy.meta_title' | t }}
+                {{ 'meta_tags.policies.refund_policy.title' | t }}
             {%- else -%}
                 {{ page_title }}
                 {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
@@ -80,17 +80,17 @@
     {%- capture meta_description -%}
         {%- case request.path -%}
             {%- when '/' -%}
-                {{ 'homepage.meta_description' | t }}
+                {{ 'meta_tags.homepage.description' | t }}
             {%- when '/collections' -%}
-                {{ 'collections.meta_description' | t }}
+                {{ 'meta_tags.collections.description' | t }}
             {%- when '/policies/legal-notice' -%}
-                {{ 'policies.legal_notice.meta_description' | t }}
+                {{ 'meta_tags.policies.legal_notice.description' | t }}
             {%- when '/policies/terms-of-service' -%}
-                {{ 'policies.terms_of_service.meta_description' | t }}
+                {{ 'meta_tags.policies.terms_of_service.description' | t }}
             {%- when '/policies/privacy-policy' -%}
-                {{ 'policies.privacy_policy.meta_description' | t }}
+                {{ 'meta_tags.policies.privacy_policy.description' | t }}
             {%- when '/policies/refund-policy' -%}
-                {{ 'policies.refund_policy.meta_description' | t }}
+                {{ 'meta_tags.policies.refund_policy.description' | t }}
             {%- else -%}
                 {{ page_description | escape }}
         {%- endcase -%}
