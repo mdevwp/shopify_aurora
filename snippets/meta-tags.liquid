@@ -73,7 +73,7 @@
         <meta name='twitter:description' content='{{ og_description | escape }}'>
 
         {%- if request.path == '/' %}
-            {{- 'general.meta_title.homepage' | t -}}
+            <title>{{- 'general.meta_title.homepage' | t -}}</title>
         {%- elsif request.path == '/collections' %}
           <title>Bijouterie ᐉ Modeschmuck voller Farbe und Persönlichkeit</title>
           <meta name="description" content="Bijouterie von ALEXASCHA ➠ Entdecke stilvolle Bijouterie ✔️ Nachhaltiger Modeschmuck ✔️ Kreative Designs und faire Herstellung">
