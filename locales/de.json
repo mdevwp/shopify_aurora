@@ -251,7 +251,32 @@
             "screen_reader": {}
         },
         "meta_title": {
-            "homepage": "Alexascha Online Shop ᐉ Nachhaltiger Schmuck, der Deine Persönlichkeit unterstreicht",
+            "homepage": {
+                "meta_title": "Alexascha Online Shop ᐉ Nachhaltiger Schmuck, der Deine Persönlichkeit unterstreicht",
+                "meta_description": "Bijouterie von ALEXASCHA ➠ Entdecke stilvolle Bijouterie ✔️ Nachhaltiger Modeschmuck ✔️ Kreative Designs und faire Herstellung"
+            },
+            "collections": {
+                "meta_title": "Bijouterie ᐉ Modeschmuck voller Farbe und Persönlichkeit",
+                "meta_description": "Bijouterie von ALEXASCHA ➠ Entdecke stilvolle Bijouterie ✔️ Nachhaltiger Modeschmuck ✔️ Kreative Designs und faire Herstellung"
+            },
+            "policies": {
+                "legal_notice": {
+                    "meta_title": "Impressum ᐉ Rechtliche Hinweise zu Alexascha",
+                    "meta_description": "Finde alle rechtlichen Angaben zu ALEXASCHA ➠ Verantwortlicher Anbieter ✔️ Kontaktinformationen ✔️ Transparente Kommunikation ✔️ Jetzt ansehen!"
+                },
+                "terms_of_service": {
+                    "meta_title": "Allgemeine Geschäftsbedingungen (AGB) ᐉ Transparente Geschäftsbedingungen",
+                    "meta_description": "Lies die Allgemeinen Geschäftsbedingungen von Alexascha ➠ Klare Regeln für Bestellungen, Versand, Rückgabe und mehr ✔️ Jetzt informieren!"
+                },
+                "privacy_policy": {
+                    "meta_title": "Datenschutz ᐉ Wir schützen Deine Daten bei Alexascha",
+                    "meta_description": "Erfahre, wie wir Deine Daten sicher und vertraulich behandeln ➠ Datenschutz ist uns wichtig ✔️ Transparente Richtlinien ✔️ Vertraue uns!"
+                },
+                "refund_policy": {
+                    "meta_title": "Widerrufsbelehrung ᐉ Dein Widerrufsrecht beim Online-Kauf",
+                    "meta_description": "Informiere dich über Dein Widerrufsrecht bei Alexascha ➠ Rückgabe und Stornierung leicht gemacht ✔️ Klare Richtlinien für Deinen Schutz ✔️ Jetzt lesen!"
+                }
+            }
 
         }
     },

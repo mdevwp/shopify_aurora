@@ -59,17 +59,17 @@
     {%- capture meta_title -%}
         {%- case request.path -%}
             {%- when '/' -%}
-                {{ 'general.meta_title.homepage' | t }}
+                {{ 'homepage.meta_title.homepage' | t }}
             {%- when '/collections' -%}
-                Bijouterie ᐉ Modeschmuck voller Farbe und Persönlichkeit
+                {{ 'collections.meta_title' | t }}
             {%- when '/policies/legal-notice' -%}
-                Impressum ᐉ Rechtliche Hinweise zu Alexascha
+                {{ 'policies.legal_notice.meta_title' | t }}
             {%- when '/policies/terms-of-service' -%}
-                Allgemeine Geschäftsbedingungen (AGB) ᐉ Transparente Geschäftsbedingungen
+                {{ 'policies.terms_of_service.meta_title' | t }}
             {%- when '/policies/privacy-policy' -%}
-                Datenschutz ᐉ Wir schützen Deine Daten bei Alexascha
+                {{ 'policies.privacy_policy.meta_title' | t }}
             {%- when '/policies/refund-policy' -%}
-                Widerrufsbelehrung ᐉ Dein Widerrufsrecht beim Online-Kauf
+                {{ 'policies.refund_policy.meta_title' | t }}
             {%- else -%}
                 {{ page_title }}
                 {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
@@ -80,31 +80,25 @@
     {%- capture meta_description -%}
         {%- case request.path -%}
             {%- when '/' -%}
-                Bijouterie von ALEXASCHA ➠ Entdecke stilvolle Bijouterie ✔️ Nachhaltiger Modeschmuck ✔️ Kreative Designs und faire Herstellung
+                {{ 'homepage.meta_description' | t }}
             {%- when '/collections' -%}
-                Bijouterie von ALEXASCHA ➠ Entdecke stilvolle Bijouterie ✔️ Nachhaltiger Modeschmuck ✔️ Kreative Designs und faire Herstellung
+                {{ 'collections.meta_description' | t }}
             {%- when '/policies/legal-notice' -%}
-                Finde alle rechtlichen Angaben zu ALEXASCHA ➠ Verantwortlicher Anbieter ✔️ Kontaktinformationen ✔️ Transparente Kommunikation ✔️ Jetzt ansehen!
+                {{ 'policies.legal_notice.meta_description' | t }}
             {%- when '/policies/terms-of-service' -%}
-                Lies die Allgemeinen Geschäftsbedingungen von Alexascha ➠ Klare Regeln für Bestellungen, Versand, Rückgabe und mehr ✔️ Jetzt informieren!
+                {{ 'policies.terms_of_service.meta_description' | t }}
             {%- when '/policies/privacy-policy' -%}
-                Erfahre, wie wir Deine Daten sicher und vertraulich behandeln ➠ Datenschutz ist uns wichtig ✔️ Transparente Richtlinien ✔️ Vertraue uns!
+                {{ 'policies.privacy_policy.meta_description' | t }}
             {%- when '/policies/refund-policy' -%}
-                Informiere dich über Dein Widerrufsrecht bei Alexascha ➠ Rückgabe und Stornierung leicht gemacht ✔️ Klare Richtlinien für Deinen Schutz ✔️ Jetzt lesen!
+                {{ 'policies.refund_policy.meta_description' | t }}
             {%- else -%}
                 {{ page_description | escape }}
         {%- endcase -%}
         {%- if current_page > 1 %} ― Seite {{ current_page }}{% endif -%}
     {%- endcapture -%}
 
-    {%- if current_page > 1 -%}
-        <title>{{ meta_title }}</title>
-        <meta name="description" content="{{ meta_description }}">
-    {%- else -%}
-        <title>{{ meta_title }}</title>
-        <meta name="description" content="{{ meta_description }}">
-    {%- endif -%}
-
+    <title>{{ meta_title }}</title>
+    <meta name="description" content="{{ meta_description }}">
     <meta property='og:title' content='{{ meta_title }}'>
     <meta property='og:description' content='{{ meta_description }}'>
     <meta name='twitter:title' content='{{ meta_title }}'>
