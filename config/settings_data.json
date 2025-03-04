@@ -238,6 +238,11 @@
         "type": "shopify://apps/product-compare/blocks/app-embed-block/2ec083cc-5677-4d10-a2af-c02464aa361b",
         "disabled": false,
         "settings": {}
+      },
+      "14352282602675302068": {
+        "type": "shopify://apps/xcloud-search-filter/blocks/cloudsearch_opt/8ddbd0bf-e311-492e-ab28-69d0ad268fac",
+        "disabled": false,
+        "settings": {}
       }
     }
   },
