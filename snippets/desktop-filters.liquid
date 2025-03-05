@@ -253,7 +253,7 @@
                                         {%- assign showed_filter_value_count = 0 -%}
 
 
-{% comment %}                                    
+                                   
                                         {%- for value in filter.values -%}
 
                                             {%- if value.count > 0 -%}
@@ -291,8 +291,10 @@
                                                 {%- endif -%}
                                             {%- endif -%}
                                         {%- endfor -%}
-{% endcomment %}
 
+
+
+{% comment %} 
 {%- for value in filter.values -%}
   
     {%- assign variant_count = 0 -%} 
@@ -352,7 +354,7 @@
         {%- endif -%}
     {%- endif -%}
 {%- endfor -%}
-
+{% endcomment %}
 
                                       
                                       
