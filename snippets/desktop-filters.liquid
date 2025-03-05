@@ -307,6 +307,8 @@
           {%- endif -%}  
       {%- endfor -%}  
 
+      {{ product.metafields.custom | json }}
+      
       {%- assign material_value = product.metafields.custom.material | default: "" -%}
       {%- assign material_values = material_value | split: "," -%}
       {%- if material_values contains value.label -%}
