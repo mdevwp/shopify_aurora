@@ -299,8 +299,8 @@
     {%- for product in collection.products -%}  
         {%- for variant in product.variants -%}  
             {%- if variant.available -%}
-        
-                {%- if variant.options[0] == value.label or variant.options[1] == value.label or variant.options[3] == value.label -%} 
+
+                {%- if variant.option1 == value.label or variant.option2 == value.label or variant.option3 == value.label -%} 
                     {%- assign variant_count = variant_count | plus: 1 -%} 
                 {%- endif -%}
             {%- endif -%}  
