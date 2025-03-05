@@ -100,12 +100,12 @@
     {% endif %}
     
     {% if filter_color != blank and variant.options[0] != blank %}
-    {% assign option_0 = variant.options[0] | downcase %}
-    {% assign option_1 = variant.options[1] | downcase %}
-    {% unless option_0 contains filter_color or option_1 contains filter_color %}
-      {% continue %}
-      
-    {% endunless %}
+        {% assign option_0 = variant.options[0] | downcase %}
+        {% assign option_1 = variant.options[1] | downcase %}
+        {% unless option_0 contains filter_color or option_1 contains filter_color %}
+          {% continue %}
+          
+        {% endunless %}
     {% endif %}
 
     {%# assign custom_index = custom_index | plus: 1 %}
