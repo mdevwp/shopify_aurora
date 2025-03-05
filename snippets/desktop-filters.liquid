@@ -294,6 +294,7 @@
 {% endcomment %}
 
 {%- for value in filter.values -%}
+  {{ value | json }}
     {%- assign variant_count = 0 -%} 
     {%- for product in collection.products -%}  
         {%- for variant in product.variants -%}  
