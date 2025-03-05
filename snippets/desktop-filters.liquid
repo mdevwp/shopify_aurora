@@ -294,11 +294,12 @@
 {% endcomment %}
 
 {%- for value in filter.values -%}
-  {{ value.label }}
+  
     {%- assign variant_count = 0 -%} 
     {%- for product in collection.products -%}  
         {%- for variant in product.variants -%}  
             {%- if variant.available -%}
+              {{ variant }}
                 {%- if variant.option1 == value.label or variant.option2 == value.label or variant.option3 == value.label -%} 
                     {%- assign variant_count = variant_count | plus: 1 -%} 
                 {%- endif -%}
