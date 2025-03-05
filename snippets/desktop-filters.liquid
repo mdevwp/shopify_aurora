@@ -296,16 +296,30 @@
 {%- for value in filter.values -%}
   
     {%- assign variant_count = 0 -%} 
-    {%- for product in collection.products -%}  
-        {%- for variant in product.variants -%}  
-            {%- if variant.available -%}
 
-                {%- if variant.option1 == value.label or variant.option2 == value.label or variant.option3 == value.label -%} 
-                    {%- assign variant_count = variant_count | plus: 1 -%} 
-                {%- endif -%}
-            {%- endif -%}  
-        {%- endfor -%}  
+
+    {%- for product in collection.products -%}  
+      {%- for variant in product.variants -%}  
+          {%- if variant.available -%}
+              {%- if variant.option1 == value.label or variant.option2 == value.label or variant.option3 == value.label -%} 
+                  {%- assign variant_count = variant_count | plus: 1 -%} 
+              {%- endif -%}
+          {%- endif -%}  
+      {%- endfor -%}  
+
+      {%- assign material_value = product.metafields.custom.material | default: "" -%}
+      {%- assign material_values = material_value | split: "," -%}
+      {%- if material_values contains value.label -%}
+          {%- assign variant_count = variant_count | plus: 1 -%}
+      {%- endif -%}
+  
+      {%- assign groessenguide_value = product.metafields.custom.groessenguide | default: "" -%}
+      {%- assign groessenguide_values = groessenguide_value | split: "," -%}
+      {%- if groessenguide_values contains value.label -%}
+          {%- assign variant_count = variant_count | plus: 1 -%}
+      {%- endif -%}
     {%- endfor -%}
+  
 
     {%- if variant_count > 0 -%}
         {%- assign showed_filter_value_count = showed_filter_value_count | plus: 1 -%}
