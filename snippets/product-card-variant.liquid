@@ -106,7 +106,7 @@
         endif
   -%}
 
-       {{ missing_values }}
+       {{ missing_values contains variant.options[1] | json }}
     
     {% if filter_color != blank and variant.options[0] != blank %}
         {% assign option_0 = variant.options[0] | downcase %}
