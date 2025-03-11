@@ -256,12 +256,13 @@
             echo content_for_header
           endcapture
           assign getfullurl = content_for_query_string | split: '"pageurl":"' | last | split: '"' | first | replace: '\/', '/' | replace: '\u0026', '&'
-        
+
+          assign missing_values = ""
+           
           if getfullurl contains '?filter' 
              assign product_per_page = 15
 
              assign all_values = "12,14,16,18" | split: ","
-             assign missing_values = ""
              for value in all_values
                 assign filter = value | append: "+"
                 unless getfullurl contains filter
