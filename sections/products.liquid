@@ -285,6 +285,11 @@
         -%}
 
 
+           {{ missing_values }}
+
+
+
+
 
         {%- paginate collection.products by product_per_page -%}
           {%- if collection.products.size > 0 -%}

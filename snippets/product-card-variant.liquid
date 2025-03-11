@@ -98,7 +98,13 @@
         {% continue %}
     {% endif %}
     
-   
+    {%- liquid
+        if missing_values != blank and variant.options[1] != blank
+          unless missing_values contains variant.options[1]
+            continue
+          endunless
+        endif
+    -%}
     
     
     {% if filter_color != blank and variant.options[0] != blank %}
