@@ -259,8 +259,14 @@
         
           if getfullurl contains '?filter' 
              assign product_per_page = 15
+              if getfullurl contains '12+' 
+                 assign mm1 = 12
+              endif
+              if getfullurl contains '16+' 
+                 assign mm2 = 16
+              endif
           endif
-           
+          
           assign page_param = getfullurl | split: '?page=' | last | split: '&' | first
           assign current_page = page_param | plus: 0
           if current_page == 0
@@ -270,7 +276,7 @@
           assign total_pages = collection.products.size | divided_by: product_per_page | ceil
           assign last_page_minus_one = total_pages | minus: 1
         -%}
-
+ {{ mm1 }}
 
 
 
