@@ -100,7 +100,8 @@
     
     {%- liquid
         if missing_values != blank and variant.options[1] != blank
-          unless missing_values contains variant.options[1]
+          assign value = variant.options[1] | replace: " mm", ""
+          unless missing_values contains value
             continue
           endunless
         endif
