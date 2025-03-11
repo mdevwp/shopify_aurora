@@ -259,13 +259,19 @@
         
           if getfullurl contains '?filter' 
              assign product_per_page = 15
-              if getfullurl contains '12+' 
-                 assign mm1 = 12
-              endif
-              if getfullurl contains '16+' 
-                 assign mm2 = 16
-              endif
+
+             assign all_values = "12,14,16,18" | split: ","
+             assign missing_values = ""
+             for value in all_values
+                assign filter = value | append: "+"
+                unless getfullurl contains filter
+                  assign missing_values = missing_values | append: value | append: ","
+                endunless
+              endfor
+            assign missing_values = missing_values | split: ","
+        
           endif
+       
           
           assign page_param = getfullurl | split: '?page=' | last | split: '&' | first
           assign current_page = page_param | plus: 0
@@ -276,7 +282,9 @@
           assign total_pages = collection.products.size | divided_by: product_per_page | ceil
           assign last_page_minus_one = total_pages | minus: 1
         -%}
- {{ mm1 }}
+
+
+           {{ missing_values }}
 
 
 
