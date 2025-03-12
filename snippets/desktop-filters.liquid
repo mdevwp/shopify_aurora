@@ -310,7 +310,8 @@
               {%- endif -%}
           {%- endif -%}  
       {%- endfor -%}  
-  
+
+      {% comment %}
       {%- assign material_values = product.metafields.custom.material | default: empty -%}
       {%- if material_values contains value.label -%}
           {%- assign variant_count = variant_count | plus: 1 -%}
@@ -320,6 +321,7 @@
       {%- if properties_values contains value.label -%}
           {%- assign variant_count = variant_count | plus: 1 -%}
       {%- endif -%}
+      {% endcomment %}
     {%- endfor -%}
   
 
