@@ -312,10 +312,12 @@
           {%- endif -%}  
       {%- endfor -%}  
 
-      {% comment %} {% endcomment %}
+      {% comment %} {{ material_values }} {% endcomment %}
       {%- assign material_values = product.metafields.custom.material | default: empty -%}
-      {{ material_values }}
-      {%- if material_values contains value.label -%}
+
+      {%- assign material_string = material_values | join: "," -%}
+      
+      {%- if material_string contains value.label -%}
         
           {%- assign variant_count = variant_count | plus: 1 -%}
       {%- endif -%}
