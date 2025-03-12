@@ -304,29 +304,26 @@
 
     {%- for product in collection.products -%}  
       {%- for variant in product.variants -%}  
-          {%- if variant.available -%}
-              {%- if variant.option1 == value.label or variant.option2 == value.label or variant.option3 == value.label -%} 
-                  {%- assign variant_count = variant_count | plus: 1 -%} 
-              {%- endif -%}
-            
-          {%- endif -%}  
+        {%- if variant.available -%}
+          {%- if variant.option1 == value.label or variant.option2 == value.label or variant.option3 == value.label -%} 
+            {%- assign variant_count = variant_count | plus: 1 -%} 
+          {%- endif -%}
+    
+          {%- assign material_values = product.metafields.custom.material | default: empty -%}
+          {%- assign material_string = material_values | join: "," -%}
+          
+          {%- if material_string contains value.label -%}
+            {%- assign variant_count = variant_count | plus: 1 -%}
+          {%- endif -%}
+    
+          {%- assign properties_values = product.metafields.custom.properties | default: empty -%}
+          {%- assign properties_string = properties_values | join: "," -%}
+    
+          {%- if properties_string contains value.label -%}
+            {%- assign variant_count = variant_count | plus: 1 -%}
+          {%- endif -%}
+        {%- endif -%}  
       {%- endfor -%}  
-
-      {% comment %} {{ material_values }} {% endcomment %}
-      {%- assign material_values = product.metafields.custom.material | default: empty -%}
-      {%- assign material_string = material_values | join: "," -%}
-      
-      {%- if material_string contains value.label -%}
-          {%- assign variant_count = variant_count | plus: 1 -%}
-      {%- endif -%}
-  
-      {%- assign properties_values = product.metafields.custom.properties | default: empty -%}
- 
-      {%- assign properties_string = properties_values | join: "," -%}
-      {%- if properties_string contains value.label -%}
-          {%- assign variant_count = variant_count | plus: 1 -%}
-      {%- endif -%}
-     
     {%- endfor -%}
   
 
