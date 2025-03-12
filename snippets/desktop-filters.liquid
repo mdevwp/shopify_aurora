@@ -308,10 +308,18 @@
               {%- if variant.option1 == value.label or variant.option2 == value.label or variant.option3 == value.label -%} 
                   {%- assign variant_count = variant_count | plus: 1 -%} 
               {%- endif -%}
+
+               {%- assign material_values = variant.metafields.custom.material | default: empty -%}
+              {{ material_values }}
+              {%- if material_values contains value.label -%}
+                  {%- assign variant_count = variant_count | plus: 1 -%}
+              {%- endif -%}
+
+            
           {%- endif -%}  
       {%- endfor -%}  
 
-      {% comment %} {% endcomment %}
+      {% comment %} 
       {%- assign material_values = product.metafields.custom.material | default: empty -%}
       {{ material_values }}
       {%- if material_values contains value.label -%}
@@ -322,7 +330,7 @@
       {%- if properties_values contains value.label -%}
           {%- assign variant_count = variant_count | plus: 1 -%}
       {%- endif -%}
-     
+     {% endcomment %}
     {%- endfor -%}
   
 
