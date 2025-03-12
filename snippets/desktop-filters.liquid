@@ -314,16 +314,14 @@
 
       {% comment %} {{ material_values }} {% endcomment %}
       {%- assign material_values = product.metafields.custom.material | default: empty -%}
-
       {%- assign material_string = material_values | join: "," -%}
-      
       {%- if material_string contains value.label -%}
-        
           {%- assign variant_count = variant_count | plus: 1 -%}
       {%- endif -%}
   
       {%- assign properties_values = product.metafields.custom.properties | default: empty -%}
-      {%- if properties_values contains value.label -%}
+      {%- assign properties_string = material_values | join: "," -%}
+      {%- if properties_string contains value.label -%}
           {%- assign variant_count = variant_count | plus: 1 -%}
       {%- endif -%}
      
