@@ -321,7 +321,7 @@
       {%- endif -%}
   
       {%- assign properties_values = product.metafields.custom.properties | default: empty -%}
-      
+      {{ properties_values }}
       {%- if properties_values contains value.label -%}
           {%- assign variant_count = variant_count | plus: 1 -%}
       {%- endif -%}
