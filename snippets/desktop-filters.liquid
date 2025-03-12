@@ -314,8 +314,9 @@
 
       {% comment %} {% endcomment %}
       {%- assign material_values = product.metafields.custom.material | default: empty -%}
-      {{ material_values }}
+      
       {%- if material_values contains value.label -%}
+        {{ material_values }}
           {%- assign variant_count = variant_count | plus: 1 -%}
       {%- endif -%}
   
