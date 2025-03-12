@@ -320,7 +320,7 @@
       {%- endif -%}
   
       {%- assign properties_values = product.metafields.custom.properties | default: empty -%}
-      {%- assign properties_string = material_values | join: "," -%}
+      {%- assign properties_string = properties_values | join: "," -%}
       {%- if properties_string contains value.label -%}
           {%- assign variant_count = variant_count | plus: 1 -%}
       {%- endif -%}
