@@ -248,7 +248,10 @@
          {% assign handles = "blaue-ohrringe,ketten,ketten-sind-hypoallergen,ohrringe-in-goldfarbe" | split: "," %}
         {% if handles contains handle %}
           {% assign product_per_page = 3 %}
-        {% endif %}    
+        {% endif %}   
+        {% if handle == 'ohrringe' %}
+          {% assign product_per_page = 9 %}
+        {% endif %}   
         
         
         {%- liquid
