@@ -262,15 +262,8 @@
           if getfullurl contains '?filter' 
              assign product_per_page = 39
 
-             assign all_values = "12,14,16,18" | split: ","
-             for value in all_values
-                assign filter = value | append: "+"
-                unless getfullurl contains filter
-                  assign missing_values = missing_values | append: value | append: ","
-                endunless
-              endfor
-            assign missing_values = missing_values | split: ","
-        
+             
+          
           endif
        
           
