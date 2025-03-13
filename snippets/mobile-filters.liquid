@@ -534,6 +534,8 @@
                   {%- else -%}
                     {%- assign showed_filter_value_count = 0 -%}
 
+{% comment %} 
+                    
                     {%- for value in filter.values -%}
                       {%- if value.count > 0 -%}
                         {%- assign showed_filter_value_count = showed_filter_value_count | plus: 1 -%}
@@ -626,6 +628,75 @@
                         {%- endif -%}
                       {%- endif -%}
                     {%- endfor -%}
+{% endcomment %}
+                    {%- for value in filter.values -%}
+  
+    {%- assign variant_count = 0 -%} 
+
+
+    {%- for product in collection.products -%}  
+      {%- for variant in product.variants -%}  
+        {%- if variant.available -%}
+          {%- if variant.option1 == value.label or variant.option2 == value.label or variant.option3 == value.label -%} 
+            {%- assign variant_count = variant_count | plus: 1 -%} 
+          {%- endif -%}
+    
+          {%- assign material_values = product.metafields.custom.material | default: empty -%}
+          {%- assign material_string = material_values | join: "," -%}
+          
+          {%- if material_string contains value.label -%}
+            {%- assign variant_count = variant_count | plus: 1 -%}
+          {%- endif -%}
+    
+          {%- assign properties_values = product.metafields.custom.properties | default: empty -%}
+          {%- assign properties_string = properties_values | join: "," -%}
+    
+          {%- if properties_string contains value.label -%}
+            {%- assign variant_count = variant_count | plus: 1 -%}
+          {%- endif -%}
+        {%- endif -%}  
+      {%- endfor -%}  
+    {%- endfor -%}
+  
+
+    {%- if 1 > 0 -%}
+        {%- assign showed_filter_value_count = showed_filter_value_count | plus: 1 -%}
+
+        {%- if option_style contains 'checkbox' -%}
+            <label class="checkbox {% if showed_filter_value_count > initial_visible_option_count %}hidden{% endif %}" data-list-item for="Filter-Dekstop-{{ filter.label | escape }}-{{ forloop.index }}" data-filters-checkbox>
+                <input class="checkbox__input" id="Filter-Dekstop-{{ filter.label | escape }}-{{ forloop.index }}" type="checkbox" name="{{ value.param_name }}" value="{{ value.value }}" {% if value.active %} checked {% endif %} {% if variant_count == 0 and value.active == false %} disabled {% endif %}>
+                <span class="checkbox__span {% if option_style == 'checkbox-outline' %} checkbox__span--outline{% else %} checkbox__span--solid{% endif %}"></span>
+                <span>
+                    {{ value.label | escape }}
+                    <span class="filters__option-count">({{ variant_count }})</span>
+                </span>
+            </label>
+        {%- elsif option_style == 'text' -%}
+            <label class="checkbox {% if showed_filter_value_count > initial_visible_option_count %}hidden{% endif %}" data-list-item for="Filter-Dekstop-{{ filter.label | escape }}-{{ forloop.index }}" data-filters-checkbox>
+                <div class="filters__text-option">
+                    <span>
+                        {{ value.label | escape }}
+                        <span class="filters__option-count">({{ variant_count }})</span>
+                    </span>
+                    <input class="checkbox__input" id="Filter-Dekstop-{{ filter.label | escape }}-{{ forloop.index }}" type="checkbox" name="{{ value.param_name }}" value="{{ value.value }}" {% if value.active %} checked {% endif %} {% if variant_count == 0 and value.active == false %} disabled {% endif %}>
+                    <span class="checkbox__span filters__text-option-checkbox checkbox__span--solid"></span>
+                </div>
+            </label>
+        {%- elsif option_style contains 'button' -%}
+            <label class="checkbox {% if showed_filter_value_count > initial_visible_option_count %}hidden{% endif %}" data-list-item for="Filter-Dekstop-{{ filter.label | escape }}-{{ forloop.index }}" data-filters-checkbox>
+                <input class="checkbox__input" id="Filter-Dekstop-{{ filter.label | escape }}-{{ forloop.index }}" type="checkbox" name="{{ value.param_name }}" value="{{ value.value }}" {% if value.active %} checked {% endif %} {% if variant_count == 0 and value.active == false %} disabled {% endif %}>
+                <div class="pill pill--small {% if option_style == 'button-outline' %}pill--outline{% endif %} {% if option_style == 'button-solid' %}pill--solid{% endif %} {% if value.active %}selected{% endif %}" {% if variant_count == 0 and value.active == false %} disabled {% endif %}>
+                    <span class="pill__label">{{ value.label | escape }} ({{ variant_count }})</span>
+                </div>
+            </label>
+        {%- endif -%}
+    {%- endif -%}
+{%- endfor -%}
+
+{% comment %} {% endcomment %}
+
+                    
+                    
                     {%- if available_filter_value_count > initial_visible_option_count -%}
                       <list-btn class='filters__more' data-trigger='expand' tabindex='0'>
                         {%- render 'icon', icon_name: 'plus', class: 'filters__more-icon' -%}
