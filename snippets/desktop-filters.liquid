@@ -319,7 +319,7 @@
           {%- assign properties_string = properties_values | join: "," -%}
           
           {%- if properties_string contains value.label -%}
-            {{ properties_string }}
+            {{ value.label }}
             {%- assign variant_count = variant_count | plus: 1 -%}
           {%- endif -%}
         {%- endif -%}  
