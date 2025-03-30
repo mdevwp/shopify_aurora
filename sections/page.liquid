@@ -22,7 +22,7 @@
 <div class='section section-{{ section.id }} color-{{ color_scheme }}'>
   <div class='container container--{{ container_size }} section-spacing {% if add_side_paddings == true %}container--with-aside-paddings{% endif %}'>
     {%- if page.title != blank and show_heading == true -%}
-      <h2 class='page__title h5'>{{ page.title }}</h2>
+      <h1 class='page__title h5'>{{ page.title }}</h1>
     {%- endif -%}
     {%- if page.content != blank -%}
       <div class='page__content rte rte--page'>
