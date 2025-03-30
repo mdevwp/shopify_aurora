@@ -3,7 +3,10 @@
   overflow: hidden;
   margin: auto;
 }
-
+h1.article__title {
+    font-size: 40px;
+    font-weight: 700;
+}
 .testimonials__container .quote__text p {
   font-size: 16px;
 }
@@ -239,7 +242,10 @@ button.intrada-wishlist--trigger-icon.intrada-wishlist--rendered {
     background: #f73a6d;
 }
 
-a:visited:not(.icon):not(.product-card__title):not(.header__item):not(.btn):not(.header__dropdown a):not(.classic-pagination__link):not(.social-list__item-link){
+a:visited:not(.icon):not(.product-card__title)
+:not(.header__item):not(.btn):not(.header__dropdown a)
+:not(.classic-pagination__link):not(.social-list__item-link)
+:not(.article__breadcrumbs-item){
     color: darkblue;
 }
 .content-menu .sub-menu li a:visited{
