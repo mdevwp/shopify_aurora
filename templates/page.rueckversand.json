@@ -1,1 +1,178 @@
-{"sections":{"page":{"type":"page","disabled":true,"settings":{"color_scheme":"default","container_size":"large","show_heading":true,"add_side_paddings":true,"section_spacing_top":96,"section_spacing_bottom":96}},"rich_text_LNci9Q":{"type":"rich-text","blocks":{"icon_rCTUUQ":{"type":"icon","settings":{"icon":"none","custom_icon_image":"shopify:\/\/shop_images\/alexascha-icon-umtausch.svg","icon_size":126}},"heading_YMn7hR":{"type":"heading","settings":{"title":"Du möchtest ein Produkt zurückgeben?","heading_size":"h3"}},"text_dNEMCM":{"type":"text","settings":{"text":"<h6><strong>Sitzt das Schmuckstück doch nicht wie geplant? Kein Problem!<\/strong><\/h6><p>Wir nehmen unsere geschätzten Produkte gern zurück, bearbeiten die Retoure, desinfizieren das gute Stück und bieten es erneut an. Somit ist unser Gewissen im Bezug auf die Umwelt rein und Du brauchst Dir in der Hinsicht auch keine Gedanken zu machen. Das Einzige, worum Du Dich kümmern musst, ist die Rücksendung selbst. <\/p>","text_2":"","text_3":"","body_size":"body3"}}},"block_order":["icon_rCTUUQ","heading_YMn7hR","text_dNEMCM"],"settings":{"color_scheme":"default","enable_background_around_container":false,"container_size":"page-width","content_align":"center","add_side_paddings":true,"section_spacing_top":0,"section_spacing_bottom":0}},"rich_text_3QzybK":{"type":"rich-text","blocks":{"icon_azWaLd":{"type":"icon","settings":{"icon":"none","custom_icon_image":"shopify:\/\/shop_images\/alexascha-icon-checkliste.svg","icon_size":126}},"text_WYLb7W":{"type":"text","settings":{"text":"<h6><strong>Hier haben wir eine Check Liste mit den Schritten einer Rücksendung für Dich:<\/strong><\/h6><p>1. checke den Originalzustand des Produkts ab (neu und ungetragen)<\/p><p>2. packe es in die mitgelieferte Produktverpackung wieder ein (Schmuckkärtchen oder Box)<\/p><p>3. wenn Du möchtest, schreibe uns gerne eine kurze Notiz mit dem Grund der Rückgabe und lege sie in den Versandkarton<\/p><p>4. verwende den Originalversandkarton und überschreibe die Adresse (ein Stück Papier, etwas Kleber und fertig ist es)<\/p><p>5. adressiere die Sendung bitte wie folgt: ALEXASCHA Design Studio GmbH \/ Hildesheimer Str. 49 \/ 31157 Sarstedt<\/p><p>6. bringe die Sendung zur Post und verschicke sie als Maxibrief, Päckchen oder Paket (Achtung: nur ein Paket lässt sich verfolgen)<\/p><p><em>Bitte beachte, dass wir aufgrund unseres Fair Pricing und Nachhaltigkeits-Modells keine kostenfreien Retouren anbieten. Die Kosten für den Rückversand sind deshalb von den Kund:innen selbst zu tragen. Eine Ausnahme wird nur bei beschädigten Produkten oder im Garantiefall gemacht.<\/em><\/p>","text_2":"","text_3":"","body_size":"body3"}}},"block_order":["icon_azWaLd","text_WYLb7W"],"settings":{"color_scheme":"custom-5","enable_background_around_container":false,"container_size":"page-width","content_align":"center","add_side_paddings":false,"section_spacing_top":0,"section_spacing_bottom":0}},"rich_text_APQ9Da":{"type":"rich-text","blocks":{"heading_qT7NnX":{"type":"heading","settings":{"title":"<strong>Und so geht`s weiter:<\/strong>","heading_size":"h6"}},"text_iLW9AR":{"type":"text","settings":{"text":"<p>1. wir empfangen das Paket und prüfen den Originalzustand der Produkte<\/p><p>2. wenn alles in Ordnung ist, werden wir den Kaufpreis mittels der beim Kauf verwendeten Zahlungsmethode innerhalb von 1-2 Wochen erstatten<\/p><p><em>Bitte beachte, dass wir nicht für die Mängel der Produkte aufkommen, wenn die Produkte nicht wie oben beschrieben auf den Postweg gebracht werden. Sollte das Produkt nicht sicher verpackt und aus diesem Grund bei uns beschädigt ankommen, so wird der Kaufpreis nicht komplett erstattet.<\/em><\/p>","text_2":"","text_3":"","body_size":"body3"}}},"block_order":["heading_qT7NnX","text_iLW9AR"],"settings":{"color_scheme":"default","enable_background_around_container":false,"container_size":"page-width","content_align":"center","add_side_paddings":true,"section_spacing_top":0,"section_spacing_bottom":0}},"rich_text_TnxEN6":{"type":"rich-text","blocks":{"heading_AYthH8":{"type":"heading","settings":{"title":"Du möchtest ein Produkt umtauschen?","heading_size":"h3"}},"text_w3ndyz":{"type":"text","settings":{"text":"<p>Ein Umtausch ist nicht so einfach, wie wir es gern hätten. Die Buchhaltung hat ihre Regeln und lässt kein Durcheinander zu, welches durch einen Umtausch und damit zusammenhängende Preis- und Versandkostenunterschiede ausgelöst wird. Deswegen bitten wir Dich, wenn Du doch ein anderes Modell oder eine andere Farbe passender für Dich findest, es einfach zu bestellen und das Produkt aus der ersten Bestellung an uns zurückzuschicken. Wie Du das am besten machst, haben wir oben einmal zusammengefasst.<\/p>","text_2":"","text_3":"","body_size":"body3"}}},"block_order":["heading_AYthH8","text_w3ndyz"],"settings":{"color_scheme":"default","enable_background_around_container":false,"container_size":"page-width","content_align":"center","add_side_paddings":true,"section_spacing_top":0,"section_spacing_bottom":0}}},"order":["page","rich_text_LNci9Q","rich_text_3QzybK","rich_text_APQ9Da","rich_text_TnxEN6"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "page": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "default",
+        "container_size": "large",
+        "show_heading": true,
+        "add_side_paddings": true,
+        "section_spacing_top": 96,
+        "section_spacing_bottom": 96
+      }
+    },
+    "rich_text_LNci9Q": {
+      "type": "rich-text",
+      "blocks": {
+        "icon_rCTUUQ": {
+          "type": "icon",
+          "settings": {
+            "icon": "none",
+            "custom_icon_image": "shopify://shop_images/alexascha-icon-umtausch.svg",
+            "icon_size": 126
+          }
+        },
+        "heading_YMn7hR": {
+          "type": "heading",
+          "settings": {
+            "title": "Du möchtest ein Produkt zurückgeben?",
+            "heading_size": "h1"
+          }
+        },
+        "text_dNEMCM": {
+          "type": "text",
+          "settings": {
+            "text": "<h6><strong>Sitzt das Schmuckstück doch nicht wie geplant? Kein Problem!</strong></h6><p>Wir nehmen unsere geschätzten Produkte gern zurück, bearbeiten die Retoure, desinfizieren das gute Stück und bieten es erneut an. Somit ist unser Gewissen im Bezug auf die Umwelt rein und Du brauchst Dir in der Hinsicht auch keine Gedanken zu machen. Das Einzige, worum Du Dich kümmern musst, ist die Rücksendung selbst. </p>",
+            "text_2": "",
+            "text_3": "",
+            "body_size": "body3"
+          }
+        }
+      },
+      "block_order": [
+        "icon_rCTUUQ",
+        "heading_YMn7hR",
+        "text_dNEMCM"
+      ],
+      "settings": {
+        "color_scheme": "default",
+        "enable_background_around_container": false,
+        "container_size": "page-width",
+        "content_align": "center",
+        "add_side_paddings": true,
+        "section_spacing_top": 0,
+        "section_spacing_bottom": 0
+      }
+    },
+    "rich_text_3QzybK": {
+      "type": "rich-text",
+      "blocks": {
+        "icon_azWaLd": {
+          "type": "icon",
+          "settings": {
+            "icon": "none",
+            "custom_icon_image": "shopify://shop_images/alexascha-icon-checkliste.svg",
+            "icon_size": 126
+          }
+        },
+        "text_WYLb7W": {
+          "type": "text",
+          "settings": {
+            "text": "<h6><strong>Hier haben wir eine Check Liste mit den Schritten einer Rücksendung für Dich:</strong></h6><p>1. checke den Originalzustand des Produkts ab (neu und ungetragen)</p><p>2. packe es in die mitgelieferte Produktverpackung wieder ein (Schmuckkärtchen oder Box)</p><p>3. wenn Du möchtest, schreibe uns gerne eine kurze Notiz mit dem Grund der Rückgabe und lege sie in den Versandkarton</p><p>4. verwende den Originalversandkarton und überschreibe die Adresse (ein Stück Papier, etwas Kleber und fertig ist es)</p><p>5. adressiere die Sendung bitte wie folgt: ALEXASCHA Design Studio GmbH / Hildesheimer Str. 49 / 31157 Sarstedt</p><p>6. bringe die Sendung zur Post und verschicke sie als Maxibrief, Päckchen oder Paket (Achtung: nur ein Paket lässt sich verfolgen)</p><p><em>Bitte beachte, dass wir aufgrund unseres Fair Pricing und Nachhaltigkeits-Modells keine kostenfreien Retouren anbieten. Die Kosten für den Rückversand sind deshalb von den Kund:innen selbst zu tragen. Eine Ausnahme wird nur bei beschädigten Produkten oder im Garantiefall gemacht.</em></p>",
+            "text_2": "",
+            "text_3": "",
+            "body_size": "body3"
+          }
+        }
+      },
+      "block_order": [
+        "icon_azWaLd",
+        "text_WYLb7W"
+      ],
+      "settings": {
+        "color_scheme": "custom-5",
+        "enable_background_around_container": false,
+        "container_size": "page-width",
+        "content_align": "center",
+        "add_side_paddings": false,
+        "section_spacing_top": 0,
+        "section_spacing_bottom": 0
+      }
+    },
+    "rich_text_APQ9Da": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_qT7NnX": {
+          "type": "heading",
+          "settings": {
+            "title": "<strong>Und so geht`s weiter:</strong>",
+            "heading_size": "h6"
+          }
+        },
+        "text_iLW9AR": {
+          "type": "text",
+          "settings": {
+            "text": "<p>1. wir empfangen das Paket und prüfen den Originalzustand der Produkte</p><p>2. wenn alles in Ordnung ist, werden wir den Kaufpreis mittels der beim Kauf verwendeten Zahlungsmethode innerhalb von 1-2 Wochen erstatten</p><p><em>Bitte beachte, dass wir nicht für die Mängel der Produkte aufkommen, wenn die Produkte nicht wie oben beschrieben auf den Postweg gebracht werden. Sollte das Produkt nicht sicher verpackt und aus diesem Grund bei uns beschädigt ankommen, so wird der Kaufpreis nicht komplett erstattet.</em></p>",
+            "text_2": "",
+            "text_3": "",
+            "body_size": "body3"
+          }
+        }
+      },
+      "block_order": [
+        "heading_qT7NnX",
+        "text_iLW9AR"
+      ],
+      "settings": {
+        "color_scheme": "default",
+        "enable_background_around_container": false,
+        "container_size": "page-width",
+        "content_align": "center",
+        "add_side_paddings": true,
+        "section_spacing_top": 0,
+        "section_spacing_bottom": 0
+      }
+    },
+    "rich_text_TnxEN6": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_AYthH8": {
+          "type": "heading",
+          "settings": {
+            "title": "Du möchtest ein Produkt umtauschen?",
+            "heading_size": "h3"
+          }
+        },
+        "text_w3ndyz": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Ein Umtausch ist nicht so einfach, wie wir es gern hätten. Die Buchhaltung hat ihre Regeln und lässt kein Durcheinander zu, welches durch einen Umtausch und damit zusammenhängende Preis- und Versandkostenunterschiede ausgelöst wird. Deswegen bitten wir Dich, wenn Du doch ein anderes Modell oder eine andere Farbe passender für Dich findest, es einfach zu bestellen und das Produkt aus der ersten Bestellung an uns zurückzuschicken. Wie Du das am besten machst, haben wir oben einmal zusammengefasst.</p>",
+            "text_2": "",
+            "text_3": "",
+            "body_size": "body3"
+          }
+        }
+      },
+      "block_order": [
+        "heading_AYthH8",
+        "text_w3ndyz"
+      ],
+      "settings": {
+        "color_scheme": "default",
+        "enable_background_around_container": false,
+        "container_size": "page-width",
+        "content_align": "center",
+        "add_side_paddings": true,
+        "section_spacing_top": 0,
+        "section_spacing_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "page",
+    "rich_text_LNci9Q",
+    "rich_text_3QzybK",
+    "rich_text_APQ9Da",
+    "rich_text_TnxEN6"
+  ]
+}
