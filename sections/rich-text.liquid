@@ -91,11 +91,11 @@
               {%- if title != blank -%}
 
                 {%- assign tag = 'h2' -%}
-                {%- if heading_size == h1 -%}
+                {%- if heading_size == 'h1' -%}
                   {%- assign tag = 'h1' -%}
                 {%- endif -%}
 
-                <{{ tag }} class='rte block-{{block.id}} {{ heading_size }} rich-text__heading tst' {{ block.shopify_attributes }}>
+                <{{ tag }} class='rte block-{{block.id}} {{ heading_size }} rich-text__heading' {{ block.shopify_attributes }}>
                   {{ title }}
                 </{{ tag }}>
               {%- endif -%}
