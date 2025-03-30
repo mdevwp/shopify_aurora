@@ -1,1 +1,859 @@
-{"sections":{"page":{"type":"page","disabled":true,"settings":{"color_scheme":"default","container_size":"large","show_heading":true,"add_side_paddings":true,"section_spacing_top":96,"section_spacing_bottom":96}},"rich_text_N7PPq4":{"type":"rich-text","blocks":{"icon_pAXcQc":{"type":"icon","settings":{"icon":"none","custom_icon_image":"shopify:\/\/shop_images\/alexascha-icon-faq.svg","icon_size":126}},"heading_MRj4w4":{"type":"heading","settings":{"title":"FAQ","heading_size":"h3"}},"text_VA8A94":{"type":"text","settings":{"text":"<p>Antworten auf häufig gestellte Fragen findest du hier. Ist deine Frage nicht dabei, schreib uns gerne eine <a href=\"\/pages\/kontakt\" title=\"Kontakt\"><strong>Nachricht<\/strong><\/a>!<\/p>","text_2":"","text_3":"","body_size":"body3"}},"buttons_Fqa6cQ":{"type":"buttons","settings":{"btn_text":"","btn_url":"","btn_style":"link","extra_btn_text":"","extra_btn_url":"","extra_btn_style":"solid"}}},"block_order":["icon_pAXcQc","heading_MRj4w4","text_VA8A94","buttons_Fqa6cQ"],"settings":{"color_scheme":"default","enable_background_around_container":false,"container_size":"page-width","content_align":"center","add_side_paddings":true,"section_spacing_top":14,"section_spacing_bottom":0}},"questions":{"type":"faq","blocks":{"category1":{"type":"category","settings":{"title":"Versand & Zahlung","category_heading_size":"h4","icon":"none"}},"question1":{"type":"question","settings":{"title":"Wie hoch sind die Versandkosten?","heading_size":"caption2","icon":"none","text":"<p>Deutschlandweit betragen die Versandkosten in der Regel 3,00€. Für alle anderen Länder werden 4,00€ berechnet. Beim Expressversand hängen die Preise von dem Bestimmungsland ab. Wenn Du in Deutschland lebst, zahlst du 12€ für die Zustellung am übernächsten Werktag (bei Bestellungen vor 12 Uhr)<\/p>","page":"","body_size":"body3","image_width":100}},"question2":{"type":"question","settings":{"title":"Kann ich die Sendung nachverfolgen?","heading_size":"caption2","icon":"none","text":"<p>Sobald Deine Bestellung versendet wurde bekommst Du eine automatische Versandbestätigung per E-Mail von uns. Die Sendungen innerhalb Deutschlands lassen sich verfolgen. Die Tracking Nummer findest Du in dieser E-Mail.<\/p>","page":"","body_size":"body3","image_width":100}},"question3":{"type":"question","settings":{"title":"Wann erhalte ich meine Bestellung?","heading_size":"caption2","icon":"none","text":"<p>Für die Bearbeitung der Bestellung brauchen wir in der Regel 1-3 Werktage. Je nach Zielland kann die Zustellung von 1-3 Tagen (für Deutschland), 3-5 Tagen (für EU-Länder) bis 5-14 Tagen (weltweit) dauern. Die Expressversandoption beinhaltet eine priorisierte Bearbeitung, damit die Sendung schnellstmöglich bei Dir ankommt.<\/p>","page":"","body_size":"body3","image_width":100}},"question_RN3Jat":{"type":"question","settings":{"title":"Verschickt ihr an die Packstation?","heading_size":"caption2","icon":"none","text":"<p>Wir verschicken Deine Bestellung auch gern an eine Packstation. Es ist wichtig, dass Du die Daten richtig in die Maske einträgst. Die Postnummer kommt in das Feld “Adresszusatz”. Tippe in das Straßenfeld das Wort “Packstation” ein und statt der Hausnummer die Nummer der Packstation. Die Postleitzahl und die Stadt kannst Du wie gewohnt ausfüllen.<\/p>","page":"","body_size":"body3","image_width":100}},"question_mAdmii":{"type":"question","settings":{"title":"Kann ich meine Bestellung abholen?","heading_size":"caption2","icon":"none","text":"<p>Da wir noch keine Filialen haben ist eine persönliche Abholung leider nicht möglich.<\/p>","page":"","body_size":"body3","image_width":100}},"question_UmPkd8":{"type":"question","settings":{"title":"Kann ich die Adresse noch ändern?","heading_size":"caption2","icon":"none","text":"<p>Solange Du keine Versandbestätigung erhalten hast, kannst Du uns Deine Änderungswünsche <a href=\"mailto:info@alexascha.de\">per E-Mail<\/a> mitteilen.<\/p>","page":"","body_size":"body3","image_width":100}},"question_D8R4FB":{"type":"question","settings":{"title":"Passt die Versandbox in den Briefkasten?","heading_size":"caption2","icon":"none","text":"<p>Die Versandbox is 45mm hoch und passt somit nicht in jeden Briefkasten rein. Aber wir arbeiten daran unsere Verpackung noch platzsparender und praktischer zu gestalten.<\/p>","page":"","body_size":"body3","image_width":100}},"question_7BBq6g":{"type":"question","settings":{"title":"Was passiert, wenn die Sendung zurückgegangen ist?","heading_size":"caption2","icon":"none","text":"<p>Wenn wir die Sendung von dem Zusteller ungeöffnet zurück bekommen haben, erstatten wir den Kaufbetrag für die Bestellung abzüglich der Lieferkosten. Sollte das ein Versehen sein und Du willst die Produkte doch haben, dann bestelle einfach neu und fülle gerne auch das Adresszusatzfeld aus, sollte es Probleme bei der Auffindbarkeit Deines Hauses bzw. Wohnung geben.<\/p>","page":"","body_size":"body3","image_width":100}},"question_3WcTPV":{"type":"question","settings":{"title":"Welche Zahlungsmöglichkeiten gibt es?","heading_size":"caption2","icon":"none","text":"<p>Du  kannst bei uns zwischen folgenden Zahlungsmethoden wählen: PayPal, Sofortüberweisung, Kreditkarte, Klarna Rechnung.<\/p>","page":"","body_size":"body3","image_width":100}},"question_ehLMLh":{"type":"question","settings":{"title":"Was mache ich, wenn der Bezahlvorgang abgebrochen wurde?","heading_size":"caption2","icon":"none","text":"<p>Solange Du keine Zahlungsbestätigung von Deiner Bank erhalten hast, ist die Bestellung nicht bezahlt. Wenn der Bezahlvorgang abgebrochen wurde und Du keine Bestätigung der Zahlung bekommst, kannst Du nochmal zum Warenkorb zurückkehren und den Bezahlvorgang neu starten. Sollten technische Probleme, die wir noch nicht mitbekommen haben, der Grund dafür sein, so sind wir für jeden Hinweis dankbar. Schreibe uns gerne eine <a href=\"mailto:info@alexascha.de\" title=\"mailto:info@alexascha.de\">kurze E-Mail<\/a> mit Deinem Feedback.<\/p>","page":"","body_size":"body3","image_width":100}},"category2":{"type":"category","settings":{"title":"Rückgabe & Umtausch","category_heading_size":"h4","icon":"none"}},"question4":{"type":"question","settings":{"title":"Kann ich meine Bestellung stornieren?","heading_size":"caption2","icon":"none","text":"<p>Solange die Bestellung noch nicht versendet wurde, kannst Du sie stornieren. Schreibe uns eine <a href=\"mailto:info@alexascha.de\">E-Mail<\/a> unter Angabe Deiner Bestellnummer und wir erledigen den Rest.<\/p>","page":"","body_size":"body3","image_width":50}},"question5":{"type":"question","settings":{"title":"Wie kann ich ein Artikel zurückschicken?","heading_size":"caption2","icon":"none","text":"<p>Du kannst einen oder mehrere Produkte selbstverständlich zurückschicken. Wie das geht, kannst Du <a href=\"\/pages\/rueckversand\" title=\"rueckversand\">hier<\/a> nachlesen.<\/p>","page":"","body_size":"body3","image_width":100}},"question6":{"type":"question","settings":{"title":"Kann ich ein Artikel umtauschen?","heading_size":"caption2","icon":"none","text":"<p>Ein Umtausch ist aus logistischen Gründen leider nicht möglich, aber Du kannst das unerwünschte Produkt retournieren und einfach eine neue Bestellung abgeben.<\/p>","page":"","body_size":"body3","image_width":100}},"question7":{"type":"question","settings":{"title":"Wie lange ist die Widerrufsfrist?","heading_size":"caption2","icon":"none","text":"<p>Du hast das Recht die unerwünschten Produkte innerhalb von 14 Tagen zu retournieren.<\/p>","page":"","body_size":"body3","image_width":100}},"question_J4mgif":{"type":"question","settings":{"title":"Wer trägt die Rücksendekosten?","heading_size":"caption2","icon":"none","text":"<p>Aufgrund unseres Fair Pricing und Nachhaltigkeits-Modells können wir keine kostenfreien Retouren anbieten. Die Kosten für den Rückversand sind deshalb von Dir zu tragen, außer es handelt sich um eine <a href=\"\/pages\/garantie-reklamation\" title=\"garantie-reklamation\">Reklamation<\/a>.<\/p>","page":"","body_size":"body3","image_width":100}},"question_CzpMxT":{"type":"question","settings":{"title":"Wie und wann bekomme ich das Geld zurück?","heading_size":"caption2","icon":"none","text":"<p>Der Kaufpreis wird Dir mittels der bei der Bestellung verwendeten Zahlungsmethode innerhalb von 1-2 Wochen nachdem die Sendung unser Lager erreicht hat, erstattet.<\/p>","page":"","body_size":"body3","image_width":100}},"category3":{"type":"category","settings":{"title":"Garantie & Reklamation","category_heading_size":"h4","icon":"none"}},"question8":{"type":"question","settings":{"title":"Gibt es eine Garantie?","heading_size":"caption2","icon":"none","text":"<p>Wir sind uns im Bezug auf die Qualität unserer Produkte sicher und bürgen dafür mit einer Garantie, die ganze 24 Monate gilt. Erfahre mehr darüber, wie Du im Garantiefall vorgehst auf der Seite <a href=\"\/pages\/garantie-reklamation\" title=\"garantie-reklamation\">Garantie & Reklamation<\/a>.<\/p>","page":"","body_size":"body3","image_width":100}},"question9":{"type":"question","settings":{"title":"Wann kann ich ein Artikel reklamieren?","heading_size":"caption2","icon":"none","text":"<p>Im Laufe von 24 Monaten nach dem Kauf hast Du die Möglichkeit das Produkt mit einem eindeutigen Herstellungsfehler oder mit einem bei der Lieferung entstandenen Mangel zu reklamieren. Fülle dafür das entsprechende Formular auf der Seite <a href=\"\/pages\/garantie-reklamation\" title=\"garantie-reklamation\">Garantie & Reklamation<\/a> aus und hänge ein Foto von dem kaputten Schmuckstück an. Wir prüfen den Zustand des Produktes und melden uns bei Dir im Laufe von 24-48 Stunden zurück.<\/p>","page":"","body_size":"body3","image_width":100}},"question_TUiLpW":{"type":"question","settings":{"title":"Was ist ein Herstellungsfehler?","heading_size":"caption2","icon":"none","text":"<p>Hier ist eine Liste, an der Du Dich orientieren kannst, wenn Du nicht selbst einschätzen kannst, was ein Fertigungsfehler ist: Kleber hat sich gelöst, Fassung ist beschädigt, Verschluss schließt nicht richtig, Kette ist gerissen, Anhänger ist zerbrochen, Bruchstelle am Rand, starke Verfärbung ist aufgetreten.<\/p>","page":"","body_size":"body3","image_width":100}},"category_4dfxKX":{"type":"category","settings":{"title":"Material & Qualität","category_heading_size":"h4","icon":"none"}},"question_8bAHty":{"type":"question","settings":{"title":"Ist euer Glasschmuck schwer?","heading_size":"caption2","icon":"none","text":"<p>Das Glas ist leichter, als man vermuten könnte. Auch die größeren Modelle aus Glas sind nicht schwer. Die unverwechselbare Haptik rundet das angenehme Tragegefühl ab.<\/p>","page":"","body_size":"body3","image_width":100}},"question_RJ4aVT":{"type":"question","settings":{"title":"Ist euer Schmuck nickelfrei und hautfreundlich?","heading_size":"caption2","icon":"none","text":"<p>Wir verwenden ausschließlich hypoallergene Metalllegierungen wie Edelstahl für unseren Schmuck, die für Allergiker geeignet sind. In 99% der Fälle ist das Tragen absolut unproblematisch.<\/p>","page":"","body_size":"body3","image_width":100}},"question_XmwMiP":{"type":"question","settings":{"title":"Geht der Glasschmuck schnell kaputt?","heading_size":"caption2","icon":"none","text":"<p>Der Glasschmuck wird aus Mosaiksteinen gefertigt, die eigentlich für den Wohnbereich vorgesehen sind. Deswegen sind sie ausgesprochen robust und sogar bruchfest. Das Hartglas, aus dem sie bestehen, ist nicht mit herkömmlichem Glas zu vergleichen. Sogar wenn das Schmuckstück mal auf den gefliesten Boden fällt, wird nichts passieren. Kratzfest ist er in Maßen. Mit der Zeit können an der Oberfläche Mikrokratzer entstehen, die als normale Gebrauchsspuren zu sehen sind.<\/p>","page":"","body_size":"body3","image_width":100}},"question_pXM99m":{"type":"question","settings":{"title":"Sehen die Produkte immer gleich aus?","heading_size":"caption2","icon":"none","text":"<p>Je nach Kollektion und Material gibt es Unterschiede. Die Produkte aus Glas und Keramik bestehen aus upcycelten Mosaiksteinchen, die nie zu 100% identisch sind. Jeder Glasstein ist ein Unikat, aber durch sorgfältiges Sortieren und Zuordnen sehen die Paare immer gleich aus. Die minimalen Unterschiede in Größe und Form sieht man nur bei mehreren Paaren oder Schmuckstücken im direkten Vergleich. Der Farbton kann je nach Charge etwas variieren. Das bedeutet nicht, dass Du ein Paar Ohrringe oder ein Schmuckset mit zwei oder drei verschiedenen Steinchen bekommen kannst, sondern lediglich, dass in einer erneuten Bestellung dieselbe Farbe etwas abweichen kann.<\/p>","page":"","body_size":"body3","image_width":100}},"question_AJDYjD":{"type":"question","settings":{"title":"Verändert sich mein Schmuck auf Dauer?","heading_size":"caption2","icon":"none","text":"<p>Mit der Zeit kann das Metall etwas dunkler bzw. matter werden, was damit zu tun hat, dass viele kaum für`s Auge sichtbare Kratzer entstehen und der Glanz der Polierung softer wird. Die Gold- bzw. Silberfarbe bleibt dabei erhalten. Die Schmucksteine verändern ihre Farbe nicht, ganz unabhängig davon welchen äußeren Einflüssen sie ausgesetzt werden.<\/p>","page":"","body_size":"body3","image_width":100}},"question_JwCBWg":{"type":"question","settings":{"title":"Färben die Produkte ab?","heading_size":"caption2","icon":"none","text":"<p>Unsere Produkte behalten ihre Farbe und hinterlassen auch auf der Haut keine Spuren. Die Haltbarkeit und das Aussehen von Schmuck hängt aber unmittelbar mit der Nutzung zusammen. Informiere Dich gern zum Thema <a href=\"\/pages\/pflegehinweise\" title=\"pflegehinweise\">Nutzung und Pflege<\/a>.<\/p>","page":"","body_size":"body3","image_width":100}},"category_D9jBgQ":{"type":"category","settings":{"title":"Pflege & Aufbewahrung","category_heading_size":"h4","icon":"none"}},"question_k3fHNc":{"type":"question","settings":{"title":"Kann ich mit eurem Schmuck duschen?","heading_size":"caption2","icon":"none","text":"<p>Da wir bei den meisten Schmuckstücken Klebstoff benutzen, solltest Deinen Schmuck beim Duschen abnehmen, um das Ablösen des Steins vom Metall zu vermeiden. Die Schmuckstücke ohne Stein schränken Dich dafür kaum ein.<\/p>","page":"","body_size":"body3","image_width":100}},"question_kLjWGc":{"type":"question","settings":{"title":"Kann ich euren Schmuck beim Sport tragen?","heading_size":"caption2","icon":"none","text":"<p>Generell solltest Du keinen Schmuck beim Sport oder Sauna tragen. Die unterschiedlichen pH-Werte machen sich beim Schwitzen bemerkbar und es kann möglich sein, dass der Schmuck im Kontakt mit einem hohen Säuregehalt seinen Glanz schneller verliert.<\/p>","page":"","body_size":"body3","image_width":100}},"question_KRrQGz":{"type":"question","settings":{"title":"Wie wirken Kosmetik, Seifen & Shampoos auf meinen Schmuck?","heading_size":"caption2","icon":"none","text":"<p>Halte Deinen Schmuck von salzigem Wasser und Chemikalien wie Duschgel, Seife oder Hand- und Gesichtscreme vorsichtshalber fern, so wird er ein langes Leben haben und behält seine schöne Erscheinung.<\/p>","page":"","body_size":"body3","image_width":100}},"question_6jyR7t":{"type":"question","settings":{"title":"Wie bewahre ich euren Schmuck am besten auf?","heading_size":"caption2","icon":"none","text":"<p>Unsere Schmuckstücke lieben es ordentlich und voneinander getrennt zu liegen, damit sie nicht zerkratzen und sich nicht verknoten. Außerdem sollte der Schmuck trocken aufbewahrt werden und nicht über einen längeren Zeitraum der direkten Sonne ausgesetzt werden.<\/p>","page":"","body_size":"body3","image_width":100}},"question_a9WhBE":{"type":"question","settings":{"title":"Wie reinige ich meinen Schmuck?","heading_size":"caption2","icon":"none","text":"<p>Da unser Schmuck wasserfest ist, kann man ihn auch ganz normal mit Wasser abwaschen, mit einer weichen Bürste reinigen oder mit einem weichen Tuch polieren.<\/p>","page":"","body_size":"body3","image_width":100}},"category_Gi7y8B":{"type":"category","settings":{"title":"Größen & Farben","category_heading_size":"h4","icon":"none"}},"question_bBD7UL":{"type":"question","settings":{"title":"In welchen Größen gibt`s die Ringe?","heading_size":"caption2","icon":"none","text":"<p>Fast alle unsere Ringe sind größenverstellbar. Sie lassen sich von etwa Größe 53 bis Größe 63 weiten. Im Durchmesser sind es ca. 17mm bis 20mm. Das Material und die Form erlauben es die Ringe auch größer einzustellen, dennoch ist das Tragegefühl ein anderes und es kann sein, dass das weniger angenehm wird.<\/p>","page":"","body_size":"body3","image_width":100}},"question_Jg6EXn":{"type":"question","settings":{"title":"Wie kann ich meine Ringgröße herausfinden?","heading_size":"caption2","icon":"none","text":"<p>Unser <a href=\"\/pages\/groessenguide\" title=\"groessenguide\">Größenguide<\/a> hilft Dir dabei Deine Ringgröße zu ermitteln und beantwortet auch die Fragen zu den Ketten- und Armbandlängen.<\/p>","page":"","body_size":"body3","image_width":100}},"question_XmqNDc":{"type":"question","settings":{"title":"In welchen Größen gibt`s die Armbänder?","heading_size":"caption2","icon":"none","text":"<p>Wir bieten größenverstellbare Armbänder mit dem Umfang von 17 bis 20 cm an. Die Armreife haben eine feste Größe von ca. 20 cm Umfang.<\/p>","page":"","body_size":"body3","image_width":100}},"question_XRF4gw":{"type":"question","settings":{"title":"Wie kann ich meine Armbandgröße herausfinden?","heading_size":"caption2","icon":"none","text":"<p>Unser <a href=\"\/pages\/groessenguide\" title=\"groessenguide\">Größenguide<\/a> hilft Dir dabei den Umfang Deines Handgelenks und somit die Größe des Armbands zu ermitteln.<\/p>","page":"","body_size":"body3","image_width":100}},"question_TaA8Gp":{"type":"question","settings":{"title":"Welche Steingröße passt mir am besten?","heading_size":"caption2","icon":"none","text":"<p>Wenn Du nicht sicher bist, welche Steingröße Du wählen sollst, schaue Dir unseren <a href=\"\/pages\/groessenguide\" title=\"groessenguide\">Größenguide<\/a> an. Hier findest Du Bilder mit Größenverhältnissen, die Dir dabei helfen sollen, eine Entscheidung zu treffen.<\/p>","page":"","body_size":"body3","image_width":100}},"question_eYWynd":{"type":"question","settings":{"title":"Kann die Farbe in Wirklichkeit vom Bild abweichen?","heading_size":"caption2","icon":"none","text":"<p>Wir geben uns größte Mühe die Farben auf den Bildern so wiederzugeben, wie sie in Wirklichkeit auch sind. Je nach Bildschirm und Kalibrierung können die Farben jedoch etwas abweichen.<\/p>","page":"","body_size":"body3","image_width":100}},"question_7jredU":{"type":"question","settings":{"title":"Kann die gleiche Farbe unterschiedlich ausfallen?","heading_size":"caption2","icon":"none","text":"<p>Je nach Charge kann es vorkommen, dass der Farbton einer Farbe anders ausfällt. Aus diesem Grund unterscheidet sich manchmal dieselbe Farbe in verschiedenen Größen ein wenig, dies können wir leider nicht verhindern.<\/p>","page":"","body_size":"body3","image_width":100}},"question_nQAc4n":{"type":"question","settings":{"title":"Ist die gleiche Farbe in Glas und Keramik identisch?","heading_size":"caption2","icon":"none","text":"<p>Aufgrund der Oberflächenbeschaffenheit kann die Farbe bei verschiedenen Materialien wie z.B. Glas und Keramik unterschiedlich wirken. Grundsätzlich haben alle unsere Farben Namen und diese verwenden wir für die gleichen Farben in allen Größen und Oberflächen zur besseren Orientierung im Shop.<\/p>","page":"","body_size":"body3","image_width":100}},"question_zJMRMC":{"type":"question","settings":{"title":"Warum finde ich kein passendes Schmuckstück für ein Set?","heading_size":"caption2","icon":"none","text":"<p>Wenn Du vergeblich nach einem Schmuckstück in passender Farbe suchst, haben wir es höchstwahrscheinlich nicht auf Lager oder können es grundsätzlich nicht produzieren. Unsere Schmuckstücke entstehen in einem Upcycling Prozess und dabei nehmen wir das, was schon da ist und können nicht alle Farben und Größen nach Wunsch umsetzen, auch wenn wir das sehr gern tun würden.<\/p>","page":"","body_size":"body3","image_width":100}}},"block_order":["category1","question1","question2","question3","question_RN3Jat","question_mAdmii","question_UmPkd8","question_D8R4FB","question_7BBq6g","question_3WcTPV","question_ehLMLh","category2","question4","question5","question6","question7","question_J4mgif","question_CzpMxT","category3","question8","question9","question_TUiLpW","category_4dfxKX","question_8bAHty","question_RJ4aVT","question_XmwMiP","question_pXM99m","question_AJDYjD","question_JwCBWg","category_D9jBgQ","question_k3fHNc","question_kLjWGc","question_KRrQGz","question_6jyR7t","question_a9WhBE","category_Gi7y8B","question_bBD7UL","question_Jg6EXn","question_XmqNDc","question_XRF4gw","question_TaA8Gp","question_eYWynd","question_7jredU","question_nQAc4n","question_zJMRMC"],"custom_css":[],"settings":{"color_scheme":"default","enable_background_around_container":false,"color_tabs":"content_tabs_separately","container_size":"small","section_layout":"bottom-tabs","expand_first_tab":false,"title":"","heading_size":"h5","text":"","body_size":"body3","btn_text":"","btn_url":"","btn_style":"solid","add_side_paddings":true,"section_spacing_top":0,"section_spacing_bottom":0}},"faq_Dypb3Y":{"type":"faq","blocks":{"category_iWg88W":{"type":"category","settings":{"title":"Gutscheine & Rabatte","category_heading_size":"h4","icon":"none"}},"question_rNRjCk":{"type":"question","settings":{"title":"Macht ihr Rabattaktionen?","heading_size":"caption2","icon":"none","text":"<p>Alles über Rabattaktionen erfährst Du als erste:r aus unserem <a href=\"http:\/\/eepurl.com\/hpSYuf\" target=\"_blank\">Newsletter<\/a>. Abonniere ihn jetzt und verpasse nichts mehr! Außerdem findest Du Inspiration und auch Informationen zu allen Aktionen auf unserem <a href=\"https:\/\/www.instagram.com\/alexascha.de\/\" target=\"_blank\">Instagram Profil<\/a>.<\/p>","page":"","body_size":"body3","image_width":100}},"question_Nj69xh":{"type":"question","settings":{"title":"Gibt es einen Mengenrabatt?","heading_size":"caption2","icon":"none","text":"<p>Einen klassischen Mengenrabatt gibt es bei uns nur für Händler, die gleichzeitig sehr viele Produkte kaufen. In unserem Online Shop gibt es keine, weil es sich hierbei nicht um solche Mengen handelt, bei welchen sich die Arbeitsprozesse optimieren ließen. Damit wir weiterhin eine faire Entlohnung aufrechterhalten können, bieten wir keine Mengenrabatte an.<\/p>","page":"","body_size":"body3","image_width":100}},"question_8rHf7y":{"type":"question","settings":{"title":"Kann ich ein Geschenkgutschein kaufen?","heading_size":"caption2","icon":"none","text":"<p>Bei uns findest Du <a href=\"\/products\/gutschein-zum-ausdrucken\" title=\"Gutschein zum Ausdrucken\">Gutscheine zum Ausdrucken<\/a> im Wert von 20€, 50€, 70€ und 100€. Du kannst ihn ganz normal auf einem DIN A4 Blatt ausdrucken und entweder gefaltet in einem langem Umschlag verschenken oder ihn auf das Postkartenformat zuschneiden und in einen kleinen Umschlag packen.<\/p>","page":"","body_size":"body3","image_width":100}},"question_jrPqMV":{"type":"question","settings":{"title":"Gibt es einen Sale?","heading_size":"caption2","icon":"none","text":"<p>Unsere Designs entwickeln wir bewusst trendunabhängig und arbeiten mit Materialien, die eine sehr hohe Lebensdauer haben, sodass wir nicht gezwungen sind zum Ende der Saison die “alten” Produkte mithilfe von einer SALE-Kategorie abzuverkaufen.<\/p>","page":"","body_size":"body3","image_width":100}},"question_X8efn6":{"type":"question","settings":{"title":"Kann man B-Ware zu kaufen?","heading_size":"caption2","icon":"none","text":"<p>Wir haben uns für den steinigen Weg der Wiederverwertung entschieden, was eine gewisse Anzahl an aussortiertem Material mit sich zieht. Diese unperfekten Schätze werden aufbewahrt in Form von losen Steinchen oder bei der Qualitätskontrolle aussortierten Schmuckstücken. Wir arbeiten daran diese unperfekt perfekten Produkte schon bald in einer neuen Kategorie zu vergünstigten Preisen anbieten zu können.<\/p>","page":"","body_size":"body3","image_width":100}},"category_djHejR":{"type":"category","settings":{"title":"Sonstiges","category_heading_size":"h4","icon":"none"}},"question_yGppFE":{"type":"question","settings":{"title":"Macht ihr Sonderanfertigungen?","heading_size":"caption2","icon":"none","text":"<p>Auf dem Weg des Minimalismus haben wir uns von einigen Formen und Materialien getrennt und uns auf das Wesentliche fokussiert. Damit mussten wir leider auch den Strich auf Bezug auf die Individualisierbarkeit ziehen. Unser Sortiment ist dennoch so aufgebaut, dass Du die maximale Auswahl an Farben und Größen bekommst, sodass sich vieles auf Deine Bedürfnisse anpassen lässt.<\/p>","page":"","body_size":"body3","image_width":100}},"question_YeNVwH":{"type":"question","settings":{"title":"Kann ich die Produkte in einem Laden kaufen?","heading_size":"caption2","icon":"none","text":"<p>Wir sind dabei unser Händlernetz auszubauen und werden schon bald eine Karte bzw. Liste mit den Läden veröffentlichen, bei denen unsere Produkte zu finden sind.<\/p>","page":"","body_size":"body3","image_width":100}},"question_DTN8yC":{"type":"question","settings":{"title":"Gibt es einen Showroom?","heading_size":"caption2","icon":"none","text":"<p>Im Moment fokussieren wir uns auf die Online-Präsenz und haben noch keinen Showroom, wo man uns besuchen könnte und den Schmuck direkt anprobieren. Wir merken uns diesen Punkt aber wegen der hohen Nachfrage für die Zukunft vor.<\/p>","page":"","body_size":"body3","image_width":100}},"question_4Hgxgf":{"type":"question","settings":{"title":"Verkauft ihr an Händler?","heading_size":"caption2","icon":"none","text":"<p>Unsere Produkte passen sehr gut zu dem Sortiment vieler Concept Stores, Mode- und Schmuckgeschäften sowie Geschenkeläden und sind sowohl online als auf offline zu finden. In Kürze werden wir die Liste unserer Partner veröffentlichen und freuen uns auch über neue Kontakte. Möchtest Du unsere Produkte in Deinem Laden anbieten? Kontaktiere uns gerne <a href=\"mailto:alexandra@alexascha.de\">per Mail<\/a> für die Einzelheiten oder besuche direkt unseren <a href=\"https:\/\/www.orderchamp.com\/de\/store\/alexascha\" target=\"_blank\">B2B-Store<\/a> auf Orderchamp.<\/p>","page":"","body_size":"body3","image_width":100}},"question_cyhyjF":{"type":"question","settings":{"title":"Wieso gibt es einige Produkte nicht mehr?","heading_size":"caption2","icon":"none","text":"<p>Wir haben unsere Werte klar definiert, was einen großen Einfluss auf das Design und die Auswahl der Materialien hatte. Das ist der Grund, warum wir einige Produkte aus dem früheren Sortiment nicht mehr in unserem Shop führen. Da wir aber wissen, dass einige Kunden genau diese Produkte lieben, bieten wir sie in unserem <a href=\"https:\/\/www.etsy.com\/de\/shop\/ALEXASCHA\" target=\"_blank\">Etsy Shop<\/a> solange der Vorrat reicht an. Vielleicht wirst Du da fündig?<\/p>","page":"","body_size":"body3","image_width":100}},"question_XeXeCc":{"type":"question","settings":{"title":"Wie kann ich meinen alten Schmuck nachhaltig entsorgen?","heading_size":"caption2","icon":"none","text":"<p>Wenn Du merkst, dass Dich die alten Schmuckstücke nicht mehr glücklich machen und Du Dich umweltfreundlich von ihnen trennen möchtest, wende Dich gerne an uns <a href=\"mailto:info@alexascha.de\">per Mail<\/a>. Wir helfen Dir dabei die Produkte korrekt zu entsorgen. Schließlich haben wir sie so konzipiert, dass sie aus wenigen Bestandteilen hergestellt sind und sich umweltbewusst entsorgen lassen.<\/p>","page":"","body_size":"body3","image_width":100}}},"block_order":["category_iWg88W","question_rNRjCk","question_Nj69xh","question_8rHf7y","question_jrPqMV","question_X8efn6","category_djHejR","question_yGppFE","question_YeNVwH","question_DTN8yC","question_4Hgxgf","question_cyhyjF","question_XeXeCc"],"settings":{"color_scheme":"default","enable_background_around_container":false,"color_tabs":"content_tabs_separately","container_size":"small","section_layout":"bottom-tabs","expand_first_tab":false,"title":"","heading_size":"h5","text":"","body_size":"body3","btn_text":"","btn_url":"","btn_style":"solid","add_side_paddings":true,"section_spacing_top":0,"section_spacing_bottom":96}}},"order":["page","rich_text_N7PPq4","questions","faq_Dypb3Y"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "page": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "default",
+        "container_size": "large",
+        "show_heading": true,
+        "add_side_paddings": true,
+        "section_spacing_top": 96,
+        "section_spacing_bottom": 96
+      }
+    },
+    "rich_text_N7PPq4": {
+      "type": "rich-text",
+      "blocks": {
+        "icon_pAXcQc": {
+          "type": "icon",
+          "settings": {
+            "icon": "none",
+            "custom_icon_image": "shopify://shop_images/alexascha-icon-faq.svg",
+            "icon_size": 126
+          }
+        },
+        "heading_MRj4w4": {
+          "type": "heading",
+          "settings": {
+            "title": "FAQ",
+            "heading_size": "h1"
+          }
+        },
+        "text_VA8A94": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Antworten auf häufig gestellte Fragen findest du hier. Ist deine Frage nicht dabei, schreib uns gerne eine <a href=\"/pages/kontakt\" title=\"Kontakt\"><strong>Nachricht</strong></a>!</p>",
+            "text_2": "",
+            "text_3": "",
+            "body_size": "body3"
+          }
+        },
+        "buttons_Fqa6cQ": {
+          "type": "buttons",
+          "settings": {
+            "btn_text": "",
+            "btn_url": "",
+            "btn_style": "link",
+            "extra_btn_text": "",
+            "extra_btn_url": "",
+            "extra_btn_style": "solid"
+          }
+        }
+      },
+      "block_order": [
+        "icon_pAXcQc",
+        "heading_MRj4w4",
+        "text_VA8A94",
+        "buttons_Fqa6cQ"
+      ],
+      "settings": {
+        "color_scheme": "default",
+        "enable_background_around_container": false,
+        "container_size": "page-width",
+        "content_align": "center",
+        "add_side_paddings": true,
+        "section_spacing_top": 14,
+        "section_spacing_bottom": 0
+      }
+    },
+    "questions": {
+      "type": "faq",
+      "blocks": {
+        "category1": {
+          "type": "category",
+          "settings": {
+            "title": "Versand & Zahlung",
+            "category_heading_size": "h4",
+            "icon": "none"
+          }
+        },
+        "question1": {
+          "type": "question",
+          "settings": {
+            "title": "Wie hoch sind die Versandkosten?",
+            "heading_size": "caption2",
+            "icon": "none",
+            "text": "<p>Deutschlandweit betragen die Versandkosten in der Regel 3,00€. Für alle anderen Länder werden 4,00€ berechnet. Beim Expressversand hängen die Preise von dem Bestimmungsland ab. Wenn Du in Deutschland lebst, zahlst du 12€ für die Zustellung am übernächsten Werktag (bei Bestellungen vor 12 Uhr)</p>",
+            "page": "",
+            "body_size": "body3",
+            "image_width": 100
+          }
+        },
+        "question2": {
+          "type": "question",
+          "settings": {
+            "title": "Kann ich die Sendung nachverfolgen?",
+            "heading_size": "caption2",
+            "icon": "none",
+            "text": "<p>Sobald Deine Bestellung versendet wurde bekommst Du eine automatische Versandbestätigung per E-Mail von uns. Die Sendungen innerhalb Deutschlands lassen sich verfolgen. Die Tracking Nummer findest Du in dieser E-Mail.</p>",
+            "page": "",
+            "body_size": "body3",
+            "image_width": 100
+          }
+        },
+        "question3": {
+          "type": "question",
+          "settings": {
+            "title": "Wann erhalte ich meine Bestellung?",
+            "heading_size": "caption2",
+            "icon": "none",
+            "text": "<p>Für die Bearbeitung der Bestellung brauchen wir in der Regel 1-3 Werktage. Je nach Zielland kann die Zustellung von 1-3 Tagen (für Deutschland), 3-5 Tagen (für EU-Länder) bis 5-14 Tagen (weltweit) dauern. Die Expressversandoption beinhaltet eine priorisierte Bearbeitung, damit die Sendung schnellstmöglich bei Dir ankommt.</p>",
+            "page": "",
+            "body_size": "body3",
+            "image_width": 100
+          }
+        },
+        "question_RN3Jat": {
+          "type": "question",
+          "settings": {
+            "title": "Verschickt ihr an die Packstation?",
+            "heading_size": "caption2",
+            "icon": "none",
+            "text": "<p>Wir verschicken Deine Bestellung auch gern an eine Packstation. Es ist wichtig, dass Du die Daten richtig in die Maske einträgst. Die Postnummer kommt in das Feld “Adresszusatz”. Tippe in das Straßenfeld das Wort “Packstation” ein und statt der Hausnummer die Nummer der Packstation. Die Postleitzahl und die Stadt kannst Du wie gewohnt ausfüllen.</p>",
+            "page": "",
+            "body_size": "body3",
+            "image_width": 100
+          }
+        },
+        "question_mAdmii": {
+          "type": "question",
+          "settings": {
+            "title": "Kann ich meine Bestellung abholen?",
+            "heading_size": "caption2",
+            "icon": "none",
+            "text": "<p>Da wir noch keine Filialen haben ist eine persönliche Abholung leider nicht möglich.</p>",
+            "page": "",
+            "body_size": "body3",
+            "image_width": 100
+          }
+        },
+        "question_UmPkd8": {
+          "type": "question",
+          "settings": {
+            "title": "Kann ich die Adresse noch ändern?",
+            "heading_size": "caption2",
+            "icon": "none",
+            "text": "<p>Solange Du keine Versandbestätigung erhalten hast, kannst Du uns Deine Änderungswünsche <a href=\"mailto:info@alexascha.de\">per E-Mail</a> mitteilen.</p>",
+            "page": "",
+            "body_size": "body3",
+            "image_width": 100
+          }
+        },
+        "question_D8R4FB": {
+          "type": "question",
+          "settings": {
+            "title": "Passt die Versandbox in den Briefkasten?",
+            "heading_size": "caption2",
+            "icon": "none",
+            "text": "<p>Die Versandbox is 45mm hoch und passt somit nicht in jeden Briefkasten rein. Aber wir arbeiten daran unsere Verpackung noch platzsparender und praktischer zu gestalten.</p>",
+            "page": "",
+            "body_size": "body3",
+            "image_width": 100
+          }
+        },
+        "question_7BBq6g": {
+          "type": "question",
+          "settings": {
+            "title": "Was passiert, wenn die Sendung zurückgegangen ist?",
+            "heading_size": "caption2",
+            "icon": "none",
+            "text": "<p>Wenn wir die Sendung von dem Zusteller ungeöffnet zurück bekommen haben, erstatten wir den Kaufbetrag für die Bestellung abzüglich der Lieferkosten. Sollte das ein Versehen sein und Du willst die Produkte doch haben, dann bestelle einfach neu und fülle gerne auch das Adresszusatzfeld aus, sollte es Probleme bei der Auffindbarkeit Deines Hauses bzw. Wohnung geben.</p>",
+            "page": "",
+            "body_size": "body3",
+            "image_width": 100
+          }
+        },
+        "question_3WcTPV": {
+          "type": "question",
+          "settings": {
+            "title": "Welche Zahlungsmöglichkeiten gibt es?",
+            "heading_size": "caption2",
+            "icon": "none",
+            "text": "<p>Du  kannst bei uns zwischen folgenden Zahlungsmethoden wählen: PayPal, Sofortüberweisung, Kreditkarte, Klarna Rechnung.</p>",
+            "page": "",
+            "body_size": "body3",
+            "image_width": 100
+          }
+        },
+        "question_ehLMLh": {
+          "type": "question",
+          "settings": {
+            "title": "Was mache ich, wenn der Bezahlvorgang abgebrochen wurde?",
+            "heading_size": "caption2",
+            "icon": "none",
+            "text": "<p>Solange Du keine Zahlungsbestätigung von Deiner Bank erhalten hast, ist die Bestellung nicht bezahlt. Wenn der Bezahlvorgang abgebrochen wurde und Du keine Bestätigung der Zahlung bekommst, kannst Du nochmal zum Warenkorb zurückkehren und den Bezahlvorgang neu starten. Sollten technische Probleme, die wir noch nicht mitbekommen haben, der Grund dafür sein, so sind wir für jeden Hinweis dankbar. Schreibe uns gerne eine <a href=\"mailto:info@alexascha.de\" title=\"mailto:info@alexascha.de\">kurze E-Mail</a> mit Deinem Feedback.</p>",
+            "page": "",
+            "body_size": "body3",
+            "image_width": 100
+          }
+        },
+        "category2": {
+          "type": "category",
+          "settings": {
+            "title": "Rückgabe & Umtausch",
+            "category_heading_size": "h4",
+            "icon": "none"
+          }
+        },
+        "question4": {
+          "type": "question",
+          "settings": {
+            "title": "Kann ich meine Bestellung stornieren?",
+            "heading_size": "caption2",
+            "icon": "none",
+            "text": "<p>Solange die Bestellung noch nicht versendet wurde, kannst Du sie stornieren. Schreibe uns eine <a href=\"mailto:info@alexascha.de\">E-Mail</a> unter Angabe Deiner Bestellnummer und wir erledigen den Rest.</p>",
+            "page": "",
+            "body_size": "body3",
+            "image_width": 50
+          }
+        },
+        "question5": {
+          "type": "question",
+          "settings": {
+            "title": "Wie kann ich ein Artikel zurückschicken?",
+            "heading_size": "caption2",
+            "icon": "none",
+            "text": "<p>Du kannst einen oder mehrere Produkte selbstverständlich zurückschicken. Wie das geht, kannst Du <a href=\"/pages/rueckversand\" title=\"rueckversand\">hier</a> nachlesen.</p>",
+            "page": "",
+            "body_size": "body3",
+            "image_width": 100
+          }
+        },
+        "question6": {
+          "type": "question",
+          "settings": {
+            "title": "Kann ich ein Artikel umtauschen?",
+            "heading_size": "caption2",
+            "icon": "none",
+            "text": "<p>Ein Umtausch ist aus logistischen Gründen leider nicht möglich, aber Du kannst das unerwünschte Produkt retournieren und einfach eine neue Bestellung abgeben.</p>",
+            "page": "",
+            "body_size": "body3",
+            "image_width": 100
+          }
+        },
+        "question7": {
+          "type": "question",
+          "settings": {
+            "title": "Wie lange ist die Widerrufsfrist?",
+            "heading_size": "caption2",
+            "icon": "none",
+            "text": "<p>Du hast das Recht die unerwünschten Produkte innerhalb von 14 Tagen zu retournieren.</p>",
+            "page": "",
+            "body_size": "body3",
+            "image_width": 100
+          }
+        },
+        "question_J4mgif": {
+          "type": "question",
+          "settings": {
+            "title": "Wer trägt die Rücksendekosten?",
+            "heading_size": "caption2",
+            "icon": "none",
+            "text": "<p>Aufgrund unseres Fair Pricing und Nachhaltigkeits-Modells können wir keine kostenfreien Retouren anbieten. Die Kosten für den Rückversand sind deshalb von Dir zu tragen, außer es handelt sich um eine <a href=\"/pages/garantie-reklamation\" title=\"garantie-reklamation\">Reklamation</a>.</p>",
+            "page": "",
+            "body_size": "body3",
+            "image_width": 100
+          }
+        },
+        "question_CzpMxT": {
+          "type": "question",
+          "settings": {
+            "title": "Wie und wann bekomme ich das Geld zurück?",
+            "heading_size": "caption2",
+            "icon": "none",
+            "text": "<p>Der Kaufpreis wird Dir mittels der bei der Bestellung verwendeten Zahlungsmethode innerhalb von 1-2 Wochen nachdem die Sendung unser Lager erreicht hat, erstattet.</p>",
+            "page": "",
+            "body_size": "body3",
+            "image_width": 100
+          }
+        },
+        "category3": {
+          "type": "category",
+          "settings": {
+            "title": "Garantie & Reklamation",
+            "category_heading_size": "h4",
+            "icon": "none"
+          }
+        },
+        "question8": {
+          "type": "question",
+          "settings": {
+            "title": "Gibt es eine Garantie?",
+            "heading_size": "caption2",
+            "icon": "none",
+            "text": "<p>Wir sind uns im Bezug auf die Qualität unserer Produkte sicher und bürgen dafür mit einer Garantie, die ganze 24 Monate gilt. Erfahre mehr darüber, wie Du im Garantiefall vorgehst auf der Seite <a href=\"/pages/garantie-reklamation\" title=\"garantie-reklamation\">Garantie & Reklamation</a>.</p>",
+            "page": "",
+            "body_size": "body3",
+            "image_width": 100
+          }
+        },
+        "question9": {
+          "type": "question",
+          "settings": {
+            "title": "Wann kann ich ein Artikel reklamieren?",
+            "heading_size": "caption2",
+            "icon": "none",
+            "text": "<p>Im Laufe von 24 Monaten nach dem Kauf hast Du die Möglichkeit das Produkt mit einem eindeutigen Herstellungsfehler oder mit einem bei der Lieferung entstandenen Mangel zu reklamieren. Fülle dafür das entsprechende Formular auf der Seite <a href=\"/pages/garantie-reklamation\" title=\"garantie-reklamation\">Garantie & Reklamation</a> aus und hänge ein Foto von dem kaputten Schmuckstück an. Wir prüfen den Zustand des Produktes und melden uns bei Dir im Laufe von 24-48 Stunden zurück.</p>",
+            "page": "",
+            "body_size": "body3",
+            "image_width": 100
+          }
+        },
+        "question_TUiLpW": {
+          "type": "question",
+          "settings": {
+            "title": "Was ist ein Herstellungsfehler?",
+            "heading_size": "caption2",
+            "icon": "none",
+            "text": "<p>Hier ist eine Liste, an der Du Dich orientieren kannst, wenn Du nicht selbst einschätzen kannst, was ein Fertigungsfehler ist: Kleber hat sich gelöst, Fassung ist beschädigt, Verschluss schließt nicht richtig, Kette ist gerissen, Anhänger ist zerbrochen, Bruchstelle am Rand, starke Verfärbung ist aufgetreten.</p>",
+            "page": "",
+            "body_size": "body3",
+            "image_width": 100
+          }
+        },
+        "category_4dfxKX": {
+          "type": "category",
+          "settings": {
+            "title": "Material & Qualität",
+            "category_heading_size": "h4",
+            "icon": "none"
+          }
+        },
+        "question_8bAHty": {
+          "type": "question",
+          "settings": {
+            "title": "Ist euer Glasschmuck schwer?",
+            "heading_size": "caption2",
+            "icon": "none",
+            "text": "<p>Das Glas ist leichter, als man vermuten könnte. Auch die größeren Modelle aus Glas sind nicht schwer. Die unverwechselbare Haptik rundet das angenehme Tragegefühl ab.</p>",
+            "page": "",
+            "body_size": "body3",
+            "image_width": 100
+          }
+        },
+        "question_RJ4aVT": {
+          "type": "question",
+          "settings": {
+            "title": "Ist euer Schmuck nickelfrei und hautfreundlich?",
+            "heading_size": "caption2",
+            "icon": "none",
+            "text": "<p>Wir verwenden ausschließlich hypoallergene Metalllegierungen wie Edelstahl für unseren Schmuck, die für Allergiker geeignet sind. In 99% der Fälle ist das Tragen absolut unproblematisch.</p>",
+            "page": "",
+            "body_size": "body3",
+            "image_width": 100
+          }
+        },
+        "question_XmwMiP": {
+          "type": "question",
+          "settings": {
+            "title": "Geht der Glasschmuck schnell kaputt?",
+            "heading_size": "caption2",
+            "icon": "none",
+            "text": "<p>Der Glasschmuck wird aus Mosaiksteinen gefertigt, die eigentlich für den Wohnbereich vorgesehen sind. Deswegen sind sie ausgesprochen robust und sogar bruchfest. Das Hartglas, aus dem sie bestehen, ist nicht mit herkömmlichem Glas zu vergleichen. Sogar wenn das Schmuckstück mal auf den gefliesten Boden fällt, wird nichts passieren. Kratzfest ist er in Maßen. Mit der Zeit können an der Oberfläche Mikrokratzer entstehen, die als normale Gebrauchsspuren zu sehen sind.</p>",
+            "page": "",
+            "body_size": "body3",
+            "image_width": 100
+          }
+        },
+        "question_pXM99m": {
+          "type": "question",
+          "settings": {
+            "title": "Sehen die Produkte immer gleich aus?",
+            "heading_size": "caption2",
+            "icon": "none",
+            "text": "<p>Je nach Kollektion und Material gibt es Unterschiede. Die Produkte aus Glas und Keramik bestehen aus upcycelten Mosaiksteinchen, die nie zu 100% identisch sind. Jeder Glasstein ist ein Unikat, aber durch sorgfältiges Sortieren und Zuordnen sehen die Paare immer gleich aus. Die minimalen Unterschiede in Größe und Form sieht man nur bei mehreren Paaren oder Schmuckstücken im direkten Vergleich. Der Farbton kann je nach Charge etwas variieren. Das bedeutet nicht, dass Du ein Paar Ohrringe oder ein Schmuckset mit zwei oder drei verschiedenen Steinchen bekommen kannst, sondern lediglich, dass in einer erneuten Bestellung dieselbe Farbe etwas abweichen kann.</p>",
+            "page": "",
+            "body_size": "body3",
+            "image_width": 100
+          }
+        },
+        "question_AJDYjD": {
+          "type": "question",
+          "settings": {
+            "title": "Verändert sich mein Schmuck auf Dauer?",
+            "heading_size": "caption2",
+            "icon": "none",
+            "text": "<p>Mit der Zeit kann das Metall etwas dunkler bzw. matter werden, was damit zu tun hat, dass viele kaum für`s Auge sichtbare Kratzer entstehen und der Glanz der Polierung softer wird. Die Gold- bzw. Silberfarbe bleibt dabei erhalten. Die Schmucksteine verändern ihre Farbe nicht, ganz unabhängig davon welchen äußeren Einflüssen sie ausgesetzt werden.</p>",
+            "page": "",
+            "body_size": "body3",
+            "image_width": 100
+          }
+        },
+        "question_JwCBWg": {
+          "type": "question",
+          "settings": {
+            "title": "Färben die Produkte ab?",
+            "heading_size": "caption2",
+            "icon": "none",
+            "text": "<p>Unsere Produkte behalten ihre Farbe und hinterlassen auch auf der Haut keine Spuren. Die Haltbarkeit und das Aussehen von Schmuck hängt aber unmittelbar mit der Nutzung zusammen. Informiere Dich gern zum Thema <a href=\"/pages/pflegehinweise\" title=\"pflegehinweise\">Nutzung und Pflege</a>.</p>",
+            "page": "",
+            "body_size": "body3",
+            "image_width": 100
+          }
+        },
+        "category_D9jBgQ": {
+          "type": "category",
+          "settings": {
+            "title": "Pflege & Aufbewahrung",
+            "category_heading_size": "h4",
+            "icon": "none"
+          }
+        },
+        "question_k3fHNc": {
+          "type": "question",
+          "settings": {
+            "title": "Kann ich mit eurem Schmuck duschen?",
+            "heading_size": "caption2",
+            "icon": "none",
+            "text": "<p>Da wir bei den meisten Schmuckstücken Klebstoff benutzen, solltest Deinen Schmuck beim Duschen abnehmen, um das Ablösen des Steins vom Metall zu vermeiden. Die Schmuckstücke ohne Stein schränken Dich dafür kaum ein.</p>",
+            "page": "",
+            "body_size": "body3",
+            "image_width": 100
+          }
+        },
+        "question_kLjWGc": {
+          "type": "question",
+          "settings": {
+            "title": "Kann ich euren Schmuck beim Sport tragen?",
+            "heading_size": "caption2",
+            "icon": "none",
+            "text": "<p>Generell solltest Du keinen Schmuck beim Sport oder Sauna tragen. Die unterschiedlichen pH-Werte machen sich beim Schwitzen bemerkbar und es kann möglich sein, dass der Schmuck im Kontakt mit einem hohen Säuregehalt seinen Glanz schneller verliert.</p>",
+            "page": "",
+            "body_size": "body3",
+            "image_width": 100
+          }
+        },
+        "question_KRrQGz": {
+          "type": "question",
+          "settings": {
+            "title": "Wie wirken Kosmetik, Seifen & Shampoos auf meinen Schmuck?",
+            "heading_size": "caption2",
+            "icon": "none",
+            "text": "<p>Halte Deinen Schmuck von salzigem Wasser und Chemikalien wie Duschgel, Seife oder Hand- und Gesichtscreme vorsichtshalber fern, so wird er ein langes Leben haben und behält seine schöne Erscheinung.</p>",
+            "page": "",
+            "body_size": "body3",
+            "image_width": 100
+          }
+        },
+        "question_6jyR7t": {
+          "type": "question",
+          "settings": {
+            "title": "Wie bewahre ich euren Schmuck am besten auf?",
+            "heading_size": "caption2",
+            "icon": "none",
+            "text": "<p>Unsere Schmuckstücke lieben es ordentlich und voneinander getrennt zu liegen, damit sie nicht zerkratzen und sich nicht verknoten. Außerdem sollte der Schmuck trocken aufbewahrt werden und nicht über einen längeren Zeitraum der direkten Sonne ausgesetzt werden.</p>",
+            "page": "",
+            "body_size": "body3",
+            "image_width": 100
+          }
+        },
+        "question_a9WhBE": {
+          "type": "question",
+          "settings": {
+            "title": "Wie reinige ich meinen Schmuck?",
+            "heading_size": "caption2",
+            "icon": "none",
+            "text": "<p>Da unser Schmuck wasserfest ist, kann man ihn auch ganz normal mit Wasser abwaschen, mit einer weichen Bürste reinigen oder mit einem weichen Tuch polieren.</p>",
+            "page": "",
+            "body_size": "body3",
+            "image_width": 100
+          }
+        },
+        "category_Gi7y8B": {
+          "type": "category",
+          "settings": {
+            "title": "Größen & Farben",
+            "category_heading_size": "h4",
+            "icon": "none"
+          }
+        },
+        "question_bBD7UL": {
+          "type": "question",
+          "settings": {
+            "title": "In welchen Größen gibt`s die Ringe?",
+            "heading_size": "caption2",
+            "icon": "none",
+            "text": "<p>Fast alle unsere Ringe sind größenverstellbar. Sie lassen sich von etwa Größe 53 bis Größe 63 weiten. Im Durchmesser sind es ca. 17mm bis 20mm. Das Material und die Form erlauben es die Ringe auch größer einzustellen, dennoch ist das Tragegefühl ein anderes und es kann sein, dass das weniger angenehm wird.</p>",
+            "page": "",
+            "body_size": "body3",
+            "image_width": 100
+          }
+        },
+        "question_Jg6EXn": {
+          "type": "question",
+          "settings": {
+            "title": "Wie kann ich meine Ringgröße herausfinden?",
+            "heading_size": "caption2",
+            "icon": "none",
+            "text": "<p>Unser <a href=\"/pages/groessenguide\" title=\"groessenguide\">Größenguide</a> hilft Dir dabei Deine Ringgröße zu ermitteln und beantwortet auch die Fragen zu den Ketten- und Armbandlängen.</p>",
+            "page": "",
+            "body_size": "body3",
+            "image_width": 100
+          }
+        },
+        "question_XmqNDc": {
+          "type": "question",
+          "settings": {
+            "title": "In welchen Größen gibt`s die Armbänder?",
+            "heading_size": "caption2",
+            "icon": "none",
+            "text": "<p>Wir bieten größenverstellbare Armbänder mit dem Umfang von 17 bis 20 cm an. Die Armreife haben eine feste Größe von ca. 20 cm Umfang.</p>",
+            "page": "",
+            "body_size": "body3",
+            "image_width": 100
+          }
+        },
+        "question_XRF4gw": {
+          "type": "question",
+          "settings": {
+            "title": "Wie kann ich meine Armbandgröße herausfinden?",
+            "heading_size": "caption2",
+            "icon": "none",
+            "text": "<p>Unser <a href=\"/pages/groessenguide\" title=\"groessenguide\">Größenguide</a> hilft Dir dabei den Umfang Deines Handgelenks und somit die Größe des Armbands zu ermitteln.</p>",
+            "page": "",
+            "body_size": "body3",
+            "image_width": 100
+          }
+        },
+        "question_TaA8Gp": {
+          "type": "question",
+          "settings": {
+            "title": "Welche Steingröße passt mir am besten?",
+            "heading_size": "caption2",
+            "icon": "none",
+            "text": "<p>Wenn Du nicht sicher bist, welche Steingröße Du wählen sollst, schaue Dir unseren <a href=\"/pages/groessenguide\" title=\"groessenguide\">Größenguide</a> an. Hier findest Du Bilder mit Größenverhältnissen, die Dir dabei helfen sollen, eine Entscheidung zu treffen.</p>",
+            "page": "",
+            "body_size": "body3",
+            "image_width": 100
+          }
+        },
+        "question_eYWynd": {
+          "type": "question",
+          "settings": {
+            "title": "Kann die Farbe in Wirklichkeit vom Bild abweichen?",
+            "heading_size": "caption2",
+            "icon": "none",
+            "text": "<p>Wir geben uns größte Mühe die Farben auf den Bildern so wiederzugeben, wie sie in Wirklichkeit auch sind. Je nach Bildschirm und Kalibrierung können die Farben jedoch etwas abweichen.</p>",
+            "page": "",
+            "body_size": "body3",
+            "image_width": 100
+          }
+        },
+        "question_7jredU": {
+          "type": "question",
+          "settings": {
+            "title": "Kann die gleiche Farbe unterschiedlich ausfallen?",
+            "heading_size": "caption2",
+            "icon": "none",
+            "text": "<p>Je nach Charge kann es vorkommen, dass der Farbton einer Farbe anders ausfällt. Aus diesem Grund unterscheidet sich manchmal dieselbe Farbe in verschiedenen Größen ein wenig, dies können wir leider nicht verhindern.</p>",
+            "page": "",
+            "body_size": "body3",
+            "image_width": 100
+          }
+        },
+        "question_nQAc4n": {
+          "type": "question",
+          "settings": {
+            "title": "Ist die gleiche Farbe in Glas und Keramik identisch?",
+            "heading_size": "caption2",
+            "icon": "none",
+            "text": "<p>Aufgrund der Oberflächenbeschaffenheit kann die Farbe bei verschiedenen Materialien wie z.B. Glas und Keramik unterschiedlich wirken. Grundsätzlich haben alle unsere Farben Namen und diese verwenden wir für die gleichen Farben in allen Größen und Oberflächen zur besseren Orientierung im Shop.</p>",
+            "page": "",
+            "body_size": "body3",
+            "image_width": 100
+          }
+        },
+        "question_zJMRMC": {
+          "type": "question",
+          "settings": {
+            "title": "Warum finde ich kein passendes Schmuckstück für ein Set?",
+            "heading_size": "caption2",
+            "icon": "none",
+            "text": "<p>Wenn Du vergeblich nach einem Schmuckstück in passender Farbe suchst, haben wir es höchstwahrscheinlich nicht auf Lager oder können es grundsätzlich nicht produzieren. Unsere Schmuckstücke entstehen in einem Upcycling Prozess und dabei nehmen wir das, was schon da ist und können nicht alle Farben und Größen nach Wunsch umsetzen, auch wenn wir das sehr gern tun würden.</p>",
+            "page": "",
+            "body_size": "body3",
+            "image_width": 100
+          }
+        }
+      },
+      "block_order": [
+        "category1",
+        "question1",
+        "question2",
+        "question3",
+        "question_RN3Jat",
+        "question_mAdmii",
+        "question_UmPkd8",
+        "question_D8R4FB",
+        "question_7BBq6g",
+        "question_3WcTPV",
+        "question_ehLMLh",
+        "category2",
+        "question4",
+        "question5",
+        "question6",
+        "question7",
+        "question_J4mgif",
+        "question_CzpMxT",
+        "category3",
+        "question8",
+        "question9",
+        "question_TUiLpW",
+        "category_4dfxKX",
+        "question_8bAHty",
+        "question_RJ4aVT",
+        "question_XmwMiP",
+        "question_pXM99m",
+        "question_AJDYjD",
+        "question_JwCBWg",
+        "category_D9jBgQ",
+        "question_k3fHNc",
+        "question_kLjWGc",
+        "question_KRrQGz",
+        "question_6jyR7t",
+        "question_a9WhBE",
+        "category_Gi7y8B",
+        "question_bBD7UL",
+        "question_Jg6EXn",
+        "question_XmqNDc",
+        "question_XRF4gw",
+        "question_TaA8Gp",
+        "question_eYWynd",
+        "question_7jredU",
+        "question_nQAc4n",
+        "question_zJMRMC"
+      ],
+      "custom_css": [],
+      "settings": {
+        "color_scheme": "default",
+        "enable_background_around_container": false,
+        "color_tabs": "content_tabs_separately",
+        "container_size": "small",
+        "section_layout": "bottom-tabs",
+        "expand_first_tab": false,
+        "title": "",
+        "heading_size": "h5",
+        "text": "",
+        "body_size": "body3",
+        "btn_text": "",
+        "btn_url": "",
+        "btn_style": "solid",
+        "add_side_paddings": true,
+        "section_spacing_top": 0,
+        "section_spacing_bottom": 0
+      }
+    },
+    "faq_Dypb3Y": {
+      "type": "faq",
+      "blocks": {
+        "category_iWg88W": {
+          "type": "category",
+          "settings": {
+            "title": "Gutscheine & Rabatte",
+            "category_heading_size": "h4",
+            "icon": "none"
+          }
+        },
+        "question_rNRjCk": {
+          "type": "question",
+          "settings": {
+            "title": "Macht ihr Rabattaktionen?",
+            "heading_size": "caption2",
+            "icon": "none",
+            "text": "<p>Alles über Rabattaktionen erfährst Du als erste:r aus unserem <a href=\"http://eepurl.com/hpSYuf\" target=\"_blank\">Newsletter</a>. Abonniere ihn jetzt und verpasse nichts mehr! Außerdem findest Du Inspiration und auch Informationen zu allen Aktionen auf unserem <a href=\"https://www.instagram.com/alexascha.de/\" target=\"_blank\">Instagram Profil</a>.</p>",
+            "page": "",
+            "body_size": "body3",
+            "image_width": 100
+          }
+        },
+        "question_Nj69xh": {
+          "type": "question",
+          "settings": {
+            "title": "Gibt es einen Mengenrabatt?",
+            "heading_size": "caption2",
+            "icon": "none",
+            "text": "<p>Einen klassischen Mengenrabatt gibt es bei uns nur für Händler, die gleichzeitig sehr viele Produkte kaufen. In unserem Online Shop gibt es keine, weil es sich hierbei nicht um solche Mengen handelt, bei welchen sich die Arbeitsprozesse optimieren ließen. Damit wir weiterhin eine faire Entlohnung aufrechterhalten können, bieten wir keine Mengenrabatte an.</p>",
+            "page": "",
+            "body_size": "body3",
+            "image_width": 100
+          }
+        },
+        "question_8rHf7y": {
+          "type": "question",
+          "settings": {
+            "title": "Kann ich ein Geschenkgutschein kaufen?",
+            "heading_size": "caption2",
+            "icon": "none",
+            "text": "<p>Bei uns findest Du <a href=\"/products/gutschein-zum-ausdrucken\" title=\"Gutschein zum Ausdrucken\">Gutscheine zum Ausdrucken</a> im Wert von 20€, 50€, 70€ und 100€. Du kannst ihn ganz normal auf einem DIN A4 Blatt ausdrucken und entweder gefaltet in einem langem Umschlag verschenken oder ihn auf das Postkartenformat zuschneiden und in einen kleinen Umschlag packen.</p>",
+            "page": "",
+            "body_size": "body3",
+            "image_width": 100
+          }
+        },
+        "question_jrPqMV": {
+          "type": "question",
+          "settings": {
+            "title": "Gibt es einen Sale?",
+            "heading_size": "caption2",
+            "icon": "none",
+            "text": "<p>Unsere Designs entwickeln wir bewusst trendunabhängig und arbeiten mit Materialien, die eine sehr hohe Lebensdauer haben, sodass wir nicht gezwungen sind zum Ende der Saison die “alten” Produkte mithilfe von einer SALE-Kategorie abzuverkaufen.</p>",
+            "page": "",
+            "body_size": "body3",
+            "image_width": 100
+          }
+        },
+        "question_X8efn6": {
+          "type": "question",
+          "settings": {
+            "title": "Kann man B-Ware zu kaufen?",
+            "heading_size": "caption2",
+            "icon": "none",
+            "text": "<p>Wir haben uns für den steinigen Weg der Wiederverwertung entschieden, was eine gewisse Anzahl an aussortiertem Material mit sich zieht. Diese unperfekten Schätze werden aufbewahrt in Form von losen Steinchen oder bei der Qualitätskontrolle aussortierten Schmuckstücken. Wir arbeiten daran diese unperfekt perfekten Produkte schon bald in einer neuen Kategorie zu vergünstigten Preisen anbieten zu können.</p>",
+            "page": "",
+            "body_size": "body3",
+            "image_width": 100
+          }
+        },
+        "category_djHejR": {
+          "type": "category",
+          "settings": {
+            "title": "Sonstiges",
+            "category_heading_size": "h4",
+            "icon": "none"
+          }
+        },
+        "question_yGppFE": {
+          "type": "question",
+          "settings": {
+            "title": "Macht ihr Sonderanfertigungen?",
+            "heading_size": "caption2",
+            "icon": "none",
+            "text": "<p>Auf dem Weg des Minimalismus haben wir uns von einigen Formen und Materialien getrennt und uns auf das Wesentliche fokussiert. Damit mussten wir leider auch den Strich auf Bezug auf die Individualisierbarkeit ziehen. Unser Sortiment ist dennoch so aufgebaut, dass Du die maximale Auswahl an Farben und Größen bekommst, sodass sich vieles auf Deine Bedürfnisse anpassen lässt.</p>",
+            "page": "",
+            "body_size": "body3",
+            "image_width": 100
+          }
+        },
+        "question_YeNVwH": {
+          "type": "question",
+          "settings": {
+            "title": "Kann ich die Produkte in einem Laden kaufen?",
+            "heading_size": "caption2",
+            "icon": "none",
+            "text": "<p>Wir sind dabei unser Händlernetz auszubauen und werden schon bald eine Karte bzw. Liste mit den Läden veröffentlichen, bei denen unsere Produkte zu finden sind.</p>",
+            "page": "",
+            "body_size": "body3",
+            "image_width": 100
+          }
+        },
+        "question_DTN8yC": {
+          "type": "question",
+          "settings": {
+            "title": "Gibt es einen Showroom?",
+            "heading_size": "caption2",
+            "icon": "none",
+            "text": "<p>Im Moment fokussieren wir uns auf die Online-Präsenz und haben noch keinen Showroom, wo man uns besuchen könnte und den Schmuck direkt anprobieren. Wir merken uns diesen Punkt aber wegen der hohen Nachfrage für die Zukunft vor.</p>",
+            "page": "",
+            "body_size": "body3",
+            "image_width": 100
+          }
+        },
+        "question_4Hgxgf": {
+          "type": "question",
+          "settings": {
+            "title": "Verkauft ihr an Händler?",
+            "heading_size": "caption2",
+            "icon": "none",
+            "text": "<p>Unsere Produkte passen sehr gut zu dem Sortiment vieler Concept Stores, Mode- und Schmuckgeschäften sowie Geschenkeläden und sind sowohl online als auf offline zu finden. In Kürze werden wir die Liste unserer Partner veröffentlichen und freuen uns auch über neue Kontakte. Möchtest Du unsere Produkte in Deinem Laden anbieten? Kontaktiere uns gerne <a href=\"mailto:alexandra@alexascha.de\">per Mail</a> für die Einzelheiten oder besuche direkt unseren <a href=\"https://www.orderchamp.com/de/store/alexascha\" target=\"_blank\">B2B-Store</a> auf Orderchamp.</p>",
+            "page": "",
+            "body_size": "body3",
+            "image_width": 100
+          }
+        },
+        "question_cyhyjF": {
+          "type": "question",
+          "settings": {
+            "title": "Wieso gibt es einige Produkte nicht mehr?",
+            "heading_size": "caption2",
+            "icon": "none",
+            "text": "<p>Wir haben unsere Werte klar definiert, was einen großen Einfluss auf das Design und die Auswahl der Materialien hatte. Das ist der Grund, warum wir einige Produkte aus dem früheren Sortiment nicht mehr in unserem Shop führen. Da wir aber wissen, dass einige Kunden genau diese Produkte lieben, bieten wir sie in unserem <a href=\"https://www.etsy.com/de/shop/ALEXASCHA\" target=\"_blank\">Etsy Shop</a> solange der Vorrat reicht an. Vielleicht wirst Du da fündig?</p>",
+            "page": "",
+            "body_size": "body3",
+            "image_width": 100
+          }
+        },
+        "question_XeXeCc": {
+          "type": "question",
+          "settings": {
+            "title": "Wie kann ich meinen alten Schmuck nachhaltig entsorgen?",
+            "heading_size": "caption2",
+            "icon": "none",
+            "text": "<p>Wenn Du merkst, dass Dich die alten Schmuckstücke nicht mehr glücklich machen und Du Dich umweltfreundlich von ihnen trennen möchtest, wende Dich gerne an uns <a href=\"mailto:info@alexascha.de\">per Mail</a>. Wir helfen Dir dabei die Produkte korrekt zu entsorgen. Schließlich haben wir sie so konzipiert, dass sie aus wenigen Bestandteilen hergestellt sind und sich umweltbewusst entsorgen lassen.</p>",
+            "page": "",
+            "body_size": "body3",
+            "image_width": 100
+          }
+        }
+      },
+      "block_order": [
+        "category_iWg88W",
+        "question_rNRjCk",
+        "question_Nj69xh",
+        "question_8rHf7y",
+        "question_jrPqMV",
+        "question_X8efn6",
+        "category_djHejR",
+        "question_yGppFE",
+        "question_YeNVwH",
+        "question_DTN8yC",
+        "question_4Hgxgf",
+        "question_cyhyjF",
+        "question_XeXeCc"
+      ],
+      "settings": {
+        "color_scheme": "default",
+        "enable_background_around_container": false,
+        "color_tabs": "content_tabs_separately",
+        "container_size": "small",
+        "section_layout": "bottom-tabs",
+        "expand_first_tab": false,
+        "title": "",
+        "heading_size": "h5",
+        "text": "",
+        "body_size": "body3",
+        "btn_text": "",
+        "btn_url": "",
+        "btn_style": "solid",
+        "add_side_paddings": true,
+        "section_spacing_top": 0,
+        "section_spacing_bottom": 96
+      }
+    }
+  },
+  "order": [
+    "page",
+    "rich_text_N7PPq4",
+    "questions",
+    "faq_Dypb3Y"
+  ]
+}
