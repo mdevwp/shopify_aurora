@@ -242,11 +242,11 @@ button.intrada-wishlist--trigger-icon.intrada-wishlist--rendered {
     background: #f73a6d;
 }
 
-a:visited:not(.icon):not(.product-card__title)
-:not(.header__item):not(.btn):not(.header__dropdown a)
-:not(.classic-pagination__link):not(.social-list__item-link)
-:not(.article__breadcrumbs-item){
+a:visited:not(.icon):not(.product-card__title):not(.header__item):not(.btn):not(.header__dropdown a):not(.classic-pagination__link):not(.social-list__item-link){
     color: darkblue;
+}
+a.article__breadcrumbs-item:visited{
+    color: inherit;
 }
 .content-menu .sub-menu li a:visited{
     color: #4b4949 !important;
