@@ -246,7 +246,7 @@ a:visited:not(.icon):not(.product-card__title):not(.header__item):not(.btn):not(
     color: darkblue;
 }
 a.article__breadcrumbs-item:visited{
-    color: inherit;
+    color: black;
 }
 .content-menu .sub-menu li a:visited{
     color: #4b4949 !important;
