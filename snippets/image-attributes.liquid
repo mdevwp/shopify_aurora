@@ -35,7 +35,7 @@ src='
 {% endif %}
 '
 data-sizes='auto' 
-alt="{% if image.alt != blank %}{{ image.alt | escape }}{% elsif product %}Foto von {{ product.title | escape }}{% elsif section.settings.title != blank %}{{ section.settings.title | escape }}{% else %}Foto von Alexascha{% endif %}"  
+alt="tst {% if image.alt != blank %}{{ image.alt | escape }}{% elsif product %}Foto von {{ product.title | escape }}{% elsif section.settings.title != blank %}{{ section.settings.title | escape }}{% else %}Foto von Alexascha{% endif %}"  
 loading='{{ loading }}' width='1' height='1' style='object-position:
 {{ image.presentation.focal_point }};'
 {% if parent_fit == blank %}
