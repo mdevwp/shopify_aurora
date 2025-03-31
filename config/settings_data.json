@@ -213,16 +213,10 @@
         "disabled": false,
         "settings": {}
       },
-      "5063685679717592333": {
-        "type": "shopify://apps/wishcraft-ultimate-wishlist/blocks/floating-wishlist-button/f2e93a20-20d3-4e28-9abb-b5ab07f852bf",
+      "940650814580334357": {
+        "type": "shopify://apps/product-compare/blocks/app-embed-block/2ec083cc-5677-4d10-a2af-c02464aa361b",
         "disabled": false,
-        "settings": {
-          "title": "Add Product",
-          "added_title": "Product Added",
-          "icon": "",
-          "style": "with-label",
-          "position": "middle-left"
-        }
+        "settings": {}
       },
       "3192664013427500466": {
         "type": "shopify://apps/wishcraft-ultimate-wishlist/blocks/wishlist-render/f2e93a20-20d3-4e28-9abb-b5ab07f852bf",
@@ -234,36 +228,16 @@
           "success_content": "<p><b>[product_name]</b> has been added to your wishlist.</p><p>You can <b>access your wishlist</b> via the heart in the header.</p>"
         }
       },
-      "940650814580334357": {
-        "type": "shopify://apps/product-compare/blocks/app-embed-block/2ec083cc-5677-4d10-a2af-c02464aa361b",
+      "5063685679717592333": {
+        "type": "shopify://apps/wishcraft-ultimate-wishlist/blocks/floating-wishlist-button/f2e93a20-20d3-4e28-9abb-b5ab07f852bf",
         "disabled": false,
-        "settings": {}
-      },
-      "5059203847231188605": {
-        "type": "shopify://apps/smart-product-filter-search/blocks/app-embed/5cc1944c-3014-4a2a-af40-7d65abc0ef73",
-        "disabled": true,
         "settings": {
-          "productGridSelector": "",
-          "useCustomQuickviewTemplate": false,
-          "customJs": "",
-          "customCss": "",
-          "customProductTemplateLoader": "{%- capture productTemplate -%}{% render 'globo.filter.product', themeTranslation: shop.metafields.globoFilter.themeTranslation.value[request.locale.iso_code] %}{%- endcapture -%}{%- unless productTemplate contains 'Liquid error' -%}<script id=\"gspfProduct\" type=\"template/html\">{{- productTemplate | replace: \"script>\", \"scripttag>\" -}}</script>{%- endunless -%}",
-          "customTreeTemplateLoader": "{%- capture treeTemplate -%}{% render 'globo.filter.tree' %}{%- endcapture -%}{%- unless treeTemplate contains 'Liquid error' -%}<script id=\"gspfFilterTree\" type=\"template/html\">{{- treeTemplate | replace: \"script>\", \"scripttag>\" -}}</script>{%- endunless -%}",
-          "customSortTemplateLoader": "{%- capture sortTemplate -%}{% render 'globo.filter.sort' %}{%- endcapture -%}{%- unless sortTemplate contains 'Liquid error' -%}<script id=\"gspfFilterSort\" type=\"template/html\">{{- sortTemplate | replace: \"script>\", \"scripttag>\" -}}</script>{%- endunless -%}",
-          "customSearchTemplateLoader": "{%- capture searchTemplate -%}{% render 'globo.filter.search' %}{%- endcapture -%}{%- unless searchTemplate contains 'Liquid error' -%}<script id=\"gspfSearchResult\" type=\"template/html\">{{- searchTemplate | replace: \"script>\", \"scripttag>\" -}}</script>{%- endunless -%}",
-          "customPaginationTemplateLoader": "{%- capture paginationTemplate -%}{% render 'globo.filter.pagination' %}{%- endcapture -%}{%- unless paginationTemplate contains 'Liquid error' -%}<script id=\"gspfPagination\" type=\"template/html\">{{- paginationTemplate | replace: \"script>\", \"scripttag>\" -}}</script>{%- endunless -%}",
-          "customYMMTemplateLoader": "{%- capture YMMTemplate -%}{% render 'globo.filter.form' %}{%- endcapture -%}{%- unless YMMTemplate contains 'Liquid error' -%}<script id=\"gspfForm\" type=\"template/html\">{{- YMMTemplate | replace: \"script>\", \"scripttag>\" -}}</script>{%- endunless -%}"
+          "title": "Add Product",
+          "added_title": "Product Added",
+          "icon": "",
+          "style": "with-label",
+          "position": "middle-left"
         }
-      },
-      "14352282602675302068": {
-        "type": "shopify://apps/xcloud-search-filter/blocks/cloudsearch_opt/8ddbd0bf-e311-492e-ab28-69d0ad268fac",
-        "disabled": true,
-        "settings": {}
-      },
-      "17275333509004181440": {
-        "type": "shopify://apps/rt-page-speed-booster/blocks/app-embed/4a6fa896-93b0-4e15-9d32-c2311aca53bb",
-        "disabled": true,
-        "settings": {}
       }
     }
   },
