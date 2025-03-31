@@ -35,7 +35,7 @@ src='
 {% endif %}
 '
 data-sizes='auto' 
-alt="{% if image.alt != blank %}{{ image.alt | escape }}{% elsif product %}{{ product.title | escape }}{% elsif section.settings.title != blank %}{{ section.settings.title | escape }}{% else %}Image from store{% endif %}"  
+alt='{{ image.alt | escape }}' 
 loading='{{ loading }}' width='1' height='1' style='object-position:
 {{ image.presentation.focal_point }};'
 {% if parent_fit == blank %}
