@@ -227,7 +227,7 @@
                             size: 'medium',
                             is_multiply_target: enable_darken_mode,
                             class_from_parent: class,
-                            class: 'shape__target-image tst'
+                            class: 'shape__target-image'
                           %}
                         >
                       {%- else -%}
@@ -235,6 +235,7 @@
                            <img
                               class="{{ class }} shape__target-image"
                               src="{{ media | replace: "files/", "" | file_url }}"
+                              alt="{% if image.alt != blank %}{{ image.alt | escape }}{% elsif product %}Foto von {{ product.title | escape }}{% elsif section.settings.title != blank %}{{ section.settings.title | escape }}{% else %}Foto von Alexascha{% endif %}"
                               width="100%"
                             >
                          {% else %}
