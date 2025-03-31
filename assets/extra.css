@@ -256,7 +256,9 @@ product-media, product-media-carousel {
     opacity: 1 !important;
     display: block !important;
 }
-
+.quote__text-wrap {
+    opacity: 1;
+}
 /************************/
 
 .shopify-section.place-under-transparent-header{
