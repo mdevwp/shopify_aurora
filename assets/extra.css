@@ -252,6 +252,12 @@ a.article__breadcrumbs-item:visited{
     color: #4b4949 !important;
 }
 /************************/
+product-media, product-media-carousel {
+    opacity: 1 !important;
+    display: block !important;
+}
+
+/************************/
 
 .shopify-section.place-under-transparent-header{
    overflow: visible !important;
