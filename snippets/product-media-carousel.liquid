@@ -217,7 +217,7 @@
                     data-dot-index='{{ forloop.index0 }}'
                     data-variant='{{ media.alt }}'
                   >
-                    <div class='product-thumbnail-carousel__thumb-image tst shape shape--{{ img_ratio }}  {% if img_ratio contains 'fit' %} shape--fit {% endif %} {% if enable_darken_mode %}multiply-mode{% endif %}'>
+                    <div class='product-thumbnail-carousel__thumb-image shape shape--{{ img_ratio }}  {% if img_ratio contains 'fit' %} shape--fit {% endif %} {% if enable_darken_mode %}multiply-mode{% endif %}'>
                       {%- assign image = media.preview_image -%}
 
                       {%- if image != blank and media.id != blank -%}
