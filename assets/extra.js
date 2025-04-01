@@ -17,7 +17,7 @@ addRelAttr();
 
 function togglePagination() {
 
-    document.querySelectorAll('.art_dir').forEach(el => el.style.display = 'block');
+    //document.querySelectorAll('.art_dir').forEach(el => el.style.display = 'block');
   
     if (window.location.search.includes('?filter')) {
         document.querySelectorAll('.classic-pagination__list').forEach(el => el.style.display = 'none');
