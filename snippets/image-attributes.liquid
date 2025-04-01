@@ -12,7 +12,7 @@
   endif
 
 
-   if class contains 'art_dir'
+   if class contains 'media__image'
       assign is_eager_loading = true 
    endif;
 
@@ -23,7 +23,7 @@
   endif
 -%}
 
-{% if class contains 'art_dir' %}
+{% if class contains 'media__image' %}
 
     class='{{ class }} {{ class_from_parent }}' 
     nopin='nopin'
