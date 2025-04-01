@@ -78,7 +78,7 @@
       loading: loading
     %}
   {%- elsif has_mobile_image -%}
-    <img
+    <img style="display:none;"
       {% render 'image-attributes', image: mobile_img, class: 'art_dir image media__image media__image--mobile' %}
     >
   {%- endif -%}
