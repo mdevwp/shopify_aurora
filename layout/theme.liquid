@@ -1,6 +1,28 @@
+<!-- crazy-load LOAD CONFIG -->
+{% include '__clspeedapp-theme-config' %}
+
+<!-- crazy-load BEGIN CAPTURE -->
+{%- capture __clspeedapp-html -%}
 <!doctype html>
 <html lang='{{ request.locale.iso_code }}'>
   <head>
+<!-- crazy-load BEGIN HEAD TOP -->
+{% include '__clspeedapp-theme-preload' %}
+{% include '__clspeedapp-html-css' %}
+{% include '__clspeedapp-html-css-critical' %}
+
+{% include '__clspeedapp-js-init' %}
+{% include '__clspeedapp-js-functions' %}
+
+{%- unless is_admin_interface -%}
+  {% include '__clspeedapp-js-frontend' %}
+{%- endunless -%}
+
+{%- unless is_admin_interface -%}
+  {% include '__clspeedapp-js-scripts' %}
+{%- endunless -%}
+<!-- crazy-load END HEAD TOP -->
+
     <meta name="google-site-verification" content="UL_j5E61mfmGbBAON0WntvjzF9gpXPBZqHrapsvqTRo" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16711737174"></script> 
@@ -80,5 +102,15 @@
     <script src='{{ 'bundle.js' | asset_url }}' defer='defer'></script>
     <script src='{{ 'extra.js' | asset_url }}' defer='defer'></script>
     <script type="text/javascript" id="trustamiwidget" src="https://cdn.trustami.com/widgetapi/widget2/trustami-widget.js?cache=off" data-user="31ae1621831be5333185d875512bf5e52c480452" data-profile="56fe809a2b5d850d0c8b4693" data-platform="0" data-plugin="wc"></script>
-  </body>
+  <!-- crazy-load BEGIN BODY -->
+{% include '__clspeedapp-html-fonts' %}
+<!-- crazy-load END BODY -->
+</body>
+
 </html>
+
+<!-- crazy-load END CAPTURE -->
+{%- endcapture -%}
+
+<!-- crazy-load LOAD HTML -->
+{% include '__clspeedapp-theme-html' %}
