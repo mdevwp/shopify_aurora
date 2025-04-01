@@ -29,9 +29,9 @@
 
     
     {% render 'css-variables' %}
-    {% comment %}
+    {% comment %}{% endcomment %}
     {{ 'bundle.js' | asset_url | preload_tag: as: 'script' }}
-    {% endcomment %}
+    
     {{ 'bundle.css' | asset_url | stylesheet_tag: preload: true }}
     {{ 'extra.css' | asset_url | stylesheet_tag: preload: true }}
     {% render 'fonts' %}
