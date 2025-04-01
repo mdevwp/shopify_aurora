@@ -16,6 +16,7 @@ addRelAttr();
 //setTimeout(addRelAttr, 2500);
 
 function togglePagination() {
+
     if (window.location.search.includes('?filter')) {
         document.querySelectorAll('.classic-pagination__list').forEach(el => el.style.display = 'none');
     } else {
@@ -26,6 +27,9 @@ function togglePagination() {
 setTimeout(togglePagination, 500);
 
 setTimeout(function(){
+
+  document.querySelectorAll('.art_dir').forEach(el => el.style.display = 'block');
+
   document.addEventListener('click', function(event) {
      if (event.target.matches('shape-swatch, .checkbox__span')) {
        setTimeout(function(){
