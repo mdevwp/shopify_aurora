@@ -78,9 +78,14 @@
       loading: loading
     %}
   {%- elsif has_mobile_image -%}
-    <img
-      {% render 'image-attributes', image: mobile_img, class: 'art_dir image media__image media__image--mobile' %}
-    >
+    
+    {% assign user_agent = request.user_agent | downcase %}
+    {% unless user_agent contains 'googlebot' %}
+         <img
+          {% render 'image-attributes', image: mobile_img, class: 'art_dir image media__image media__image--mobile' %}
+        >
+    {% endunless %}
+   
   {%- endif -%}
 
   {% if with_placeholder == true %}
