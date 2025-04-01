@@ -78,12 +78,9 @@
       loading: loading
     %}
   {%- elsif has_mobile_image -%}
-    <!--img
+    <img
       {% render 'image-attributes', image: mobile_img, class: 'art_dir image media__image media__image--mobile' %}
-    -->
-
-     <img src="https://cdn.shopify.com/s/files/1/0923/3557/1243/files/alexascha-mix-and-match-shop-banner-2_mob_new.jpg?v=1743524060" >
-    
+    >
   {%- endif -%}
 
   {% if with_placeholder == true %}
