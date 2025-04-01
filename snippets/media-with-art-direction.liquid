@@ -46,8 +46,6 @@
   endif
 -%}
 
-{% assign user_agent = request.user_agent | downcase %}
-
 <div class='media {{ class }}'>
   {%- if with_overlay -%}
     <div class='overlay'></div>
@@ -64,11 +62,9 @@
       loading: loading
     %}
   {%- elsif has_desktop_image -%}
-     {% unless user_agent contains 'googlebot' %}
-        <img
-          {% render 'image-attributes', image: desktop_img, class: 'art_dir image media__image media__image--desktop' %}
-        >
-     {% endunless %}
+    <img
+      {% render 'image-attributes', image: desktop_img, class: 'art_dir image media__image media__image--desktop' %}
+    >
   {%- endif -%}
 
   {%- if has_mobile_video -%}
@@ -82,13 +78,9 @@
       loading: loading
     %}
   {%- elsif has_mobile_image -%}
-    
-    {% unless user_agent contains 'googlebot' %}
-         <img
-          {% render 'image-attributes', image: mobile_img, class: 'art_dir image media__image media__image--mobile' %}
-        >
-    {% endunless %}
-   
+    <img
+      {% render 'image-attributes', image: mobile_img, class: 'art_dir image media__image media__image--mobile' %}
+    >
   {%- endif -%}
 
   {% if with_placeholder == true %}
