@@ -11,13 +11,19 @@
     assign res_list = '128,240,380,540,720,920,1080,1440,1920' | split: ','
   endif
 
+
+   if class contains 'media__image'
+      assign is_eager_loading = true 
+   endif;
+
+
   assign loading = 'lazy'
   if is_eager_loading
     assign loading = 'eager'
   endif
 -%}
 
-class='lazyload {{ class }}
+class='{{ is_eager_loading }} lazyload {{ class }}
 {{ class_from_parent }}
 {% if is_multiply_target %} multiply-mode__target {% endif %}' 
 nopin='nopin'
