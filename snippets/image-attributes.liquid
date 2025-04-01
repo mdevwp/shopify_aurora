@@ -25,21 +25,20 @@
 
 {% if class contains 'media__image' %}
 
-    class='{{ class }} {{ class_from_parent }}' 
+      class='{{ class }} {{ class_from_parent }}' 
     nopin='nopin'
-    src='{{ image | image_url: width: 2000 }}'
+    src='{{ image | image_url: width: res_list.last }}'
     srcset='
-        {{ image | image_url: width: 480 }} 480w,
-        {{ image | image_url: width: 768 }} 768w,
-        {{ image | image_url: width: 1024 }} 1024w,
-        {{ image | image_url: width: 1440 }} 1440w,
-        {{ image | image_url: width: 2000 }} 2000w
+        {%- for res in res_list -%}
+            {{ image | image_url: width: res }} {{ res }}w,
+        {%- endfor -%}
     '
     sizes='(max-width: 480px) 480px, 
            (max-width: 768px) 768px, 
            (max-width: 1024px) 1024px, 
            (max-width: 1440px) 1440px, 
-           2000px'
+           {{ res_list.last }}px'
+  
     alt="{% if image.alt != blank %}{{ image.alt | escape }}{% elsif product %}Foto von {{ product.title | escape }}{% elsif section.settings.title != blank %}{{ section.settings.title | escape }}{% else %}Foto von Alexascha{% endif %}"  
     width='{{ image.width }}' 
     height='{{ image.height }}' 
