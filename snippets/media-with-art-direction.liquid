@@ -61,7 +61,7 @@
       controls: false,
       loading: loading
     %}
-  {%- elsif has_desktop_image -%}
+  {%- elsif has_desktop_image and request.device_type != 'mobile' -%}
     <img
       {% render 'image-attributes', image: desktop_img, class: 'art_dir image media__image media__image--desktop' %}
     >
