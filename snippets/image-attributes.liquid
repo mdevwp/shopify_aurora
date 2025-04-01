@@ -50,7 +50,7 @@
     {% assign src_width = max_size %}
 {% endif %}
 
-{% if image != blank && class contains 'media__image' %}
+{% if image != blank and class contains 'media__image' %}
     class='{{ class }} {{ class_from_parent }}' 
     nopin='nopin'
     src='{{ image | image_url: width: src_width }}'
