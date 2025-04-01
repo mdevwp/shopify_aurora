@@ -258,6 +258,11 @@
         "type": "shopify://apps/prefetch-master-speed-boost/blocks/head/4a386c7f-e4e2-4274-b96e-83522ca50f0f",
         "disabled": false,
         "settings": {}
+      },
+      "15885977890469162556": {
+        "type": "shopify://apps/ea-page-speed-boost/blocks/app-embed-block/b667776a-3444-4aab-a7b6-a467a3438097",
+        "disabled": false,
+        "settings": {}
       }
     }
   },
