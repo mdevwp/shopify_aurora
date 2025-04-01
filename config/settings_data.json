@@ -248,6 +248,11 @@
         "type": "shopify://apps/booster-page-speed-optimizer/blocks/app-embed/d920faf3-7c60-423a-9636-22618b5561b5",
         "disabled": true,
         "settings": {}
+      },
+      "3993679071332431876": {
+        "type": "shopify://apps/fastrr-page-speed-boost/blocks/instant-speed-boost/51274298-5995-4dd1-b8c3-3613ab919059",
+        "disabled": false,
+        "settings": {}
       }
     }
   },
