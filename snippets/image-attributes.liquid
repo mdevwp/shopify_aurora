@@ -40,8 +40,8 @@
            {{ res_list.last }}px'
   
     alt="{% if image.alt != blank %}{{ image.alt | escape }}{% elsif product %}Foto von {{ product.title | escape }}{% elsif section.settings.title != blank %}{{ section.settings.title | escape }}{% else %}Foto von Alexascha{% endif %}"  
-    width='1' 
-    height='1' 
+    width='{{ image.width }}' 
+    height='{{ image.height }}' 
     style='object-position: {{ image.presentation.focal_point }};' 
     fetchpriority='high'
   
