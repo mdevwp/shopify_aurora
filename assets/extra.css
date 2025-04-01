@@ -10,7 +10,9 @@ h1.article__title {
 .testimonials__container .quote__text p {
   font-size: 16px;
 }
-
+.card-carousel__slide pre {
+    display: none;
+}
 .logo-list__container {
    max-width: 1120px;
 }
