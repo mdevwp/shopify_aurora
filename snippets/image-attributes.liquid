@@ -23,29 +23,56 @@
   endif
 -%}
 
-class='lazyload {{ class }}
-{{ class_from_parent }}
-{% if is_multiply_target %} multiply-mode__target {% endif %}' 
-nopin='nopin'
-src='
-{% if is_variant_image != true %}
-  {{- image | image_url: width: 160 -}}
-  ' data-srcset='
-  {%- for res in res_list -%}
-    {{ image | image_url: width: res }}
-    {{ res }}w,
-  {%- endfor -%}
-{% else %}
-  {{ image | replace: 'files/', '' | file_img_url: 'original' }}
+{% if class contains 'media__image' %}
+
+    class='{{ class }} {{ class_from_parent }}' 
+    nopin='nopin'
+    src='{{ image | image_url: width: 2000 }}'
+    srcset='
+        {{ image | image_url: width: 480 }} 480w,
+        {{ image | image_url: width: 768 }} 768w,
+        {{ image | image_url: width: 1024 }} 1024w,
+        {{ image | image_url: width: 1440 }} 1440w,
+        {{ image | image_url: width: 2000 }} 2000w
+    '
+    sizes='(max-width: 480px) 480px, 
+           (max-width: 768px) 768px, 
+           (max-width: 1024px) 1024px, 
+           (max-width: 1440px) 1440px, 
+           2000px'
+    alt="{% if image.alt != blank %}{{ image.alt | escape }}{% elsif product %}Foto von {{ product.title | escape }}{% elsif section.settings.title != blank %}{{ section.settings.title | escape }}{% else %}Foto von Alexascha{% endif %}"  
+    width='{{ image.width }}' 
+    height='{{ image.height }}' 
+    style='object-position: {{ image.presentation.focal_point }};' 
+    fetchpriority='high'
   
-{% endif %}
-'
-data-sizes='auto' 
-alt="{% if image.alt != blank %}{{ image.alt | escape }}{% elsif product %}Foto von {{ product.title | escape }}{% elsif section.settings.title != blank %}{{ section.settings.title | escape }}{% else %}Foto von Alexascha{% endif %}"  
-loading='{{ loading }}' width='1' height='1' style='object-position:
-{{ image.presentation.focal_point }};'
-{% if parent_fit == blank %}
-  data-parent-fit='cover' data-aspectratio='
-  {{- image.aspect_ratio -}}
-  '
+{% else %}
+  
+    class='lazyload {{ class }}
+    {{ class_from_parent }}
+    {% if is_multiply_target %} multiply-mode__target {% endif %}' 
+    nopin='nopin'
+    src='
+    {% if is_variant_image != true %}
+      {{- image | image_url: width: 160 -}}
+      ' data-srcset='
+      {%- for res in res_list -%}
+        {{ image | image_url: width: res }}
+        {{ res }}w,
+      {%- endfor -%}
+    {% else %}
+      {{ image | replace: 'files/', '' | file_img_url: 'original' }}
+      
+    {% endif %}
+    '
+    data-sizes='auto' 
+    alt="{% if image.alt != blank %}{{ image.alt | escape }}{% elsif product %}Foto von {{ product.title | escape }}{% elsif section.settings.title != blank %}{{ section.settings.title | escape }}{% else %}Foto von Alexascha{% endif %}"  
+    loading='{{ loading }}' width='1' height='1' style='object-position:
+    {{ image.presentation.focal_point }};'
+    {% if parent_fit == blank %}
+      data-parent-fit='cover' data-aspectratio='
+      {{- image.aspect_ratio -}}
+      '
+    {% endif %}
+  
 {% endif %}
