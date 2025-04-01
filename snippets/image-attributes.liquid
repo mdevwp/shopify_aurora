@@ -51,7 +51,7 @@
 {% endif %}
 
 {% if is_variant_image != true and class contains 'media__image' %}
-    class='{{ request.device_type }} {{ class }} {{ class_from_parent }}' 
+    class='{{ class }} {{ class_from_parent }}' 
     nopin='nopin'
     src='{{ image | image_url: width: src_width }}'
     srcset='
