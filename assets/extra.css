@@ -13,6 +13,9 @@ h1.article__title {
 .card-carousel__slide pre {
     display: none;
 }
+a.unstyled-link.product-breadcrumbs-block__link {
+    color: black !important;
+}
 .logo-list__container {
    max-width: 1120px;
 }
