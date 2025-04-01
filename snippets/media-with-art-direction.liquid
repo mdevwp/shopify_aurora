@@ -78,6 +78,14 @@
       loading: loading
     %}
   {%- elsif has_mobile_image -%}
+      <img 
+          width="2000" 
+          height="2000" 
+          style="pointer-events:none;position:absolute;top:0;left:0;width:99vw;height:99vh;max-width:99vw;max-height:99vh" 
+          src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAwIiBoZWlnaHQ9IjIwMDAiIHZpZXdCb3g9IjAgMCAyMDAwIDIwMDAiPjxwYXRoIGQ9Ik0wIDBoMjAwMHYyMDAwSDB6IiBmaWxsPSJub25lIi8+PC9zdmc+" 
+          role="presentation" 
+          alt="some-alt"
+      />
     <img 
       {% render 'image-attributes', image: mobile_img, class: 'art_dir image media__image media__image--mobile' %}
     >
