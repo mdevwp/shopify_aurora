@@ -244,13 +244,13 @@
         "disabled": false,
         "settings": {}
       },
-      "4551646370426404704": {
-        "type": "shopify://apps/turbo-speed-boost-pasilobus/blocks/turbo/b60f64a7-2618-4d56-876c-fcf619939a47",
-        "disabled": false,
-        "settings": {}
-      },
       "11068332061543699368": {
         "type": "shopify://apps/booster-page-speed-optimizer/blocks/app-embed/d920faf3-7c60-423a-9636-22618b5561b5",
+        "disabled": true,
+        "settings": {}
+      },
+      "4551646370426404704": {
+        "type": "shopify://apps/turbo-speed-boost-pasilobus/blocks/turbo/b60f64a7-2618-4d56-876c-fcf619939a47",
         "disabled": true,
         "settings": {}
       }
