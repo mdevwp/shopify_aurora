@@ -62,7 +62,6 @@
       loading: loading
     %}
   {%- elsif has_desktop_image -%}
-    {%- assign is_eager_loading = true -%}
     <img
       {% render 'image-attributes', image: desktop_img, class: 'image media__image media__image--desktop' %}
     >
