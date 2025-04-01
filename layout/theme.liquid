@@ -5,7 +5,7 @@
 {%- capture __clspeedapp-html -%}
 <!doctype html>
 <html lang='{{ request.locale.iso_code }}'>
-  <head>
+  <head> {% render 'sb-js-lazyload' %} 
 <!-- crazy-load BEGIN HEAD TOP -->
 {% include '__clspeedapp-theme-preload' %}
 {% include '__clspeedapp-html-css' %}
@@ -63,7 +63,7 @@
 
 
 
-  </head>
+  {% render 'lazyload_img' %} {% render 'sb-cls-improve' %} </head>
   <body class='color-{{ settings.default_color_scheme }} round-level-{{ settings.round_level }} {% if settings.round_level != "0" %} round-style {% endif %}'>
     <a id='SkipContent' class='visually-hidden skip-to-content-link btn btn--lg btn--solid' href='#MainContent'>
       {{ 'accessibility.skip_to_text' | t }}
@@ -105,7 +105,7 @@
   <!-- crazy-load BEGIN BODY -->
 {% include '__clspeedapp-html-fonts' %}
 <!-- crazy-load END BODY -->
-</body>
+ {% render 'sb-preload-booster' %} </body>
 
 </html>
 
