@@ -23,6 +23,18 @@
   endif
 -%}
 
+{% assign image_alt = image.alt | escape %}
+{% if image_alt == blank %}
+    {% if product %}
+        {% assign image_alt = 'Foto von ' | append: product.title | escape %}
+    {% elsif section.settings.title != blank %}
+        {% assign image_alt = section.settings.title | escape %}
+    {% else %}
+        {% assign image_alt = 'Foto von Alexascha' %}
+    {% endif %}
+{% endif %}
+
+
 {% if class contains 'art_dir' %}
 
     class='{{ class }} {{ class_from_parent }}' 
@@ -39,7 +51,8 @@
            (max-width: 1440px) 1440px, 
            {{ res_list.last }}px'
   
-    alt="{% if image.alt != blank %}{{ image.alt | escape }}{% elsif product %}Foto von {{ product.title | escape }}{% elsif section.settings.title != blank %}{{ section.settings.title | escape }}{% else %}Foto von Alexascha{% endif %}"  
+    alt='{{ image_alt }}'
+    title='{{ image_alt }}'
     width='{{ image.width }}' 
     height='{{ image.height }}' 
     style='object-position: {{ image.presentation.focal_point }};' 
@@ -65,7 +78,8 @@
     {% endif %}
     '
     data-sizes='auto' 
-    alt="{% if image.alt != blank %}{{ image.alt | escape }}{% elsif product %}Foto von {{ product.title | escape }}{% elsif section.settings.title != blank %}{{ section.settings.title | escape }}{% else %}Foto von Alexascha{% endif %}"  
+    alt='{{ image_alt }}'
+    title='{{ image_alt }}'
     loading='{{ loading }}' width='1' height='1' style='object-position:
     {{ image.presentation.focal_point }};'
     {% if parent_fit == blank %}
