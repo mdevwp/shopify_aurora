@@ -36,42 +36,28 @@
     {% endif %}
 {% endif %}
 
-{% if class contains 'media__image--mobile' %}
-    {% assign selected_res_list = mobile_res_list %}
-{% else %}
-    {% assign selected_res_list = res_list %}
-{% endif %}
-
-{% assign max_size = selected_res_list.last %}
-{% assign min_size = selected_res_list.first %}
-{% assign src_width = max_size %}
-
-{% if class contains 'media__image--mobile' %}
-    {% assign src_width = max_size %}
-{% endif %}
-
-
 
 {% if class contains 'art_dir' %}
-
-
+  
   class='{{ class }} {{ class_from_parent }}' 
     nopin='nopin'
-    src='{{ image | image_url: width: src_width }}'
+    src='{{ image | image_url: width: 2000 }}'
     srcset='
-        {%- for res in selected_res_list -%}
-            {{ image | image_url: width: res }} {{ res }}w,
-        {%- endfor -%}
+        {{ image | image_url: width: 480 }} 480w,
+        {{ image | image_url: width: 768 }} 768w,
+        {{ image | image_url: width: 1024 }} 1024w,
+        {{ image | image_url: width: 1440 }} 1440w,
+        {{ image | image_url: width: 2000 }} 2000w
     '
-    sizes='(max-width: 480px) 100vw, 
-           (max-width: 768px) 90vw, 
-           (max-width: 1024px) 80vw, 
-           (max-width: 1440px) 70vw, 
-           {{ max_size }}px'
+    sizes='(max-width: 480px) 480px, 
+           (max-width: 768px) 768px, 
+           (max-width: 1024px) 1024px, 
+           (max-width: 1440px) 1440px, 
+           2000px'
     alt='{{ image_alt }}'
     title='{{ image_alt }}'
-    width='{{ src_width }}'
-    height='{{ src_width | divided_by: image.aspect_ratio | round }}'
+    width='{{ image.width }}' 
+    height='{{ image.height }}' 
     style='object-position: {{ image.presentation.focal_point }};' 
     fetchpriority='high'
   
