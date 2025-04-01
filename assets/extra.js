@@ -41,10 +41,12 @@ setTimeout(function(){
 document.addEventListener("DOMContentLoaded", function () {
     const menu = document.querySelector(".content-menu");
     const button = document.querySelector(".menu-button");
-
-    button.addEventListener("click", function () {
+    if(button){
+      button.addEventListener("click", function () {
         menu.classList.toggle("active");
-    });
+      });
+    }
+    
 
     document.addEventListener("click", function (event) {
         if (!menu.contains(event.target)) {
