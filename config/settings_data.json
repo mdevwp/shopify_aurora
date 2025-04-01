@@ -253,6 +253,11 @@
         "type": "shopify://apps/turbo-speed-boost-pasilobus/blocks/turbo/b60f64a7-2618-4d56-876c-fcf619939a47",
         "disabled": true,
         "settings": {}
+      },
+      "4092125102900202911": {
+        "type": "shopify://apps/prefetch-master-speed-boost/blocks/head/4a386c7f-e4e2-4274-b96e-83522ca50f0f",
+        "disabled": false,
+        "settings": {}
       }
     }
   },
