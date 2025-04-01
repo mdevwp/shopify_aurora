@@ -50,28 +50,7 @@
     {% assign src_width = max_size %}
 {% endif %}
 
-{% if if image != blank && class contains 'media__image' %}
-    class='{{ class }} {{ class_from_parent }}' 
-    nopin='nopin'
-    src='{{ image | image_url: width: src_width }}'
-    srcset='
-        {%- for res in selected_res_list -%}
-            {{ image | image_url: width: res }} {{ res }}w,
-        {%- endfor -%}
-    '
-    sizes='(max-width: 480px) 100vw, 
-           (max-width: 768px) 90vw, 
-           (max-width: 1024px) 80vw, 
-           (max-width: 1440px) 70vw, 
-           {{ max_size }}px'
-    alt='{{ image_alt }}'
-    title='{{ image_alt }}'
-    width='{{ src_width }}'
-    height='{{ src_width | divided_by: image.aspect_ratio | round }}'
-    style='object-position: {{ image.presentation.focal_point }};' 
-    fetchpriority='high'
-  
-{% else %}
+
   
     class='lazyload {{ class }}
     {{ class_from_parent }}
@@ -101,4 +80,3 @@
       '
     {% endif %}
   
-{% endif %}
