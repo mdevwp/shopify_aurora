@@ -23,7 +23,7 @@
   endif
 -%}
 
-class='{{ is_eager_loading }} lazyload {{ class }}
+class='lazyload {{ class }}
 {{ class_from_parent }}
 {% if is_multiply_target %} multiply-mode__target {% endif %}' 
 nopin='nopin'
