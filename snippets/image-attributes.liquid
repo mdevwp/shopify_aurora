@@ -36,12 +36,17 @@
     {% endif %}
 {% endif %}
 
+{% if class contains 'media__image--mobile' %}
+    {% assign src_width = 480 %}
+{% else %}
+    {% assign src_width = image.width %}
+{% endif %}
 
 {% if class contains 'art_dir' %}
   
   class='{{ class }} {{ class_from_parent }}' 
     nopin='nopin'
-    src='{{ image | image_url: width: 2000 }}'
+    src='{{ image | image_url: width: src_width }}'
     srcset='
         {{ image | image_url: width: 480 }} 480w,
         {{ image | image_url: width: 768 }} 768w,
@@ -56,7 +61,7 @@
            2000px'
     alt='{{ image_alt }}'
     title='{{ image_alt }}'
-    width='{{ image.width }}' 
+    width='{{ src_width }}' 
     height='{{ image.height }}' 
     style='object-position: {{ image.presentation.focal_point }};' 
     fetchpriority='high'
