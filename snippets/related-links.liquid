@@ -1,8 +1,4 @@
 {% comment %}
-  Automatische interne Verlinkung für Kollektionen, Produkte und Artikel im Footer
-{% endcomment %}
-
-{% comment %}
   Automatische interne Verlinkung für Kollektionen und Produkte im Footer
 {% endcomment %}
 
@@ -14,6 +10,7 @@
       {% assign count = 0 %}
       {% for col in collections %}
         {% if count < 4 and col.handle != collection.handle %}
+          {% if count > 0 %} | {% endif %}
           <a href="{{ col.url }}" class="footer-link">{{ col.title }}</a>
           {% assign count = count | plus: 1 %}
         {% else %}
@@ -37,6 +34,7 @@
       
       {% for p in related_products %}
         {% if count < 4 and p.handle != product.handle %}
+          {% if count > 0 %} | {% endif %}
           <a href="{{ p.url }}" class="footer-link">{{ p.title }}</a>
           {% assign count = count | plus: 1 %}
         {% else %}
