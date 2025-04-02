@@ -61,7 +61,7 @@
   <div class="footer-linking">
     <h3>Verwandte Kategorien</h3>
     <div class="link-row">
-      {% assign related_collections = collections | sample: 4 %}
+      {% assign related_collections = collections | slice: 0, 4 %}
       {% for collection in related_collections %}
         <a href="{{ collection.url }}" class="footer-link">{{ collection.title }}</a>
       {% endfor %}
@@ -72,7 +72,7 @@
   <div class="footer-linking">
     <h3>Verwandte Produkte</h3>
     <div class="link-row">
-      {% assign related_products = collections.all.products | where: "tags", product.tags.first | sample: 4 %}
+      {% assign related_products = collections.all.products | where: "tags", product.tags.first | slice: 0, 4 %}
       {% for product in related_products %}
         <a href="{{ product.url }}" class="footer-link">{{ product.title }}</a>
       {% endfor %}
@@ -83,7 +83,7 @@
   <div class="footer-linking">
     <h3>Verwandte Artikel</h3>
     <div class="link-row">
-      {% assign related_articles = blog.articles | sample: 4 %}
+      {% assign related_articles = blog.articles | slice: 0, 4 %}
       {% for article in related_articles %}
         <a href="{{ article.url }}" class="footer-link">{{ article.title }}</a>
       {% endfor %}
