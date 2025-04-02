@@ -52,44 +52,6 @@
 {%- render 'inline-css-minifier', css: css -%}
 
 
-{% comment %}
-  Automatic interlinking for collections, products, and articles in the footer
-{% endcomment %}
-
-{% if template == 'collection' %}
-  <!-- Collection page: automatic interlinking to other collections -->
-  <div class="footer-linking">
-    <h3>Related Categories</h3>
-    <ul>
-      {% assign related_collections = collections | sample: 5 %}
-      {% for collection in related_collections %}
-        <li><a href="{{ collection.url }}">{{ collection.title }}</a></li>
-      {% endfor %}
-    </ul>
-  </div>
-{% elsif template == 'product' %}
-  <!-- Product page: interlinking to related products -->
-  <div class="footer-linking">
-    <h3>Related Products</h3>
-    <ul>
-      {% assign related_products = collections.all.products | where: "tags", product.tags.first | sample: 4 %}
-      {% for product in related_products %}
-        <li><a href="{{ product.url }}">{{ product.title }}</a></li>
-      {% endfor %}
-    </ul>
-  </div>
-{% elsif template == 'article' %}
-  <!-- Article page: interlinking to other articles -->
-  <div class="footer-linking">
-    <h3>Related Articles</h3>
-    <ul>
-      {% assign related_articles = blog.articles | sample: 3 %}
-      {% for article in related_articles %}
-        <li><a href="{{ article.url }}">{{ article.title }}</a></li>
-      {% endfor %}
-    </ul>
-  </div>
-{% endif %}
 
 
 
