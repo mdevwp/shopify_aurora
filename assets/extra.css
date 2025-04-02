@@ -27,6 +27,7 @@
   overflow: hidden;
   margin: auto;
 }
+span.link__text,
 h3.featured-article__title.h4 a,
 a.article-footer-posts__post-link{
     color: black !important;
