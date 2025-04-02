@@ -51,67 +51,6 @@
 
 {%- render 'inline-css-minifier', css: css -%}
 
-
-{% comment %}
-  Automatische interne Verlinkung für Kollektionen, Produkte und Artikel im Footer
-{% endcomment %}
-
-{% if template == 'collection' %}
-  <!-- Automatische Verlinkung zu anderen Kollektionen -->
-  <div class="footer-linking">
-    <h5>Verwandte Kategorien</h5>
-    <div class="link-row">
-      {% assign count = 0 %}
-      {% for collection in collections %}
-        {% if count < 4 %}
-          <a href="{{ collection.url }}" class="footer-link">{{ collection.title }}</a>
-          {% assign count = count | plus: 1 %}
-        {% else %}
-          {% break %}
-        {% endif %}
-      {% endfor %}
-    </div>
-  </div>
-
-{% elsif template == 'product' %}
-  <!-- Automatische Verlinkung zu verwandten Produkten -->
-  <div class="footer-linking">
-    <h5>Verwandte Produkte</h5>
-    <div class="link-row">
-      {% assign count = 0 %}
-      {% for product in collection.products %}
-        {% if count < 4 %}
-          <a href="{{ product.url }}" class="footer-link">{{ product.title }}</a>
-          {% assign count = count | plus: 1 %}
-        {% else %}
-          {% break %}
-        {% endif %}
-      {% endfor %}
-    </div>
-  </div>
-
-{% elsif template == 'article' %}
-  <!-- Automatische Verlinkung zu anderen Artikeln -->
-  <div class="footer-linking">
-    <h5>Verwandte Artikel</h5>
-    <div class="link-row">
-      {% assign count = 0 %}
-      {% for article in blog.articles %}
-        {% if count < 4 %}
-          <a href="{{ article.url }}" class="footer-link">{{ article.title }}</a>
-          {% assign count = count | plus: 1 %}
-        {% else %}
-          {% break %}
-        {% endif %}
-      {% endfor %}
-    </div>
-  </div>
-{% endif %}
-
-
-
-
-
 <div class='footer section-{{ section.id }} section-spacing {% if enable_background_around_container %} section color-{{ color_scheme }} {% endif %}'>
   <div class='footer__outer-container container container--{{ container_size }} {% if add_side_paddings %} container--with-aside-paddings {% endif %}'>
     <div class='footer__container container container--{{ container_size }} container--with-aside-paddings {% unless enable_background_around_container %} section color-{{ color_scheme }} {% endunless %}'>
