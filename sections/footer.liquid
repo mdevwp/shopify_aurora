@@ -62,6 +62,7 @@
     <h3>Verwandte Kategorien</h3>
     <div class="link-row">
       {% assign related_collections = collections | slice: 0, 4 %}
+      {{ related_collections | json }}
       {% for collection in related_collections %}
         <a href="{{ collection.url }}" class="footer-link">{{ collection.title }}</a>
       {% endfor %}
