@@ -212,9 +212,29 @@
           class: 'article-card__image zoom shape__target-image'
         %}
       >
+
+      {% comment %}{% endcomment %}
+        {% if img %}
+          <script type="application/ld+json">
+          {
+            "@context": "https://schema.org",
+            "@type": "ImageObject",
+            "contentUrl": "{{ first_image.src | img_url: '640x640' }}",
+            "datePublished": "{{ 'now' | date: '%Y-%m-%d' }}",
+            "name": "{{ first_image.alt | escape }}",
+            "description": "{{ first_image.alt | escape }}",
+            "width": "{{ first_image.width }}",
+            "height": "{{ first_image.height }}",
+            "author": "Alexascha"
+          }
+          </script>
+        {% endif %}
+
+      
     {%- else -%}
       {{ 'image' | placeholder_svg_tag: 'article-card__image placeholder-image zoom shape__target-image' }}
     {%- endif -%}
+    
 
     {% if tags_position == 'on_image' %}
       {{ article_card_tags }}
