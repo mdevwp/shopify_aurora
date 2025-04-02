@@ -3,7 +3,8 @@
   overflow: hidden;
   margin: auto;
 }
-h3.featured-article__title.h4 a {
+h3.featured-article__title.h4 a,
+a.article-footer-posts__post-link{
     color: black !important;
 }
 h1.article__title {
