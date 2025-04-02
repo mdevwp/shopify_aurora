@@ -3,6 +3,9 @@
   overflow: hidden;
   margin: auto;
 }
+h3.featured-article__title.h4 a {
+    color: black !important;
+}
 h1.article__title {
     font-size: 40px;
     font-weight: 700;
