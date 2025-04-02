@@ -3,13 +3,13 @@
 {% endcomment %}
 
 {% comment %}
-  Automatische interne Verlinkung für Kollektionen, Produkte und Artikel im Footer
+  Automatische interne Verlinkung für Kollektionen und Produkte im Footer
 {% endcomment %}
 
 {% if collection %}
   <!-- Automatische Verlinkung zu anderen Kollektionen -->
   <div class="footer-linking">
-    <h5>Verwandte Kategorien</h5>
+    <h6>Verwandte Kategorien</h6>
     <div class="link-row">
       {% assign count = 0 %}
       {% for col in collections %}
@@ -26,10 +26,16 @@
 {% elsif product %}
   <!-- Automatische Verlinkung zu verwandten Produkten -->
   <div class="footer-linking">
-    <h5>Verwandte Produkte</h5>
+    <h6>Verwandte Produkte</h6>
     <div class="link-row">
       {% assign count = 0 %}
-      {% for p in collection.products %}
+      {% if collection %}
+        {% assign related_products = collection.products %}
+      {% else %}
+        {% assign related_products = collections.all.products %}
+      {% endif %}
+      
+      {% for p in related_products %}
         {% if count < 4 and p.handle != product.handle %}
           <a href="{{ p.url }}" class="footer-link">{{ p.title }}</a>
           {% assign count = count | plus: 1 %}
@@ -39,5 +45,4 @@
       {% endfor %}
     </div>
   </div>
-
 {% endif %}
