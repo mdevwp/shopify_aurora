@@ -59,7 +59,7 @@
 {% if template == 'collection' %}
   <!-- Automatische Verlinkung zu anderen Kollektionen -->
   <div class="footer-linking">
-    <h3>Verwandte Kategorien</h3>
+    <h5>Verwandte Kategorien</h5>
     <div class="link-row">
       {% assign count = 0 %}
       {% for collection in collections %}
@@ -76,7 +76,7 @@
 {% elsif template == 'product' %}
   <!-- Automatische Verlinkung zu verwandten Produkten -->
   <div class="footer-linking">
-    <h3>Verwandte Produkte</h3>
+    <h5>Verwandte Produkte</h5>
     <div class="link-row">
       {% assign count = 0 %}
       {% for product in collection.products %}
@@ -93,7 +93,7 @@
 {% elsif template == 'article' %}
   <!-- Automatische Verlinkung zu anderen Artikeln -->
   <div class="footer-linking">
-    <h3>Verwandte Artikel</h3>
+    <h5>Verwandte Artikel</h5>
     <div class="link-row">
       {% assign count = 0 %}
       {% for article in blog.articles %}
