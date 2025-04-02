@@ -56,15 +56,21 @@
   Automatische interne Verlinkung für Kollektionen, Produkte und Artikel im Footer
 {% endcomment %}
 
+{% comment %}
+  Automatische interne Verlinkung für Kollektionen, Produkte und Artikel im Footer
+{% endcomment %}
+
 {% if template == 'collection' %}
   <!-- Collection page: automatische Verlinkung zu anderen Kollektionen -->
   <div class="footer-linking">
     <h3>Verwandte Kategorien</h3>
     <div class="link-row">
-      {% assign related_collections = collections | slice: 0, 4 %}
-      {{ related_collections }}
-      {% for collection in related_collections %}
-        <a href="{{ collection.url }}" class="footer-link">{{ collection.title }}</a>
+      {% assign collection_count = collections.size %}
+      {% for i in (0..3) %}
+        {% if i < collection_count %}
+          {% assign related_collection = collections[i] %}
+          <a href="{{ related_collection.url }}" class="footer-link">{{ related_collection.title }}</a>
+        {% endif %}
       {% endfor %}
     </div>
   </div>
@@ -73,7 +79,7 @@
   <div class="footer-linking">
     <h3>Verwandte Produkte</h3>
     <div class="link-row">
-      {% assign related_products = collections.all.products | where: "tags", product.tags.first | slice: 0, 4 %}
+      {% assign related_products = collection.products | slice: 0, 4 %}
       {% for product in related_products %}
         <a href="{{ product.url }}" class="footer-link">{{ product.title }}</a>
       {% endfor %}
@@ -91,6 +97,7 @@
     </div>
   </div>
 {% endif %}
+
 
 
 
