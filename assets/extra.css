@@ -8,6 +8,9 @@
     max-width: 960px;
     padding: 40px;
 }
+.footer-linking h5 {
+    margin-bottom: 10px;
+}
 .footer-linking .footer-link {
   text-decoration: none;
   color: #007bff;
