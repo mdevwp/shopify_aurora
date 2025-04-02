@@ -93,6 +93,26 @@
   {% assign custom_index = 0 %}
   
   {% for variant in product.variants %}
+
+
+      {% for image in images %}
+          <script type="application/ld+json">
+          {
+            "@context": "https://schema.org",
+            "@type": "ImageObject",
+            "contentUrl": "{{ image.src | img_url: '1024x1024' }}",
+            "datePublished": "{{ 'now' | date: '%Y-%m-%d' }}",
+            "name": "{{ image.alt | escape }}",
+            "description": "{{ image.alt | escape }}",
+            "width": "{{ image.width }}",
+            "height": "{{ image.height }}",
+            "author": "Alexascha"
+          }
+          </script>
+      {% endfor %}
+
+
+    
     
     {% if filter_metal != blank and variant.options[0] != blank and variant.options[0] != filter_metal %}      
         {% continue %}
