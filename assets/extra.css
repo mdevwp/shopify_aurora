@@ -4,6 +4,9 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+.footer-linking h5 {
+    display: none;
+}
 .footer-linking {
     margin: 0 auto;
     text-align: center;
