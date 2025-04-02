@@ -5,7 +5,7 @@
 {% if collection %}
   <!-- Automatische Verlinkung zu anderen Kollektionen -->
   <div class="footer-linking">
-    <h6>Verwandte Kategorien</h6>
+    <h6>{{ settings.related_collections_title }}</h6>
     <div class="link-row">
       {% assign count = 0 %}
       {% for col in collections %}
@@ -23,7 +23,7 @@
 {% elsif product %}
   <!-- Automatische Verlinkung zu verwandten Produkten -->
   <div class="footer-linking">
-    <h6>Verwandte Produkte</h6>
+    <h6>{{ settings.related_products_title }}</h6>
     <div class="link-row">
       {% assign count = 0 %}
       {% if collection %}
