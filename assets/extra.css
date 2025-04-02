@@ -3,7 +3,11 @@
   gap: 35px;
   flex-wrap: wrap;
 }
-
+.container.footer-linking {
+    margin: 0 auto;
+    max-width: 960px;
+    padding: 40px;
+}
 .footer-linking .footer-link {
   text-decoration: none;
   color: #007bff;
