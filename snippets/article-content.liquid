@@ -9,7 +9,7 @@
   "datePublished": "{{ article.published_at | date: '%Y-%m-%d' }}",
   "dateCreated": "{{ article.published_at | date: '%Y-%m-%d' }}",
   "dateModified": "{{ article.updated_at | date: '%Y-%m-%d' }}",
-  "articleBody": "{{ article.content | strip_html | replace: '\n', ' ' | replace: '\r', '' | replace: '  ', ' ' }}",
+  "articleBody": "{{ article.content | strip_html }}",
   "wordcount": "{{ article.content | strip_html | number_of_words }}",
   "mainEntityOfPage": {
     "@type": "WebPage",
