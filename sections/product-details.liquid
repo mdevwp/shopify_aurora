@@ -42,6 +42,33 @@
       <div class="product-details__video-container">
         <video class="product-details__video" src="{{ product.metafields.custom.video | file_url }}" muted="1" autoplay="1" loop="" playsinline=""></video>
       </div>
+
+      {% if product.metafields.custom.video %}
+        {% assign video_url = product.metafields.custom.video | file_url %}
+        {% assign video_thumbnail = product.metafields.custom.video_thumbnail | file_url %}
+        {% assign video_name = product.title %}
+        {% assign video_description = product.metafields.custom.video_description | default: product.title %}
+        {% assign video_duration = product.metafields.custom.video_duration %}
+        {% assign video_upload_date = product.metafields.custom.video_upload_date %}
+        {% assign video_interaction_count = product.metafields.custom.video_views %}
+      
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "VideoObject",
+          "contentUrl": "{{ video_url }}",
+          "name": "{{ video_name }}",
+          "description": "{{ video_description }}",
+          "thumbnailUrl": "{{ video_thumbnail }}",
+          "encodingFormat": "video/mp4",
+          "uploadDate": "{{ video_upload_date }}",
+          "duration": "PT{{ video_duration }}",
+          "interactionCount": "{{ video_interaction_count }}"
+        }
+        </script>
+      {% endif %}
+
+      
     {% endif %}
     
     <div class='product-details__container {% unless enable_background_around_container %} product-details__container--with-aside-spacing section color-{{ color_scheme }} {% endunless %}'>
