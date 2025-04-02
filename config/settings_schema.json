@@ -8,25 +8,6 @@
     "theme_support_url": "https://getsitecontrol.getform.com/l15wd"
   },
 
-  {
-    "name": "Interne Verlinkung",
-    "settings": [
-      {
-        "type": "text",
-        "id": "related_collections_title",
-        "label": "Titel für verwandte Kategorien",
-        "default": "Verwandte Kategorien"
-      },
-      {
-        "type": "text",
-        "id": "related_products_title",
-        "label": "Titel für verwandte Produkte",
-        "default": "Verwandte Produkte"
-      }
-    ]
-  },
-
-  
   {   
     "name": "t:settings_schema.appearance.name",
     "settings": [
@@ -1632,6 +1613,23 @@
         "default": "bottom-right",
         "label": "t:settings_schema.navigation.back_to_top_button_position.label",
         "info": "t:settings_schema.navigation.back_to_top_button_position.info"
+      }
+    ]
+  },
+   {
+    "name": "Interne Verlinkung",
+    "settings": [
+      {
+        "type": "text",
+        "id": "related_collections_title",
+        "label": "Titel für verwandte Kategorien",
+        "default": "Verwandte Kategorien"
+      },
+      {
+        "type": "text",
+        "id": "related_products_title",
+        "label": "Titel für verwandte Produkte",
+        "default": "Verwandte Produkte"
       }
     ]
   },
