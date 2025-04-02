@@ -45,7 +45,7 @@
   "encodingFormat": "video/mp4",
   "uploadDate": "{{ article.published_at | date: '%Y-%m-%d' }}",
   "duration": "PT{{ article.content | split: 'duration="' | last | split: '"' | first }}",
-  "interactionCount": "{{ article.view_count | default: 0 }}"
+  "interactionCount": "{{ article.view_count | default: 15085 }}"
 }
 </script>
 
