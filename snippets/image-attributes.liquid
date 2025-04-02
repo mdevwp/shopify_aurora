@@ -33,6 +33,9 @@
         {% assign image_alt = section.settings.title | escape %}
     {% else %}
         {% assign image_alt = 'Foto von Alexascha' %}
+        {% if class contains 'logo-img' %}
+            {% assign image_alt = 'Logo' %}
+        {% endif %}
     {% endif %}
 {% endif %}
 
