@@ -2,15 +2,19 @@
   Automatische interne Verlinkung für Kollektionen, Produkte und Artikel im Footer
 {% endcomment %}
 
-{% if template == 'collection' %}
+{% comment %}
+  Automatische interne Verlinkung für Kollektionen, Produkte und Artikel im Footer
+{% endcomment %}
+
+{% if collection %}
   <!-- Automatische Verlinkung zu anderen Kollektionen -->
   <div class="footer-linking">
-    <h5>Verwandte Kategorien</h5>
+    <h3>Verwandte Kategorien</h3>
     <div class="link-row">
       {% assign count = 0 %}
-      {% for collection in collections %}
-        {% if count < 4 %}
-          <a href="{{ collection.url }}" class="footer-link">{{ collection.title }}</a>
+      {% for col in collections %}
+        {% if count < 4 and col.handle != collection.handle %}
+          <a href="{{ col.url }}" class="footer-link">{{ col.title }}</a>
           {% assign count = count | plus: 1 %}
         {% else %}
           {% break %}
@@ -19,15 +23,15 @@
     </div>
   </div>
 
-{% elsif template == 'product' %}
+{% elsif product %}
   <!-- Automatische Verlinkung zu verwandten Produkten -->
   <div class="footer-linking">
-    <h5>Verwandte Produkte</h5>
+    <h3>Verwandte Produkte</h3>
     <div class="link-row">
       {% assign count = 0 %}
-      {% for product in collection.products %}
-        {% if count < 4 %}
-          <a href="{{ product.url }}" class="footer-link">{{ product.title }}</a>
+      {% for p in collection.products %}
+        {% if count < 4 and p.handle != product.handle %}
+          <a href="{{ p.url }}" class="footer-link">{{ p.title }}</a>
           {% assign count = count | plus: 1 %}
         {% else %}
           {% break %}
@@ -36,15 +40,15 @@
     </div>
   </div>
 
-{% elsif template == 'article' %}
+{% elsif article %}
   <!-- Automatische Verlinkung zu anderen Artikeln -->
   <div class="footer-linking">
-    <h5>Verwandte Artikel</h5>
+    <h3>Verwandte Artikel</h3>
     <div class="link-row">
       {% assign count = 0 %}
-      {% for article in blog.articles %}
-        {% if count < 4 %}
-          <a href="{{ article.url }}" class="footer-link">{{ article.title }}</a>
+      {% for art in blog.articles %}
+        {% if count < 4 and art.handle != article.handle %}
+          <a href="{{ art.url }}" class="footer-link">{{ art.title }}</a>
           {% assign count = count | plus: 1 %}
         {% else %}
           {% break %}
