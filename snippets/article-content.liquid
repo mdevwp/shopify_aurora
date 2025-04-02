@@ -34,31 +34,20 @@
   <div class='rte rte--blog-post article__content body-color {{ block.settings.body_size }}'>{{ article.content }}</div>
 </div>
 
-{% for block in article.blocks %}
-  {% if block.type == 'video' %}
-    {% assign video_url = block.settings.video_url %}
-    {% assign video_thumbnail = block.settings.video_thumbnail %}
-    {% assign video_name = block.settings.video_title %}
-    {% assign video_description = block.settings.video_description %}
-    {% assign video_duration = block.settings.video_duration %}
-    {% assign video_upload_date = block.settings.video_upload_date %}
-    {% assign video_interaction_count = block.settings.video_interaction_count %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "contentUrl": "{{ article.content | split: 'src="' | last | split: '"' | first }}", 
+  "name": "{{ article.title }}",
+  "description": "{{ article.excerpt | strip_html | truncatewords: 30 }}",
+  "thumbnailUrl": "{{ article.featured_image | img_url: 'original' }}",
+  "encodingFormat": "video/mp4",
+  "uploadDate": "{{ article.published_at | date: '%Y-%m-%d' }}",
+  "duration": "PT{{ article.content | split: 'duration="' | last | split: '"' | first }}",
+  "interactionCount": "{{ article.view_count | default: 0 }}"
+}
+</script>
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "VideoObject",
-      "contentUrl": "{{ video_url }}",
-      "name": "{{ video_name }}",
-      "description": "{{ video_description }}",
-      "thumbnailUrl": "{{ video_thumbnail }}",
-      "encodingFormat": "video/mp4",
-      "uploadDate": "{{ video_upload_date }}",
-      "duration": "PT{{ video_duration }}",
-      "interactionCount": "{{ video_interaction_count }}"
-    }
-    </script>
-  {% endif %}
-{% endfor %}
 
 
