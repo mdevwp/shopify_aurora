@@ -219,12 +219,12 @@
           {
             "@context": "https://schema.org",
             "@type": "ImageObject",
-            "contentUrl": "{{ first_image.src | img_url: '640x640' }}",
+            "contentUrl": "{{ img.src | img_url: '640x640' }}",
             "datePublished": "{{ 'now' | date: '%Y-%m-%d' }}",
-            "name": "{{ first_image.alt | escape }}",
-            "description": "{{ first_image.alt | escape }}",
-            "width": "{{ first_image.width }}",
-            "height": "{{ first_image.height }}",
+            "name": "{{ img.alt | escape }}",
+            "description": "{{ img.alt | escape }}",
+            "width": "{{ img.width }}",
+            "height": "{{ img.height }}",
             "author": "Alexascha"
           }
           </script>
