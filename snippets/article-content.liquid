@@ -1,3 +1,35 @@
 <div class='container container--{{ section.settings.container_size }} container--with-aside-paddings body-font-weight-from-global-settings' {{ block.shopify_attributes }}>
   <div class='rte rte--blog-post article__content body-color {{ block.settings.body_size }}'>{{ article.content }}</div>
 </div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ article.title }}",
+  "image": "{{ article.featured_image | img_url: 'original' }}",
+  "alternativeHeadline": "{{ article.title }}", 
+  "description": "{{ article.metatags.description }}",
+  "datePublished": "{{ article.published_at | date: '%Y-%m-%d' }}",
+  "dateCreated": "{{ article.published_at | date: '%Y-%m-%d' }}",
+  "dateModified": "{{ article.updated_at | date: '%Y-%m-%d' }}",
+  "articleBody": "{{ article.content | strip_html }}",
+  "wordcount": "{{ article.content | strip_html | number_of_words }}",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ article.url }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ shop.name }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ shop.logo | img_url: 'original' }}"
+    }
+  },
+  "author": {
+    "@type": "Person",
+    "name": "{{ article.author }}"
+  }
+}
+</script>
