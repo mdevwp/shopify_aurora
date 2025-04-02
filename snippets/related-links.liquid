@@ -40,20 +40,4 @@
     </div>
   </div>
 
-{% elsif article %}
-  <!-- Automatische Verlinkung zu anderen Artikeln -->
-  <div class="footer-linking">
-    <h5>Verwandte Artikel</h5>
-    <div class="link-row">
-      {% assign count = 0 %}
-      {% for art in blog.articles %}
-        {% if count < 4 and art.handle != article.handle %}
-          <a href="{{ art.url }}" class="footer-link">{{ art.title }}</a>
-          {% assign count = count | plus: 1 %}
-        {% else %}
-          {% break %}
-        {% endif %}
-      {% endfor %}
-    </div>
-  </div>
 {% endif %}
