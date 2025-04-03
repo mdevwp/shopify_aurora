@@ -295,6 +295,24 @@
                     class: image_class
                   %}
                 >
+
+                  {% assign first_image = media %}
+                  {% if first_image %}
+                    <script type="application/ld+json">
+                    {
+                      "@context": "https://schema.org",
+                      "@type": "ImageObject",
+                      "contentUrl": "{{ first_image.src | img_url: '640x640' }}",
+                      "datePublished": "{{ 'now' | date: '%Y-%m-%d' }}",
+                      "name": "{{ first_image.alt | escape }}",
+                      "description": "{{ first_image.alt | escape }}",
+                      "width": "{{ first_image.width }}",
+                      "height": "{{ first_image.height }}",
+                      "author": "Alexascha"
+                    }
+                    </script>
+                  {% endif %}
+                
               {% endif %}
             {%- endfor -%}
 
