@@ -218,57 +218,6 @@
         "type": "shopify://apps/product-compare/blocks/app-embed-block/2ec083cc-5677-4d10-a2af-c02464aa361b",
         "disabled": false,
         "settings": {}
-      },
-      "3192664013427500466": {
-        "type": "shopify://apps/wishcraft-ultimate-wishlist/blocks/wishlist-render/f2e93a20-20d3-4e28-9abb-b5ab07f852bf",
-        "disabled": false,
-        "settings": {
-          "default_title": "Your Favourites",
-          "enable_multiple_wishlists": true,
-          "colour_scheme": "light",
-          "success_content": "<p><b>[product_name]</b> has been added to your wishlist.</p><p>You can <b>access your wishlist</b> via the heart in the header.</p>"
-        }
-      },
-      "5063685679717592333": {
-        "type": "shopify://apps/wishcraft-ultimate-wishlist/blocks/floating-wishlist-button/f2e93a20-20d3-4e28-9abb-b5ab07f852bf",
-        "disabled": false,
-        "settings": {
-          "title": "Add Product",
-          "added_title": "Product Added",
-          "icon": "",
-          "style": "with-label",
-          "position": "middle-left"
-        }
-      },
-      "15885977890469162556": {
-        "type": "shopify://apps/ea-page-speed-boost/blocks/app-embed-block/b667776a-3444-4aab-a7b6-a467a3438097",
-        "disabled": true,
-        "settings": {}
-      },
-      "11068332061543699368": {
-        "type": "shopify://apps/booster-page-speed-optimizer/blocks/app-embed/d920faf3-7c60-423a-9636-22618b5561b5",
-        "disabled": true,
-        "settings": {}
-      },
-      "4551646370426404704": {
-        "type": "shopify://apps/turbo-speed-boost-pasilobus/blocks/turbo/b60f64a7-2618-4d56-876c-fcf619939a47",
-        "disabled": false,
-        "settings": {}
-      },
-      "10431957531522714341": {
-        "type": "shopify://apps/seoant-page-speed/blocks/pagespeed-preloading/b6edaf80-ee08-4404-951c-d8f577b5c1b1",
-        "disabled": false,
-        "settings": {}
-      },
-      "5017882195547572635": {
-        "type": "shopify://apps/sc-easy-redirects/blocks/app/be3f8dbd-5d43-46b4-ba43-2d65046054c2",
-        "disabled": false,
-        "settings": {}
-      },
-      "15789145905799289410": {
-        "type": "shopify://apps/redirect-pro-404-seo/blocks/tracker/68d49184-0465-4c21-8d3d-e051f7921c3f",
-        "disabled": false,
-        "settings": {}
       }
     }
   },
