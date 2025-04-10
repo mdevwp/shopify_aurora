@@ -83,14 +83,7 @@
           "type": "quantity_selector",
           "settings": {}
         },
-        "wishcraft_ultimate_wishlist_wishlist_trigger_icon_grYKLm": {
-          "type": "shopify://apps/wishcraft-ultimate-wishlist/blocks/wishlist-trigger-icon/f2e93a20-20d3-4e28-9abb-b5ab07f852bf",
-          "settings": {
-            "icon_color": "dark",
-            "icon": ""
-          }
-        },
-        "wishcraft_ultimate_wishlist_inline_wishlist_button_yVnyQz": {
+        "wishcraft_ultimate_wishlist_inline_wishlist_button_kT7gGQ": {
           "type": "shopify://apps/wishcraft-ultimate-wishlist/blocks/inline-wishlist-button/f2e93a20-20d3-4e28-9abb-b5ab07f852bf",
           "settings": {
             "title": "Add to Wishlist",
@@ -144,8 +137,7 @@
         "28586830-d855-4547-8946-94914bac9e85",
         "d3d427d0-4e7d-4f81-9057-c64f65a4f183",
         "quantity_selector",
-        "wishcraft_ultimate_wishlist_wishlist_trigger_icon_grYKLm",
-        "wishcraft_ultimate_wishlist_inline_wishlist_button_yVnyQz",
+        "wishcraft_ultimate_wishlist_inline_wishlist_button_kT7gGQ",
         "buy_buttons",
         "c9188b10-e29c-4c63-b385-a3faa860d64a",
         "product_properties_AX3DJi"
