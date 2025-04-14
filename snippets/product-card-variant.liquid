@@ -95,8 +95,7 @@
   {% for variant in product.variants %}
 
 
-    {% if filter_metal != blank and variant.options[0] != blank and variant.options[0] != filter_metal and variant.options[1] != filter_metal %}      
-       {{ variant.options[0] }} 
+    {% if filter_metal != blank and variant.options[0] != blank and variant.options[0] != filter_metal and variant.options[1] != filter_metal and variant.options[2] != filter_metal %}       
       {% continue %}
     {% endif %}
     
