@@ -296,11 +296,8 @@
                 
                 {% assign filter_metal = '' %}
                 {% assign metals = "Gold, Roségold, Silber" | split: ", " %} 
-                {% assign collection_title_lower = collection.title | downcase %}
-                
                 {% for metal in metals %}
-                  {% assign metal_lower = metal | downcase %}
-                  {% if collection_title_lower contains metal_lower %}
+                  {% if collection.title contains metal %}
                     {% assign filter_metal = metal %}
                   {% endif %}
                 {% endfor %}
