@@ -96,7 +96,8 @@
 
 
     {% if filter_metal != blank and variant.options[0] != blank and variant.options[0] != filter_metal and variant.options[1] != filter_metal %}      
-        {% continue %}
+       {{ variant.options[0] }} 
+      {% continue %}
     {% endif %}
     
     {%- liquid
