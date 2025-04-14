@@ -51,6 +51,17 @@
 
 {%- render 'inline-css-minifier', css: css -%}
 
+
+{% comment %}
+  Automatische interne Verlinkung für Kollektionen, Produkte und Artikel im Footer
+{% endcomment %}
+
+
+
+
+
+
+
 <div class='footer section-{{ section.id }} section-spacing {% if enable_background_around_container %} section color-{{ color_scheme }} {% endif %}'>
   <div class='footer__outer-container container container--{{ container_size }} {% if add_side_paddings %} container--with-aside-paddings {% endif %}'>
     <div class='footer__container container container--{{ container_size }} container--with-aside-paddings {% unless enable_background_around_container %} section color-{{ color_scheme }} {% endunless %}'>
