@@ -294,13 +294,7 @@
             <div class='shop__products-grid-wrap'>
               <div class='shop__products-grid' id='ShopProductsGrid'> 
                 
-                {% assign filter_metal = '' %}
-                {% assign metals = "Gold, Roségold, Silber" | split: ", " %} 
-                {% for metal in metals %}
-                  {% if collection.title contains metal %}
-                    {% assign filter_metal = metal %}
-                  {% endif %}
-                {% endfor %}
+                
 
                 {% assign colors = "Weiß:weiß, Gelb:gelb, Blau:blau, Orang:safrangelb, Rosa:rosa, Schwarz:schwarz, Grün:grün, Lila:lavend, Violet:lavend, Rote:rot, Braun:braun, Beige:sandbraun, Graue:grau" | split: ", " %}
                 {% for color in colors %}
