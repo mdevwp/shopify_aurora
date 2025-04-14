@@ -95,16 +95,11 @@
   {% for variant in product.variants %}
 
 
+    {% if filter_metal != blank and variant.options[0] != blank and variant.options[0] != filter_metal and variant.options[1] != filter_metal %}      
+        {% continue %}
+    {% endif %}
     
     
-    {%- liquid
-        if missing_values != blank and variant.options[1] != blank
-          assign value = variant.options[1] | replace: " mm", ""
-          if missing_values contains value
-            continue
-          endif
-        endif
-    -%}
     
     
     {% if filter_color != blank and variant.options[0] != blank %}
