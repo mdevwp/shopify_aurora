@@ -99,17 +99,17 @@
         {% continue %}
     {% endif %}
     
+    {%- liquid
+        if missing_values != blank and variant.options[1] != blank
+          assign value = variant.options[1] | replace: " mm", ""
+          if missing_values contains value
+            continue
+          endif
+        endif
+    -%}
     
     
     
-    {% if filter_color != blank and variant.options[0] != blank %}
-        {% assign option_0 = variant.options[0] | downcase %}
-        {% assign option_1 = variant.options[1] | downcase %}
-        {% unless option_0 contains filter_color or option_1 contains filter_color %}
-          {% continue %}
-          
-        {% endunless %}
-    {% endif %}
     
 
     {% liquid
