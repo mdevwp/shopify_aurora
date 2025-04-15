@@ -43,6 +43,8 @@
         <video class="product-details__video" src="{{ product.metafields.custom.video | file_url }}" muted="1" autoplay="1" loop="" playsinline=""></video>
       </div>
 
+
+{% comment %}      
       {% if product.metafields.custom.video %}
         {% assign video_url = product.metafields.custom.video | file_url %}
         {% assign video_thumbnail = product.metafields.custom.video_thumbnail | file_url %}
@@ -67,6 +69,53 @@
         }
         </script>
       {% endif %}
+{% endcomment %}  
+
+
+{% if product.metafields.custom.video %}
+  {% assign video_url = product.metafields.custom.video | file_url %}
+  {% assign video_thumbnail = product.metafields.custom.video_thumbnail | file_url %}
+  {% assign video_name = product.title %}
+  {% assign video_description = product.metafields.custom.video_description | default: product.title %}
+  {% assign video_interaction_count = product.metafields.custom.video_views %}
+
+  <script>
+    const video = document.getElementById('product-video');
+    video.addEventListener('loadedmetadata', function () {
+      const durationSeconds = Math.floor(video.duration);
+      const isoDuration = convertToISODuration(durationSeconds);
+      const uploadDate = new Date().toISOString().split('T')[0]; // today's date
+
+      const schema = {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "contentUrl": "{{ video_url }}",
+        "name": "{{ video_name | escape }}",
+        "description": "{{ video_description | escape }}",
+        "thumbnailUrl": "{{ video_thumbnail }}",
+        "encodingFormat": "video/mp4",
+        "uploadDate": uploadDate,
+        "duration": isoDuration,
+        "interactionCount": "{{ video_interaction_count }}"
+      };
+
+      const script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.text = JSON.stringify(schema);
+      document.head.appendChild(script);
+    });
+
+    function convertToISODuration(seconds) {
+      const hrs = Math.floor(seconds / 3600);
+      const mins = Math.floor((seconds % 3600) / 60);
+      const secs = seconds % 60;
+      return `PT${hrs > 0 ? hrs + 'H' : ''}${mins > 0 ? mins + 'M' : ''}${secs}S`;
+    }
+  </script>
+{% endif %}
+
+
+
 
       
     {% endif %}
