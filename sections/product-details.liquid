@@ -43,7 +43,6 @@
         <video class="product-details__video" src="{{ product.metafields.custom.video | file_url }}" muted="1" autoplay="1" loop="" playsinline=""></video>
       </div>
 
-      {% comment %}     {% endcomment %}
       {% if product.metafields.custom.video %}
         {% assign video_url = product.metafields.custom.video | file_url %}
         {% assign video_thumbnail = product.metafields.custom.video_thumbnail | file_url %}
@@ -68,8 +67,6 @@
         }
         </script>
       {% endif %}
- 
-      
 
       
     {% endif %}
