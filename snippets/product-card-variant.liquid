@@ -382,25 +382,28 @@
                     {%- endif -%}
                   {%- endfor -%}
                 {% endif %}
+
+                {% assign first_image = images.first %}
+                {% if first_image %}
+                  <script type="application/ld+json">
+                  {
+                    "@context": "https://schema.org",
+                    "@type": "ImageObject",
+                    "contentUrl": "{{ first_image.src | img_url: '640x640' }}",
+                    "datePublished": "{{ 'now' | date: '%Y-%m-%d' }}",
+                    "name": "{{ first_image.alt | escape }}",
+                    "description": "{{ first_image.alt | escape }}",
+                    "width": "{{ first_image.width }}",
+                    "height": "{{ first_image.height }}",
+                    "author": "Alexascha"
+                  }
+                  </script>
+                {% endif %}
+          
               </div>
             </div>
 
-            {% assign first_image = images.first %}
-              {% if first_image %}
-                <script type="application/ld+json">
-                {
-                  "@context": "https://schema.org",
-                  "@type": "ImageObject",
-                  "contentUrl": "{{ first_image.src | img_url: '640x640' }}",
-                  "datePublished": "{{ 'now' | date: '%Y-%m-%d' }}",
-                  "name": "{{ first_image.alt | escape }}",
-                  "description": "{{ first_image.alt | escape }}",
-                  "width": "{{ first_image.width }}",
-                  "height": "{{ first_image.height }}",
-                  "author": "Alexascha"
-                }
-                </script>
-              {% endif %}
+            
 
             <div class='product-card__dots-spinner-wrap' data-product-card-preloader style="display:none;">
               <div class='dots-spinner product-card__dots-spinner'>
