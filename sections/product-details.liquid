@@ -46,30 +46,31 @@
 
 {% comment %} {% endcomment %}
       
-      {% if product.metafields.custom.video %}
-        {% assign video_url = product.metafields.custom.video | file_url %}
-        {% assign video_thumbnail = product.metafields.custom.video_thumbnail | file_url %}
-        {% assign video_name = product.title %}
-        {% assign video_description = product.metafields.custom.video_description | default: product.title %}
-        {% assign video_duration = product.metafields.custom.video_duration %}
-        {% assign video_upload_date = product.metafields.custom.video_upload_date %}
-        {% assign video_interaction_count = product.metafields.custom.video_views %}
-      
-        <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "VideoObject",
-          "contentUrl": "{{ video_url }}",
-          "name": "{{ video_name }}",
-          "description": "{{ video_description }}",
-          "thumbnailUrl": "{{ video_thumbnail }}",
-          "encodingFormat": "video/mp4",
-          "uploadDate": "{{ video_upload_date }}",
-          "duration": "PT{{ video_duration }}",
-          "interactionCount": "{{ video_interaction_count }}"
-        }
-        </script>
-      {% endif %}  
+{% if product.metafields.custom.video %}
+  {% assign video_url = product.metafields.custom.video | file_url %}
+  {% assign video_thumbnail = product.metafields.custom.video_thumbnail | file_url %}
+  {% assign video_name = product.title %}
+  {% assign video_description = product.metafields.custom.video_description | default: product.title %}
+  {% assign video_duration = product.metafields.custom.video_duration | default: "1M30S" %}
+  {% assign video_upload_date = product.metafields.custom.video_upload_date | default: "2025-02-14" %}
+  {% assign video_interaction_count = product.metafields.custom.video_views | default: 1548 %}
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "contentUrl": "{{ video_url }}",
+    "name": "{{ video_name | escape }}",
+    "description": "{{ video_description | escape }}",
+    "thumbnailUrl": "{{ video_thumbnail }}",
+    "encodingFormat": "video/mp4",
+    "uploadDate": "{{ video_upload_date }}",
+    "duration": "PT{{ video_duration }}",
+    "interactionCount": "{{ video_interaction_count }}"
+  }
+  </script>
+{% endif %}
+ 
 
 
 
