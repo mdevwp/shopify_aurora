@@ -162,7 +162,7 @@
     "primary_shape_for_product_pages": "round",
     "primary_size_for_product_pages": 2,
     "primary_shape_for_filters": "round",
-    "primary_size_for_filters": 2,
+    "primary_size_for_filters": 1,
     "primary_custom_colors_and_patterns": "Ultramarine::#0437F2\nCherry blossom::#FFB7C5\nSunny day::yellow/green/blue/\nSummertime::#F9FAFB/#0F9D58/#4285F4\nAmethystlila::#690072\nApricot::#eddbc9\nAquablau::#00a8db\nAzurblau::#4c9be0\nFlieder::#7b4591\nGraphitgrau::#9299a0\nGrasgrün::#539e31\nHämatitgrau::#303030\nHimmelblau::#7ce4ff\nKaffeebraun::#7c3c17\nKaribikblau::#00c7d6\nKirschrot::#a82335\nLavendel::#a459c6\nLimettengrün::#b8d843\nLindgrün::#64ba74\nMaigrün::#c4d6a7\nMalachitgrün::#00593e\nMehrfarbig::#8224e3\nMinzgrün::#69dba9\nMoosgrün::#008245\nNachtblau::#000863\nNussbraun::#7f5339\nOnyxschwarz::#000000\nOrange::#ef5c37\nPerlmuttweiß::#fffbf2\nQuarzrosa::#ce7982\nSafrangelb::#e29024\nSandbraun::#ddc999\nSandgelb::#ededb4\nSandrosa::#e5cdcc\nSaphirblau::#1b49b5\nSchneeweiß::#ffffff\nSonnengelb::#f2d665\nZitronengelb::#efe121",
     "secondary_option_names": "NACH FARBEN FILTERN\nSteinfarbe\nSteinfarben",
     "secondary_shape_for_product_pages": "round",
@@ -232,7 +232,7 @@
       },
       "940650814580334357": {
         "type": "shopify://apps/product-compare/blocks/app-embed-block/2ec083cc-5677-4d10-a2af-c02464aa361b",
-        "disabled": true,
+        "disabled": false,
         "settings": {}
       }
     }
