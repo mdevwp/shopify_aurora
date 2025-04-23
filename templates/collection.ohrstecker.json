@@ -24,7 +24,7 @@
         "show_breadcrumbs": false,
         "show_collection_title": true,
         "show_collection_description": true,
-        "image": "shopify://shop_images/alexascha-kategoriebanner-gruen.jpg",
+        "image": "shopify://shop_images/shopify-banner-test.jpg",
         "desktop_overlay_opacity": 0,
         "mobile_overlay_opacity": 0,
         "heading_size": "h2",

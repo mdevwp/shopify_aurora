@@ -123,7 +123,7 @@
         "disable_desktop": false,
         "disable_mobile": true,
         "title": "BEKANNT AUS",
-        "heading_size": "h3",
+        "heading_size": "h5",
         "alignment": "center",
         "desktop_columns": 5,
         "desktop_space_between_cards": 16,
