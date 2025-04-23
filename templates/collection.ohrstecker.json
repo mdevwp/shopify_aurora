@@ -18,7 +18,7 @@
         "color_scheme": "white",
         "enable_background_around_container": false,
         "container_size": "full-screen",
-        "desktop_ratio": 0.2,
+        "desktop_ratio": 0.1,
         "mobile_ratio": 1,
         "show_collection_image": true,
         "show_breadcrumbs": false,
