@@ -28,7 +28,7 @@
         "desktop_overlay_opacity": 0,
         "mobile_overlay_opacity": 0,
         "heading_size": "h2",
-        "body_size": "body3",
+        "body_size": "body4",
         "desktop_content_position": "align-items:center;justify-content:center;",
         "desktop_content_align": "center",
         "content_max_width": 528,
