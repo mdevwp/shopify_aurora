@@ -25,6 +25,7 @@
   <div class="footer-linking">
     <h6>{{ settings.related_products_title }}</h6>
     <div class="link-row">
+  {{ collection| json }}
       {% assign count = 0 %}
       {% if collection %}
         {% assign related_products = collection.products %}
