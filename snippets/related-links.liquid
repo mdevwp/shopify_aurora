@@ -24,15 +24,13 @@
   <!-- Automatische Verlinkung zu verwandten Produkten -->
   <div class="footer-linking">
     <h6>{{ settings.related_products_title }}</h6>
-    <div class="link-row">
-
+    <div class="link-row"> 
       {% assign count = 0 %}
       {% if collection %}
         {% assign related_products = collection.products %}
       {% else %}
         {% assign related_products = collections.all.products %}
       {% endif %}
-      
       {% for p in related_products %}
         {% if count < 4 and p.handle != product.handle %}
           {% if count > 0 %} | {% endif %}
