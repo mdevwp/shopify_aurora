@@ -21,25 +21,34 @@
   </div>
 
 {% elsif product %}
-  <!-- Automatische Verlinkung zu verwandten Produkten -->
   <div class="footer-linking">
     <h6>{{ settings.related_products_title }}</h6>
-    <div class="link-row"> 
+    <div class="link-row">
+      
       {% assign count = 0 %}
+
       {% if collection %}
         {% assign related_products = collection.products %}
+      {% elsif product.collections != blank %}
+        {% assign first_collection = product.collections | first %}
+        {% assign related_products = first_collection.products %}
       {% else %}
         {% assign related_products = collections.all.products %}
       {% endif %}
-      {% for p in related_products %}
-        {% if count < 4 and p.handle != product.handle %}
-          {% if count > 0 %} | {% endif %}
-          <a href="{{ p.url }}" class="footer-link">{{ p.title }}</a>
-          {% assign count = count | plus: 1 %}
-        {% else %}
-          {% break %}
-        {% endif %}
-      {% endfor %}
+      
+      {% if related_products %}
+        {% for p in related_products %}
+          {% if p.handle != product.handle %}
+            {% if count > 0 %} | {% endif %}
+            <a href="{{ p.url }}" class="footer-link">{{ p.title }}</a>
+            {% assign count = count | plus: 1 %}
+          {% endif %}
+          {% if count == 4 %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+
     </div>
   </div>
 {% endif %}
