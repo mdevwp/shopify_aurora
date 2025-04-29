@@ -209,34 +209,10 @@
         "mobile_spacing_top": 0,
         "mobile_spacing_bottom": 0
       }
-    },
-    "17458424739f61653a": {
-      "type": "apps",
-      "blocks": {
-        "wishcraft_ultimate_wishlist_wishlist_trigger_icon_C8qLth": {
-          "type": "shopify://apps/wishcraft-ultimate-wishlist/blocks/wishlist-trigger-icon/f2e93a20-20d3-4e28-9abb-b5ab07f852bf",
-          "settings": {
-            "icon_color": "dark",
-            "icon": ""
-          }
-        }
-      },
-      "block_order": [
-        "wishcraft_ultimate_wishlist_wishlist_trigger_icon_C8qLth"
-      ],
-      "settings": {
-        "color_scheme": "default",
-        "container_size": "large",
-        "custom_liquid": "",
-        "add_side_paddings": true,
-        "section_spacing_top": 48,
-        "section_spacing_bottom": 48
-      }
     }
   },
   "order": [
     "announcement-bar",
-    "header",
-    "17458424739f61653a"
+    "header"
   ]
 }
