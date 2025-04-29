@@ -247,7 +247,7 @@
       },
       "15289809162917654101": {
         "type": "shopify://apps/301-redirect-auto/blocks/redirect/01f53dbb-7c00-467f-81d8-e2223daaa8d6",
-        "disabled": false,
+        "disabled": true,
         "settings": {}
       }
     }
