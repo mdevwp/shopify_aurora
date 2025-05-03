@@ -16,11 +16,11 @@
           "type": "image-banner",
           "settings": {
             "color_scheme": "primary",
-            "desktop_img": "shopify://shop_images/shopbanner-muttertag.png",
+            "desktop_img": "shopify://shop_images/alexascha-shop-banner-muttertag-desktop.png",
             "mobile_img": "shopify://shop_images/alexascha-nachhaltiger-schmuck-banner-pureform-mobile.jpg",
             "desktop_overlay_opacity": 12,
             "mobile_overlay_opacity": 12,
-            "caption": "Ein Ring für Dich",
+            "caption": "EIN RING FÜR DICH",
             "title": "ein ring für mama",
             "heading_size": "display3",
             "text": "<h5>zum preis von einem</h5>",
