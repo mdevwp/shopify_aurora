@@ -24,7 +24,6 @@
         "show_breadcrumbs": false,
         "show_collection_title": true,
         "show_collection_description": true,
-        "image": "shopify://shop_images/shopify-banner-test-3.jpg",
         "desktop_overlay_opacity": 0,
         "mobile_overlay_opacity": 0,
         "heading_size": "h2",
@@ -66,7 +65,7 @@
         "desktop_space_between_cards": 12,
         "mobile_columns": "2",
         "mobile_space_between_cards": 8,
-        "pagination_type": "classic-pagination",
+        "pagination_type": "load-button-pagination",
         "add_side_paddings": true,
         "section_spacing_top": 48,
         "section_spacing_bottom": 48
