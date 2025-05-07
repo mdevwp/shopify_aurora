@@ -206,6 +206,10 @@ shopify-paypal-button {
   .cc-floating.cc-bottom.cc-right.cc-default.cc-window.isense-cc-window {
     bottom: 25px;
   }
+  #trustami-stars-badge-mobile-view iframe {
+    transform: scale(1)!important;
+    margin-right: 0px!important;
+  }
 }
 
 .shopify-section-header {
