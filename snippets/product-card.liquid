@@ -818,7 +818,8 @@
           <a
             class='product-card__title unstyled-link'
             aria-label='{{ product.title | strip_html | escape }}'
-          >
+          > 
+            {{ product.metafields.judgeme.badge }}
             {{- 'cards.product_card.store_front.default_title' | t -}}
           </a>
           {%- if show_vendor -%}
