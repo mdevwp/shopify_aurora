@@ -256,12 +256,33 @@
         "section_spacing_top": 48,
         "section_spacing_bottom": 48
       }
+    },
+    "1747656885d1cc914a": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_VFCT4b": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_VFCT4b"
+      ],
+      "settings": {
+        "color_scheme": "default",
+        "container_size": "large",
+        "custom_liquid": "",
+        "add_side_paddings": true,
+        "section_spacing_top": 48,
+        "section_spacing_bottom": 48
+      }
     }
   },
   "order": [
     "ff03a7f7-70a4-4aa2-8e65-56be8e7dbefc",
     "main",
     "product-details",
-    "product-recommendations"
+    "product-recommendations",
+    "1747656885d1cc914a"
   ]
 }
