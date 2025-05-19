@@ -41,6 +41,16 @@
     <!--link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"-->
     <!--link rel="preload" as="image" href="https://dev-alexascha.myshopify.com/cdn/shop/files/alexascha-mix-and-match.jpg" fetchpriority="high"-->
 
+
+    {%- assign current_page = request.query.page | default: 1 | plus: 0 -%}
+    {% if current_page > 1 %}
+      <style>
+        section#shopify-section-template--24618774987087__multicolumn_BMDG4G {
+          display: none;
+        }
+      </style>
+    {% endif %}
+
   </head>
   <body class='color-{{ settings.default_color_scheme }} round-level-{{ settings.round_level }} {% if settings.round_level != "0" %} round-style {% endif %}'>
     <a id='SkipContent' class='visually-hidden skip-to-content-link btn btn--lg btn--solid' href='#MainContent'>
