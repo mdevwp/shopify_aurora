@@ -42,14 +42,20 @@
     <!--link rel="preload" as="image" href="https://dev-alexascha.myshopify.com/cdn/shop/files/alexascha-mix-and-match.jpg" fetchpriority="high"-->
 
 
-    {%- assign current_page = request.query.page | default: 1 | plus: 0 -%}
-    {% if current_page > 1 %}
+   {%- capture content_for_query_string -%}
+      {{ content_for_header }}
+    {%- endcapture -%}
+    
+    {%- assign getfullurl = content_for_query_string | split: '"pageurl":"' | last | split: '"' | first | replace: '\/', '/' | replace: '\u0026', '&' -%}
+    
+    {%- assign page_param = getfullurl | split: '?page=' | last | split: '&' | first | plus: 0 -%}
+    {%- if page_param > 1 -%}
       <style>
         section#shopify-section-template--24618774987087__multicolumn_BMDG4G {
           display: none;
         }
       </style>
-    {% endif %}
+    {%- endif -%}
 
   </head>
   <body class='color-{{ settings.default_color_scheme }} round-level-{{ settings.round_level }} {% if settings.round_level != "0" %} round-style {% endif %}'>
