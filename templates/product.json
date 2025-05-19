@@ -115,6 +115,10 @@
         "product_properties_PGJA6C": {
           "type": "product_properties",
           "settings": {}
+        },
+        "judge_me_reviews_preview_badge_X4nezY": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
         }
       },
       "block_order": [
@@ -128,7 +132,8 @@
         "quantity_selector",
         "wishcraft_ultimate_wishlist_inline_wishlist_button_N8wbjV",
         "buy_buttons",
-        "product_properties_PGJA6C"
+        "product_properties_PGJA6C",
+        "judge_me_reviews_preview_badge_X4nezY"
       ],
       "settings": {
         "color_scheme": "default",
