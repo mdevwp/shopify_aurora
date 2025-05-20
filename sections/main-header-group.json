@@ -181,7 +181,7 @@
       "settings": {
         "color_scheme": "default",
         "container_size": "full-screen",
-        "enable_sticky": "none",
+        "enable_sticky": "dynamic",
         "enable_shadow": false,
         "enable_border": false,
         "enable_transparent": false,
