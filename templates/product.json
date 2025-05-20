@@ -102,6 +102,13 @@
             "icon": ""
           }
         },
+        "wishcraft_ultimate_wishlist_wishlist_trigger_icon_kbtBdK": {
+          "type": "shopify://apps/wishcraft-ultimate-wishlist/blocks/wishlist-trigger-icon/f2e93a20-20d3-4e28-9abb-b5ab07f852bf",
+          "settings": {
+            "icon_color": "dark",
+            "icon": ""
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -131,6 +138,7 @@
         "inventory_status",
         "quantity_selector",
         "wishcraft_ultimate_wishlist_inline_wishlist_button_N8wbjV",
+        "wishcraft_ultimate_wishlist_wishlist_trigger_icon_kbtBdK",
         "buy_buttons",
         "product_properties_PGJA6C",
         "judge_me_reviews_preview_badge_X4nezY"
