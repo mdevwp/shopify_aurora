@@ -237,7 +237,7 @@
 
         {% assign handle = collection.handle %}
 
-        {% assign handles = "lila-ohrringe,schwarze-ohrringe,ketten-in-goldfarbe,ketten-in-rosegoldfarbe,silberfarbene-ketten,rote-ohrringe" | split: "," %}
+        {% assign handles = "ohrclips,lila-ohrringe,schwarze-ohrringe,ketten-in-goldfarbe,ketten-in-rosegoldfarbe,silberfarbene-ketten,rote-ohrringe" | split: "," %}
         {% if handles contains handle %}
           {% assign product_per_page = 10 %}
         {% endif %}
@@ -245,7 +245,7 @@
         {% if handles contains handle %}
           {% assign product_per_page = 4 %}
         {% endif %}
-         {% assign handles = "ohrclips,blaue-ohrringe,ketten,ketten-sind-hypoallergen,ohrringe-in-goldfarbe" | split: "," %}
+         {% assign handles = "blaue-ohrringe,ketten,ketten-sind-hypoallergen,ohrringe-in-goldfarbe" | split: "," %}
         {% if handles contains handle %}
           {% assign product_per_page = 3 %}
         {% endif %}   
