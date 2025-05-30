@@ -245,11 +245,11 @@
         {% if handles contains handle %}
           {% assign product_per_page = 4 %}
         {% endif %}
-         {% assign handles = "blaue-ohrringe,ketten,ketten-sind-hypoallergen,ohrringe-in-goldfarbe" | split: "," %}
+         {% assign handles = "ohrclips,blaue-ohrringe,ketten,ketten-sind-hypoallergen,ohrringe-in-goldfarbe" | split: "," %}
         {% if handles contains handle %}
           {% assign product_per_page = 3 %}
         {% endif %}   
-        {% if handle == 'ohrclips,ohrringe' %}
+        {% if handle == 'ohrringe' %}
           {% assign product_per_page = 2 %}
         {% endif %}   
         
@@ -283,11 +283,12 @@
             assign current_page = 1
           endif
         
-          assign total_pages = collection.products.size | divided_by: product_per_page | ceil
+     
+          assign total_pages = collection.products.size | times: 1.0 | divided_by: product_per_page | ceil
           assign last_page_minus_one = total_pages | minus: 1
         -%}
 
-{{  }}
+
 
         {%- paginate collection.products by product_per_page -%}
           {%- if collection.products.size > 0 -%}
