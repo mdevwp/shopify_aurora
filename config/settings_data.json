@@ -129,7 +129,7 @@
     "product_card_custom_badge_1_tag": "Best Sellers",
     "product_card_custom_badge_1_bg": "#ffffff",
     "product_card_custom_badge_1_color": "#000000",
-    "product_card_custom_badge_2_bg": "#5d54a3",
+    "product_card_custom_badge_2_bg": "#f73a6d",
     "product_card_custom_badge_3_bg": "#f73a6d",
     "cart_type": "drawer_only",
     "show_sticky_cart": true,
@@ -142,6 +142,7 @@
     "cart_free_shipping_bar_color": "#f73a6d",
     "favicon": "shopify://shop_images/cropped-favicon-192x192_1.png",
     "back_to_top_button_position": "bottom-left",
+    "related_products_title": "Verwandte Produkte",
     "social_instagram_link": "https://www.instagram.com/alexascha.de/?hl=de",
     "social_facebook_link": "https://de-de.facebook.com/Alexascha/",
     "social_twitter_link": "",
@@ -161,7 +162,7 @@
     "primary_shape_for_product_pages": "round",
     "primary_size_for_product_pages": 2,
     "primary_shape_for_filters": "round",
-    "primary_size_for_filters": 2,
+    "primary_size_for_filters": 3,
     "primary_custom_colors_and_patterns": "Ultramarine::#0437F2\nCherry blossom::#FFB7C5\nSunny day::yellow/green/blue/\nSummertime::#F9FAFB/#0F9D58/#4285F4\nAmethystlila::#690072\nApricot::#eddbc9\nAquablau::#00a8db\nAzurblau::#4c9be0\nFlieder::#7b4591\nGraphitgrau::#9299a0\nGrasgrün::#539e31\nHämatitgrau::#303030\nHimmelblau::#7ce4ff\nKaffeebraun::#7c3c17\nKaribikblau::#00c7d6\nKirschrot::#a82335\nLavendel::#a459c6\nLimettengrün::#b8d843\nLindgrün::#64ba74\nMaigrün::#c4d6a7\nMalachitgrün::#00593e\nMehrfarbig::#8224e3\nMinzgrün::#69dba9\nMoosgrün::#008245\nNachtblau::#000863\nNussbraun::#7f5339\nOnyxschwarz::#000000\nOrange::#ef5c37\nPerlmuttweiß::#fffbf2\nQuarzrosa::#ce7982\nSafrangelb::#e29024\nSandbraun::#ddc999\nSandgelb::#ededb4\nSandrosa::#e5cdcc\nSaphirblau::#1b49b5\nSchneeweiß::#ffffff\nSonnengelb::#f2d665\nZitronengelb::#efe121",
     "secondary_option_names": "NACH FARBEN FILTERN\nSteinfarbe\nSteinfarben",
     "secondary_shape_for_product_pages": "round",
@@ -208,13 +209,19 @@
     },
     "content_for_index": [],
     "blocks": {
-      "17368511000352060744": {
-        "type": "shopify://apps/goaffpro-affiliate-marketing/blocks/goaffpro-embedded-pixel/2f4d802b-86c2-47e4-8096-ae1aa3efbab2",
+      "5063685679717592333": {
+        "type": "shopify://apps/wishcraft-ultimate-wishlist/blocks/floating-wishlist-button/f2e93a20-20d3-4e28-9abb-b5ab07f852bf",
         "disabled": false,
-        "settings": {}
+        "settings": {
+          "title": "Add Product",
+          "added_title": "Product Added",
+          "icon": "",
+          "style": "with-label",
+          "position": "middle-left"
+        }
       },
-      "2153490007123654574": {
-        "type": "shopify://apps/consentmo-gdpr/blocks/gdpr_cookie_consent/4fbe573f-a377-4fea-9801-3ee0858cae41",
+      "940650814580334357": {
+        "type": "shopify://apps/product-compare/blocks/app-embed-block/2ec083cc-5677-4d10-a2af-c02464aa361b",
         "disabled": false,
         "settings": {}
       },
@@ -222,6 +229,26 @@
         "type": "shopify://apps/judge-me-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
         "disabled": false,
         "settings": {}
+      },
+      "15289809162917654101": {
+        "type": "shopify://apps/301-redirect-auto/blocks/redirect/01f53dbb-7c00-467f-81d8-e2223daaa8d6",
+        "disabled": true,
+        "settings": {}
+      },
+      "15789145905799289410": {
+        "type": "shopify://apps/redirect-pro-404-seo/blocks/tracker/68d49184-0465-4c21-8d3d-e051f7921c3f",
+        "disabled": true,
+        "settings": {}
+      },
+      "3192664013427500466": {
+        "type": "shopify://apps/wishcraft-ultimate-wishlist/blocks/wishlist-render/f2e93a20-20d3-4e28-9abb-b5ab07f852bf",
+        "disabled": false,
+        "settings": {
+          "default_title": "Your Favourites",
+          "enable_multiple_wishlists": true,
+          "colour_scheme": "light",
+          "success_content": "<p><strong>[product_name]</strong> has been added to your wishlist.</p>"
+        }
       }
     }
   },
