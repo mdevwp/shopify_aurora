@@ -12,6 +12,23 @@ body .intrada-wishlist--trigger-icon .intrada-wishlist--count {
     right: 4px;
 }
 
+@media screen and (max-width: 1200px) {
+  body button.intrada-wishlist--trigger-icon.intrada-wishlist--rendered {
+      right: 90px;
+  }
+}
+@media screen and (max-width: 767px) {
+  body button.intrada-wishlist--trigger-icon.intrada-wishlist--rendered {
+      top: 58px;
+  }
+}
+@media screen and (max-width: 380px) {
+  body button.intrada-wishlist--trigger-icon.intrada-wishlist--rendered {
+      right: 90px;
+      top: 74px;
+  }
+}
+
 .footer-linking .link-row {
   display: flex;
   gap: 35px;
