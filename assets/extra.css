@@ -1,3 +1,7 @@
+.container.container--large.section-spacing.container--with-aside-paddings {
+    position: absolute;
+}
+
 body button.intrada-wishlist--trigger-icon.intrada-wishlist--rendered {
     position: absolute!important;
     right: 180px;
