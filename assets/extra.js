@@ -17,8 +17,11 @@ addRelAttr();
 
 
 $(document).ready(function() {
-  var count = $('.intrada-wishlist--count').text().trim();
-  $('.wishlist-count').text(count);
+  setTimeout(function(){
+    var count = $('.intrada-wishlist--count').text().trim();
+    $('.wishlist-count').text(count);
+  }, 2000)
+  
 });
 
 
