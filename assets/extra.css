@@ -4,8 +4,8 @@
 
 body button.intrada-wishlist--trigger-icon.intrada-wishlist--rendered {
     position: absolute!important;
-    right: 180px;
-    top: 64px;
+    right: 120px;
+    top: -58px;
     z-index: 9999;
     background: #fff!important;
     color: #f73a6d !important;
