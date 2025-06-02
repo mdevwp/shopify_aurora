@@ -6,7 +6,11 @@ body button.intrada-wishlist--trigger-icon.intrada-wishlist--rendered {
     background: #fff!important;
     color: #f73a6d !important;
 }
-
+body .intrada-wishlist--trigger-icon .intrada-wishlist--count {
+    position: absolute;
+    bottom: 20px;
+    right: 4px;
+}
 
 .footer-linking .link-row {
   display: flex;
