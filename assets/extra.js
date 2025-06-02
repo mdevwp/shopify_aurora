@@ -15,6 +15,13 @@ addRelAttr();
 */
 //setTimeout(addRelAttr, 2500);
 
+
+$(document).ready(function() {
+  var count = $('.intrada-wishlist--count').text().trim();
+  $('.wishlist-count').text(count);
+});
+
+
 function togglePagination() {
 
     //document.querySelectorAll('.art_dir').forEach(el => el.style.display = 'block');
