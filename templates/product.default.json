@@ -93,6 +93,7 @@
         },
         "wishcraft_ultimate_wishlist_wishlist_trigger_icon_zMTmKA": {
           "type": "shopify://apps/wishcraft-ultimate-wishlist/blocks/wishlist-trigger-icon/f2e93a20-20d3-4e28-9abb-b5ab07f852bf",
+          "disabled": true,
           "settings": {
             "icon_color": "dark",
             "icon": ""
