@@ -16,12 +16,14 @@ addRelAttr();
 //setTimeout(addRelAttr, 2500);
 
 
-$(document).ready(function() {
-  setTimeout(function(){
-    var count = $('.intrada-wishlist--count').text().trim();
-    $('.wishlist-count').text(count);
-  }, 3000)
-  
+document.addEventListener("DOMContentLoaded", function () {
+  setTimeout(function () {
+    var source = document.querySelector('.intrada-wishlist--count');
+    var target = document.querySelector('.wishlist-count');
+    if (source && target) {
+      target.textContent = source.textContent.trim();
+    }
+  }, 3000);
 });
 
 
