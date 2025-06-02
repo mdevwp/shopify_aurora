@@ -20,7 +20,7 @@ $(document).ready(function() {
   setTimeout(function(){
     var count = $('.intrada-wishlist--count').text().trim();
     $('.wishlist-count').text(count);
-  }, 2000)
+  }, 3000)
   
 });
 
