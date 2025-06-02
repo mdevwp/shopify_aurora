@@ -1,3 +1,13 @@
+button.intrada-wishlist--trigger-icon.intrada-wishlist--rendered {
+    position: absolute;
+    right: 180px;
+    top: 62px;
+    z-index: 9999;
+    background: #fff;
+    color: #f73a6d !important;
+}
+
+
 .footer-linking .link-row {
   display: flex;
   gap: 35px;
