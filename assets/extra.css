@@ -7,7 +7,7 @@ body button.intrada-wishlist--trigger-icon.intrada-wishlist--rendered {
     right: -350px;
     top: -58px;
     z-index: 9999;
-    background: #fff!important;
+    background: transparent!important;
     color: #f73a6d !important;
 }
 body .intrada-wishlist--trigger-icon .intrada-wishlist--count {
