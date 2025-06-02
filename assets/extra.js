@@ -17,13 +17,28 @@ addRelAttr();
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  setTimeout(function () {
-    var source = document.querySelector('.intrada-wishlist--count');
-    var target = document.querySelector('.wishlist-count');
-    if (source && target) {
-      target.textContent = source.textContent.trim();
+  const targetCount = document.querySelector('.wishlist-count');
+
+  function updateCountIfAvailable() {
+    const source = document.querySelector('.intrada-wishlist--count');
+    if (source && targetCount) {
+      const count = source.textContent.trim();
+      targetCount.textContent = count;
     }
-  }, 3000);
+  }
+
+  // Попробовать сразу, если элемент уже загружен
+  updateCountIfAvailable();
+
+  // Следим за <body> или другим контейнером, куда вставляется intrada-wishlist--count
+  const observer = new MutationObserver(() => {
+    updateCountIfAvailable();
+  });
+
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true
+  });
 });
 
 
