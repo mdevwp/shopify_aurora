@@ -30,7 +30,6 @@ body .intrada-wishlist--trigger-icon .intrada-wishlist--count {
 @media screen and (max-width: 380px) {
   body button.intrada-wishlist--trigger-icon.intrada-wishlist--rendered {
       right: 90px;
-      top: 74px;
   }
 }
 
