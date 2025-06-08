@@ -110,7 +110,7 @@
     "product_card_price_size": "xs",
     "img_hover": "none",
     "color_swatches_when_to_show": "never",
-    "show_quick_view": false,
+    "show_quick_view": true,
     "show_add_to_cart": true,
     "desktop_button_style": "with_labels",
     "show_button_on_hover": true,
