@@ -3,15 +3,18 @@
     max-width: 100% !important;
 }
 @media screen and (min-width: 1200px) {
-  product-info {
+  product-info.fixed {
       position: fixed;
       right: calc((108% - var(--gsc-container-width)) / 2);
       background: white;
       z-index: 999;
   }
- /* product-details.product-details.section-template--23952994992375__product-details.section.color-default {
-    max-width: 57%;
-  }*/
+  .fixed .product-content-tab,
+  .fixed .product-content-tab,
+  .fixed .custom-product-properties,
+  .fixed .product-general-info-block{
+    display:none;
+  }
   .product-details__container {
       max-width: 60%;
   }
