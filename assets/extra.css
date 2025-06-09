@@ -9,6 +9,12 @@
       background: white;
       z-index: 999;
   }
+ /* product-details.product-details.section-template--23952994992375__product-details.section.color-default {
+    max-width: 57%;
+  }*/
+  .product-details__container {
+      max-width: 60%;
+  }
 }
 
 body button.intrada-wishlist--trigger-icon.intrada-wishlist--rendered {
