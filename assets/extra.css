@@ -2,6 +2,12 @@
     position: absolute;
     max-width: 100% !important;
 }
+product-info {
+    position: fixed;
+    right: calc((108% - var(--gsc-container-width)) / 2);
+    background: white;
+    z-index: 999;
+}
 
 body button.intrada-wishlist--trigger-icon.intrada-wishlist--rendered {
     position: absolute!important;
