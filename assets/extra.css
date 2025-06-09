@@ -8,6 +8,9 @@
 .product-card__btn-wrapper {
     opacity: 0.5;
 }
+
+
+
 @media screen and (min-width: 1200px) {
   product-info.fixed {
       position: fixed;
@@ -44,9 +47,9 @@
 }
 
 body button.intrada-wishlist--trigger-icon.intrada-wishlist--rendered {
-    position: absolute!important;
+    position: fixed !important;
     right: 185px;
-    top: -60px;
+    top: 66px;
     z-index: 9999;
     background: transparent!important;
     color: #f73a6d !important;
@@ -56,6 +59,12 @@ body .intrada-wishlist--trigger-icon .intrada-wishlist--count {
     bottom: 20px;
     right: 4px;
 }
+
+.scrolled ~ section button.intrada-wishlist--trigger-icon.intrada-wishlist--rendered {
+    top: 22px !important;
+}
+
+
 
 @media screen and (max-width: 1200px) {
   body button.intrada-wishlist--trigger-icon.intrada-wishlist--rendered {
