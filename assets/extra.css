@@ -11,7 +11,8 @@
   }
   .fixed .product-content-tab,
   .fixed .custom-product-properties,
-  .fixed .product-general-info-block{
+  .fixed .product-general-info-block h1,
+  .fixed .custom-app-block custom-app-block--inside-product-section{
     display:none;
   }
   .product-details__container {
