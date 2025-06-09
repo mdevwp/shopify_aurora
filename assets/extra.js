@@ -1,7 +1,7 @@
 $(window).on('scroll resize', function () {
   
         var currentScroll = $(this).scrollTop();
-        if (currentScroll > 50) {
+        if (currentScroll > 20) {
             $('.intrada-wishlist--trigger-icon').addClass('scrolled');
         }else{
             $('.intrada-wishlist--trigger-icon').removeClass('scrolled');
