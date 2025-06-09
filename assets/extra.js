@@ -1,19 +1,15 @@
-/*
-function addRelAttr(){
-  document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll('a[href]').forEach(function (link) {
-        const url = new URL(link.href, window.location.origin);
-        if (url.origin !== window.location.origin && !link.hasAttribute('rel')) {
-            link.setAttribute('rel', 'nofollow');
-            link.setAttribute('target', '_blank');
+$(window).on('scroll resize', function () {
+        if ($(window).width() > 991) {
+            var currentScroll = $(this).scrollTop();
+            var $product__info = $('.product__info-wrapper');
+
+            if (currentScroll > 550) {
+                $product__info.addClass('fixed');
+            } else {
+                $product__info.removeClass('fixed');
+            }
         }
     });
-  });
-}
-
-addRelAttr();
-*/
-//setTimeout(addRelAttr, 2500);
 
 
 document.addEventListener("DOMContentLoaded", function () {
