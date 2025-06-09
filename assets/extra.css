@@ -5,7 +5,7 @@
 @media screen and (min-width: 1200px) {
   product-info.fixed {
       position: fixed;
-      right: calc((109% - var(--gsc-container-width)) / 2);
+      right: calc((105% - var(--gsc-container-width)) / 2);
       background: white;
       z-index: 999;
   }
