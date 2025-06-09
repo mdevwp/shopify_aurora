@@ -9,6 +9,9 @@
       background: white;
       z-index: 999;
   }
+  .product__info-wrapper.fixed {
+      margin-top: -70px;
+  }
   .fixed .product-content-tab,
   .fixed .custom-product-properties,
   .fixed .product-general-info-block h1,
