@@ -1,6 +1,14 @@
 $(window).on('scroll resize', function () {
+  
+        var currentScroll = $(this).scrollTop();
+        if (currentScroll > 550) {
+            $('.intrada-wishlist--trigger-icon').addClass('scrolled');
+        }else{
+            $('.intrada-wishlist--trigger-icon').removeClass('scrolled');
+        }
+  
         if ($(window).width() > 991) {
-            var currentScroll = $(this).scrollTop();
+            
             var $product__info = $('.product__info-wrapper');
 
             if (currentScroll > 550) {
@@ -9,8 +17,6 @@ $(window).on('scroll resize', function () {
                 $product__info.removeClass('fixed');
             }
         }
-  
-      $('.intrada-wishlist--trigger-icon').addClass('scrolled');
   
     });
 
