@@ -2,7 +2,7 @@
     position: absolute;
     max-width: 100% !important;
 }
-label.pill.pill--large:not(.selected) {
+.quick-view__body label.pill.pill--large:not(.selected) {
     display: none;
 }
 .product-card__btn-wrapper {
