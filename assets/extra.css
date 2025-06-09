@@ -12,7 +12,7 @@
   .fixed .product-content-tab,
   .fixed .custom-product-properties,
   .fixed .product-general-info-block h1,
-  .fixed .custom-app-block,
+  .fixed .custom-app-block--inside-product-section,
   .fixed .product-general-info-block__vendor{
     display:none;
   }
