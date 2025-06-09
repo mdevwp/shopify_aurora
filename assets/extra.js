@@ -9,6 +9,9 @@ $(window).on('scroll resize', function () {
                 $product__info.removeClass('fixed');
             }
         }
+  
+      $('.intrada-wishlist--trigger-icon').addClass('scrolled');
+  
     });
 
 
