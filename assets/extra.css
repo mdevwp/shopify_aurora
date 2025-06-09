@@ -14,7 +14,19 @@
   .fixed .product-general-info-block h1,
   .fixed .custom-app-block--inside-product-section,
   .fixed .product-general-info-block__vendor{
-    display:none;
+      display:none;
+  }
+  .fixed .product-price__content {
+      margin-bottom: -20px;
+      position: absolute;
+      top: 43px;
+      z-index: 999;
+  }
+  .fixed .product-quantity__wrap {
+    min-width: 40%;
+    position: absolute;
+    right: 34px;
+    margin-top: 0px;
   }
   .product-details__container {
       max-width: 60%;
