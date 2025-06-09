@@ -10,7 +10,6 @@
       z-index: 999;
   }
   .fixed .product-content-tab,
-  .fixed .product-content-tab,
   .fixed .custom-product-properties,
   .fixed .product-general-info-block{
     display:none;
