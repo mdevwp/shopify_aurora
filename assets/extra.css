@@ -60,7 +60,8 @@ body .intrada-wishlist--trigger-icon .intrada-wishlist--count {
     right: 4px;
 }
 
-.scrolled ~ section button.intrada-wishlist--trigger-icon.intrada-wishlist--rendered {
+/*.scrolled ~ section button.intrada-wishlist--trigger-icon.intrada-wishlist--rendered*/
+.intrada-wishlist--trigger-icon.scrolled{
     top: 22px !important;
 }
 
