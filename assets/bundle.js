@@ -18788,12 +18788,12 @@ class VariantPicker extends base_component_1.BaseComponent {
         }
         this.setListeners();
     }
-    handleVariantChange = event => {
+    handleVariantChange = event => { return;
         this.setVariant();
         const targetUrl = event.target.dataset.productUrl;
         const isInsideQuickView = this.closest('.shopify-modal, .quick-view-modal');
         if (targetUrl && this.dataset.url !== targetUrl && !isInsideQuickView) {
-          //this.swapProduct(targetUrl); 
+          this.swapProduct(targetUrl); 
           return;
         }
         this.setOptionsAvailable();
