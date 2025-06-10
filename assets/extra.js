@@ -3,12 +3,12 @@ $(window).on('scroll resize', function () {
         var currentScroll = $(this).scrollTop();
         if (currentScroll > 20) {
           
-            $('.product-form__mobile-sticky-button').addClass('is-visible');
+            //$('.product-form__mobile-sticky-button').addClass('is-visible');
             $('.intrada-wishlist--trigger-icon').addClass('scrolled');
           
         }else{
 
-            $('.product-form__mobile-sticky-button').removeClass('is-visible');
+            //$('.product-form__mobile-sticky-button').removeClass('is-visible');
             $('.intrada-wishlist--trigger-icon').removeClass('scrolled');
         }
   
