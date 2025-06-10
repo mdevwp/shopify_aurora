@@ -29,24 +29,25 @@ $(window).on('scroll resize', function () {
   
     });
 
-/*
-const selectVariant = (variantId) => {
-  const variantSelect = document.querySelector('form[action*="/cart/add"] select[name="id"]');
-  if (variantSelect) {
-    variantSelect.value = variantId;
-    variantSelect.dispatchEvent(new Event('change', { bubbles: true }));
-  }
-};
+document.addEventListener('DOMContentLoaded', function () {
+  const swatches = document.querySelectorAll('.color-swatch-select-parent');
 
-document.querySelectorAll('.color-swatch').forEach((swatch) => {
-  swatch.addEventListener('click', (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    const variantId = swatch.getAttribute('data-variant-id');
-    if (variantId) selectVariant(variantId);
+  swatches.forEach(function(swatch) {
+    swatch.addEventListener('click', function(event) {
+      // Предотвращаем стандартное поведение (например, отправку формы)
+      event.preventDefault();
+      event.stopPropagation();
+
+      // Вручную отмечаем выбранный цвет (например, выделение или установка атрибута)
+      swatches.forEach(s => s.classList.remove('selected')); // Убираем выделение со всех
+      swatch.classList.add('selected'); // Добавляем текущему
+
+      // Можно также обновить скрытый input value, если нужно
+      const input = swatch.querySelector('input[type="radio"], input[type="hidden"]');
+      if (input) input.checked = true;
+    });
   });
 });
-*/
 
 
 document.addEventListener("DOMContentLoaded", function () {
