@@ -38,13 +38,11 @@ const selectVariant = (variantId) => {
 };
 
 document.querySelectorAll('.color-swatch').forEach((swatch) => {
-  swatch.addEventListener('click', function(e) {
-    e.preventDefault(); 
-    e.stopPropagation(); 
-
+  swatch.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
     const variantId = swatch.getAttribute('data-variant-id');
     if (variantId) selectVariant(variantId);
-
   });
 });
 
