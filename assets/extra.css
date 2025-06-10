@@ -11,6 +11,14 @@
 }
 
 
+.product-form__mobile-sticky-button .product-price__current-price {
+    position: absolute;
+    z-index: 999;
+    font-size: 14px;
+    padding: 3px 5px;
+    font-weight: 700;
+}
+
 
 @media screen and (min-width: 1200px) {
   product-info.fixed {
