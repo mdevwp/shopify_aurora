@@ -17,9 +17,10 @@ body .back-to-top-button {
 .product-form__mobile-sticky-button .product-price__current-price {
     position: absolute;
     z-index: 999;
-    font-size: 14px;
+    font-size: 12.5px;
     padding: 3px 5px;
     font-weight: 700;
+    color: white;
 }
 
 
