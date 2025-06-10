@@ -30,11 +30,23 @@ $(window).on('scroll resize', function () {
     });
 
 
+const selectVariant = (variantId) => {
+  const variantSelect = document.querySelector('form[action*="/cart/add"] select[name="id"]');
+  if (variantSelect) {
+    variantSelect.value = variantId;
+    variantSelect.dispatchEvent(new Event('change', { bubbles: true }));
+  }
+};
 
-/**********************/
+document.querySelectorAll('.color-swatch').forEach((swatch) => {
+  swatch.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const variantId = swatch.getAttribute('data-variant-id');
+    if (variantId) selectVariant(variantId);
+  });
+});
 
-
-/**********************/
 
 
 document.addEventListener("DOMContentLoaded", function () {
