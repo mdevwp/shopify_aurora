@@ -32,79 +32,49 @@ $(window).on('scroll resize', function () {
 
 
 /**********************/
-
 document.addEventListener('DOMContentLoaded', () => {
-
-  function initSwatchLogic(container = document) {
-    const swatches = container.querySelectorAll('.color-swatch-select-parent');
+  function disableColorSwatchFormSubmission(scope = document) {
+    const swatches = scope.querySelectorAll('.color-swatch-select-parent');
 
     swatches.forEach(swatch => {
-      if (swatch.dataset.swatchListenerAdded) return;
-      swatch.dataset.swatchListenerAdded = 'true';
+      if (swatch.dataset.listenerAttached === 'true') return;
+      swatch.dataset.listenerAttached = 'true';
 
-      swatch.addEventListener('click', e => {
+      swatch.addEventListener('click', function(e) {
         e.preventDefault();
-        e.stopPropagation();
+        e.stopImmediatePropagation();
 
-        const swatchValue = swatch.dataset.value || swatch.dataset.color || swatch.dataset.colorName || swatch.dataset.valueName || swatch.getAttribute('data-value');
-        if (!swatchValue) return;
-
-        // Отмечаем как выбранный
-        swatches.forEach(s => s.classList.remove('selected'));
-        swatch.classList.add('selected');
-
-        // Находим input (если есть)
-        const input = swatch.querySelector('input[type="radio"], input[type="hidden"]');
-        if (input) {
-          input.checked = true;
-          const evt = new Event('change', { bubbles: true });
-          input.dispatchEvent(evt);
+        // Отметить радиокнопку, если есть
+        const radio = swatch.querySelector('input[type="radio"]');
+        if (radio) {
+          radio.checked = true;
+          const changeEvent = new Event('change', { bubbles: true });
+          radio.dispatchEvent(changeEvent);
         }
 
-        // Обновление изображения
-        updateProductImage(swatchValue, container);
+        // Отметить swatch как выбранный
+        swatches.forEach(s => s.classList.remove('selected'));
+        swatch.classList.add('selected');
+      });
+    });
+
+    // Блокируем submit форм, связанных с вариантами
+    const forms = scope.querySelectorAll('form');
+    forms.forEach(form => {
+      form.addEventListener('submit', e => {
+        if (form.classList.contains('product-variant-picker__form') || form.querySelector('.color-swatch-select-parent')) {
+          e.preventDefault();
+        }
       });
     });
   }
 
-  function updateProductImage(colorValue, container = document) {
-    const variantImages = container.querySelectorAll('[data-color]');
-    colorValue = colorValue.toLowerCase();
+  disableColorSwatchFormSubmission();
 
-    variantImages.forEach(img => {
-      const color = img.dataset.color?.toLowerCase() || '';
-      if (color.includes(colorValue)) {
-        // Если используется слайдер типа Flickity, Slick или другой
-        const mainImage = img.closest('.product__media-item, .product-gallery__media, .product__image');
-        if (mainImage && typeof window.Flickity !== 'undefined') {
-          const gallery = document.querySelector('.flickity-slider, .product__media-list, .product__media-gallery');
-          const index = [...gallery.children].indexOf(mainImage);
-
-          if (index >= 0 && gallery.flickity) {
-            gallery.flickity('select', index);
-          } else {
-            mainImage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          }
-        } else {
-          // Фолбэк — просто прокрутка к картинке
-          img.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
-      }
-    });
-  }
-
-  // При загрузке страницы
-  initSwatchLogic();
-
-  // Если quick view подгружается динамически
+  // При открытии quick view (если используется)
   document.addEventListener('shopify:modal:open', e => {
-    initSwatchLogic(e.target);
+    disableColorSwatchFormSubmission(e.target);
   });
-
-  document.addEventListener('quickview:loaded', e => {
-    initSwatchLogic(e.detail.modal);
-  });
-
 });
 
 /**********************/
