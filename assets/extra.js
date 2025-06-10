@@ -35,27 +35,18 @@ $(window).on('scroll resize', function () {
 document.addEventListener('shopify:modal:open', (event) => {
   const modal = event.target;
 
-  modal.querySelectorAll('.color-swatch-select-parent, .color-swatch').forEach(el => {
+  modal.querySelectorAll('[data-product-url]').forEach(el => {
     el.addEventListener('click', (e) => {
-      const targetUrl = e.target?.dataset?.productUrl || e.currentTarget?.dataset?.productUrl;
+      const url = el.dataset.productUrl;
+      if (!url) return;
 
-      // 🔒 Если это Quick View и есть targetUrl — блокируем
-      if (targetUrl) {
-        console.warn('🛑 Блокируем переход на', targetUrl);
+      const isQuickView = modal.matches('.shopify-modal, .quick-view-modal');
+      if (isQuickView) {
         e.preventDefault();
         e.stopImmediatePropagation();
-
-        // Пытаемся выбрать вариант вручную
-        const variantId = e.currentTarget.getAttribute('data-variant-id');
-        const form = modal.querySelector('form[action*="/cart/add"]');
-        const variantSelect = form?.querySelector('select[name="id"]');
-
-        if (variantId && variantSelect) {
-          variantSelect.value = variantId;
-          variantSelect.dispatchEvent(new Event('change', { bubbles: true }));
-        }
+        console.warn('🛑 Блокировка перехода по data-product-url в Quick View:', url);
       }
-    }, true); // 🔁 useCapture=true — ловим до других скриптов
+    }, true); // useCapture = true, чтобы перехватить ДО других скриптов
   });
 });
 
