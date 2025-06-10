@@ -107,62 +107,81 @@
 
 
   /******************/
+
+
+
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('shopify:modal:open', (event) => {
     const modal = event.target;
 
-    // Блокируем сабмиты форм внутри модалки (на всякий случай)
-    const forms = modal.querySelectorAll('form');
-    forms.forEach(form => {
+    // Защита от submit
+    modal.querySelectorAll('form').forEach(form => {
       form.addEventListener('submit', e => {
         e.preventDefault();
         e.stopImmediatePropagation();
       });
     });
 
-    // Обрабатываем клики по свотчам
+    // Блокируем поведение label
     const swatches = modal.querySelectorAll('.color-swatch-select-parent');
 
     swatches.forEach((swatch) => {
-      if (swatch.dataset.listenerAttached === 'true') return;
-      swatch.dataset.listenerAttached = 'true';
+      const forId = swatch.getAttribute('for');
+      if (!forId) return;
 
+      const input = modal.querySelector('#' + forId);
+      if (!input) return;
+
+      // Полная блокировка поведения
+      ['click', 'mousedown', 'mouseup'].forEach(evtName => {
+        swatch.addEventListener(evtName, (e) => {
+          e.preventDefault();
+          e.stopImmediatePropagation();
+        });
+      });
+
+      // Переназначаем клик
       swatch.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopImmediatePropagation();
 
-        // Отключаем поведение label
-        const forId = swatch.getAttribute('for');
-        if (!forId) return;
+        input.checked = true;
+        input.setAttribute('checked', 'checked');
 
-        const input = modal.querySelector('#' + forId);
-        if (input && input.type === 'radio') {
-          input.checked = true;
+        // Явный выбор варианта
+        const changeEvent = new Event('change', { bubbles: true });
+        input.dispatchEvent(changeEvent);
 
-          // Создаем искусственное событие "change"
-          const event = new Event('change', { bubbles: true });
-          input.dispatchEvent(event);
-        }
-
-        // Удаляем .selected с других свотчей
+        // Обновляем визуально
         modal.querySelectorAll('.color-swatch-select-parent.selected').forEach(el => el.classList.remove('selected'));
         swatch.classList.add('selected');
       });
     });
 
-    // Также блокируем переходы по ссылкам внутри свотчей (на всякий случай)
-    modal.querySelectorAll('.color-swatch-select-parent a').forEach(link => {
-      link.addEventListener('click', e => {
+    // Удаляем auto redirect при смене варианта
+    const variantForm = modal.querySelector('form[action*="/cart/add"]');
+    if (variantForm) {
+      const selects = variantForm.querySelectorAll('input[type="radio"], select');
+
+      selects.forEach(input => {
+        input.addEventListener('change', (e) => {
+          // Удалим любые .submit() из onchange
+          e.preventDefault();
+          e.stopImmediatePropagation();
+        });
+      });
+    }
+
+    // Блокируем ссылки (на всякий случай)
+    modal.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', e => {
         e.preventDefault();
         e.stopImmediatePropagation();
       });
     });
   });
 });
-  
-  console.log('test');
-  
 </script>
 
 
