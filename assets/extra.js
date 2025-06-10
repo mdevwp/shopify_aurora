@@ -30,6 +30,17 @@ $(window).on('scroll resize', function () {
     });
 
 
+
+document.querySelectorAll('.color-swatch').forEach((swatch) => {
+  swatch.addEventListener('click', function(e) {
+    e.preventDefault(); 
+    e.stopPropagation(); 
+
+  });
+});
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
   const targetCount = document.querySelector('.wishlist-count');
 
