@@ -30,7 +30,36 @@ $(window).on('scroll resize', function () {
     });
 
 
+/******************/
 
+
+document.addEventListener('shopify:modal:open', (e) => {
+  const modal = e.target;
+
+  const swatches = modal.querySelectorAll('.color-swatch-select-parent');
+
+  swatches.forEach((label) => {
+    const labelClone = label.cloneNode(true);
+    label.parentNode.replaceChild(labelClone, label); // удаляет все обработчики темы
+
+    labelClone.addEventListener('click', (event) => {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+
+      const inputId = labelClone.getAttribute('for');
+      const input = modal.querySelector('#' + CSS.escape(inputId));
+      if (input) {
+        input.checked = true;
+        input.dispatchEvent(new Event('change', { bubbles: true }));
+      }
+
+      modal.querySelectorAll('.color-swatch-select-parent.selected').forEach(el => el.classList.remove('selected'));
+      labelClone.classList.add('selected');
+    });
+  });
+});
+
+/******************/
 
 
 
