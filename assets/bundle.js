@@ -17447,7 +17447,7 @@ class ProductContent extends base_component_1.BaseComponent {
                 variant: this.variantPicker.variant,
             });
             this.variantPicker.on('change', this.handleVariantChange);
-            this.variantPicker.on('change', this.variantChangeReload);
+            //this.variantPicker.on('change', this.variantChangeReload);
         })
             .catch(error => {
             console.log(error);
@@ -18811,9 +18811,7 @@ class VariantPicker extends base_component_1.BaseComponent {
             this.setFirstMedia(false);
         }
       
-     const isInsideQuickView = this.element?.closest('.shopify-modal, .quick-view-modal') !== null;
-
-      if (!isInsideQuickView) {
+    
         this.emit('change', {
           variant: this.variant,
           option: {
@@ -18821,21 +18819,7 @@ class VariantPicker extends base_component_1.BaseComponent {
             value: event.target.value,
           },
         });
-      } else {
-        console.log('🔒 Variant updated in Quick View — no global emit.');
-
-         const rootEl = this.element || this.closest?.('[data-product-section]') || document.querySelector('.shopify-modal');
-
-        if (rootEl && this.variant?.featured_media?.id) {
-          const featuredMediaId = this.variant.featured_media.id;
-          const mediaToSelect = rootEl.querySelector(`[data-media-id="${featuredMediaId}"]`);
-        
-          if (mediaToSelect) {
-            mediaToSelect.dispatchEvent(new Event('mediaVisible', { bubbles: true }));
-          }
-        }
-        
-      }
+     
      
     };
     toggleHeaderDynamicShow = bool => {
