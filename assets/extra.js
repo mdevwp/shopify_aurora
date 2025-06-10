@@ -34,7 +34,7 @@ $(window).on('scroll resize', function () {
 document.querySelectorAll('.color-swatch').forEach((swatch) => {
   swatch.addEventListener('click', function(e) {
     e.preventDefault(); 
-    e.stopPropagation(); 
+    //e.stopPropagation(); 
 
   });
 });
