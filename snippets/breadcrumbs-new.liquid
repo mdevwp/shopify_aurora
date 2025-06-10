@@ -1,26 +1,31 @@
-{%- liquid
-  assign add_side_paddings = section.settings.add_side_paddings
-  assign section_spacing_top = section.settings.section_spacing_top
-  assign section_spacing_bottom = section.settings.section_spacing_bottom
-  assign color_scheme = section.settings.color_scheme
-  assign container_size = section.settings.container_size
--%}
+<nav class="breadcrumbs" role="navigation" aria-label="breadcrumbs">
+  <a href="{{ routes.root_url }}">Home</a>
+  <span>&raquo;</span>
+  <a href="/collections/all">Каталог</a>
 
-{% capture css %}
-  {% style %}
-    .section-{{section.id}} {
-        --gsc-section-spacing-top: {{ section_spacing_top }}px;
-        --gsc-section-spacing-bottom: {{ section_spacing_bottom }}px;
-    }
-  {% endstyle %}
-{% endcapture %}
+  {% if collection %}
+    <span>&raquo;</span>
+    <a href="{{ collection.url }}">{{ collection.title }}</a>
+  {% endif %}
 
-{% render 'inline-css-minifier', css: css %}
+  {% if product %}
+    {% if collection %}
+      <span>&raquo;</span>
+      <span>{{ product.title }}</span>
+    {% else %}
+      <span>&raquo;</span>
+      <span>{{ product.title }}</span>
+    {% endif %}
+  {% elsif article %}
+    <span>&raquo;</span>
+    <a href="{{ blog.url }}">{{ blog.title }}</a>
+    <span>&raquo;</span>
+    <span>{{ article.title }}</span>
+  {% elsif page %}
+    <span>&raquo;</span>
+    <span>{{ page.title }}</span>
+  {% endif %}
+</nav>
 
-<div class='product-breadcrumbs section-{{ section.id }} color-{{ color_scheme }} section-spacing'>
-  <div class='container container--{{ container_size }} product-breadcrumbs__container {% if add_side_paddings == true %}container--with-aside-paddings{% endif %}'>
-    {% render 'product-breadcrumbs-block', product: product, section: section, block: block, sectionId: sectionId %}
-  </div>
-</div>
 
 
