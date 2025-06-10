@@ -32,48 +32,63 @@ $(window).on('scroll resize', function () {
 
 
 /**********************/
+
+
 document.addEventListener('DOMContentLoaded', () => {
-  function disableColorSwatchFormSubmission(scope = document) {
-    const swatches = scope.querySelectorAll('.color-swatch-select-parent');
+  const swatches = document.querySelectorAll('.color-swatch-select-parent');
 
-    swatches.forEach(swatch => {
-      if (swatch.dataset.listenerAttached === 'true') return;
-      swatch.dataset.listenerAttached = 'true';
+  swatches.forEach((swatch) => {
+    if (swatch.dataset.prevented) return;
+    swatch.dataset.prevented = 'true';
 
-      swatch.addEventListener('click', function(e) {
+    swatch.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopImmediatePropagation();
+
+      // manually update checked input if needed
+      const forId = swatch.getAttribute('for');
+      if (forId) {
+        const relatedInput = document.getElementById(forId);
+        if (relatedInput && relatedInput.type === 'radio') {
+          relatedInput.checked = true;
+          const evt = new Event('change', { bubbles: true });
+          relatedInput.dispatchEvent(evt);
+        }
+      }
+
+      // manually add selected class (optional)
+      document.querySelectorAll('.color-swatch-select-parent.selected').forEach(el => el.classList.remove('selected'));
+      swatch.classList.add('selected');
+    });
+  });
+
+  // Если используется модалка / quick view
+  document.addEventListener('shopify:modal:open', (e) => {
+    const modal = e.target;
+    const swatches = modal.querySelectorAll('.color-swatch-select-parent');
+
+    swatches.forEach((swatch) => {
+      if (swatch.dataset.prevented) return;
+      swatch.dataset.prevented = 'true';
+
+      swatch.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopImmediatePropagation();
 
-        // Отметить радиокнопку, если есть
-        const radio = swatch.querySelector('input[type="radio"]');
-        if (radio) {
-          radio.checked = true;
-          const changeEvent = new Event('change', { bubbles: true });
-          radio.dispatchEvent(changeEvent);
+        const forId = swatch.getAttribute('for');
+        if (forId) {
+          const relatedInput = modal.querySelector('#' + forId);
+          if (relatedInput && relatedInput.type === 'radio') {
+            relatedInput.checked = true;
+            const evt = new Event('change', { bubbles: true });
+            relatedInput.dispatchEvent(evt);
+          }
         }
 
-        // Отметить swatch как выбранный
-        swatches.forEach(s => s.classList.remove('selected'));
+        modal.querySelectorAll('.color-swatch-select-parent.selected').forEach(el => el.classList.remove('selected'));
         swatch.classList.add('selected');
       });
     });
-
-    // Блокируем submit форм, связанных с вариантами
-    const forms = scope.querySelectorAll('form');
-    forms.forEach(form => {
-      form.addEventListener('submit', e => {
-        if (form.classList.contains('product-variant-picker__form') || form.querySelector('.color-swatch-select-parent')) {
-          e.preventDefault();
-        }
-      });
-    });
-  }
-
-  disableColorSwatchFormSubmission();
-
-  // При открытии quick view (если используется)
-  document.addEventListener('shopify:modal:open', e => {
-    disableColorSwatchFormSubmission(e.target);
   });
 });
 
