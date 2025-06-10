@@ -18804,12 +18804,13 @@ class VariantPicker extends base_component_1.BaseComponent {
         }
         this.updatePickupAvailability();
         this.updateURL();
- return;     
+    
         this.updateVariantInput();
         this.updateSection();
         if (!this.hasAttribute('data-product-media-filtering-option')) {
             this.setFirstMedia(false);
         }
+       return; 
         this.emit('change', {
             variant: this.variant,
             option: {
