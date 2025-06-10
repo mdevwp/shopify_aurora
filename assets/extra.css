@@ -97,7 +97,7 @@ body .intrada-wishlist--trigger-icon .intrada-wishlist--count {
       top: 59px !important;
       right: 90px;
   }
-   body .scrolled button.intrada-wishlist--trigger-icon.intrada-wishlist--rendered {
+   .scrolled button.intrada-wishlist--trigger-icon.intrada-wishlist--rendered {
       top: 15px !important;
   }
 }
