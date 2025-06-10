@@ -32,27 +32,6 @@ $(window).on('scroll resize', function () {
 
 /******************/
 
-document.addEventListener('shopify:modal:open', (event) => {
-  const modal = event.target;
-
-  modal.querySelectorAll('[data-product-url]').forEach(el => {
-    el.addEventListener('click', (e) => {
-      const url = el.dataset.productUrl;
-      if (!url) return;
-
-      const isQuickView = modal.matches('.shopify-modal, .quick-view-modal');
-      if (isQuickView) {
-        e.preventDefault();
-        e.stopImmediatePropagation();
-        console.warn('🛑 Блокировка перехода по data-product-url в Quick View:', url);
-      }
-    }, true); // useCapture = true, чтобы перехватить ДО других скриптов
-  });
-});
-
-/******************/
-
-
 
 document.addEventListener("DOMContentLoaded", function () {
   const targetCount = document.querySelector('.wishlist-count');
