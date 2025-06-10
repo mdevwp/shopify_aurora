@@ -50,6 +50,12 @@
   }
 </script>
 
+
+<div class="section-spacing container container--large container--with-aside-paddings ">
+  {% render 'breadcrumbs-new' %}
+</div>
+
+
 {% if section.settings.show_only_selected_variants == true %}
   <product-content
     data-options='{{ product.options | join: ',' }}'
