@@ -56,38 +56,7 @@
         }
       </style>
     {%- endif -%}
-<script>
-window.addEventListener('scroll', handleScroll);
-window.addEventListener('resize', handleScroll);
 
-function handleScroll() {
-    var currentScroll = window.scrollY;
-
-    var wishlistIcon = document.querySelector('.intrada-wishlist--trigger-icon');
-    if (currentScroll > 20) {
-        wishlistIcon.classList.add('scrolled');
-    } else {
-        wishlistIcon.classList.remove('scrolled');
-    }
-
-    var stickyButton = document.querySelector('.product-form__mobile-sticky-button');
-    if (currentScroll > 200) {
-        stickyButton.classList.add('is-visible');
-    } else {
-        stickyButton.classList.remove('is-visible');
-    }
-
-    if (window.innerWidth > 991) {
-        var productInfo = document.querySelector('.product__info-wrapper');
-        if (currentScroll > 550) {
-            productInfo.classList.add('fixed');
-        } else {
-            productInfo.classList.remove('fixed');
-        }
-    }
-}
-
-</script>
   </head>
   <body class='color-{{ settings.default_color_scheme }} round-level-{{ settings.round_level }} {% if settings.round_level != "0" %} round-style {% endif %}'>
     <a id='SkipContent' class='visually-hidden skip-to-content-link btn btn--lg btn--solid' href='#MainContent'>
