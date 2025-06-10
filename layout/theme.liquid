@@ -112,10 +112,10 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  document.addEventListener('shopify:modal:open', (event) => {
-    const modal = event.target;
+  document.addEventListener('shopify:modal:open', (e) => {
+    const modal = e.target;
 
-    // Защита от submit
+    // Блокируем submit в модалке
     modal.querySelectorAll('form').forEach(form => {
       form.addEventListener('submit', e => {
         e.preventDefault();
@@ -123,61 +123,30 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Блокируем поведение label
-    const swatches = modal.querySelectorAll('.color-swatch-select-parent');
+    // Обрабатываем все swatch'и
+    modal.querySelectorAll('.color-swatch-select-parent').forEach(swatch => {
+      if (swatch.dataset.listenerAttached === 'true') return;
+      swatch.dataset.listenerAttached = 'true';
 
-    swatches.forEach((swatch) => {
-      const forId = swatch.getAttribute('for');
-      if (!forId) return;
-
-      const input = modal.querySelector('#' + forId);
-      if (!input) return;
-
-      // Полная блокировка поведения
-      ['click', 'mousedown', 'mouseup'].forEach(evtName => {
-        swatch.addEventListener(evtName, (e) => {
-          e.preventDefault();
-          e.stopImmediatePropagation();
-        });
-      });
-
-      // Переназначаем клик
       swatch.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopImmediatePropagation();
 
-        input.checked = true;
-        input.setAttribute('checked', 'checked');
+        const inputId = swatch.getAttribute('for');
+        const input = modal.querySelector(`#${CSS.escape(inputId)}`);
 
-        // Явный выбор варианта
-        const changeEvent = new Event('change', { bubbles: true });
-        input.dispatchEvent(changeEvent);
+        if (input && input.type === 'radio') {
+          // Программно активируем вариант
+          input.checked = true;
 
-        // Обновляем визуально
+          // Запускаем событие смены варианта
+          const changeEvent = new Event('change', { bubbles: true });
+          input.dispatchEvent(changeEvent);
+        }
+
+        // Визуально выделяем
         modal.querySelectorAll('.color-swatch-select-parent.selected').forEach(el => el.classList.remove('selected'));
         swatch.classList.add('selected');
-      });
-    });
-
-    // Удаляем auto redirect при смене варианта
-    const variantForm = modal.querySelector('form[action*="/cart/add"]');
-    if (variantForm) {
-      const selects = variantForm.querySelectorAll('input[type="radio"], select');
-
-      selects.forEach(input => {
-        input.addEventListener('change', (e) => {
-          // Удалим любые .submit() из onchange
-          e.preventDefault();
-          e.stopImmediatePropagation();
-        });
-      });
-    }
-
-    // Блокируем ссылки (на всякий случай)
-    modal.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', e => {
-        e.preventDefault();
-        e.stopImmediatePropagation();
       });
     });
   });
