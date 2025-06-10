@@ -18811,17 +18811,20 @@ class VariantPicker extends base_component_1.BaseComponent {
             this.setFirstMedia(false);
         }
       
-       const isInsideQuickView = document.querySelector('.shopify-modal, .quick-view-modal')?.contains(this.element);
+      const isInsideQuickView = document.querySelector('.shopify-modal, .quick-view-modal')?.contains(this.element);
 
-if (!isInsideQuickView) {
-  this.emit('change', {
-    variant: this.variant,
-    option: {
-      name: event.target.name,
-      value: event.target.value,
-    },
-  });
-}
+      if (!isInsideQuickView) {
+        this.emit('change', {
+          variant: this.variant,
+          option: {
+            name: event.target.name,
+            value: event.target.value,
+          },
+        });
+      } else {
+        // 👇 Локально обновляем, без редиректа и события
+        console.log('🔒 Variant updated in Quick View — no global emit.');
+      }
      
     };
     toggleHeaderDynamicShow = bool => {
