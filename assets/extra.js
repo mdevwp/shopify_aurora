@@ -33,42 +33,7 @@ $(window).on('scroll resize', function () {
 
 /**********************/
 
-document.addEventListener('DOMContentLoaded', () => {
-  document.addEventListener('shopify:modal:open', (event) => {
-    const modal = event.target;
 
-    // Найдем все свотчи внутри модалки
-    const swatches = modal.querySelectorAll('.color-swatch-select-parent');
-
-    swatches.forEach((swatch) => {
-      if (swatch.dataset.listenerAttached) return;
-      swatch.dataset.listenerAttached = 'true';
-
-      swatch.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopImmediatePropagation();
-
-        // Получаем ID input, связанного с label
-        const forId = swatch.getAttribute('for');
-        if (!forId) return;
-
-        const relatedInput = modal.querySelector('#' + forId);
-        if (relatedInput && relatedInput.type === 'radio') {
-          // Устанавливаем checked вручную
-          relatedInput.checked = true;
-
-          // Триггерим change, чтобы Shopify обновил фото и цену
-          const evt = new Event('change', { bubbles: true });
-          relatedInput.dispatchEvent(evt);
-        }
-
-        // Визуально выделяем выбранный swatch (если используется)
-        modal.querySelectorAll('.color-swatch-select-parent.selected').forEach(el => el.classList.remove('selected'));
-        swatch.classList.add('selected');
-      });
-    });
-  });
-});
 /**********************/
 
 
