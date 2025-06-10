@@ -18793,7 +18793,7 @@ class VariantPicker extends base_component_1.BaseComponent {
         const targetUrl = event.target.dataset.productUrl;
         const isInsideQuickView = this.closest('.shopify-modal, .quick-view-modal');
         if (targetUrl && this.dataset.url !== targetUrl && !isInsideQuickView) {
-          this.swapProduct(targetUrl); 
+          //this.swapProduct(targetUrl); 
           return;
         }
         this.setOptionsAvailable();
