@@ -31,45 +31,7 @@ $(window).on('scroll resize', function () {
 
 
 /******************/
-document.addEventListener('shopify:modal:open', (event) => {
-  const modal = event.target;
 
-  // Переопределяем window.location для модалки
-  const originalHref = Object.getOwnPropertyDescriptor(window.location.__proto__, 'href');
-  if (!originalHref) return;
-
-  Object.defineProperty(window.location, 'href', {
-    configurable: true,
-    get() {
-      return originalHref.get.call(window.location);
-    },
-    set(value) {
-      if (!modal.contains(document.activeElement)) {
-        originalHref.set.call(window.location, value);
-      } else {
-        console.warn('🛑 [Quick View] Заблокирован редирект:', value);
-      }
-    }
-  });
-
-  // Перехватываем .assign
-  const originalAssign = window.location.assign;
-  window.location.assign = function (value) {
-    if (!modal.contains(document.activeElement)) {
-      return originalAssign.call(window.location, value);
-    } else {
-      console.warn('🛑 [Quick View] Заблокирован location.assign:', value);
-    }
-  };
-
-  // Блокируем формы в модалке
-  modal.querySelectorAll('form').forEach(form => {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      e.stopImmediatePropagation();
-    });
-  });
-});
 
 /******************/
 
