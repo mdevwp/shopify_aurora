@@ -18811,13 +18811,17 @@ class VariantPicker extends base_component_1.BaseComponent {
             this.setFirstMedia(false);
         }
       
-        this.emit('change', {
-            variant: this.variant,
-            option: {
-                name: event.target.name,
-                value: event.target.value,
-            },
-        });
+       const isInsideQuickView = document.querySelector('.shopify-modal, .quick-view-modal')?.contains(this.element);
+
+if (!isInsideQuickView) {
+  this.emit('change', {
+    variant: this.variant,
+    option: {
+      name: event.target.name,
+      value: event.target.value,
+    },
+  });
+}
      
     };
     toggleHeaderDynamicShow = bool => {
