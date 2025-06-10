@@ -18814,13 +18814,13 @@ class VariantPicker extends base_component_1.BaseComponent {
      const isInsideQuickView = this.element?.closest('.shopify-modal, .quick-view-modal') !== null;
 
       if (!isInsideQuickView) {
-        /*this.emit('change', {
+        this.emit('change', {
           variant: this.variant,
           option: {
             name: event.target.name,
             value: event.target.value,
           },
-        });*/
+        });
       } else {
         console.log('🔒 Variant updated in Quick View — no global emit.');
       }
