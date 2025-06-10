@@ -18792,13 +18792,13 @@ class VariantPicker extends base_component_1.BaseComponent {
         this.setVariant();
         const targetUrl = event.target.dataset.productUrl;
                                      
-       const isInsideQuickView = this.element.closest('.shopify-modal, .quick-view-modal');
-
+         const targetUrl = event.target.dataset.productUrl;
+        const isInsideQuickView = this.element?.closest('.shopify-modal, .quick-view-modal');
+      
         if (targetUrl && this.dataset.url !== targetUrl && !isInsideQuickView) {
-          this.swapProduct(targetUrl); 
+          this.swapProduct(targetUrl); // ← разрешено только вне модалки
           return;
         }
-
 
       
         this.setOptionsAvailable();
