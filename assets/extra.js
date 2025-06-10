@@ -32,7 +32,18 @@ $(window).on('scroll resize', function () {
 
 /******************/
 
-
+document.addEventListener('shopify:modal:open', () => {
+  const originalSwapProduct = window.swapProduct || (() => {});
+  window.swapProduct = function(targetUrl) {
+    // блокируем вызов только внутри модалки
+    const activeModal = document.querySelector('.shopify-modal, .quick-view-modal');
+    if (activeModal && activeModal.contains(document.activeElement)) {
+      console.warn('🛑 Блокировка swapProduct в модалке:', targetUrl);
+      return;
+    }
+    return originalSwapProduct.apply(this, arguments);
+  };
+});
 /******************/
 
 
