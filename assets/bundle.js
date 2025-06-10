@@ -18795,7 +18795,28 @@ class VariantPicker extends base_component_1.BaseComponent {
        const isInsideQuickView = this.element.closest('.shopify-modal, .quick-view-modal');
 
         if (targetUrl && this.dataset.url !== targetUrl && !isInsideQuickView) {
-          this.swapProduct(targetUrl); 
+          if (!isInsideQuickView) {
+  this.swapProduct(targetUrl);
+} else {
+  // Подгружаем секцию товара (фото, цена, инфо) из targetUrl — как делает swapProduct
+  fetch(`${targetUrl}?section_id=quick-view-product`)
+    .then(response => response.text())
+    .then(html => {
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, 'text/html');
+
+      // Найдём новую секцию
+      const newSection = doc.querySelector('[data-product-section]');
+      const currentSection = this.element.closest('[data-product-section]');
+
+      if (newSection && currentSection) {
+        currentSection.innerHTML = newSection.innerHTML;
+
+        // 🔁 Повторно инициализировать JS компоненты внутри обновлённого блока
+        window.Shopify && Shopify.PaymentButton && Shopify.PaymentButton.init && Shopify.PaymentButton.init();
+      }
+    });
+}
           return;
         }
 
