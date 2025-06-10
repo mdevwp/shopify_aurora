@@ -112,39 +112,56 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('shopify:modal:open', (event) => {
     const modal = event.target;
 
-    // Найдем все свотчи внутри модалки
+    // Блокируем сабмиты форм внутри модалки (на всякий случай)
+    const forms = modal.querySelectorAll('form');
+    forms.forEach(form => {
+      form.addEventListener('submit', e => {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+      });
+    });
+
+    // Обрабатываем клики по свотчам
     const swatches = modal.querySelectorAll('.color-swatch-select-parent');
 
     swatches.forEach((swatch) => {
-      if (swatch.dataset.listenerAttached) return;
+      if (swatch.dataset.listenerAttached === 'true') return;
       swatch.dataset.listenerAttached = 'true';
 
       swatch.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopImmediatePropagation();
 
-        // Получаем ID input, связанного с label
+        // Отключаем поведение label
         const forId = swatch.getAttribute('for');
         if (!forId) return;
 
-        const relatedInput = modal.querySelector('#' + forId);
-        if (relatedInput && relatedInput.type === 'radio') {
-          // Устанавливаем checked вручную
-          relatedInput.checked = true;
+        const input = modal.querySelector('#' + forId);
+        if (input && input.type === 'radio') {
+          input.checked = true;
 
-          // Триггерим change, чтобы Shopify обновил фото и цену
-          const evt = new Event('change', { bubbles: true });
-          relatedInput.dispatchEvent(evt);
+          // Создаем искусственное событие "change"
+          const event = new Event('change', { bubbles: true });
+          input.dispatchEvent(event);
         }
 
-        // Визуально выделяем выбранный swatch (если используется)
+        // Удаляем .selected с других свотчей
         modal.querySelectorAll('.color-swatch-select-parent.selected').forEach(el => el.classList.remove('selected'));
         swatch.classList.add('selected');
+      });
+    });
+
+    // Также блокируем переходы по ссылкам внутри свотчей (на всякий случай)
+    modal.querySelectorAll('.color-swatch-select-parent a').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        e.stopImmediatePropagation();
       });
     });
   });
 });
 </script>
+
 
 
     /***********************/
