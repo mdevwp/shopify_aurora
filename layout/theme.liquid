@@ -109,58 +109,32 @@
   /******************/
 
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  document.addEventListener('shopify:modal:open', (e) => {
-    const modal = e.target;
+document.addEventListener('shopify:modal:open', (e) => {
+  const modal = e.target;
 
-    // ❌ Блокируем window.location в пределах модалки
-    const originalAssign = window.location.assign;
-    const originalHref = Object.getOwnPropertyDescriptor(window.location.__proto__, 'href');
+  const swatches = modal.querySelectorAll('.color-swatch-select-parent');
 
-    Object.defineProperty(window.location, 'href', {
-      configurable: true,
-      get() {
-        return originalHref.get.call(window.location);
-      },
-      set(value) {
-        if (!modal.contains(document.activeElement)) {
-          originalHref.set.call(window.location, value);
-        } else {
-          console.warn('🛑 Попытка редиректа в Quick View заблокирована:', value);
-        }
+  swatches.forEach((label) => {
+    const labelClone = label.cloneNode(true);
+    label.parentNode.replaceChild(labelClone, label); // удаляет все обработчики темы
+
+    labelClone.addEventListener('click', (event) => {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+
+      const inputId = labelClone.getAttribute('for');
+      const input = modal.querySelector('#' + CSS.escape(inputId));
+      if (input) {
+        input.checked = true;
+        input.dispatchEvent(new Event('change', { bubbles: true }));
       }
-    });
 
-    window.location.assign = function(value) {
-      if (!modal.contains(document.activeElement)) {
-        originalAssign.call(window.location, value);
-      } else {
-        console.warn('🛑 Попытка assign() в Quick View заблокирована:', value);
-      }
-    };
-
-    // ✅ Назначаем обработчики на swatches
-    modal.querySelectorAll('.color-swatch-select-parent').forEach(label => {
-      label.addEventListener('click', (ev) => {
-        ev.preventDefault();
-        ev.stopImmediatePropagation();
-
-        const forId = label.getAttribute('for');
-        const input = modal.querySelector(`#${CSS.escape(forId)}`);
-        if (input) {
-          input.checked = true;
-          input.dispatchEvent(new Event('change', { bubbles: true }));
-        }
-
-        // Визуальное выделение
-        modal.querySelectorAll('.color-swatch-select-parent.selected').forEach(el => el.classList.remove('selected'));
-        label.classList.add('selected');
-      });
+      modal.querySelectorAll('.color-swatch-select-parent.selected').forEach(el => el.classList.remove('selected'));
+      labelClone.classList.add('selected');
     });
   });
 });
-</script>
+
 
 
 
