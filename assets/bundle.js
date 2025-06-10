@@ -18792,7 +18792,7 @@ class VariantPicker extends base_component_1.BaseComponent {
        this.setVariant();
         const targetUrl = event.target.dataset.productUrl;
         if (targetUrl && this.dataset.url !== targetUrl) {
-            this.swapProduct(targetUrl);
+            //this.swapProduct(targetUrl);
             return;
         }
 
