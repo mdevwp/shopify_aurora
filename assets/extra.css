@@ -94,8 +94,10 @@ body .intrada-wishlist--trigger-icon .intrada-wishlist--count {
 }
 @media screen and (max-width: 767px) {
   body button.intrada-wishlist--trigger-icon.intrada-wishlist--rendered {
-      top: 15px !important;
       right: 90px;
+  }
+   body .scrolled ~ button.intrada-wishlist--trigger-icon.intrada-wishlist--rendered {
+      top: 15px !important;
   }
 }
 @media screen and (max-width: 380px) {
