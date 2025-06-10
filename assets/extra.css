@@ -10,6 +10,9 @@
     opacity: 0.5;
 }
 
+body[is-product-form-button-fixed] .back-to-top-button {
+    bottom: 100px!important;
+}
 
 .product-form__mobile-sticky-button .product-price__current-price {
     position: absolute;
