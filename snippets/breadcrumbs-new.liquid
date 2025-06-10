@@ -1,0 +1,26 @@
+{%- liquid
+  assign add_side_paddings = section.settings.add_side_paddings
+  assign section_spacing_top = section.settings.section_spacing_top
+  assign section_spacing_bottom = section.settings.section_spacing_bottom
+  assign color_scheme = section.settings.color_scheme
+  assign container_size = section.settings.container_size
+-%}
+
+{% capture css %}
+  {% style %}
+    .section-{{section.id}} {
+        --gsc-section-spacing-top: {{ section_spacing_top }}px;
+        --gsc-section-spacing-bottom: {{ section_spacing_bottom }}px;
+    }
+  {% endstyle %}
+{% endcapture %}
+
+{% render 'inline-css-minifier', css: css %}
+
+<div class='product-breadcrumbs section-{{ section.id }} color-{{ color_scheme }} section-spacing'>
+  <div class='container container--{{ container_size }} product-breadcrumbs__container {% if add_side_paddings == true %}container--with-aside-paddings{% endif %}'>
+    {% render 'product-breadcrumbs-block', product: product, section: section, block: block, sectionId: sectionId %}
+  </div>
+</div>
+
+
