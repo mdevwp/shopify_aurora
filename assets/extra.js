@@ -8,7 +8,7 @@ $(window).on('scroll resize', function () {
             $('.intrada-wishlist--trigger-icon').removeClass('scrolled');
         }
 
-        if (currentScroll > 100) {
+        if (currentScroll > 150) {
             $('.product-form__mobile-sticky-button').addClass('is-visible');
         }else{
             $('.product-form__mobile-sticky-button').removeClass('is-visible');
