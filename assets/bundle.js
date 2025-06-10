@@ -18789,17 +18789,14 @@ class VariantPicker extends base_component_1.BaseComponent {
         this.setListeners();
     }
     handleVariantChange = event => { 
-
-        event.preventDefault();
-        event.stopImmediatePropagation();
       
        this.setVariant();
         const targetUrl = event.target.dataset.productUrl;
         if (targetUrl && this.dataset.url !== targetUrl) {
-            //this.swapProduct(targetUrl);
+            this.swapProduct(targetUrl);
             return;
         }
-
+return;
       
         this.setOptionsAvailable();
         this.updateLabels();
@@ -18808,7 +18805,7 @@ class VariantPicker extends base_component_1.BaseComponent {
             return;
         }
         this.updatePickupAvailability();
-        //this.updateURL();
+        this.updateURL();
       
         this.updateVariantInput();
         this.updateSection();
