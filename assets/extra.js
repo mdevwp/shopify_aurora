@@ -1,33 +1,4 @@
-$(window).on('scroll resize', function () {
-  
-        var currentScroll = $(this).scrollTop();
-        if (currentScroll > 20) {
-            $('.intrada-wishlist--trigger-icon').addClass('scrolled');
-          
-        }else{
-            $('.intrada-wishlist--trigger-icon').removeClass('scrolled');
-        }
 
-        if (currentScroll > 200) {
-            $('.product-form__mobile-sticky-button').addClass('is-visible');
-        }else{
-            $('.product-form__mobile-sticky-button').removeClass('is-visible');
-        }
-
-  
-        if ($(window).width() > 991) {
-            
-            var $product__info = $('.product__info-wrapper');
-
-            if (currentScroll > 550) {
-                $product__info.addClass('fixed');
-            } else {
-               
-                $product__info.removeClass('fixed');
-            }
-        }
-  
-    });
 
 
 /******************/
@@ -44,10 +15,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Попробовать сразу, если элемент уже загружен
   updateCountIfAvailable();
 
-  // Следим за <body> или другим контейнером, куда вставляется intrada-wishlist--count
   const observer = new MutationObserver(() => {
     updateCountIfAvailable();
   });
