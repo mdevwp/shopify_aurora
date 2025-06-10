@@ -18824,9 +18824,12 @@ class VariantPicker extends base_component_1.BaseComponent {
       } else {
         console.log('🔒 Variant updated in Quick View — no global emit.');
 
-        const featuredMediaId = this.variant?.featured_media?.id;
-        if (featuredMediaId) {
-          const mediaToSelect = this.element.querySelector(`[data-media-id="${featuredMediaId}"]`);
+         const rootEl = this.element || this.closest?.('[data-product-section]') || document.querySelector('.shopify-modal');
+
+        if (rootEl && this.variant?.featured_media?.id) {
+          const featuredMediaId = this.variant.featured_media.id;
+          const mediaToSelect = rootEl.querySelector(`[data-media-id="${featuredMediaId}"]`);
+        
           if (mediaToSelect) {
             mediaToSelect.dispatchEvent(new Event('mediaVisible', { bubbles: true }));
           }
