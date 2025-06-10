@@ -18805,11 +18805,6 @@ class VariantPicker extends base_component_1.BaseComponent {
         }
         this.updatePickupAvailability();
         //this.updateURL();
-
-      if (!document.querySelector('.shopify-modal, .quick-view-modal')?.contains(this.element)) {
-  this.updateURL();
-}
-
       
         this.updateVariantInput();
         this.updateSection();
