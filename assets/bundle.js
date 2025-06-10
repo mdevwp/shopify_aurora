@@ -18811,7 +18811,7 @@ class VariantPicker extends base_component_1.BaseComponent {
             this.setFirstMedia(false);
         }
       
-      const isInsideQuickView = document.querySelector('.shopify-modal, .quick-view-modal')?.contains(this.element);
+     const isInsideQuickView = this.element?.closest('.shopify-modal, .quick-view-modal') !== null;
 
       if (!isInsideQuickView) {
         this.emit('change', {
@@ -18822,7 +18822,6 @@ class VariantPicker extends base_component_1.BaseComponent {
           },
         });
       } else {
-        // 👇 Локально обновляем, без редиректа и события
         console.log('🔒 Variant updated in Quick View — no global emit.');
       }
      
