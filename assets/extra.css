@@ -14,6 +14,10 @@ body .back-to-top-button {
     bottom: 100px!important;
 }
 
+.breadcrumbs {
+    font-size: 14px;
+}
+
 .product-form__mobile-sticky-button .product-price__current-price {
     position: absolute;
     z-index: 999;
