@@ -46,7 +46,8 @@ body .back-to-top-button {
   .fixed .product-general-info-block h1,
   .fixed .custom-app-block--inside-product-section,
   .fixed .product-general-info-block__vendor,
-  .fixed .product-variant-picker__list{
+  .fixed .product-variant-picker__list,
+  .fixed .product-quantity__wrap{
       display:none;
   }
   .fixed .product-price__content {
