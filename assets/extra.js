@@ -13,7 +13,12 @@ $(window).on('scroll resize', function () {
 
             if (currentScroll > 550) {
                 $product__info.addClass('fixed');
+
+                $('.product-form__mobile-sticky-button').addClass('is-visible');
+
+              
             } else {
+                $('.product-form__mobile-sticky-button').removeClass('is-visible');
                 $product__info.removeClass('fixed');
             }
         }
