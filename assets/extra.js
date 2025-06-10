@@ -32,29 +32,33 @@ $(window).on('scroll resize', function () {
 
 /******************/
 
+document.addEventListener('shopify:modal:open', (event) => {
+  const modal = event.target;
 
-document.addEventListener('shopify:modal:open', (e) => {
-  const modal = e.target;
+  // Функция переключения варианта только внутри модалки
+  const selectVariantInModal = (variantId) => {
+    const variantSelect = modal.querySelector('form[action*="/cart/add"] select[name="id"]');
+    if (variantSelect) {
+      variantSelect.value = variantId;
+      variantSelect.dispatchEvent(new Event('change', { bubbles: true }));
+    }
+  };
 
-  const swatches = modal.querySelectorAll('.color-swatch-select-parent');
+  // Обработчик для свотчей внутри модалки
+  modal.querySelectorAll('.color-swatch').forEach((swatch) => {
+    swatch.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
 
-  swatches.forEach((label) => {
-    const labelClone = label.cloneNode(true);
-    label.parentNode.replaceChild(labelClone, label); // удаляет все обработчики темы
-
-    labelClone.addEventListener('click', (event) => {
-      event.preventDefault();
-      event.stopImmediatePropagation();
-
-      const inputId = labelClone.getAttribute('for');
-      const input = modal.querySelector('#' + CSS.escape(inputId));
-      if (input) {
-        input.checked = true;
-        input.dispatchEvent(new Event('change', { bubbles: true }));
+      const variantId = swatch.getAttribute('data-variant-id');
+      if (variantId) {
+        selectVariantInModal(variantId);
       }
 
+      // Удалить .selected у других и назначить текущий
       modal.querySelectorAll('.color-swatch-select-parent.selected').forEach(el => el.classList.remove('selected'));
-      labelClone.classList.add('selected');
+      const parent = swatch.closest('.color-swatch-select-parent');
+      if (parent) parent.classList.add('selected');
     });
   });
 });
