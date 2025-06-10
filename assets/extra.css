@@ -17,6 +17,9 @@ body .back-to-top-button {
 .breadcrumbs {
     font-size: 14px;
 }
+.product-card__actions {
+    max-width: 50px;
+}
 
 .product-form__mobile-sticky-button .product-price__current-price {
     position: absolute;
