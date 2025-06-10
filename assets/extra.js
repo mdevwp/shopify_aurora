@@ -29,24 +29,57 @@ $(window).on('scroll resize', function () {
   
     });
 
-document.addEventListener('DOMContentLoaded', function () {
-  const swatches = document.querySelectorAll('.color-swatch-select-parent');
 
-  swatches.forEach(function(swatch) {
-    swatch.addEventListener('click', function(event) {
-      // Предотвращаем стандартное поведение (например, отправку формы)
-      event.preventDefault();
-      event.stopPropagation();
 
-      // Вручную отмечаем выбранный цвет (например, выделение или установка атрибута)
-      swatches.forEach(s => s.classList.remove('selected')); // Убираем выделение со всех
-      swatch.classList.add('selected'); // Добавляем текущему
+document.addEventListener('DOMContentLoaded', () => {
 
-      // Можно также обновить скрытый input value, если нужно
-      const input = swatch.querySelector('input[type="radio"], input[type="hidden"]');
-      if (input) input.checked = true;
+  function disableSwatchNavigation(container = document) {
+    const swatches = container.querySelectorAll('.color-swatch-select-parent');
+
+    swatches.forEach(swatch => {
+      if (swatch.dataset.swatchListenerAdded) return;
+      swatch.dataset.swatchListenerAdded = 'true';
+
+      swatch.addEventListener('click', event => {
+        event.preventDefault();
+        event.stopPropagation();
+
+        // Удаляем выделение со всех соседних
+        swatches.forEach(s => s.classList.remove('selected'));
+        swatch.classList.add('selected');
+
+        // Проверяем input внутри (radio/hidden) и меняем его
+        const input = swatch.querySelector('input[type="radio"], input[type="hidden"]');
+        if (input) {
+          input.checked = true;
+          const evt = new Event('change', { bubbles: true });
+          input.dispatchEvent(evt);
+        }
+      });
     });
+  }
+
+  // На загруженной странице
+  disableSwatchNavigation();
+
+  // Для содержимого quick-view/modal (если вставка происходит через Ajax)
+  // Подстрой под свое событие открытия модалки
+  document.addEventListener('shopify:modal:open', event => {
+    disableSwatchNavigation(event.target);
   });
+
+  // Или же под событие своего quick-view, если в теме он кастомный:
+  document.addEventListener('quickview:loaded', event => {
+    disableSwatchNavigation(event.detail.modal);
+  });
+
+  // Фолбэк: перехват кликов вообще на документе
+  document.body.addEventListener('click', e => {
+    if (e.target.closest('.color-swatch-select-parent')) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+  }, true);
 });
 
 
