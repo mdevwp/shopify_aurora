@@ -18789,14 +18789,11 @@ class VariantPicker extends base_component_1.BaseComponent {
         this.setListeners();
     }
     handleVariantChange = event => { 
-        this.setVariant();
+       this.setVariant();
         const targetUrl = event.target.dataset.productUrl;
-                                     
-        const isInsideQuickView = document.querySelector('.shopify-modal, .quick-view-modal')?.contains(this.element);
-      
-        if (targetUrl && this.dataset.url !== targetUrl && !isInsideQuickView) {
-          this.swapProduct(targetUrl); // ← разрешено только вне модалки
-          return;
+        if (targetUrl && this.dataset.url !== targetUrl) {
+            this.swapProduct(targetUrl);
+            return;
         }
 
       
@@ -18807,7 +18804,13 @@ class VariantPicker extends base_component_1.BaseComponent {
             return;
         }
         this.updatePickupAvailability();
-        this.updateURL();
+        //this.updateURL();
+
+      if (!document.querySelector('.shopify-modal, .quick-view-modal')?.contains(this.element)) {
+  this.updateURL();
+}
+
+      
         this.updateVariantInput();
         this.updateSection();
         if (!this.hasAttribute('data-product-media-filtering-option')) {
