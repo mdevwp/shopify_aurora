@@ -31,56 +31,83 @@ $(window).on('scroll resize', function () {
 
 
 
+/**********************/
+
 document.addEventListener('DOMContentLoaded', () => {
 
-  function disableSwatchNavigation(container = document) {
+  function initSwatchLogic(container = document) {
     const swatches = container.querySelectorAll('.color-swatch-select-parent');
 
     swatches.forEach(swatch => {
       if (swatch.dataset.swatchListenerAdded) return;
       swatch.dataset.swatchListenerAdded = 'true';
 
-      swatch.addEventListener('click', event => {
-        event.preventDefault();
-        event.stopPropagation();
+      swatch.addEventListener('click', e => {
+        e.preventDefault();
+        e.stopPropagation();
 
-        // Удаляем выделение со всех соседних
+        const swatchValue = swatch.dataset.value || swatch.dataset.color || swatch.dataset.colorName || swatch.dataset.valueName || swatch.getAttribute('data-value');
+        if (!swatchValue) return;
+
+        // Отмечаем как выбранный
         swatches.forEach(s => s.classList.remove('selected'));
         swatch.classList.add('selected');
 
-        // Проверяем input внутри (radio/hidden) и меняем его
+        // Находим input (если есть)
         const input = swatch.querySelector('input[type="radio"], input[type="hidden"]');
         if (input) {
           input.checked = true;
           const evt = new Event('change', { bubbles: true });
           input.dispatchEvent(evt);
         }
+
+        // Обновление изображения
+        updateProductImage(swatchValue, container);
       });
     });
   }
 
-  // На загруженной странице
-  disableSwatchNavigation();
+  function updateProductImage(colorValue, container = document) {
+    const variantImages = container.querySelectorAll('[data-color]');
+    colorValue = colorValue.toLowerCase();
 
-  // Для содержимого quick-view/modal (если вставка происходит через Ajax)
-  // Подстрой под свое событие открытия модалки
-  document.addEventListener('shopify:modal:open', event => {
-    disableSwatchNavigation(event.target);
+    variantImages.forEach(img => {
+      const color = img.dataset.color?.toLowerCase() || '';
+      if (color.includes(colorValue)) {
+        // Если используется слайдер типа Flickity, Slick или другой
+        const mainImage = img.closest('.product__media-item, .product-gallery__media, .product__image');
+        if (mainImage && typeof window.Flickity !== 'undefined') {
+          const gallery = document.querySelector('.flickity-slider, .product__media-list, .product__media-gallery');
+          const index = [...gallery.children].indexOf(mainImage);
+
+          if (index >= 0 && gallery.flickity) {
+            gallery.flickity('select', index);
+          } else {
+            mainImage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        } else {
+          // Фолбэк — просто прокрутка к картинке
+          img.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }
+    });
+  }
+
+  // При загрузке страницы
+  initSwatchLogic();
+
+  // Если quick view подгружается динамически
+  document.addEventListener('shopify:modal:open', e => {
+    initSwatchLogic(e.target);
   });
 
-  // Или же под событие своего quick-view, если в теме он кастомный:
-  document.addEventListener('quickview:loaded', event => {
-    disableSwatchNavigation(event.detail.modal);
+  document.addEventListener('quickview:loaded', e => {
+    initSwatchLogic(e.detail.modal);
   });
 
-  // Фолбэк: перехват кликов вообще на документе
-  document.body.addEventListener('click', e => {
-    if (e.target.closest('.color-swatch-select-parent')) {
-      e.preventDefault();
-      e.stopPropagation();
-    }
-  }, true);
 });
+
+/**********************/
 
 
 document.addEventListener("DOMContentLoaded", function () {
