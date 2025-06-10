@@ -18810,7 +18810,7 @@ class VariantPicker extends base_component_1.BaseComponent {
         if (!this.hasAttribute('data-product-media-filtering-option')) {
             this.setFirstMedia(false);
         }
-       return; 
+      
         this.emit('change', {
             variant: this.variant,
             option: {
@@ -18818,6 +18818,7 @@ class VariantPicker extends base_component_1.BaseComponent {
                 value: event.target.value,
             },
         });
+       return; 
     };
     toggleHeaderDynamicShow = bool => {
         const header = (0, utils_1.$el)(HEADER_SELECTOR);
