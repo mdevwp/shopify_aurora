@@ -1,6 +1,7 @@
 .shopify-section-group-main-header-group .container.container--large.section-spacing.container--with-aside-paddings {
     position: absolute;
     max-width: 100% !important;
+    margin-top: -120px;
 }
 .quick-view__body label.pill.pill--large:not(.selected) {
     display: none;
