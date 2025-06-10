@@ -103,21 +103,23 @@ setTimeout(function(){
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    const menu = $(".content-menu");
-    const button = $(".menu-button");
-    if(button){
-      button.addEventListener("click", function () {
-        menu.classList.toggle("active");
-      });
-    }
-    
+    const menu = document.querySelector(".content-menu");
+    const button = document.querySelector(".menu-button");
 
-    document.addEventListener("click", function (event) {
-        if (!menu.contains(event.target)) {
-            menu.classList.remove("active");
-        }
-    });
+    if (menu && button) {
+        button.addEventListener("click", function () {
+            menu.classList.toggle("active");
+        });
+
+        document.addEventListener("click", function (event) {
+
+            if (!menu.contains(event.target) && !button.contains(event.target)) {
+                menu.classList.remove("active");
+            }
+        });
+    }
 });
+
 
 
 /*
