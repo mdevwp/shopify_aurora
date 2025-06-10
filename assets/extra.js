@@ -29,6 +29,7 @@ $(window).on('scroll resize', function () {
   
     });
 
+/*
 const selectVariant = (variantId) => {
   const variantSelect = document.querySelector('form[action*="/cart/add"] select[name="id"]');
   if (variantSelect) {
@@ -45,7 +46,7 @@ document.querySelectorAll('.color-swatch').forEach((swatch) => {
     if (variantId) selectVariant(variantId);
   });
 });
-
+*/
 
 
 document.addEventListener("DOMContentLoaded", function () {
