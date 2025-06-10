@@ -103,8 +103,8 @@ setTimeout(function(){
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    const menu = document.querySelector(".content-menu");
-    const button = document.querySelector(".menu-button");
+    const menu = $(".content-menu");
+    const button = $(".menu-button");
     if(button){
       button.addEventListener("click", function () {
         menu.classList.toggle("active");
