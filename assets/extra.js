@@ -9,7 +9,7 @@ $(document).ready(function(){
  setTimeout(wishlist_count,2000);
 
   $('.intrada-wishlist-block-btn').click(function(){
-    setTimeout('wishlist_count',2000);
+    setTimeout(wishlist_count,2000);
     console.log( 'test' );
   });
 
