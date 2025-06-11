@@ -39,7 +39,7 @@ button.intrada-wishlist--trigger-icon.intrada-wishlist--rendered:not(.top) {
 }
 button.top.intrada-wishlist--trigger-icon.intrada-wishlist--rendered {
     position: relative;
-    margin-top: -128px;
+    margin-top: 0px;
 }
 
 @media screen and (min-width: 1200px) {
