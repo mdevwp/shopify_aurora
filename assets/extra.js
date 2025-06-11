@@ -1,3 +1,8 @@
+
+$(document).ready(function(){
+  console.log($('.intrada-wishlist--count').text());
+});
+
 $(window).on('scroll resize', function () {
   
     var currentScroll = $(this).scrollTop();
