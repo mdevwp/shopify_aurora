@@ -6,7 +6,7 @@ $(document).ready(function(){
       var count = $('.intrada-wishlist--count').not('.top').text();
       $('.top.intrada-wishlist--count').text(count); 
   }
- setTimeout('wishlist_count',2000);
+ setTimeout(wishlist_count,2000);
 
   $('.intrada-wishlist-block-btn').click(function(){
     setTimeout('wishlist_count',2000);
