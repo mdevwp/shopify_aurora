@@ -3,9 +3,12 @@ $(document).ready(function(){
     console.log('test');
   
     setTimeout(function(){
-      console.log($('.intrada-wishlist--count').text());
+      var count = $('.intrada-wishlist--count').not('.top').text();
+      console.log( count );
+
+      $('.top.intrada-wishlist--count').text(count);
     },2000);
-    console.log($('.intrada-wishlist--count').text());
+
 });
 
 $(window).on('scroll resize', function () {
