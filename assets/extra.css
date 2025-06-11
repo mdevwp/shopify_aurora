@@ -30,6 +30,9 @@ body .back-to-top-button {
     color: white;
 }
 
+.intrada-wishlist--count:not(.top){
+  display: none;
+}
 
 @media screen and (min-width: 1200px) {
   product-info.fixed {
