@@ -1,7 +1,11 @@
 
 $(document).ready(function(){
-   console.log('test');
-  console.log($('.intrada-wishlist--count').text());
+    console.log('test');
+  
+    setTimeout(function(){
+      console.log($('.intrada-wishlist--count').text());
+    },2000);
+    console.log($('.intrada-wishlist--count').text());
 });
 
 $(window).on('scroll resize', function () {
