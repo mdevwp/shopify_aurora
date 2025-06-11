@@ -30,7 +30,8 @@ body .back-to-top-button {
     color: white;
 }
 
-.intrada-wishlist--count:not(.top){
+button.intrada-wishlist--trigger-icon:not(.top),
+.intrada-wishlist--count:not(.top),{
   display: none;
 }
 
@@ -101,9 +102,9 @@ body .intrada-wishlist--trigger-icon .intrada-wishlist--count {
       top: 59px !important;
       right: 90px;
   }
-   body .scrolled ~ section button.intrada-wishlist--trigger-icon.intrada-wishlist--rendered {
+  /* body .scrolled ~ section button.intrada-wishlist--trigger-icon.intrada-wishlist--rendered {
       top: 15px !important;
-  }
+  }*/
 }
 @media screen and (max-width: 380px) {
   body button.intrada-wishlist--trigger-icon.intrada-wishlist--rendered {
