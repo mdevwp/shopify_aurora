@@ -79,9 +79,6 @@ button.top.intrada-wishlist--trigger-icon.intrada-wishlist--rendered {
 }
 
 body button.intrada-wishlist--trigger-icon.intrada-wishlist--rendered {
-    position: fixed !important;
-    right: 185px;
-    top: 66px;
     z-index: 9999;
     background: transparent!important;
     color: #f73a6d !important;
