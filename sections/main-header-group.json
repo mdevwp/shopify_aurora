@@ -38,7 +38,7 @@
       ],
       "settings": {
         "show_only_on_homepage": false,
-        "color_scheme": "secondary",
+        "color_scheme": "custom-3",
         "container_size": "full-screen",
         "show_navigation_arrows": true,
         "autoplay_mode": "disabled",
