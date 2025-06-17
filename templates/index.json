@@ -16,7 +16,7 @@
           "type": "image-banner",
           "settings": {
             "color_scheme": "primary",
-            "desktop_img": "shopify://shop_images/alexascha-nachhaltiger-schmuck-pureform-desktop.jpg",
+            "desktop_img": "shopify://shop_images/shopbanner13-geburtstag.png",
             "mobile_img": "shopify://shop_images/alexascha-nachhaltiger-schmuck-banner-pureform-mobile.jpg",
             "desktop_overlay_opacity": 12,
             "mobile_overlay_opacity": 12,
@@ -25,7 +25,7 @@
             "heading_size": "display3",
             "text": "<p>FÜR JEDEN MOMENT</p>",
             "body_size": "body3",
-            "desktop_content_position": "align-items:center;justify-content:center;",
+            "desktop_content_position": "align-items:flex-end;justify-content:center;",
             "desktop_content_align": "center",
             "content_max_width": 560,
             "content_spacing": 0,
