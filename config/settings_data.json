@@ -797,7 +797,7 @@
       ".sticky-cart-button__icon {color: white;}",
       ".product-card__btn-icon {width: 1rem; height: 1rem; color: #dce7ce;}",
       ".cart-drawer__on-side-related-products {background: #dce7ce !important;}",
-      ".cart-drawer__body-aside-content .vertical-product-card__button .vertical-product-card__button-icon svg {width: 1rem;color: #dce7ce;}"
+      ".cart-drawer__body-aside-content svg.vertical-product-card__button-icon {width: 1rem; color: #dce7ce;}"
     ]
   }
 }
