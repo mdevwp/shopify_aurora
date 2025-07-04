@@ -18,6 +18,19 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width,initial-scale=1'>
     <meta name='theme-color' content='{{ settings.default_color_scheme }}'>
+    {% if template.name == 'product' %}
+    <meta property="og:type" content="product">
+    <meta property="og:title" content="{{ product.title | escape }}">
+    <meta property="og:description" content="{{ product.description | strip_html | truncate: 200 | escape }}">
+    <meta property="og:url" content="{{ shop.url }}{{ product.url }}">
+    <meta property="og:image" content="{{ product.featured_image | img_url: 'large' }}">
+  {% else %}
+    <!-- Default OG tags for other pages -->
+    <meta property="og:title" content="{{ page_title | escape }}">
+    <meta property="og:description" content="{{ shop.description | escape }}">
+    <meta property="og:url" content="{{ shop.url }}{{ request.path }}">
+    <meta property="og:image" content="{{ settings.social_share_image | img_url: 'large' }}">
+  {% endif %}
 
     {%- if settings.favicon != blank -%}
       <link rel='icon' type='image/png' href='{{ settings.favicon | image_url: width: 32, height: 32 }}'>
