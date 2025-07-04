@@ -18021,7 +18021,7 @@ class ProductMediaCarousel extends base_component_1.BaseComponent {
                 }
                 return +slide.dataset.mediaId === +variant.featured_media.id;
             });
-            carousel.embla.scrollTo(slideIndex, jump);
+            carousel.embla.scrollTo(slideIndex, true);
         }
     }
     setReady() {
