@@ -94,7 +94,9 @@
     {% endif %}
     '
     data-sizes='auto' 
-    alt='{{ image_alt }}'
+    {% if show_alt != false %}
+      alt="{{ image_alt }}"
+    {% endif %}
     title='{{ image_alt }}'
     loading='{{ loading }}' width='1' height='1' style='object-position:
     {{ image.presentation.focal_point }};'
