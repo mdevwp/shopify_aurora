@@ -6758,7 +6758,7 @@ class CarouselDots extends base_component_1.BaseComponent {
             return;
         }
         const index = this.carousel.embla.selectedScrollSnap();
-        this.embla.scrollTo(index);
+        this.embla.scrollTo(index, true);
         this.dots.forEach(dot => {
             dot.classList.toggle('is-primary', +dot.dataset.dotIndex === index);
         });
