@@ -109,6 +109,7 @@
     "enable_product_darken_background": false,
     "product_card_price_size": "xs",
     "img_hover": "none",
+    "color_swatches_what_to_show": "colors-and-patterns",
     "color_swatches_when_to_show": "never",
     "show_quick_view": true,
     "show_add_to_cart": true,
