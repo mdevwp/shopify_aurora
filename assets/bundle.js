@@ -6745,7 +6745,7 @@ class CarouselDots extends base_component_1.BaseComponent {
         const selectedDotIndex = this.dots.findIndex(dot => {
             return dot.classList.contains('is-selected');
         });
-        this.carousel.embla.scrollTo(selectedDotIndex);
+        this.carousel.embla.scrollTo(selectedDotIndex, true);
     };
     handleCarouselReInit = () => {
         this.setCarousel();
