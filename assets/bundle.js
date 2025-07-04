@@ -6781,7 +6781,7 @@ class CarouselDots extends base_component_1.BaseComponent {
         this.embla.reInit(this.getOptions(), this.getPlugins());
     }
     scrollToIndex(index) {
-        this.carousel?.embla.scrollTo(index);
+        this.carousel?.embla.scrollTo(index, true);
         this.carousel?.stop();
     }
     getOptions = () => ({
