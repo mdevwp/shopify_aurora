@@ -96,8 +96,8 @@
     data-sizes='auto' 
     {% if show_alt != false %}
       alt="{{ image_alt }}"
+      title='{{ image_alt }}'
     {% endif %}
-    title='{{ image_alt }}'
     loading='{{ loading }}' width='1' height='1' style='object-position:
     {{ image.presentation.focal_point }};'
     {% if parent_fit == blank %}
