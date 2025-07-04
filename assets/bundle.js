@@ -17588,7 +17588,7 @@ class ProductContent extends base_component_1.BaseComponent {
         }
         else {
             this.carousels.forEach(carousel => {
-                carousel.embla.scrollTo(0);
+                carousel.embla.scrollTo(0, true);
             });
             this.variantPicker.setFirstMediaByVariant(0);
         }
