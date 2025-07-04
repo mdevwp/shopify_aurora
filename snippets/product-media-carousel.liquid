@@ -98,9 +98,7 @@
               {%- endif -%}
             {%- endfor -%}
           {%- else -%}
-            {%- for media in product.media -%}
-              {% assign media_alt = media.alt | strip %}
-              {% if media_alt == option %}
+            {%- for media in product_media -%}
               <div
                 class='carousel__slide product-media-carousel__slide'
                 {% if enable_image_zoom %}
@@ -120,7 +118,6 @@
                   class: 'shape__target-image'
                 %}
               </div>
-                {%- endif -%}
             {%- endfor -%}
           {%- endif -%}
         {%- else -%}
