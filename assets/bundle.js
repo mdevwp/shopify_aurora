@@ -14948,7 +14948,7 @@ class LookbookComponent extends base_component_1.BaseComponent {
         const carousel = (0, utils_1.$elParent)(CAROUSEL_SELECTOR, block);
         if (carousel) {
             carousel.reInit();
-            carousel.embla.scrollTo(index);
+            carousel.embla.scrollTo(index, true);
         }
         else if ((0, utils_1.isNotThemeStore)()) {
             block.scrollIntoView({ behavior: 'smooth', block: 'center' });
