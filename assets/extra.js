@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         body: JSON.stringify({
           product_id: productId,
-          variant_id: parsed.product_id // или нужный variant_id
+          variant_id: parsed.product_id
         })
       }).then(response => {
         if (response.ok) {
