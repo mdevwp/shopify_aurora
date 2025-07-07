@@ -119,6 +119,37 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll('.intrada-wishlist--button').forEach(function (button) {
+    button.addEventListener('click', function (e) {
+      e.preventDefault(); // отключаем стандартное поведение
+
+      const data = button.dataset.intradaWishlistButton;
+      if (!data) return;
+
+      const parsed = JSON.parse(data);
+      const productId = parsed.id;
+
+      fetch('/apps/wishcraft/ultimate-wishlist/api/items', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Requested-With': 'XMLHttpRequest'
+        },
+        body: JSON.stringify({
+          product_id: productId,
+          variant_id: parsed.product_id // или нужный variant_id
+        })
+      }).then(response => {
+        if (response.ok) {
+          button.classList.add('intrada-wishlist--checked');
+          // Удалить или отключить попап
+          document.querySelector('.intrada-wishlist--add-item-popup')?.remove();
+        }
+      });
+    });
+  });
+});
 
 
 /*
