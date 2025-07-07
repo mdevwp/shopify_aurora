@@ -122,32 +122,40 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll('.intrada-wishlist--button').forEach(function (button) {
     button.addEventListener('click', function (e) {
-      e.preventDefault(); // отключаем стандартное поведение
+      e.preventDefault();
+      e.stopPropagation();
 
       const data = button.dataset.intradaWishlistButton;
       if (!data) return;
-
+      
       const parsed = JSON.parse(data);
-      const productId = parsed.id;
 
-      fetch('/apps/wishcraft/ultimate-wishlist/api/items', {
+      // Настройка запроса
+      const endpoint = 'https://app-wishlist.fullfatcommerce.com/api/public/wishlist';
+      const authParams = 'shop=alexascha-dev1.myshopify.com&customer=bgVddRYLoXgR9Oj6yqtlgqhUJepgkJPIdWSd7V7UPpCkQm2NsD';
+
+      fetch(`${endpoint}?${authParams}`, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
-          'X-Requested-With': 'XMLHttpRequest'
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          product_id: productId,
-          variant_id: parsed.product_id
+          product_id: parsed.product_id,
+          variant_id: parsed.id
         })
       }).then(response => {
         if (response.ok) {
+          console.log('✅ Товар добавлен в вишлист');
           button.classList.add('intrada-wishlist--checked');
-          // Удалить или отключить попап
           document.querySelector('.intrada-wishlist--add-item-popup')?.remove();
+        } else {
+          console.warn('❌ Не удалось добавить в вишлист');
         }
+      }).catch(error => {
+        console.error('Ошибка при запросе:', error);
       });
-    });
+
+    }, { once: true });
   });
 });
 
