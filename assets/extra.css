@@ -470,3 +470,6 @@ float-element#HeaderDropdownMenu-ohrringe,
 .product-card__dots-spinner-wrap{
   display: none!important;
 }
+.intrada-wishlist--add-item-popup {
+  display: none !important;
+}
