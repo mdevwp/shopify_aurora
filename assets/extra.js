@@ -130,6 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
   document.addEventListener('DOMContentLoaded', () => {
+    // 1) Прячем попап за пределы экрана через CSS
     const style = document.createElement('style');
     style.textContent = `
       [data-intrada-wishlist-add-item-popup] {
@@ -140,37 +141,28 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     document.head.appendChild(style);
 
-    const wishlistButtons = document.querySelectorAll('[data-intrada-wishlist-button]');
+    // 2) Ловим любой клик по кнопке добавления в вишлист
+    document.addEventListener('click', event => {
+      const btn = event.target.closest('button[data-intrada-wishlist-button]');
+      if (!btn) return;
 
-    wishlistButtons.forEach(btn => {
-      btn.addEventListener('click', e => {
-        e.preventDefault();
-        e.stopPropagation();
-        btn.click();
-        
+      // Ждём, пока плагин действительно «откроет» попап (aria-expanded сменится на "true")
+      // таймаут лучше сделать чуть больше нитрокода, но не слишком большой
+      setTimeout(() => {
         const popup = document.querySelector('[data-intrada-wishlist-add-item-popup]');
         if (!popup) return;
+        if (popup.getAttribute('aria-expanded') !== 'true') return;
 
-        const mo = new MutationObserver(mutations => {
-          for (let m of mutations) {
-            if (
-              m.type === 'attributes' &&
-              m.attributeName === 'aria-expanded' &&
-              popup.getAttribute('aria-expanded') === 'true'
-            ) {
-              mo.disconnect();
-              const firstListItem = popup.querySelector('.intrada-wishlist--add-item-popup-lists ul li');
-              if (firstListItem) firstListItem.click();
-              const addBtn = popup.querySelector('button[type="submit"]');
-              if (addBtn) {
-                addBtn.disabled = false;
-                addBtn.click();
-              }
-            }
-          }
-        });
+        // 3) Автоклик на первый <li> (ваш «Favorit»)
+        const firstListItem = popup.querySelector('.intrada-wishlist--add-item-popup-lists ul li');
+        if (firstListItem) firstListItem.click();
 
-        mo.observe(popup, { attributes: true });
-      }, { once: false });
+        // 4) Разблокируем и жмём «Add to List»
+        const addBtn = popup.querySelector('button[type="submit"]');
+        if (addBtn) {
+          addBtn.disabled = false;
+          addBtn.click();
+        }
+      }, 200);
     });
   });
