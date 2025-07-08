@@ -128,3 +128,43 @@ document.addEventListener('DOMContentLoaded', () => {
       btnsContainer.insertBefore(priceClone, btnsContainer.firstChild);
     }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const buttons = document.querySelectorAll('[data-intrada-wishlist-button]');
+
+  buttons.forEach(button => {
+    button.removeAttribute('data-intrada-wishlist-button-popup');
+
+    button.addEventListener('click', async event => {
+      event.preventDefault();
+      const payload = JSON.parse(button.getAttribute('data-intrada-wishlist-button'));
+
+      try {
+        await IntradaWishlist.addItem({
+          id:         payload.id,
+          product_id: payload.product_id,
+          handle:     payload.product_handle
+        });
+
+        // После успешного добавления обновляем внешний вид кнопки
+        button.classList.add('intrada-wishlist--checked');
+        button.querySelector('.intrada-wishlist--button--when-added').style.display     = '';
+        button.querySelector('.intrada-wishlist--button--when-not-added').style.display = 'none';
+
+        // Опционально: показать нотификацию или тост
+        // window.showToast('Добавлено в избранное');
+
+      } catch (err) {
+        console.error('Ошибка добавления в избранное:', err);
+        // Опционально: показать ошибку пользователю
+      }
+    });
+  });
+
+  // Принудительно скрываем попап через CSS (если он всё же появляется)
+  const style = document.createElement('style');
+  style.innerHTML = `
+    [data-intrada-wishlist-add-item-popup] { display: none !important; }
+  `;
+  document.head.appendChild(style);
+});
