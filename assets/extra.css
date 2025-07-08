@@ -480,6 +480,7 @@ float-element#HeaderDropdownMenu-ohrringe,
 }
 @max-width(767px) {
   .product-price.mobile .product-price__current-price {
+    font-size: 2.5rem;
     font-weight: 600;
   }
 }
