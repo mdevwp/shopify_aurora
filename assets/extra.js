@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
-  document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     const priceEl = document.querySelector('.product-price');
     const btnsContainer = document.querySelector('.product-form__btns');
 
@@ -127,37 +127,4 @@ document.addEventListener("DOMContentLoaded", function () {
       priceClone.classList.add('mobile');
       btnsContainer.insertBefore(priceClone, btnsContainer.firstChild);
     }
-  });
-document.addEventListener('DOMContentLoaded', () => {
-  const buttons = document.querySelectorAll('[data-intrada-wishlist-button]');
-  buttons.forEach(button => {
-    button.removeAttribute('data-intrada-wishlist-button-popup');
-
-    button.addEventListener('click', async event => {
-      event.preventDefault();
-
-      const payload = JSON.parse(button.getAttribute('data-intrada-wishlist-button'));
-
-      try {
-        await IntradaWishlist.addItem({
-          id:         payload.id,
-          product_id: payload.product_id,
-          handle:     payload.product_handle
-        });
-
-        button.classList.add('intrada-wishlist--checked');
-        button.querySelector('.intrada-wishlist--button--when-added').style.display     = '';
-        button.querySelector('.intrada-wishlist--button--when-not-added').style.display = 'none';
-
-      } catch (err) {
-        console.log('Ошибка добавления в избранное:', err);
-      }
-    });
-  });
-
-  const style = document.createElement('style');
-  style.innerHTML = `
-    [data-intrada-wishlist-add-item-popup] { display: none !important; }
-  `;
-  document.head.appendChild(style);
 });
