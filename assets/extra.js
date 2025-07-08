@@ -118,7 +118,16 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+  document.addEventListener('DOMContentLoaded', () => {
+    const priceEl = document.querySelector('.product-price');
+    const btnsContainer = document.querySelector('.product-form__btns');
 
+    if (priceEl && btnsContainer) {
+      const priceClone = priceEl.cloneNode(true);
+      priceClone.classList.add('mobile');
+      btnsContainer.insertBefore(priceClone, btnsContainer.firstChild);
+    }
+  });
 document.addEventListener('DOMContentLoaded', () => {
   const buttons = document.querySelectorAll('[data-intrada-wishlist-button]');
   buttons.forEach(button => {
