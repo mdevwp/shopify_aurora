@@ -473,3 +473,8 @@ float-element#HeaderDropdownMenu-ohrringe,
 .intrada-wishlist--add-item-popup {
   display: none !important;
 }
+@min-width(768px) {
+  .product-price.mobile {
+    display: none !important;
+  }
+}
