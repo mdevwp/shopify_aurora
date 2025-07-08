@@ -478,3 +478,8 @@ float-element#HeaderDropdownMenu-ohrringe,
     display: none;
   }
 }
+@max-width(767px) {
+  .product-price.mobile .product-price__current-price {
+    font-weight: 600;
+  }
+}
