@@ -100,7 +100,6 @@ setTimeout(function(){
   });
 },1000);
 
-
 document.addEventListener("DOMContentLoaded", function () {
     const menu = document.querySelector(".content-menu");
     const button = document.querySelector(".menu-button");
@@ -118,6 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
 document.addEventListener('DOMContentLoaded', () => {
     const priceEl = document.querySelector('.product-price');
     const btnsContainer = document.querySelector('.product-form__btns');
