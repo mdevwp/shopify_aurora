@@ -482,4 +482,12 @@ float-element#HeaderDropdownMenu-ohrringe,
     font-size: 2.5rem;
     font-weight: 600;
   }
+  .product-form__mobile-sticky-button .product-price__current-price {
+    position: absolute;
+    z-index: 999;
+    top: -2.8rem;
+    right: 2rem;
+    font-size: 2.5rem;
+    background: #fff;
+  }
 }
