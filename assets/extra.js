@@ -119,64 +119,36 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll('.intrada-wishlist--button').forEach(function (button) {
-    button.addEventListener('click', function (e) {
-      e.preventDefault();
-      e.stopPropagation();
+document.addEventListener('DOMContentLoaded', () => {
+  const buttons = document.querySelectorAll('[data-intrada-wishlist-button]');
+  buttons.forEach(button => {
+    button.removeAttribute('data-intrada-wishlist-button-popup');
 
-      const data = button.dataset.intradaWishlistButton;
-      if (!data) return;
-      
-      const parsed = JSON.parse(data);
+    button.addEventListener('click', async event => {
+      event.preventDefault();
 
-      // Настройка запроса
-      const endpoint = 'https://app-wishlist.fullfatcommerce.com/api/public/wishlist';
-      const authParams = 'shop=alexascha-dev1.myshopify.com&customer=bgVddRYLoXgR9Oj6yqtlgqhUJepgkJPIdWSd7V7UPpCkQm2NsD';
+      const payload = JSON.parse(button.getAttribute('data-intrada-wishlist-button'));
 
-      fetch(`${endpoint}?${authParams}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          product_id: parsed.product_id,
-          variant_id: parsed.id
-        })
-      }).then(response => {
-        if (response.ok) {
-          console.log('✅ Товар добавлен в вишлист');
-          button.classList.add('intrada-wishlist--checked');
-          document.querySelector('.intrada-wishlist--add-item-popup')?.remove();
-        } else {
-          console.warn('❌ Не удалось добавить в вишлист');
-        }
-      }).catch(error => {
-        console.error('Ошибка при запросе:', error);
-      });
+      try {
+        await IntradaWishlist.addItem({
+          id:         payload.id,
+          product_id: payload.product_id,
+          handle:     payload.product_handle
+        });
 
-    }, { once: true });
-  });
-});
+        button.classList.add('intrada-wishlist--checked');
+        button.querySelector('.intrada-wishlist--button--when-added').style.display     = '';
+        button.querySelector('.intrada-wishlist--button--when-not-added').style.display = 'none';
 
-
-/*
-document.addEventListener("DOMContentLoaded", function() {
-    document.body.addEventListener("click", function(event) {
-        let button = event.target.closest(".basic-wishlist-button");
-        if (button) {
-            event.preventDefault(); 
-            let variantID = document.querySelector('[name="id"]').value;
-            let formData = new FormData();
-            formData.append("product_id", variantID); 
-
-            fetch("/apps/wishlist/add", {
-                method: "POST",
-                body: formData
-            }).then(response => response.json())
-              .then(data => console.log("Added to wishlist:", data))
-              .catch(error => console.error("Wishlist error:", error));
-        }
+      } catch (err) {
+        console.log('Ошибка добавления в избранное:', err);
+      }
     });
+  });
+
+  const style = document.createElement('style');
+  style.innerHTML = `
+    [data-intrada-wishlist-add-item-popup] { display: none !important; }
+  `;
+  document.head.appendChild(style);
 });
-*/
