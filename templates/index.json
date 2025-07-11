@@ -290,6 +290,7 @@
     },
     "collection_list_B9kaQC": {
       "type": "collection-list",
+      "disabled": true,
       "settings": {
         "color_scheme": "default",
         "container_size": "page-width",
@@ -731,9 +732,9 @@
   },
   "order": [
     "35abde66-b33a-4178-b3ef-5bba319784ba",
-    "three_banners_FVKz3p",
     "logo_list_LxyV4R",
     "multicolumn_xjFjyb",
+    "three_banners_FVKz3p",
     "collection_list_B9kaQC",
     "multicolumn_DTDANp",
     "featured_collection_jiFBPx",
