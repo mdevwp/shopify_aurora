@@ -2,13 +2,19 @@
   <div class="three-banners__grid collection-list__container container container--page-width section-spacing container--with-aside-paddings">
     {% for block in section.blocks %}
       <div class="three-banners__item">
-        <div class="three-banners__image-wrapper">
-          <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.alt_text }}">
-        </div>
-        {% if block.settings.caption != blank %}
-          <div class="three-banners__caption">
-            {{ block.settings.caption }}
-          </div>
+        {% if block.settings.link != blank %}
+          <a href="{{ block.settings.link }}" class="three-banners__link">
+        {% endif %}
+            <div class="three-banners__image-wrapper">
+              <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.alt_text }}">
+            </div>
+            {% if block.settings.caption != blank %}
+              <div class="three-banners__caption">
+                {{ block.settings.caption }}
+              </div>
+            {% endif %}
+        {% if block.settings.link != blank %}
+          </a>
         {% endif %}
       </div>
     {% endfor %}
@@ -44,7 +50,7 @@
   text-align: center;
 }
 
-  /* Mobile swipe styles */
+/* Mobile swipe styles */
 @media (max-width: 767px) {
   .three-banners__grid.collection-list__container.container.container--page-width.section-spacing.container--with-aside-paddings {
       margin-left: 16px;
@@ -54,6 +60,7 @@
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
+    gap: 0;
   }
   .three-banners__item {
     flex: 0 0 80%;
@@ -68,11 +75,7 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
-  .three-banners__grid {
-    gap: 0px;
-  }
 }
-  
 </style>
 
 {% schema %}
@@ -100,6 +103,12 @@
           "id": "alt_text",
           "label": "Alt text",
           "default": "Banner image"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link URL",
+          "default": "/"
         }
       ]
     }
