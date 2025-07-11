@@ -71,7 +71,8 @@
           "settings": {
             "image": "shopify://shop_images/alexascha-nachhaltiger-schmuck-ohrringe-mit-stein.webp",
             "caption": "OHRRINGE",
-            "alt_text": "Banner image"
+            "alt_text": "Banner image",
+            "link": "shopify://collections/ohrringe"
           }
         },
         "banner_eRHXMy": {
@@ -79,7 +80,8 @@
           "settings": {
             "image": "shopify://shop_images/alexascha-kurze-kette-silber-pb0n85075nef5j8vqu2cwxmy84mbckbm44xdqtzots.webp",
             "caption": "KETTEN",
-            "alt_text": "Banner image"
+            "alt_text": "Banner image",
+            "link": "/"
           }
         },
         "banner_kxpa3E": {
@@ -87,7 +89,8 @@
           "settings": {
             "image": "shopify://shop_images/alexascha-ring-silber-blutrot-pb0n6fwotf2s6vpmnlnlwv1zm2zgg8l27qitjuia28.webp",
             "caption": "RINGE",
-            "alt_text": "Banner image"
+            "alt_text": "Banner image",
+            "link": "/"
           }
         }
       },
