@@ -1,6 +1,78 @@
+<section class="three-banners">
+  <div class="three-banners__grid">
+    {% for block in section.blocks %}
+      <div class="three-banners__item">
+        <div class="three-banners__image-wrapper">
+          <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.alt_text }}">
+        </div>
+        {% if block.settings.caption != blank %}
+          <div class="three-banners__caption">
+            {{ block.settings.caption }}
+          </div>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+<style>
+.three-banners__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.three-banners__image-wrapper {
+  overflow: hidden;
+}
+.three-banners__image-wrapper img {
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+.three-banners__image-wrapper:hover img {
+  transform: scale(1.05);
+}
+.three-banners__caption {
+  background-color: #f0f0f0;
+  padding: 10px;
+  text-align: center;
+}
+</style>
+
 {% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
+{
+  "name": "Three banners",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "banner",
+      "name": "Banner",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "caption",
+          "label": "Caption",
+          "default": "Your caption"
+        },
+        {
+          "type": "text",
+          "id": "alt_text",
+          "label": "Alt text",
+          "default": "Banner image"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 3,
+  "presets": [
+    {
+      "name": "Three banners",
+      "category": "Custom"
+    }
+  ]
+}
 {% endschema %}
