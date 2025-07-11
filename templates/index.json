@@ -63,6 +63,42 @@
         "section_spacing_bottom": 20
       }
     },
+    "three_banners_FVKz3p": {
+      "type": "three-banners",
+      "blocks": {
+        "banner_FVFCgi": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify://shop_images/alexascha-nachhaltiger-schmuck-ohrringe-mit-stein.webp",
+            "caption": "OHRRINGE",
+            "alt_text": "Banner image"
+          }
+        },
+        "banner_eRHXMy": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify://shop_images/alexascha-kurze-kette-silber-pb0n85075nef5j8vqu2cwxmy84mbckbm44xdqtzots.webp",
+            "caption": "KETTEN",
+            "alt_text": "Banner image"
+          }
+        },
+        "banner_kxpa3E": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify://shop_images/alexascha-ring-silber-blutrot-pb0n6fwotf2s6vpmnlnlwv1zm2zgg8l27qitjuia28.webp",
+            "caption": "RINGE",
+            "alt_text": "Banner image"
+          }
+        }
+      },
+      "block_order": [
+        "banner_FVFCgi",
+        "banner_eRHXMy",
+        "banner_kxpa3E"
+      ],
+      "name": "Three banners",
+      "settings": {}
+    },
     "logo_list_LxyV4R": {
       "type": "logo-list",
       "blocks": {
@@ -692,6 +728,7 @@
   },
   "order": [
     "35abde66-b33a-4178-b3ef-5bba319784ba",
+    "three_banners_FVKz3p",
     "logo_list_LxyV4R",
     "multicolumn_xjFjyb",
     "collection_list_B9kaQC",
