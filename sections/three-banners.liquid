@@ -1,5 +1,5 @@
 <section class="three-banners">
-  <div class="three-banners__grid collection-list__container container container--page-width section-spacing container--with-aside-paddings">
+  <div class="three-banners__grid">
     {% for block in section.blocks %}
       <div class="three-banners__item">
         <div class="three-banners__image-wrapper">
@@ -21,21 +21,27 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
-.three-banners__image-wrapper {
+.three-banners__item {
   overflow: hidden;
 }
+.three-banners__image-wrapper {
+  overflow: hidden;
+  margin-bottom: 0;
+}
 .three-banners__image-wrapper img {
+  display: block;
   width: 100%;
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease-in-out;
+  transform-origin: center center;
 }
 .three-banners__image-wrapper:hover img {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 .three-banners__caption {
+  margin-top: 0;
   background-color: #f0f0f0;
   padding: 10px;
   text-align: center;
-  margin-top: -10px;
 }
 </style>
 
