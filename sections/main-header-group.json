@@ -26,7 +26,7 @@
           "type": "announcement",
           "disabled": true,
           "settings": {
-            "text": "<p>#2 Gratis Versand ab 50€ • 2 Jahre Garantie • 15% Rabattcode GREEN</p>",
+            "text": "",
             "link": "",
             "icon": "none"
           }
@@ -40,12 +40,12 @@
         "show_only_on_homepage": false,
         "color_scheme": "secondary",
         "container_size": "full-screen",
-        "show_navigation_arrows": true,
+        "show_navigation_arrows": false,
         "autoplay_mode": "disabled",
         "autoplay_interval": 6,
         "show_language_selector": false,
         "show_currency_selector": false,
-        "show_social_list": true,
+        "show_social_list": false,
         "add_side_paddings": true,
         "desktop_spacing_top": 0,
         "desktop_spacing_bottom": 0,
