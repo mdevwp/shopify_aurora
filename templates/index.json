@@ -255,8 +255,8 @@
         "banner_FVFCgi": {
           "type": "banner",
           "settings": {
-            "image": "shopify://shop_images/alexascha-nachhaltiger-schmuck-ohrringe-mit-stein.webp",
-            "caption": "OHRRINGE",
+            "image": "shopify://shop_images/alexascha-ring-silber-blutrot-pb0n6fwotf2s6vpmnlnlwv1zm2zgg8l27qitjuia28.webp",
+            "caption": "OHRRINGE!",
             "alt_text": "Banner image",
             "link": "shopify://collections/ohrringe"
           }
@@ -264,8 +264,8 @@
         "banner_eRHXMy": {
           "type": "banner",
           "settings": {
-            "image": "shopify://shop_images/alexascha-kurze-kette-silber-pb0n85075nef5j8vqu2cwxmy84mbckbm44xdqtzots.webp",
-            "caption": "KETTEN",
+            "image": "shopify://shop_images/alexascha-nachhaltiger-schmuck-ohrringe-mit-stein.webp",
+            "caption": "KETTEN!",
             "alt_text": "Banner image",
             "link": "shopify://collections/blaue-ketten"
           }
@@ -273,10 +273,10 @@
         "banner_kxpa3E": {
           "type": "banner",
           "settings": {
-            "image": "shopify://shop_images/alexascha-ring-silber-blutrot-pb0n6fwotf2s6vpmnlnlwv1zm2zgg8l27qitjuia28.webp",
-            "caption": "RINGE",
+            "image": "shopify://shop_images/alexascha-kurze-kette-silber-pb0n85075nef5j8vqu2cwxmy84mbckbm44xdqtzots.webp",
+            "caption": "RINGE!",
             "alt_text": "Banner image",
-            "link": "/"
+            "link": "https://alexascha-dev1.myshopify.com/collections/blaue-ketten"
           }
         }
       },
