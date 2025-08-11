@@ -170,7 +170,6 @@ document.addEventListener('DOMContentLoaded', () => {
   (function () {
   "use strict";
 
-  // Что и где меняем
   const rules = [
     {
       // Кнопка "закрыть" в попапе
@@ -194,7 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       // Кнопка "Поделиться" (последний элемент)
-      selector: '.intrada-wishlist--share-copied li:last-child button span',
+      selector: '.intrada-wishlist--popup-actions li:last-child button span',
       text: 'Teilen'
     }
   ];
