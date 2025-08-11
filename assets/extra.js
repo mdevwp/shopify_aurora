@@ -166,3 +166,93 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 200);
     });
   });
+
+  (function () {
+  "use strict";
+
+  // Что и где меняем
+  const rules = [
+    {
+      // Кнопка "закрыть" в попапе
+      selector: '.intrada-wishlist--popup-buttons .intrada-wishlist-block-btn.intrada-wishlist-block-btn--outline',
+      text: 'Schließen'
+    },
+    {
+      // Пустой список
+      selector: 'p.intrada-wishlist--empty',
+      text: 'Deine Wunschliste ist leer'
+    },
+    {
+      // Плавающая кнопка, когда товар не добавлен
+      selector: '.intrada-wishlist--floating-button .intrada-wishlist--button--when-not-added',
+      text: 'Deine Favoriten'
+    },
+    {
+      // Кнопка "Удалить всё" в попапе (первый элемент)
+      selector: '.intrada-wishlist--popup-actions li:first-child button span',
+      text: 'Alles entfernen'
+    },
+    {
+      // Кнопка "Поделиться" (последний элемент)
+      selector: '.intrada-wishlist--share-copied li:last-child button span',
+      text: 'Teilen'
+    }
+  ];
+
+  function setTextSmart(el, text) {
+    // если уже заменяли/совпадает — выходим
+    if (el.dataset.i18nDone === '1') return;
+    const current = (el.textContent || '').trim();
+    if (current === text) { el.dataset.i18nDone = '1'; return; }
+
+    // Если целевой элемент — button, стараемся не сломать иконки
+    let target = el;
+    const isButton = el.tagName === 'BUTTON';
+    if (isButton) {
+      // ищем подходящий контейнер текста внутри кнопки
+      target = el.querySelector('span, .text, .label') || el;
+    }
+
+    target.textContent = text;
+
+    // ARIA/tooltip — полезно для доступности и некоторых тем
+    const btn = isButton ? el : el.closest('button');
+    if (btn) {
+      btn.setAttribute('aria-label', text);
+      btn.setAttribute('title', text);
+    }
+
+    el.dataset.i18nDone = '1';
+  }
+
+  function applyAll(root = document) {
+    rules.forEach(({ selector, text }) => {
+      root.querySelectorAll(selector).forEach((el) => setTextSmart(el, text));
+    });
+  }
+
+  // Первый прогон
+  applyAll();
+
+  // На всякий — ещё раз после DOMContentLoaded
+  document.addEventListener('DOMContentLoaded', applyAll);
+
+  // Наблюдаем за динамическими вставками (попапы, ajax)
+  const obs = new MutationObserver((mutations) => {
+    for (const m of mutations) {
+      if (m.type === 'childList') {
+        m.addedNodes.forEach((n) => {
+          if (n && n.nodeType === 1) applyAll(n);
+        });
+      } else if (m.type === 'attributes' && m.target && m.target.nodeType === 1) {
+        applyAll(m.target);
+      }
+    }
+  });
+
+  obs.observe(document.documentElement, {
+    subtree: true,
+    childList: true,
+    attributes: true
+  });
+})();
