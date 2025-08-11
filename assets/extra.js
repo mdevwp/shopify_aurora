@@ -26,9 +26,9 @@ $(window).on('scroll resize', function () {
     }
 
     if (currentScroll > 200) {
-        $('.product-form__mobile-sticky-button').addClass('is-visible');
+        //$('.product-form__mobile-sticky-button').addClass('is-visible');
     }else{
-        $('.product-form__mobile-sticky-button').removeClass('is-visible');
+        //$('.product-form__mobile-sticky-button').removeClass('is-visible');
     }
 
 
