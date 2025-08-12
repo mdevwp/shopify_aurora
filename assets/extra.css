@@ -483,6 +483,7 @@ float-element#HeaderDropdownMenu-ohrringe,
     font-weight: 600;
   }
   .product-form__mobile-sticky-button.is-visible .product-price__current-price {
+    display: none;
     position: absolute;
     z-index: 999;
     top: -2.8rem;
