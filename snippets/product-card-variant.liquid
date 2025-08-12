@@ -575,7 +575,7 @@
                       {%- endfor -%}
                       <a
                         class='image-swatches__item unstyled-link image-swatches__item--{{ settings.primary_shape_for_product_cards }} image-swatches__count'
-                        href='{{ product.url }}'
+                        href='{{ product.url | within: collection }}'
                         aria-label='{{ product.title | strip_html | escape }}'
                         data-color-swatches-hidden-count
                       >
@@ -647,7 +647,7 @@
 
                       <a
                         class='unstyled-link'
-                        href='{{ product.url }}'
+                        href='{{ product.url | within: collection }}'
                         aria-label='{{ product.title | strip_html | escape }}'
                         data-color-swatches-hidden-count
                       >
