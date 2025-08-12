@@ -167,6 +167,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+(function(){
+    var m = location.pathname.match(/\/collections\/([^\/?#]+)/);
+    if (!m) return;
+    var handle = m[1];
+
+    document.addEventListener('click', function(e){
+      var a = e.target.closest && e.target.closest('a[href*="/products/"]');
+      if (!a) return;
+      try { sessionStorage.setItem('originCollectionHandle', handle); } catch(e){}
+    }, true);
+})();
+
   (function () {
   "use strict";
 
@@ -256,16 +268,4 @@ document.addEventListener('DOMContentLoaded', () => {
     childList: true,
     attributes: true
   });
-})();
-
-(function(){
-  var m = location.pathname.match(/\/collections\/([^\/?#]+)/);
-  if (!m) return;
-  var handle = m[1];
-
-  document.addEventListener('click', function(e){
-    var a = e.target.closest && e.target.closest('a[href*="/products/"]');
-    if (!a) return;
-    try { sessionStorage.setItem('originCollectionHandle', handle); } catch(e){}
-  }, true);
 })();
