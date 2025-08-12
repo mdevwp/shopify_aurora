@@ -172,17 +172,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const rules = [
     {
-      // Кнопка "закрыть" в попапе
       selector: '.intrada-wishlist--popup-buttons .intrada-wishlist-block-btn.intrada-wishlist-block-btn--outline',
       text: 'Schließen'
     },
     {
-      // Пустой список
       selector: 'p.intrada-wishlist--empty',
       text: 'Deine Wunschliste ist leer'
     },
+    
     {
-      // Плавающая кнопка, когда товар не добавлен
+      selector: '.intrada-wishlist--floating-button .intrada-wishlist--button--when-added',
+      text: 'Deine Favoriten'
+    },
+    {
       selector: '.intrada-wishlist--floating-button .intrada-wishlist--button--when-not-added',
       text: 'Zur Wunschliste hinzufügen'
     },
