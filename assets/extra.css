@@ -493,7 +493,7 @@ float-element#HeaderDropdownMenu-ohrringe,
             color: #000000;
         border-radius: 5px 5px 0 0;
   }
-  .product-form__mobile-sticky-button.is-visible {
+  .product-form__mobile-sticky-button.is-visible, .product-form__mobile-sticky-button {
     display: none;
   }
 }
