@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       // Плавающая кнопка, когда товар не добавлен
       selector: '.intrada-wishlist--floating-button .intrada-wishlist--button--when-not-added',
-      text: 'Deine Favoriten'
+      text: 'Zur Wunschliste hinzufügen'
     },
     {
       // Кнопка "Удалить всё" в попапе (первый элемент)
