@@ -155,7 +155,6 @@
     return handle.replace(/-/g,' ').replace(/\b\w/g,function(c){ return c.toUpperCase(); });
   }
 
-  // ——— 1) Коллекция: запомним источник при любом клике на товар ———
   if (pathMatches(/^\/collections\/[^\/]+(\/|$)/)) {
     var handle = getCollectionHandleFromPath(location.pathname);
     if (handle && handle !== 'all') {
@@ -166,23 +165,19 @@
         ts: Date.now()
       };
 
-      // сохраняем сразу при загрузке (на случай переходов по referrer)
       saveOriginCollection(payload);
 
-      // и перед навигацией по клику на любой линк к товару (ctrl/cmd+click тоже ловим)
       document.addEventListener('mousedown', function(e){
         var a = e.target.closest && e.target.closest('a[href*="/products/"]');
         if (!a) return;
         saveOriginCollection(payload);
       }, true);
     }
-    return; // на страницах коллекций дальше ничего не делаем
+    return;
   }
 
-  // ——— 2) Товар: если пришли из коллекции — заменим звено коллекции в крошках ———
   if (!pathMatches(/\/products\//)) return;
 
-  // приоритет: коллекция в самом URL товара → referrer → localStorage
   var handle =
     getCollectionHandleFromProductPath(location.pathname) ||
     (function(){
