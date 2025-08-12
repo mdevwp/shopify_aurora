@@ -192,7 +192,7 @@
         "color_menu_items": "Item 1:#E32417, Item 2:#F1C232",
         "desktop_logo_img": "shopify://shop_images/alexascha.svg",
         "desktop_logo_width": 156,
-        "mobile_logo_width": 120,
+        "mobile_logo_width": 100,
         "is_transparent_only_on_homepage": true,
         "transparent_opacity": 0,
         "transparent_blurring": 0,
