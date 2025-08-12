@@ -69,7 +69,6 @@
         }
       </style>
     {%- endif -%}
-
   </head>
   <body class='color-{{ settings.default_color_scheme }} round-level-{{ settings.round_level }} {% if settings.round_level != "0" %} round-style {% endif %}'>
     <a id='SkipContent' class='visually-hidden skip-to-content-link btn btn--lg btn--solid' href='#MainContent'>
@@ -120,6 +119,114 @@
 
 
 
-    
+ <script>
+(function () {
+  var STORAGE_KEY = 'originCollection';
+  var MAX_AGE_MS = 2 * 60 * 60 * 1000; // 2 часа
+
+  // ——— helpers ———
+  function pathMatches(re){ return re.test(location.pathname); }
+  function getCollectionHandleFromPath(path){
+    var m = path.match(/\/collections\/([^\/?#]+)/);
+    return m ? m[1] : null;
+  }
+  function getCollectionHandleFromProductPath(path){
+    var m = path.match(/\/collections\/([^\/]+)\/products\//);
+    return m ? m[1] : null;
+  }
+  function saveOriginCollection(data){
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); } catch(e){}
+  }
+  function readOriginCollection(){
+    try {
+      var raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return null;
+      var data = JSON.parse(raw);
+      if (!data || !data.ts || (Date.now() - data.ts) > MAX_AGE_MS) return null;
+      return data;
+    } catch(e){ return null; }
+  }
+  function guessTitle(){
+    var h = document.querySelector('h1, .section-header__title, .collection-hero__title');
+    if (h && h.textContent.trim()) return h.textContent.trim();
+    return (document.title || '').replace(/\s*\|.*$/, '').trim();
+  }
+  function humanize(handle){
+    return handle.replace(/-/g,' ').replace(/\b\w/g,function(c){ return c.toUpperCase(); });
+  }
+
+  // ——— 1) Коллекция: запомним источник при любом клике на товар ———
+  if (pathMatches(/^\/collections\/[^\/]+(\/|$)/)) {
+    var handle = getCollectionHandleFromPath(location.pathname);
+    if (handle && handle !== 'all') {
+      var payload = {
+        handle: handle,
+        title: guessTitle(),
+        url: location.origin + '/collections/' + handle,
+        ts: Date.now()
+      };
+
+      // сохраняем сразу при загрузке (на случай переходов по referrer)
+      saveOriginCollection(payload);
+
+      // и перед навигацией по клику на любой линк к товару (ctrl/cmd+click тоже ловим)
+      document.addEventListener('mousedown', function(e){
+        var a = e.target.closest && e.target.closest('a[href*="/products/"]');
+        if (!a) return;
+        saveOriginCollection(payload);
+      }, true);
+    }
+    return; // на страницах коллекций дальше ничего не делаем
+  }
+
+  // ——— 2) Товар: если пришли из коллекции — заменим звено коллекции в крошках ———
+  if (!pathMatches(/\/products\//)) return;
+
+  // приоритет: коллекция в самом URL товара → referrer → localStorage
+  var handle =
+    getCollectionHandleFromProductPath(location.pathname) ||
+    (function(){
+      if (!document.referrer) return null;
+      try {
+        var u = new URL(document.referrer);
+        if (u.origin !== location.origin) return null;
+        var h = getCollectionHandleFromPath(u.pathname);
+        return (h && h !== 'all') ? h : null;
+      } catch(e){ return null; }
+    })() ||
+    (function(){ var d = readOriginCollection(); return d ? d.handle : null; })();
+
+  if (!handle || handle === 'all') return;
+
+  var origin = readOriginCollection();
+  var url   = (origin && origin.handle === handle && origin.url) ? origin.url : (location.origin + '/collections/' + handle);
+  var title = (origin && origin.handle === handle && origin.title) ? origin.title : humanize(handle);
+
+  var bc = document.querySelector('nav.breadcrumbs');
+  if (!bc) return;
+
+  // найдём звено коллекции (не /collections/all), чтобы заменить
+  var link = bc.querySelector('a[href^="/collections/"]:not([href$="/all"])');
+
+  if (link) {
+    link.setAttribute('href', url.replace(location.origin,''));
+    link.textContent = title;
+  } else {
+    // если звена коллекции нет — вставим перед заголовком товара
+    var sep = document.createElement('span');
+    sep.textContent = '»';
+    sep.setAttribute('aria-hidden','true');
+
+    var a = document.createElement('a');
+    a.href = url.replace(location.origin,'');
+    a.textContent = title;
+
+    var titleNode = bc.querySelector('span[aria-current="page"]') || bc.lastChild;
+    bc.insertBefore(sep, titleNode);
+    bc.insertBefore(a, titleNode);
+  }
+})();
+</script>
+   
   </body>
 </html>
