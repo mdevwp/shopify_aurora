@@ -853,3 +853,65 @@
     </div>
   </div>
 {% endif %}
+
+{%- comment -%} Карты коллекций, к которым относится товар (handle, title, url) {%- endcomment -%}
+<script>
+  window.PRODUCT_COLLECTIONS = [
+    {% for c in product.collections %}
+      {"handle": {{ c.handle | json }}, "title": {{ c.title | strip_html | json }}, "url": {{ c.url | json }} }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ];
+</script>
+
+<script>
+(function() {
+  if (typeof window.PRODUCT_COLLECTIONS === 'undefined') return;
+
+  function handleFromProductUrl(path) {
+    var m = path.match(/\/collections\/([^\/]+)\/products\//);
+    return m ? m[1] : null;
+  }
+
+  var handle =
+    handleFromProductUrl(location.pathname) ||
+
+    (function(){
+      if (!document.referrer) return null;
+      try {
+        var u = new URL(document.referrer);
+        if (u.origin !== location.origin) return null;
+        var m = u.pathname.match(/\/collections\/([^\/?#]+)/);
+        return m ? m[1] : null;
+      } catch(e){ return null; }
+    })() ||
+
+    sessionStorage.getItem('originCollectionHandle');
+
+  if (!handle) return;
+
+  var col = window.PRODUCT_COLLECTIONS.find(function(x){ return x.handle === handle; });
+  if (!col) return;
+
+  var bc = document.querySelector('nav.breadcrumbs');
+  if (!bc) return;
+
+  var link = bc.querySelector('a[href^="/collections/"]:not([href$="/all"])');
+
+  if (link) {
+    link.href = col.url;
+    link.textContent = col.title;
+  } else {
+    var sep = document.createElement('span');
+    sep.textContent = '»';
+    sep.setAttribute('aria-hidden','true');
+
+    var a = document.createElement('a');
+    a.href = col.url;
+    a.textContent = col.title;
+
+    var titleNode = bc.querySelector('span[aria-current="page"]') || bc.lastChild;
+    bc.insertBefore(sep, titleNode);
+    bc.insertBefore(a, titleNode);
+  }
+})();
+</script>
