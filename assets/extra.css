@@ -493,3 +493,8 @@ float-element#HeaderDropdownMenu-ohrringe,
         border-radius: 5px 5px 0 0;
   }
 }
+@media(max-width: 767px) {
+	button.top.intrada-wishlist--trigger-icon.intrada-wishlist--rendered {
+		top: 0px;
+	}
+}
