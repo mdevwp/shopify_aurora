@@ -99,7 +99,7 @@
       {% if color_swatches_when_to_show_on_mobile == 'never' %} product-card--with-color-swatches-hide-on-mobile {% endif  %}
       {% if product_card_align == 'center' %} product-card--center-alignment {% endif %}
     '
-    data-url='{{ product.url }}'
+    data-url='{{ product.url | within: collection }}'
     data-id='{{ product.id }}'
     {% if block != blank %}
       data-block-id='{{ block.id }}'
@@ -120,7 +120,7 @@
         >
           <a
             class='product-card__link'
-            href='{{ product.url }}'
+            href='{{ product.url | within: collection }}'
             aria-label='{{ product.title | strip_html | escape }}'
           ></a>
           {%- if show_mobile_carousel == true and images.size > 1 -%}
@@ -134,7 +134,7 @@
               <div class='carousel__viewport embla product-card__carousel-viewport' data-carousel-viewport>
                 <a
                   class='carousel__container product-card__carousel-container unstyled-link'
-                  href='{{ product.url }}'
+                  href='{{ product.url | within: collection }}'
                   data-carousel-container
                   aria-label='{{ product.title | strip_html | escape }}'
                   tabindex='-1'
@@ -364,7 +364,7 @@
                 class='product-card__tab'
                 data-id='{{ forloop.index }}'
                 data-product-media-tabs-item
-                href='{% if img.attached_to_variant? %} {{ img.variants[0].url }} {% else %} {{ product.url }} {% endif %}'
+                href='{% if img.attached_to_variant? %} {{ img.variants[0].url }} {% else %} {{ product.url | within: collection }} {% endif %}'
               ></a>
             {%- endfor -%}
           </product-media-tabs>
@@ -505,7 +505,7 @@
                   {%- endfor -%}
                   <a
                     class='image-swatches__item unstyled-link image-swatches__item--{{ settings.primary_shape_for_product_cards }} image-swatches__count'
-                    href='{{ product.url }}'
+                    href='{{ product.url | within: collection }}'
                     aria-label='{{ product.title | strip_html | escape }}'
                     data-color-swatches-hidden-count
                   >
@@ -577,7 +577,7 @@
 
                   <a
                     class='unstyled-link'
-                    href='{{ product.url }}'
+                    href='{{ product.url | within: collection }}'
                     aria-label='{{ product.title | strip_html | escape }}'
                     data-color-swatches-hidden-count
                   >
@@ -641,7 +641,7 @@
 
           <a
             class='product-card__title unstyled-link'
-            href='{{ product.url }}'
+            href='{{ product.url | within: collection }}'
             aria-label='{{ product.title | strip_html | escape }}'
           >
             {{- product.title -}}
