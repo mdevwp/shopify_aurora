@@ -497,4 +497,7 @@ float-element#HeaderDropdownMenu-ohrringe,
 	button.top.intrada-wishlist--trigger-icon.intrada-wishlist--rendered {
 		top: 0px;
 	}
+	.shopify-block.shopify-app-block {
+		display: none;
+	}
 }
