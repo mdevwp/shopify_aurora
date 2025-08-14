@@ -507,6 +507,6 @@ float-element#HeaderDropdownMenu-ohrringe,
     stroke: #f73a6d !important;
 }
 
-.shopify-block  button.intrada-wishlist--button.intrada-wishlist--checked .intrada-wishlist--button--when-not-added {
+.shopify-block  button.intrada-wishlist--button.intrada-wishlist--checked .intrada-wishlist--button--when-not-added, .shopify-block  button.intrada-wishlist--button.intrada-wishlist--checked .intrada-wishlist--button--when-added {
 	color: black;
 }
