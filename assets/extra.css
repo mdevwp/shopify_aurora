@@ -502,3 +502,11 @@ float-element#HeaderDropdownMenu-ohrringe,
 		top: 0px;
 	}
 }
+.shopify-block  button.intrada-wishlist--button.intrada-wishlist--checked svg * {
+    vector-effect: non-scaling-stroke;
+    stroke: #f73a6d !important;
+}
+
+.shopify-block  button.intrada-wishlist--button.intrada-wishlist--checked .intrada-wishlist--button--when-not-added {
+	color: black;
+}
