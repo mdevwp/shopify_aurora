@@ -85,7 +85,7 @@
     assign color_swatches_what_to_show = blank
   endif
 
-   assign show_mobile_carousel = false
+  assign show_mobile_carousel = false
 -%}
 
 {% if product.id != blank %}
@@ -115,7 +115,7 @@
     {%- assign selected_color_ids = __num_csv | split: ',' | compact -%}
   {%- endif -%}
 
-  {%- if __debug == '1' -%}
+  {%- if __debug != '' -%}
     <div style="font:12px/1.4 monospace; background:#fff8e1; border:1px solid #ffd666; padding:6px; margin:6px 0;">
       <strong>DEBUG/snippet.product-card-variant</strong>
       <div>product: <code>{{ product.handle }}</code> ({{ product.id }})</div>
@@ -150,7 +150,7 @@
       {%- endif -%}
     {%- endif -%}
 
-    {%- if __debug == '1' -%}
+    {%- if __debug != '' -%}
       <div style="font:12px monospace; background:#f0f9ff; border:1px dashed #7cc1ff; padding:4px; margin:3px 0;">
         P:<code>{{ product.handle }}</code>
         V:<code>{{ variant.id }}</code>
@@ -852,7 +852,7 @@
     </div>
   {% endfor %}
 
-  {%- if __debug == '1' -%}
+  {%- if __debug != '' -%}
     <div style="font:12px/1.3 monospace; background:#eaffea; border:1px solid #9ae69a; padding:6px; margin:6px 0;">
       rendered_variants_for_product {{ product.handle }}: <strong>{{ __rendered }}</strong>
     </div>
