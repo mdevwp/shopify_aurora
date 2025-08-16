@@ -90,7 +90,9 @@
 
 {% if product.id != blank %}
 
-  {%- assign __debug = request.params.debug | default: '0' -%}
+  {%- comment -%} Debug flag from URL: ?debug=1 {%- endcomment -%}
+  {%- capture _dbg -%}{% render 'data-url-parameters', key: 'debug' %}{%- endcapture -%}
+  {%- assign __debug = _dbg | strip | downcase -%}
 
   {%- comment -%}Build selected_color_ids from collection if not passed; normalize GID -> numeric id strings{%- endcomment -%}
   {%- if selected_color_ids == nil -%}
