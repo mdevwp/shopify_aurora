@@ -121,12 +121,14 @@
       {%- if val -%}
         {%- if val.size -%}
           {%- for mo in val -%}
-            {%- if selected_color_ids contains (mo.id | append: '') -%}
+            {%- assign mo_id_str = mo.id | append: '' -%}
+            {%- if selected_color_ids contains mo_id_str -%}
               {%- assign show = true -%}{%- break -%}
             {%- endif -%}
           {%- endfor -%}
         {%- else -%}
-          {%- if selected_color_ids contains (val.id | append: '') -%}
+          {%- assign val_id_str = val.id | append: '' -%}
+          {%- if selected_color_ids contains val_id_str -%}
             {%- assign show = true -%}
           {%- endif -%}
         {%- endif -%}
