@@ -90,6 +90,9 @@
 
 {% if product.id != blank %}
 
+  {%- assign __debug = request.params.debug | default: '0' -%}
+
+  {%- comment -%}Build selected_color_ids from collection if not passed; normalize GID -> numeric id strings{%- endcomment -%}
   {%- if selected_color_ids == nil -%}
     {%- assign _csv = '' -%}
     {%- if collection and collection.filters -%}
@@ -102,8 +105,6 @@
       {%- endfor -%}
     {%- endif -%}
     {%- assign _selected_color_ids = _csv | split: ',' | compact -%}
-
-    {%- comment -%}Normalize GIDs to numeric IDs{%- endcomment -%}
     {%- assign __num_csv = '' -%}
     {%- for gid in _selected_color_ids -%}
       {%- assign id_tail = gid | split: '/' | last -%}
@@ -112,72 +113,78 @@
     {%- assign selected_color_ids = __num_csv | split: ',' | compact -%}
   {%- endif -%}
 
-  
+  {%- if __debug == '1' -%}
+    <div style="font:12px/1.4 monospace; background:#fff8e1; border:1px solid #ffd666; padding:6px; margin:6px 0;">
+      <strong>DEBUG/snippet.product-card-variant</strong>
+      <div>product: <code>{{ product.handle }}</code> ({{ product.id }})</div>
+      <div>selected_color_ids(normalized): <code>{{ selected_color_ids | join: ', ' }}</code></div>
+    </div>
+  {%- endif -%}
+
+  {%- assign __rendered = 0 -%}
   {% for variant in product.variants %}
     {%- assign show = true -%}
+    {%- assign val = variant.metafields.custom.color_variation.value -%}
+
     {%- if selected_color_ids and selected_color_ids.size > 0 -%}
       {%- assign show = false -%}
-      {%- assign val = variant.metafields.custom.color_variation.value -%}
+      {%- assign __mo_ids_csv = '' -%}
       {%- if val -%}
         {%- if val.size -%}
           {%- for mo in val -%}
             {%- assign mo_id_str = mo.id | append: '' -%}
+            {%- assign __mo_ids_csv = __mo_ids_csv | append: mo_id_str | append: ',' -%}
             {%- if selected_color_ids contains mo_id_str -%}
-              {%- assign show = true -%}{%- break -%}
+              {%- assign show = true -%}
             {%- endif -%}
           {%- endfor -%}
         {%- else -%}
           {%- assign val_id_str = val.id | append: '' -%}
+          {%- assign __mo_ids_csv = __mo_ids_csv | append: val_id_str | append: ',' -%}
           {%- if selected_color_ids contains val_id_str -%}
             {%- assign show = true -%}
           {%- endif -%}
         {%- endif -%}
       {%- endif -%}
     {%- endif -%}
+
+    {%- if __debug == '1' -%}
+      <div style="font:12px monospace; background:#f0f9ff; border:1px dashed #7cc1ff; padding:4px; margin:3px 0;">
+        P:<code>{{ product.handle }}</code>
+        V:<code>{{ variant.id }}</code>
+        opt0:<code>{{ variant.options[0] }}</code>
+        opt1:<code>{{ variant.options[1] }}</code>
+        color_meta_ids:[<code>{{ __mo_ids_csv }}</code>]
+        match:<code>{{ show }}</code>
+      </div>
+    {%- endif -%}
+
     {%- unless show -%}{% continue %}{%- endunless -%}
 
-    {% if filter_metal != blank and variant.options[0] != blank and variant.options[0] != filter_metal and variant.options[1] != filter_metal %}       
+    {% if filter_metal != blank and variant.options[0] != blank and variant.options[0] != filter_metal and variant.options[1] != filter_metal %}
       {% comment %}{% endcomment %}
-      {% continue %} 
+      {% continue %}
     {% endif %}
-    
-    {%- liquid
-        if missing_values != blank and variant.options[1] != blank
-          assign value = variant.options[1] | replace: " mm", ""
-          if missing_values contains value
-            continue
-          endif
-        endif
-    -%}
-    
-    
-    {% if filter_color != blank and variant.options[0] != blank %}
-        {% assign option_0 = variant.options[0] | downcase %}
-        {% assign option_1 = variant.options[1] | downcase %}
-        {% unless option_0 contains filter_color or option_1 contains filter_color %}
-          {% continue %}
-          
-        {% endunless %}
-    {% endif %}
-    
 
-    {% liquid
-      assign price = variant.price | default: 0
-      if settings.show_currency_code
-        assign money_price = price | money_with_currency
-      else
-        assign money_price = price | money
-      endif
-    
-      if variant.compare_at_price > price and variant.available
-        if settings.product_card_show_sale_badge
-          assign show_sale_badge = true
-        endif
-        if settings.product_card_show_sale_amount_badge
-          assign show_sale_amount_badge = true
+    {%- liquid
+      if missing_values != blank and variant.options[1] != blank
+        assign value = variant.options[1] | replace: " mm", ""
+        if missing_values contains value
+          continue
         endif
       endif
-    %}
+    -%}
+
+    {% if filter_color != blank and variant.options[0] != blank %}
+      {% assign option_0 = variant.options[0] | downcase %}
+      {% assign option_1 = variant.options[1] | downcase %}
+      {% unless option_0 contains filter_color or option_1 contains filter_color %}
+        {% continue %}
+      {% endunless %}
+    {% endif %}
+
+    {%- assign __rendered = __rendered | plus: 1 -%}
+
     <div 
       class='shop__grid-item'
       {% for option_name in product.options_with_values %}
@@ -444,8 +451,6 @@
           
               </div>
             </div>
-
-            
 
             <div class='product-card__dots-spinner-wrap' data-product-card-preloader style="display:none;">
               <div class='dots-spinner product-card__dots-spinner'>
@@ -759,8 +764,6 @@
                 {{ product.title }} &mdash;{% for option in variant.options %}{{ option }}{% unless forloop.last %}, {% endunless %}{% endfor %}
               </a>
 
-
-              
               {%- if show_vendor -%}
                 <a
                   class='product-card__vendor body-color unstyled-link'
@@ -807,7 +810,6 @@
               <div class='product-card__price'>
                 <div class='product-card__price-cost'>
                   <div class='product-card__price-item {% if settings.product_card_highlight_sale_price and product.compare_at_price > price %} product-card__price-item--highlight-sale{% endif %}'>
-                    
                     {{ variant.price | money }}
 
                     {% if variant.unit_price_measurement %}
@@ -844,9 +846,16 @@
           </div>
         </div>
       </product-card>
+      </div>
     </div>
-  </div>
   {% endfor %}
+
+  {%- if __debug == '1' -%}
+    <div style="font:12px/1.3 monospace; background:#eaffea; border:1px solid #9ae69a; padding:6px; margin:6px 0;">
+      rendered_variants_for_product {{ product.handle }}: <strong>{{ __rendered }}</strong>
+    </div>
+  {%- endif -%}
+
 {% else %}
   <div
     class='product-card product-card--{{ card_style }} {% if settings.img_hover != 'none' %} product-card--{{ settings.img_hover }} {% endif %} {{ class }} {% if product_card_align == 'center' %}product-card--center-alignment{% endif %}'

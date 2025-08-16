@@ -320,32 +320,51 @@
                     {%- endfor -%}
                   {%- endif -%}
                 {%- endfor -%}
-                {%- assign selected_color_ids = selected_color_ids_csv | split: ',' | compact -%}
+                {%- assign selected_color_ids_raw = selected_color_ids_csv | split: ',' | compact -%}
 
                 {%- comment -%}Normalize GIDs to numeric IDs{%- endcomment -%}
                 {%- assign selected_color_ids_num_csv = '' -%}
-                {%- for gid in selected_color_ids -%}
+                {%- for gid in selected_color_ids_raw -%}
                   {%- assign id_tail = gid | split: '/' | last -%}
                   {%- assign selected_color_ids_num_csv = selected_color_ids_num_csv | append: id_tail | append: ',' -%}
                 {%- endfor -%}
                 {%- assign selected_color_ids = selected_color_ids_num_csv | split: ',' | compact -%}
-                
-                {%- for product in collection.products -%} 
-                    {%
-                      render 'product-card-variant',
-                      with_bottom_spacing: true,
-                      product: product,
-                      filter_metal: filter_metal,
-                      filter_color: filter_color,
-                      missing_values: missing_values,
-                      img_ratio: img_ratio,
-                      show_mobile_carousel: true,
-                      product_card_align: product_card_align,
-                      add_side_paddings: add_side_paddings,
-                      primary_custom_colors_and_patterns: primary_custom_colors_and_patterns,
-                      section_background_color: section_background_color,
-                      selected_color_ids: selected_color_ids
-                    %}
+
+                {%- assign __debug = request.params.debug | default: '0' -%}
+                {%- if __debug == '1' -%}
+                  <div style="font:12px/1.3 monospace; background:#eef6ff; border:1px solid #9ec5fe; padding:8px; margin:8px 0;">
+                    <div><strong>DEBUG/sections.products</strong></div>
+                    <div>URL: <code>{{ getfullurl }}</code></div>
+                    <div>Active filter keys:
+                      {%- for f in collection.filters -%}
+                        {%- if f.param_name == 'filter.v.m.custom.color_variation' -%}
+                          {%- for av in f.active_values -%}
+                            <code>{{ av.value }}</code>{% unless forloop.last %}, {% endunless %}
+                          {%- endfor -%}
+                        {%- endif -%}
+                      {%- endfor -%}
+                    </div>
+                    <div>selected_color_ids_raw: <code>{{ selected_color_ids_raw | join: ', ' }}</code></div>
+                    <div>selected_color_ids_normalized: <code>{{ selected_color_ids | join: ', ' }}</code></div>
+                  </div>
+                {%- endif -%}
+
+                {%- for product in collection.products -%}
+                  {%
+                    render 'product-card-variant',
+                    with_bottom_spacing: true,
+                    product: product,
+                    filter_metal: filter_metal,
+                    filter_color: filter_color,
+                    missing_values: missing_values,
+                    img_ratio: img_ratio,
+                    show_mobile_carousel: true,
+                    product_card_align: product_card_align,
+                    add_side_paddings: add_side_paddings,
+                    primary_custom_colors_and_patterns: primary_custom_colors_and_patterns,
+                    section_background_color: section_background_color,
+                    selected_color_ids: selected_color_ids
+                  %}
                 {%- endfor -%}
               </div>
               {% render 'loading-overlay', class: 'shop__loading-overlay', id: 'ShopProductsOverlay' %}
