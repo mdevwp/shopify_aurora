@@ -91,17 +91,25 @@
 {% if product.id != blank %}
 
   {%- if selected_color_ids == nil -%}
-    {%- assign csv = '' -%}
+    {%- assign _csv = '' -%}
     {%- if collection and collection.filters -%}
       {%- for f in collection.filters -%}
         {%- if f.param_name == 'filter.v.m.custom.color_variation' -%}
           {%- for av in f.active_values -%}
-            {%- assign csv = csv | append: av.value | append: ',' -%}
+            {%- assign _csv = _csv | append: av.value | append: ',' -%}
           {%- endfor -%}
         {%- endif -%}
       {%- endfor -%}
     {%- endif -%}
-    {%- assign selected_color_ids = _csv | split: ',' | compact -%}
+    {%- assign _selected_color_ids = _csv | split: ',' | compact -%}
+
+    {%- comment -%}Normalize GIDs to numeric IDs{%- endcomment -%}
+    {%- assign __num_csv = '' -%}
+    {%- for gid in _selected_color_ids -%}
+      {%- assign id_tail = gid | split: '/' | last -%}
+      {%- assign __num_csv = __num_csv | append: id_tail | append: ',' -%}
+    {%- endfor -%}
+    {%- assign selected_color_ids = __num_csv | split: ',' | compact -%}
   {%- endif -%}
 
   
@@ -113,7 +121,7 @@
       {%- if val -%}
         {%- if val.size -%}
           {%- for mo in val -%}
-            {%- if selected_color_ids contains mo.id -%}
+            {%- if selected_color_ids contains val.id -%}
               {%- assign show = true -%}{%- break -%}
             {%- endif -%}
           {%- endfor -%}
