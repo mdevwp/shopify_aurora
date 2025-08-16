@@ -321,6 +321,14 @@
                   {%- endif -%}
                 {%- endfor -%}
                 {%- assign selected_color_ids = selected_color_ids_csv | split: ',' | compact -%}
+
+                {%- comment -%}Normalize GIDs to numeric IDs{%- endcomment -%}
+                {%- assign selected_color_ids_num_csv = '' -%}
+                {%- for gid in selected_color_ids -%}
+                  {%- assign id_tail = gid | split: '/' | last -%}
+                  {%- assign selected_color_ids_num_csv = selected_color_ids_num_csv | append: id_tail | append: ',' -%}
+                {%- endfor -%}
+                {%- assign selected_color_ids = selected_color_ids_num_csv | split: ',' | compact -%}
                 
                 {%- for product in collection.products -%} 
                     {%
