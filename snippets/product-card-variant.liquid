@@ -115,9 +115,8 @@
 
   {%- if __debug == '1' -%}
     {%- comment -%}
-      Build a product-level rollup of all Metaobject IDs present in
-      variant metafield custom.color_variation across this product.
-      Handles both list and single reference. Falls back if theme uses .references.
+      Product-level rollup of all Metaobject IDs present in variant metafield custom.color_variation.
+      Supports list, single, and legacy .references.
     {%- endcomment -%}
     {%- assign _product_color_meta_ids_csv = '' -%}
     {%- for _v in product.variants -%}
@@ -147,12 +146,13 @@
     {%- assign product_color_meta_ids = _product_color_meta_ids_csv | split: ',' | compact | uniq -%}
 
     <pre style="white-space:pre-wrap;font:12px/1.3 monospace;background:#111;color:#0f0;padding:8px;overflow:auto">
-  DEBUG/snippet.product-card-variant
-  product: {{ product.handle }} ({{ product.id }})
-  selected_color_ids(normalized): {{ selected_color_ids | join: '|' }}
-  product_variant_metafield.custom.color_variation.ids: {{ product_color_meta_ids | join: '|' }}
+DEBUG/snippet.product-card-variant
+product: {{ product.handle }} ({{ product.id }})
+selected_color_ids(normalized): {{ selected_color_ids | join: '|' }}
+product_variant_metafield.custom.color_variation.ids: {{ product_color_meta_ids | join: '|' }}
     </pre>
   {%- endif -%}
+
   {%- assign __rendered_variant_count = 0 -%}
 
   {% for variant in product.variants %}
@@ -160,17 +160,43 @@
     {%- if selected_color_ids and selected_color_ids.size > 0 -%}
       {%- assign show = false -%}
 
+      {%- comment -%}DEEP DEBUG for this variant metafield{%- endcomment -%}
+      {%- if __debug == '1' -%}
+        {%- assign _cv = variant.metafields.custom.color_variation -%}
+        <pre style="white-space:pre-wrap;font:12px/1.3 monospace;background:#111;color:#0f0;padding:6px;margin:6px 0;">
+P:{{ product.handle }} V:{{ variant.id }}
+{% if _cv %}cv-present:true{% else %}cv-present:false{% endif %} | cv-type:"{% if _cv and _cv.type %}{{ _cv.type }}{% endif %}"
+raw-cv: {{ _cv | json }}
+raw-cv.value: {{ _cv.value | json }}
+-- enumerate namespace "custom" --
+{%- for _mf in variant.metafields.custom -%}
+mf:key={{ _mf.first }} -> {{ _mf.last | json }}
+{%- endfor -%}
+        </pre>
+      {%- endif -%}
+
       {%- comment -%}Read variant metafield as metaobject reference(s){%- endcomment -%}
       {%- assign color_meta_ids_csv = '' -%}
-      {%- if variant.metafields.custom.color_variation != blank -%}
-        {%- if variant.metafields.custom.color_variation.references != blank -%}
-          {%- for ref in variant.metafields.custom.color_variation.references -%}
-            {%- assign id_str = ref.id | replace: "gid://shopify/Metaobject/", "" -%}
-            {%- assign color_meta_ids_csv = color_meta_ids_csv | append: id_str | append: ',' -%}
+      {%- assign _cv = variant.metafields.custom.color_variation -%}
+      {%- if _cv -%}
+        {%- if _cv.value != blank -%}
+          {%- if _cv.type contains 'list' -%}
+            {%- for _ref in _cv.value -%}
+              {%- assign _id_tail = _ref.id | append: '' | split: '/' | last -%}
+              {%- assign _product_color_meta_ids_csv = _product_color_meta_ids_csv | append: _id_tail | append: ',' -%}
+            {%- endfor -%}
+          {%- else -%}
+            {%- assign _id_tail = _cv.value.id | append: '' | split: '/' | last -%}
+            {%- assign _product_color_meta_ids_csv = _product_color_meta_ids_csv | append: _id_tail | append: ',' -%}
+          {%- endif -%}
+        {%- elsif _cv.references != blank -%}
+          {%- for _ref in _cv.references -%}
+            {%- assign _id_tail = _ref.id | append: '' | split: '/' | last -%}
+            {%- assign _product_color_meta_ids_csv = _product_color_meta_ids_csv | append: _id_tail | append: ',' -%}
           {%- endfor -%}
-        {%- else -%}
-          {%- assign single_id = variant.metafields.custom.color_variation.id | replace: "gid://shopify/Metaobject/", "" -%}
-          {%- assign color_meta_ids_csv = color_meta_ids_csv | append: single_id | append: ',' -%}
+        {%- elsif _cv.id != blank -%}
+          {%- assign _id_tail = _cv.id | append: '' | split: '/' | last -%}
+          {%- assign _product_color_meta_ids_csv = _product_color_meta_ids_csv | append: _id_tail | append: ',' -%}
         {%- endif -%}
       {%- endif -%}
       {%- assign color_meta_ids = color_meta_ids_csv | split: ',' | compact -%}
