@@ -231,6 +231,9 @@
         %}
       {%- endif -%}
       <div class='shop__products' id='ShopProducts'>
+        
+
+
 
         {% assign handle = collection.handle %}
 
@@ -242,14 +245,15 @@
         {% if handles contains handle %}
           {% assign product_per_page = 4 %}
         {% endif %}
-        {% assign handles = "blaue-ohrringe,ketten,ketten-sind-hypoallergen,ohrringe-in-goldfarbe" | split: "," %}
+         {% assign handles = "blaue-ohrringe,ketten,ketten-sind-hypoallergen,ohrringe-in-goldfarbe" | split: "," %}
         {% if handles contains handle %}
           {% assign product_per_page = 3 %}
-        {% endif %}
+        {% endif %}   
         {% if handle == 'ohrringe' %}
           {% assign product_per_page = 2 %}
-        {% endif %}
-
+        {% endif %}   
+        
+        
         {%- liquid
           capture content_for_query_string
             echo content_for_header
@@ -257,8 +261,10 @@
           assign getfullurl = content_for_query_string | split: '"pageurl":"' | last | split: '"' | first | replace: '\/', '/' | replace: '\u0026', '&'
 
           assign missing_values = ""
-          if getfullurl contains '?filter'
+           
+          if getfullurl contains '?filter' 
              assign product_per_page = 39
+
              assign all_values = "12,14,16,18" | split: ","
              for value in all_values
                 assign filter = value | append: "+"
@@ -267,55 +273,30 @@
                 endunless
               endfor
             assign missing_values = missing_values | split: ","
+          
           endif
-
+       
+          
           assign page_param = getfullurl | split: '?page=' | last | split: '&' | first
           assign current_page = page_param | plus: 0
           if current_page == 0
             assign current_page = 1
           endif
-
+        
+     
           assign total_pages = collection.products.size | times: 1.0 | divided_by: product_per_page | ceil
           assign last_page_minus_one = total_pages | minus: 1
         -%}
 
-        {%- comment -%}DEBUG flag via data-url-parameters{%- endcomment -%}
-        {%- capture __dbg %}{% render 'data-url-parameters', key: 'debug' %}{% endcapture -%}
-        {%- assign __debug = __dbg | strip -%}
 
-        {%- comment -%}Collect selected color GIDs from filters and normalize to numeric IDs{%- endcomment -%}
-        {%- assign selected_color_ids_csv = '' -%}
-        {%- for f in collection.filters -%}
-          {%- if f.param_name == 'filter.v.m.custom.color_variation' -%}
-            {%- for av in f.active_values -%}
-              {%- assign selected_color_ids_csv = selected_color_ids_csv | append: av.value | append: ',' -%}
-            {%- endfor -%}
-          {%- endif -%}
-        {%- endfor -%}
-        {%- assign _selected_color_ids = selected_color_ids_csv | split: ',' | compact -%}
-        {%- assign _norm_csv = '' -%}
-        {%- for gid in _selected_color_ids -%}
-          {%- assign tail = gid | split: '/' | last -%}
-          {%- assign _norm_csv = _norm_csv | append: tail | append: ',' -%}
-        {%- endfor -%}
-        {%- assign selected_color_ids = _norm_csv | split: ',' | compact -%}
-
-        {%- if __debug == '1' -%}
-          <pre style="white-space:pre-wrap;font:12px/1.3 monospace;background:#111;color:#0f0;padding:8px;overflow:auto">
-DEBUG/section.products
-collection: {{ collection.handle }} ({{ collection.id }})
-selected_color_ids(normalized): {{ selected_color_ids | join: '|' }}
-url: {{ getfullurl }}
-          </pre>
-        {%- endif -%}
 
         {%- paginate collection.products by product_per_page -%}
           {%- if collection.products.size > 0 -%}
             <div class='shop__products-grid-wrap'>
-              <div class='shop__products-grid' id='ShopProductsGrid'>
-
+              <div class='shop__products-grid' id='ShopProductsGrid'> 
+                
                 {% assign filter_metal = '' %}
-                {% assign metals = "Gold, Roségold, Silber" | split: ", " %}
+                {% assign metals = "Gold, Roségold, Silber" | split: ", " %} 
                 {% for metal in metals %}
                   {% if collection.title contains metal %}
                     {% assign filter_metal = metal %}
@@ -330,23 +311,22 @@ url: {{ getfullurl }}
                   {% endif %}
                 {% endfor %}
 
-                {%- for product in collection.products -%}
-                  {%
-                    render 'product-card-variant',
-                    with_bottom_spacing: true,
-                    product: product,
-                    filter_metal: filter_metal,
-                    filter_color: filter_color,
-                    missing_values: missing_values,
-                    img_ratio: img_ratio,
-                    show_mobile_carousel: true,
-                    product_card_align: product_card_align,
-                    add_side_paddings: add_side_paddings,
-                    primary_custom_colors_and_patterns: primary_custom_colors_and_patterns,
-                    section_background_color: section_background_color,
-                    selected_color_ids: selected_color_ids,
-                    __debug: __debug
-                  %}
+                
+                {%- for product in collection.products -%} 
+                    {%
+                      render 'product-card-variant',
+                      with_bottom_spacing: true,
+                      product: product,
+                      filter_metal: filter_metal,
+                      filter_color: filter_color,
+                      missing_values: missing_values,
+                      img_ratio: img_ratio,
+                      show_mobile_carousel: true,
+                      product_card_align: product_card_align,
+                      add_side_paddings: add_side_paddings,
+                      primary_custom_colors_and_patterns: primary_custom_colors_and_patterns,
+                      section_background_color: section_background_color
+                    %}
                 {%- endfor -%}
               </div>
               {% render 'loading-overlay', class: 'shop__loading-overlay', id: 'ShopProductsOverlay' %}
@@ -370,7 +350,7 @@ url: {{ getfullurl }}
               </div>
             {%- endif -%}
           {%- endif -%}
-
+ 
           {%- liquid
             if paginate.pages > 1
               case pagination_type
@@ -389,6 +369,10 @@ url: {{ getfullurl }}
   </div>
 </shop-component>
 
+
+        
+
+
 {% if total_pages > 1 %}
   <ul class="classic-pagination__list">
     {%- if current_page > 1 -%}
@@ -396,18 +380,18 @@ url: {{ getfullurl }}
         <a href="?page={{ current_page | minus: 1 }}" class="classic-pagination__item classic-pagination__link">&lt;</a>
       </li>
     {%- endif -%}
-
+  
     {%- assign range = 2 -%}
     {%- assign start_page = current_page | minus: range -%}
     {%- if start_page < 1 -%}
       {%- assign start_page = 1 -%}
     {%- endif -%}
-
+  
     {%- assign end_page = current_page | plus: range -%}
     {%- if end_page > total_pages -%}
       {%- assign end_page = total_pages -%}
     {%- endif -%}
-
+  
     {%- if start_page > 1 -%}
       <li>
         <a href="?page=1" class="classic-pagination__item classic-pagination__link">1</a>
@@ -416,7 +400,7 @@ url: {{ getfullurl }}
         <li><span class="classic-pagination__item">...</span></li>
       {%- endif -%}
     {%- endif -%}
-
+  
     {%- for page in (start_page..end_page) -%}
       <li>
         {%- if page == current_page -%}
@@ -426,7 +410,7 @@ url: {{ getfullurl }}
         {%- endif -%}
       </li>
     {%- endfor -%}
-
+  
     {%- if end_page < total_pages -%}
       {%- if end_page < last_page_minus_one -%}
         <li><span class="classic-pagination__item">...</span></li>
@@ -435,62 +419,91 @@ url: {{ getfullurl }}
         <a href="?page={{ total_pages }}" class="classic-pagination__item classic-pagination__link">{{ total_pages }}</a>
       </li>
     {%- endif -%}
-
+  
     {%- if current_page < total_pages -%}
       <li>
         <a href="?page={{ current_page | plus: 1 }}" class="classic-pagination__item classic-pagination__link">&gt;</a>
       </li>
     {%- endif -%}
   </ul>
-{%- endif -%}
+ {%- endif -%}
 
+
+
+        
 <script>
   localStorage.setItem(
     'prevCollectionPage',
     JSON.stringify({ title: '{{ collection.title }}', url: '{{ collection.url }}' }),
   )
-</script>
 
-<script>
   function applyFilters() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const filters = {};
-    urlParams.forEach((value, key) => {
-      if (key.startsWith('filter.')) {
-        const filterKey = key.split('.').slice(-1)[0];
-        if (!filters[filterKey]) filters[filterKey] = [];
-        filters[filterKey].push(value);
-      }
-    });
-    const products = document.querySelectorAll('.shop__grid-item');
-    products.forEach(product => {
-      let isVisible = true;
-      for (const filterKey in filters) {
-        const productValue = product.getAttribute(`data-${filterKey.toLowerCase()}`);
-        if (productValue && !filters[filterKey].includes(productValue)) {
-          isVisible = false;
-          break;
+            const urlParams = new URLSearchParams(window.location.search);
+            const filters = {};
+
+            // Extract filters from URL
+            urlParams.forEach((value, key) => {
+                if (key.startsWith('filter.')) {
+                    const filterKey = key.split('.').slice(-1)[0];
+                    if (!filters[filterKey]) {
+                        filters[filterKey] = [];
+                    }
+                    filters[filterKey].push(value);
+                }
+            });
+
+            const products = document.querySelectorAll('.shop__grid-item');
+            
+            products.forEach(product => {
+                let isVisible = true;
+                
+                for (const filterKey in filters) {
+                    const productValue = product.getAttribute(`data-${filterKey.toLowerCase()}`);
+                    if (productValue && !filters[filterKey].includes(productValue)) {
+                        isVisible = false;
+                        break;
+                    }
+                }
+                
+                if (!isVisible) {
+                    product.classList.add('hidden');
+                } else {
+                    product.classList.remove('hidden');
+                }
+            });
         }
-      }
-      product.classList.toggle('hidden', !isVisible);
-    });
-  }
-  document.addEventListener("DOMContentLoaded", applyFilters);
-  window.addEventListener('popstate', applyFilters);
-  const observer = new MutationObserver(() => { applyFilters(); });
-  observer.observe(document.querySelector('body'), { childList: true, subtree: true });
+
+        // Initial filter application
+        document.addEventListener("DOMContentLoaded", applyFilters);
+
+        // Listen for URL changes
+        window.addEventListener('popstate', applyFilters);
+
+        // MutationObserver to detect changes in the URL
+        const observer = new MutationObserver(() => {
+            applyFilters();
+        });
+
+        observer.observe(document.querySelector('body'), {
+            childList: true,
+            subtree: true
+        });
 </script>
 
-<script>
-  gtag('event', 'view_item_list', {
+<script> 
+  gtag('event', 'view_item_list', { 
     'send_to': 'AW-16711737174',
-    'value': "{{ collection.title }}",
+    'value': "{{ collection.title }}", 
     'items': [
-      { 'id': "{{ collection.id }}", 'google_business_vertical': 'retail' }
-    ]
+      {
+        'id': "{{ collection.id }}",
+        'google_business_vertical': 'retail'
+      }
+    ] 
   });
 </script>
 
+        
 {% render 'save-section-data-in-global-scope', section: section %}
 
 {% schema %}

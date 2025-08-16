@@ -75,6 +75,7 @@
       assign color_swatches_when_to_show = 'never'
       assign color_swatches_when_to_show_on_mobile = 'never'
     endif
+
   else
     assign color_swatches_when_to_show = 'never'
     assign color_swatches_when_to_show_on_mobile = 'never'
@@ -84,146 +85,39 @@
     assign color_swatches_what_to_show = blank
   endif
 
-  assign show_mobile_carousel = false
+   assign show_mobile_carousel = false
 -%}
 
-{%- comment -%}DEBUG flag from parent render{% endcomment -%}
-{%- assign __debug = __debug | default: '' -%}
+{% if product.id != blank %}
 
-{%- if product.id != blank -%}
+  
+  {% for variant in product.variants %}
 
-  {%- comment -%}selected metaobject IDs and labels from collection filters{%- endcomment -%}
-{%- assign __sel_ids_csv = '' -%}
-{%- assign __sel_labels_csv = '' -%}
-{%- if collection and collection.filters -%}
-  {%- for f in collection.filters -%}
-    {%- if f.param_name == 'filter.v.m.custom.color_variation' -%}
-      {%- for av in f.active_values -%}
-        {%- if av.value != blank -%}
-          {%- assign __sel_ids_csv = __sel_ids_csv | append: av.value | append: ',' -%}
-        {%- endif -%}
-        {%- if av.label != blank -%}
-          {%- assign __sel_labels_csv = __sel_labels_csv | append: av.label | append: ',' -%}
-        {%- endif -%}
-      {%- endfor -%}
-    {%- endif -%}
-  {%- endfor -%}
-{%- endif -%}
 
-{%- assign _sel_ids = __sel_ids_csv | split: ',' | compact -%}
-{%- comment -%}Normalize GIDs to numeric tails{%- endcomment -%}
-{%- assign _sel_ids_num_csv = '' -%}
-{%- for gid in _sel_ids -%}
-  {%- assign tail = gid | split: '/' | last -%}
-  {%- assign _sel_ids_num_csv = _sel_ids_num_csv | append: tail | append: ',' -%}
-{%- endfor -%}
-{%- assign selected_color_ids = _sel_ids_num_csv | split: ',' | compact -%}
-
-{%- assign selected_color_labels = __sel_labels_csv | split: ',' | compact -%}
-{%- assign selected_color_labels_norm_csv = '' -%}
-{%- for lab in selected_color_labels -%}
-  {%- assign norm = lab | downcase | strip -%}
-  {%- assign selected_color_labels_norm_csv = selected_color_labels_norm_csv | append: norm | append: ',' -%}
-{%- endfor -%}
-{%- assign selected_color_labels = selected_color_labels_norm_csv | split: ',' | compact -%}
-
-{%- if __debug == '1' -%}
-<pre style="white-space:pre-wrap;font:12px/1.3 monospace;background:#111;color:#0f0;padding:8px;overflow:auto">
-DEBUG/snippet.product-card-variant
-product: {{ product.handle }} ({{ product.id }})
-selected_color_ids(normalized): {{ selected_color_ids | join: '|' }}
-selected_color_labels: {{ selected_color_labels | join: '|' }}
-</pre>
-{%- endif -%}
-
-{%- assign __rendered_variant_count = 0 -%}
-
-{%- for variant in product.variants -%}
-  {%- assign show = true -%}
-
-  {%- if selected_color_ids.size > 0 or selected_color_labels.size > 0 -%}
-    {%- assign show = false -%}
-
-    {%- assign _cv = variant.metafields.custom.color_variation -%}
-    {%- assign color_meta_ids_csv = '' -%}
-    {%- assign color_labels_norm_csv = '' -%}
-
-    {%- if _cv and _cv.value != blank -%}
-      {%- for ref in _cv.value -%}
-        {%- comment -%}labels path (works){%- endcomment -%}
-        {%- assign lab = ref.color_name | default: ref.title | default: ref.name -%}
-        {%- if lab != blank -%}
-          {%- assign color_labels_norm_csv = color_labels_norm_csv | append: lab | downcase | strip | append: ',' -%}
-        {%- endif -%}
-        {%- comment -%}ID path (often not exposed on storefront){%- endcomment -%}
-        {%- assign _id_raw = ref.id | append: '' -%}
-        {%- if _id_raw != '' -%}
-          {%- assign _id_tail = _id_raw | split: '/' | last -%}
-          {%- assign color_meta_ids_csv = color_meta_ids_csv | append: _id_tail | append: ',' -%}
-        {%- endif -%}
-      {%- endfor -%}
-    {%- elsif _cv and _cv.references != blank -%}
-      {%- for ref in _cv.references -%}
-        {%- assign _id_raw = ref.id | append: '' -%}
-        {%- if _id_raw != '' -%}
-          {%- assign _id_tail = _id_raw | split: '/' | last -%}
-          {%- assign color_meta_ids_csv = color_meta_ids_csv | append: _id_tail | append: ',' -%}
-        {%- endif -%}
-        {%- assign lab = ref.color_name | default: ref.title | default: ref.name -%}
-        {%- if lab != blank -%}
-          {%- assign color_labels_norm_csv = color_labels_norm_csv | append: lab | downcase | strip | append: ',' -%}
-        {%- endif -%}
-      {%- endfor -%}
-    {%- endif -%}
-
-    {%- assign color_meta_ids = color_meta_ids_csv | split: ',' | compact -%}
-    {%- assign color_label_norms = color_labels_norm_csv | split: ',' | compact -%}
-
-    {%- assign match = false -%}
-    {%- if selected_color_ids.size > 0 and color_meta_ids.size > 0 -%}
-      {%- for sid in selected_color_ids -%}
-        {%- if color_meta_ids contains sid -%}{%- assign match = true -%}{%- break -%}{%- endif -%}
-      {%- endfor -%}
-    {%- endif -%}
-    {%- if match == false and selected_color_labels.size > 0 and color_label_norms.size > 0 -%}
-      {%- for sl in selected_color_labels -%}
-        {%- if color_label_norms contains sl -%}{%- assign match = true -%}{%- break -%}{%- endif -%}
-      {%- endfor -%}
-    {%- endif -%}
-
-    {%- if __debug == '1' -%}
-<pre style="white-space:pre-wrap;font:12px/1.3 monospace;background:#111;color:#0f0;padding:4px 8px;overflow:auto">
-P:{{ product.handle }} V:{{ variant.id }}
-opt0:{{ variant.options[0] }} opt1:{{ variant.options[1] }}
-color_meta_ids:[{{ color_meta_ids | join: ',' }}]
-color_label_norms:[{{ color_label_norms | join: ',' }}]
-match:{{ match }}
-</pre>
-    {%- endif -%}
-
-    {%- unless match -%}{% continue %}{%- endunless -%}
-  {%- endif -%}
-
-    {% if filter_metal != blank and variant.options[0] != blank and variant.options[0] != filter_metal and variant.options[1] != filter_metal %}
-      {% continue %}
+    {% if filter_metal != blank and variant.options[0] != blank and variant.options[0] != filter_metal and variant.options[1] != filter_metal %}       
+      {% comment %}{% endcomment %}
+      {% continue %} 
     {% endif %}
-
+    
     {%- liquid
-      if missing_values != blank and variant.options[1] != blank
-        assign value = variant.options[1] | replace: " mm", ""
-        if missing_values contains value
-          continue
+        if missing_values != blank and variant.options[1] != blank
+          assign value = variant.options[1] | replace: " mm", ""
+          if missing_values contains value
+            continue
+          endif
         endif
-      endif
     -%}
-
+    
+    
     {% if filter_color != blank and variant.options[0] != blank %}
-      {% assign option_0 = variant.options[0] | downcase %}
-      {% assign option_1 = variant.options[1] | downcase %}
-      {% unless option_0 contains filter_color or option_1 contains filter_color %}
-        {% continue %}
-      {% endunless %}
+        {% assign option_0 = variant.options[0] | downcase %}
+        {% assign option_1 = variant.options[1] | downcase %}
+        {% unless option_0 contains filter_color or option_1 contains filter_color %}
+          {% continue %}
+          
+        {% endunless %}
     {% endif %}
+    
 
     {% liquid
       assign price = variant.price | default: 0
@@ -232,7 +126,7 @@ match:{{ match }}
       else
         assign money_price = price | money
       endif
-
+    
       if variant.compare_at_price > price and variant.available
         if settings.product_card_show_sale_badge
           assign show_sale_badge = true
@@ -242,10 +136,7 @@ match:{{ match }}
         endif
       endif
     %}
-
-    {%- assign __rendered_variant_count = __rendered_variant_count | plus: 1 -%}
-
-    <div
+    <div 
       class='shop__grid-item'
       {% for option_name in product.options_with_values %}
         {% assign option_index = forloop.index0 %}
@@ -323,10 +214,12 @@ match:{{ match }}
                             {%- liquid
                               assign id = img.external_id
                               assign prepared_video_url = id | append: '?autoplay=1&mute=1&muted=1&controls=0' | append: '&loop=1&playlist=' | append: id
+
                               if img.host == 'youtube'
                                 assign prepared_video_url = prepared_video_url | append: '&enablejsapi=1'
                               endif
                             -%}
+
                             <iframe
                               {% if forloop.first %}
                                 data-main-media
@@ -407,14 +300,17 @@ match:{{ match }}
                       loading: 'lazy',
                       attrs: 'data-main-media data-product-card-featured-image data-id="1"'
                     %}
+
                   {% elsif media.media_type == 'external_video' %}
                     {%- liquid
                       assign id = media.external_id
                       assign prepared_video_url = id | append: '?autoplay=1&mute=1&muted=1&controls=0' | append: '&loop=1&playlist=' | append: id
+
                       if media.host == 'youtube'
                         assign prepared_video_url = prepared_video_url | append: '&enablejsapi=1'
                       endif
                     -%}
+
                     <iframe
                       {% if forloop.first %}
                         data-main-media
@@ -437,6 +333,7 @@ match:{{ match }}
                       frameborder='0'
                       title='{{ media.alt | escape }}'
                     ></iframe>
+
                   {% else %}
                     <img
                       {% if forloop.first %}
@@ -471,6 +368,7 @@ match:{{ match }}
                 {% if color_swatches_when_to_show != 'never' %}
                   {%- for color in colors limit: 5 -%}
                     {%- assign variant_color = product.variants | where: color_option_position, color | first -%}
+
                     {%- if variant_color.image.src != blank -%}
                       <img
                         data-variant-id='{{ variant_color.id }}'
@@ -501,8 +399,11 @@ match:{{ match }}
                   }
                   </script>
                 {% endif %}
+          
               </div>
             </div>
+
+            
 
             <div class='product-card__dots-spinner-wrap' data-product-card-preloader style="display:none;">
               <div class='dots-spinner product-card__dots-spinner'>
@@ -513,14 +414,18 @@ match:{{ match }}
             </div>
           {%- else -%}
             {%- assign placeholder_class = 'placeholder-image product-card__img product-card__img--visible shape__target-image' -%}
+
             {%- if settings.enable_product_darken_background -%}
               {%- assign placeholder_class = placeholder_class | append: ' multiply-mode__target' -%}
             {%- endif -%}
-            <div class='product-card__images-wrapper {% if settings.enable_product_darken_background %} multiply-mode {% endif %}' visible>
+
+            <div
+              class='product-card__images-wrapper {% if settings.enable_product_darken_background %} multiply-mode {% endif %}'
+              visible
+            >
               {{- 'product-4' | placeholder_svg_tag: placeholder_class -}}
             </div>
           {%- endif -%}
-
           <div class='product-card__actions {% if settings.img_hover == 'show-product-media' and images.size > 1 %} product-card__actions--with-media-tabs{% endif %} {% if settings.show_button_on_hover %} product-card__actions--visible-on-hover{% endif %}'>
             {%- if settings.img_hover == 'show-product-media' and images.size > 1 -%}
               <product-media-tabs class='product-card__tabs' data-product-card-media-tabs>
@@ -546,7 +451,13 @@ match:{{ match }}
                     id='product-form-component-{{ variant.id }}-{{ sectionId }}'
                   >
                     {%- form 'product', product, data-type: 'add-to-cart-form' -%}
-                      <input type='hidden' name='id' value='{{ variant.id }}' data-product-form-variant id='{{ product_form_id }}-IdInput-{{ form.id }}'>
+                      <input
+                        type='hidden'
+                        name='id'
+                        value='{{ variant.id }}'
+                        data-product-form-variant
+                        id='{{ product_form_id }}-IdInput-{{ form.id }}'
+                      >
                       <button
                         type='submit'
                         name='add'
@@ -567,7 +478,10 @@ match:{{ match }}
                   </product-form>
                 {%- endif -%}
                 {%- if settings.show_quick_view == true -%}
-                  <div class='product-card__btn-wrapper {% if desktop_button_style == 'with_labels' %} product-card__btn-wrapper--with-labels{% endif %}' id='product-card-quick-view-btn-{{ variant.id }}'>
+                  <div
+                    class='product-card__btn-wrapper {% if desktop_button_style == 'with_labels' %} product-card__btn-wrapper--with-labels{% endif %}'
+                    id='product-card-quick-view-btn-{{ variant.id }}'
+                  >
                     <button
                       class='btn btn--solid product-card__btn'
                       data-quick-view-button
@@ -610,14 +524,146 @@ match:{{ match }}
             </div>
           {% endif %}
         </div>
-
         <div class='product-card__details {% if with_bottom_spacing %}product-card__details--bottom-spacing{% endif %} {% if add_side_paddings == false %} product-card__details--left-spacing {% endif %}'>
           <div class='product-card__details-inner' data-product-details-inner>
-
             {%- if colors.size > 0 -%}
-              {%- if color_swatches_what_to_show == 'variant-images' or color_swatches_what_to_show == 'colors-and-patterns' -%}
-                {% comment %} Swatches markup unchanged from your theme {% endcomment %}
-              {%- endif -%}
+              <div class='product-card__colors-wrapper' data-product-card-colors-wrapper>
+                {%- if color_swatches_what_to_show == 'variant-images' -%}
+                  <color-swatches
+                    class='product-card__image-swatches-wrapper'
+                    data-count='{{ colors.size }}'
+                    data-product-card-color-swatches
+                  >
+                    <div class='image-swatches product-card__image-swatches'>
+                      {%- for color in colors limit: 5 -%}
+                        {%- assign variant_color = product.variants | where: color_option_position, color | first -%}
+
+                        {%- if variant_color.image.src != blank -%}
+                          <a
+                            class='image-swatches__item unstyled-link image-swatches__item--{{ settings.primary_shape_for_product_cards }}'
+                            href='{{ variant_color.url }}'
+                            aria-label='{{ variant_color.title | strip_html | escape }}'
+                            data-color='{{ color }}'
+                            data-color-swatches-item
+                            data-variant-id='{{ variant_color.id }}'
+                          >
+                            <div class='image-swatches__item-body-wrapper image-swatches__item-body-wrapper--{{ settings.primary_shape_for_product_cards }} {% if settings.enable_product_darken_background %}multiply-mode{% endif %}'>
+                              <img
+                                {% render 'image-attributes',
+                                  image: variant_color.image,
+                                  size: 'xsmall',
+                                  is_multiply_target: settings.enable_product_darken_background,
+                                  class: 'image-swatches__item-body'
+                                %}
+                              >
+                            </div>
+                          </a>
+                        {%- else -%}
+                          <a
+                            class='image-swatches__item image-swatches__item--{{ settings.primary_shape_for_product_cards }}'
+                            href='{{ variant_color.url }}'
+                            aria-label='{{ variant_color.title | strip_html | escape }}'
+                            data-color='{{ color }}'
+                            data-color-swatches-item
+                            data-variant-id='{{ variant_color.id }}'
+                          >
+                            <div class='image-swatches__item-body-wrapper image-swatches__item-body-wrapper--{{ settings.primary_shape_for_product_cards }}'>
+                              {% render 'icon-color-image-placeholder', class: 'image-swatches__item-body' %}
+                            </div>
+                          </a>
+                        {%- endif -%}
+                      {%- endfor -%}
+                      <a
+                        class='image-swatches__item unstyled-link image-swatches__item--{{ settings.primary_shape_for_product_cards }} image-swatches__count'
+                        href='{{ product.url }}'
+                        aria-label='{{ product.title | strip_html | escape }}'
+                        data-color-swatches-hidden-count
+                      >
+                        <div
+                          class='image-swatches__count-body image-swatches__item-body-wrapper image-swatches__item-body-wrapper--{{ settings.primary_shape_for_product_cards }}'
+                        >
+                          <span class='image-swatches__count-number' data-color-swatches-hidden-count-label></span>
+                        </div>
+                      </a>
+                    </div>
+                    {% if color_swatches_when_to_show == 'on_hover' %}
+                      <div class='image-swatches__label body-color' data-color-swatches-label></div>
+                    {% endif %}
+                  </color-swatches>
+                {%- elsif color_swatches_what_to_show == 'colors-and-patterns' -%}
+                  <color-swatches
+                    class='product-card-shape-swatches-wrapper'
+                    data-count='{{ colors.size }}'
+                    data-product-card-color-swatches
+                  >
+                    <div class='product-card-shape-swatches'>
+                      {%- for color in colors limit: 5 -%}
+                        {%- liquid
+                          assign variant_color = product.variants | where: color_option_position, color | first
+                          assign color_downcase = color | downcase | strip
+
+                          assign is_image = false
+                          assign selected_color_label = color_downcase | capitalize
+                          assign selected_color_value = color_downcase
+
+                          for pattern in primary_custom_colors_and_patterns
+                            assign config = pattern | split: '::'
+                            assign pattern_label_downcase = config[0] | downcase | strip
+                            assign pattern_value = config[1]
+
+                            if pattern_label_downcase == color_downcase
+                              unless pattern_value contains 'http'
+                                if pattern_value contains '.png' or pattern_value contains '.jp'
+                                  assign selected_color_value = pattern_value
+
+                                  assign is_image = true
+                                endif
+                              endunless
+                            endif
+                          endfor
+                        -%}
+
+                        <a
+                          class='unstyled-link'
+                          href='{{ variant_color.url }}'
+                          aria-label='{{ variant_color.title | strip_html | escape }}'
+                          data-color-swatches-item
+                          data-variant-id='{{ variant_color.id }}'
+                          data-color='{{ selected_color_label }}'
+                        >
+                          <shape-swatch
+                            class='color-swatch color-swatch--{{ settings.primary_shape_for_product_cards }}'
+                            data-color='{{ selected_color_label }}'
+                            data-section-background='{{ section_background_color | strip }}'
+                            style='{% if is_image %} --gsc-color-swatch-value: url({{ selected_color_value | file_img_url: "200x" }}); {% endif %}'
+                            data-colors-patterns='{{ primary_custom_colors_and_patterns }}'
+                            {% if is_image %}
+                              is-image
+                            {% endif %}
+                          >
+                          </shape-swatch>
+                        </a>
+                      {%- endfor -%}
+
+                      <a
+                        class='unstyled-link'
+                        href='{{ product.url }}'
+                        aria-label='{{ product.title | strip_html | escape }}'
+                        data-color-swatches-hidden-count
+                      >
+                        <div
+                          class='color-swatch__count color-swatch color-swatch--{{ settings.primary_shape_for_product_cards }}'
+                        >
+                          <span class='color-swatch__count-number' data-color-swatches-hidden-count-label></span>
+                        </div>
+                      </a>
+                    </div>
+                    {% if color_swatches_when_to_show == 'on_hover' %}
+                      <div class='product-card-shape-swatches__label body-color' data-color-swatches-label></div>
+                    {% endif %}
+                  </color-swatches>
+                {%- endif -%}
+              </div>
             {%- endif -%}
 
             <div class='product-card__info'>
@@ -671,8 +717,13 @@ match:{{ match }}
                 {{ product.title }} &mdash;{% for option in variant.options %}{{ option }}{% unless forloop.last %}, {% endunless %}{% endfor %}
               </a>
 
+
+              
               {%- if show_vendor -%}
-                <a class='product-card__vendor body-color unstyled-link' href='/collections/all?filter.p.vendor={{ product.vendor }}'>
+                <a
+                  class='product-card__vendor body-color unstyled-link'
+                  href='/collections/all?filter.p.vendor={{ product.vendor }}'
+                >
                   {{- product.vendor -}}
                 </a>
               {%- endif -%}
@@ -680,6 +731,7 @@ match:{{ match }}
               {%- if settings.product_card_rating_style != 'none' -%}
                 {% liquid
                   assign reviews_app = settings.product_card_reviews_app
+
                   assign rating_count = product.metafields.reviews.rating.value.rating | plus: 0
                   assign rating_reviews_count = product.metafields.reviews.rating_count | plus: 0
 
@@ -694,6 +746,7 @@ match:{{ match }}
                     assign rating_reviews_count = product.metafields.okendo.summaryData.reviewCount | plus: 0
                   endif
                 %}
+
                 {%- render 'rating',
                   rating_style: settings.product_card_rating_style,
                   rating_count: rating_count,
@@ -712,22 +765,29 @@ match:{{ match }}
               <div class='product-card__price'>
                 <div class='product-card__price-cost'>
                   <div class='product-card__price-item {% if settings.product_card_highlight_sale_price and product.compare_at_price > price %} product-card__price-item--highlight-sale{% endif %}'>
+                    
                     {{ variant.price | money }}
+
                     {% if variant.unit_price_measurement %}
                       ({{ variant.unit_price | money }}
+
                       <span aria-hidden='true'>/</span>
+
                       {% if variant.unit_price_measurement.reference_value != 1 %}
                         {{- variant.unit_price_measurement.reference_value -}}
                       {% endif %}
+
                       {{ variant.unit_price_measurement.reference_unit }})
                     {% endif %}
                   </div>
+
                   {%- if variant.compare_at_price > variant.price -%}
                     <div class='product-card__price-item-old {% if settings.product_card_highlight_sale_price and variant.compare_at_price > variant.price %} product-card__price-item-old--highlight-sale{% endif %}'>
                       {{- variant.compare_at_price | money -}}
                     </div>
                   {%- endif -%}
                 </div>
+
                 {%- if show_sale_amount_badge -%}
                   {% render 'badges',
                     name: 'sale_amount',
@@ -742,17 +802,10 @@ match:{{ match }}
           </div>
         </div>
       </product-card>
-      </div>
     </div>
+  </div>
   {% endfor %}
-
-  {%- if __debug == '1' -%}
-    <pre style="white-space:pre-wrap;font:12px/1.3 monospace;background:#111;color:#0f0;padding:8px;overflow:auto">
-rendered_variants_for_product {{ product.handle }}: {{ __rendered_variant_count }}
-    </pre>
-  {%- endif -%}
-
-{%- else -%}
+{% else %}
   <div
     class='product-card product-card--{{ card_style }} {% if settings.img_hover != 'none' %} product-card--{{ settings.img_hover }} {% endif %} {{ class }} {% if product_card_align == 'center' %}product-card--center-alignment{% endif %}'
     {% if block != blank %}
@@ -767,20 +820,38 @@ rendered_variants_for_product {{ product.handle }}: {{ __rendered_variant_count 
       {% endif %}
       data-product-card-inner
     >
-      <a class='product-card__link' aria-label='{{ product.title | strip_html | escape }}'></a>
+      <a
+        class='product-card__link'
+        aria-label='{{ product.title | strip_html | escape }}'
+      ></a>
+
       {%- assign placeholder_class = 'placeholder-image product-card__img product-card__img--visible shape__target-image' -%}
+
       {%- if settings.enable_product_darken_background -%}
         {%- assign placeholder_class = placeholder_class | append: ' multiply-mode__target' -%}
       {%- endif -%}
-      <div class='product-card__images-wrapper {% if settings.enable_product_darken_background %}multiply-mode{% endif %}' visible>
+
+      <div
+        class='product-card__images-wrapper {% if settings.enable_product_darken_background %}multiply-mode{% endif %}'
+        visible
+      >
         {{- 'product-4' | placeholder_svg_tag: placeholder_class -}}
       </div>
       <div class='product-card__actions {% if settings.img_hover == 'show-product-media' and images.size > 1 %} product-card__actions--with-media-tabs{% endif %} {% if settings.show_button_on_hover %} product-card__actions--visible-on-hover{% endif %}'>
         {%- if settings.show_quick_view == true or settings.show_add_to_cart == true -%}
-          <div class='product-card__btns {% if desktop_button_style == 'with_labels' %} product-card__btns--with-text-buttons{% else %} product-card__btns--with-icon-buttons{% endif %}' data-product-card-buttons>
+          <div
+            class='product-card__btns {% if desktop_button_style == 'with_labels' %} product-card__btns--with-text-buttons{% else %} product-card__btns--with-icon-buttons{% endif %}'
+            data-product-card-buttons
+          >
             {%- if settings.show_add_to_cart == true -%}
               <div class='product-card__btn-wrapper {% if desktop_button_style == 'with_labels' %} product-card__btn-wrapper--with-labels{% endif %}'>
-                <button class='btn btn--solid product-card__btn' tabindex='-1' style='display: flex;' data-product-card-button aria-label='{{- 'cards.product_card.screen_reader.add_to_cart_button_label' | t -}}'>
+                <button
+                  class='btn btn--solid product-card__btn'
+                  tabindex='-1'
+                  style='display: flex;'
+                  data-product-card-button
+                  aria-label='{{- 'cards.product_card.screen_reader.add_to_cart_button_label' | t -}}'
+                >
                   <span style='display: flex; align-items: center; justify-content: center;'>
                     {%- render 'product-card-icon-plus', class: 'product-card__btn-icon' -%}
                     <span class='product-card__btn-label-text' data-product-card-button-text data-button-text>
@@ -791,8 +862,18 @@ rendered_variants_for_product {{ product.handle }}: {{ __rendered_variant_count 
               </div>
             {%- endif -%}
             {%- if settings.show_quick_view == true -%}
-              <div class='product-card__btn-wrapper {% if desktop_button_style == 'with_labels' %} product-card__btn-wrapper--with-labels{% endif %}' id='product-card-quick-view-btn-{{ product.id }}'>
-                <div class='btn btn--solid product-card__btn' data-quick-view-button data-product-card-quick-view-button data-product-card-button data-quick-view-id='Quick-view' tabindex='-1'>
+              <div
+                class='product-card__btn-wrapper {% if desktop_button_style == 'with_labels' %} product-card__btn-wrapper--with-labels{% endif %}'
+                id='product-card-quick-view-btn-{{ product.id }}'
+              >
+                <div
+                  class='btn btn--solid product-card__btn'
+                  data-quick-view-button
+                  data-product-card-quick-view-button
+                  data-product-card-button
+                  data-quick-view-id='Quick-view'
+                  tabindex='-1'
+                >
                   {%- render 'product-card-icon-eye', class: 'product-card__btn-icon' -%}
                   <span class='product-card__btn-label-text' data-product-card-button-text>
                     {{- 'cards.product_card.store_front.quick_view_button_label' | t -}}
@@ -807,7 +888,10 @@ rendered_variants_for_product {{ product.handle }}: {{ __rendered_variant_count 
     <div class='product-card__details {% if with_bottom_spacing %}product-card__details--bottom-spacing{% endif %} {% if add_side_paddings == false %} product-card__details--left-spacing {% endif %}'>
       <div class='product-card__details-inner' data-product-details-inner>
         <div class='product-card__info'>
-          <a class='product-card__title unstyled-link' aria-label='{{ product.title | strip_html | escape }}'>
+          <a
+            class='product-card__title unstyled-link'
+            aria-label='{{ product.title | strip_html | escape }}'
+          >
             {{- 'cards.product_card.store_front.default_title' | t -}}
           </a>
           {%- if show_vendor -%}
@@ -815,11 +899,13 @@ rendered_variants_for_product {{ product.handle }}: {{ __rendered_variant_count 
               {{- 'cards.product_card.store_front.default_vendor' | t -}}
             </a>
           {%- endif -%}
+
           {%- if settings.product_card_rating_style != 'none' -%}
             {% liquid
               assign rating_count = product.metafields.reviews.rating.value.rating | plus: 0
               assign rating_reviews_count = product.metafields.reviews.rating_count | plus: 0
             %}
+
             {%- render 'rating',
               rating_style: settings.product_card_rating_style,
               rating_count: rating_count,
@@ -827,6 +913,7 @@ rendered_variants_for_product {{ product.handle }}: {{ __rendered_variant_count 
               class: 'product-card__rating body-color'
             -%}
           {%- endif -%}
+
           <div class='product-card__price'>
             <div class='product-card__price-cost'>
               <div class='product-card__price-item'>
@@ -838,4 +925,4 @@ rendered_variants_for_product {{ product.handle }}: {{ __rendered_variant_count 
       </div>
     </div>
   </div>
-{%- endif -%}
+{% endif %}
