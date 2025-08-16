@@ -311,6 +311,16 @@
                   {% endif %}
                 {% endfor %}
 
+                {%- comment -%}Collect selected Metaobject GIDs for variant metafield custom.color_variation{%- endcomment -%}
+                {%- assign selected_color_ids_csv = '' -%}
+                {%- for f in collection.filters -%}
+                  {%- if f.param_name == 'filter.v.m.custom.color_variation' -%}
+                    {%- for av in f.active_values -%}
+                      {%- assign selected_color_ids_csv = selected_color_ids_csv | append: av.value | append: ',' -%}
+                    {%- endfor -%}
+                  {%- endif -%}
+                {%- endfor -%}
+                {%- assign selected_color_ids = selected_color_ids_csv | split: ',' | compact -%}
                 
                 {%- for product in collection.products -%} 
                     {%
@@ -325,7 +335,8 @@
                       product_card_align: product_card_align,
                       add_side_paddings: add_side_paddings,
                       primary_custom_colors_and_patterns: primary_custom_colors_and_patterns,
-                      section_background_color: section_background_color
+                      section_background_color: section_background_color,
+                      selected_color_ids: selected_color_ids
                     %}
                 {%- endfor -%}
               </div>

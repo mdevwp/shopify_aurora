@@ -90,9 +90,41 @@
 
 {% if product.id != blank %}
 
+  {%- if selected_color_ids == nil -%}
+    {%- assign csv = '' -%}
+    {%- if collection and collection.filters -%}
+      {%- for f in collection.filters -%}
+        {%- if f.param_name == 'filter.v.m.custom.color_variation' -%}
+          {%- for av in f.active_values -%}
+            {%- assign csv = _csv | append: av.value | append: ',' -%}
+          {%- endfor -%}
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endif -%}
+    {%- assign selected_color_ids = _csv | split: ',' | compact -%}
+  {%- endif -%}
+
   
   {% for variant in product.variants %}
-
+    {%- assign show = true -%}
+    {%- if selected_color_ids and selected_color_ids.size > 0 -%}
+      {%- assign show = false -%}
+      {%- assign val = variant.metafields.custom.color_variation.value -%}
+      {%- if val -%}
+        {%- if val.size -%}
+          {%- for mo in val -%}
+            {%- if selected_color_ids contains mo.id -%}
+              {%- assign show = true -%}{%- break -%}
+            {%- endif -%}
+          {%- endfor -%}
+        {%- else -%}
+          {%- if selected_color_ids contains val.id -%}
+            {%- assign show = true -%}
+          {%- endif -%}
+        {%- endif -%}
+      {%- endif -%}
+    {%- endif -%}
+    {%- unless show -%}{% continue %}{%- endunless -%}
 
     {% if filter_metal != blank and variant.options[0] != blank and variant.options[0] != filter_metal and variant.options[1] != filter_metal %}       
       {% comment %}{% endcomment %}
