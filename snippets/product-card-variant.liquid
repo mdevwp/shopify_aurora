@@ -92,155 +92,117 @@
 
 {%- if product.id != blank -%}
 
-  {%- comment -%}selected_color_ids may be passed in. If not, compute from collection.filters{%- endcomment -%}
-  {%- if selected_color_ids == nil or selected_color_ids == empty -%}
-    {%- assign _csv = '' -%}
-    {%- if collection and collection.filters -%}
-      {%- for f in collection.filters -%}
-        {%- if f.param_name == 'filter.v.m.custom.color_variation' -%}
-          {%- for av in f.active_values -%}
-            {%- assign _csv = _csv | append: av.value | append: ',' -%}
-          {%- endfor -%}
+  {%- comment -%}selected metaobject IDs and labels from collection filters{%- endcomment -%}
+{%- assign __sel_ids_csv = '' -%}
+{%- assign __sel_labels_csv = '' -%}
+{%- if collection and collection.filters -%}
+  {%- for f in collection.filters -%}
+    {%- if f.param_name == 'filter.v.m.custom.color_variation' -%}
+      {%- for av in f.active_values -%}
+        {%- if av.value != blank -%}
+          {%- assign __sel_ids_csv = __sel_ids_csv | append: av.value | append: ',' -%}
+        {%- endif -%}
+        {%- if av.label != blank -%}
+          {%- assign __sel_labels_csv = __sel_labels_csv | append: av.label | append: ',' -%}
         {%- endif -%}
       {%- endfor -%}
     {%- endif -%}
-    {%- assign _sel = _csv | split: ',' | compact -%}
-    {%- assign __num_csv = '' -%}
-    {%- for gid in _sel -%}
-      {%- assign id_tail = gid | split: '/' | last -%}
-      {%- assign __num_csv = __num_csv | append: id_tail | append: ',' -%}
-    {%- endfor -%}
-    {%- assign selected_color_ids = __num_csv | split: ',' | compact -%}
-  {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}
 
-  {%- if __debug == '1' -%}
-    {%- comment -%}
-      Product-level rollup of all Metaobject IDs present in variant metafield custom.color_variation.
-      Supports list, single, and legacy .references.
-    {%- endcomment -%}
-    {%- assign _product_color_meta_ids_csv = '' -%}
-    {%- for _v in product.variants -%}
-      {%- assign _cv = _v.metafields.custom.color_variation -%}
-      {%- if _cv -%}
-        {%- if _cv.value != blank -%}
-          {%- if _cv.type contains 'list' -%}
-            {%- for _ref in _cv.value -%}
-              {%- assign _id_tail = _ref.id | replace: 'gid://shopify/Metaobject/', '' -%}
-              {%- assign _product_color_meta_ids_csv = _product_color_meta_ids_csv | append: _id_tail | append: ',' -%}
-            {%- endfor -%}
-          {%- else -%}
-            {%- assign _id_tail = _cv.value.id | replace: 'gid://shopify/Metaobject/', '' -%}
-            {%- assign _product_color_meta_ids_csv = _product_color_meta_ids_csv | append: _id_tail | append: ',' -%}
-          {%- endif -%}
-        {%- elsif _cv.references != blank -%}
-          {%- for _ref in _cv.references -%}
-            {%- assign _id_tail = _ref.id | replace: 'gid://shopify/Metaobject/', '' -%}
-            {%- assign _product_color_meta_ids_csv = _product_color_meta_ids_csv | append: _id_tail | append: ',' -%}
-          {%- endfor -%}
-        {%- elsif _cv.id != blank -%}
-          {%- assign _id_tail = _cv.id | replace: 'gid://shopify/Metaobject/', '' -%}
-          {%- assign _product_color_meta_ids_csv = _product_color_meta_ids_csv | append: _id_tail | append: ',' -%}
-        {%- endif -%}
-      {%- endif -%}
-    {%- endfor -%}
-    {%- assign product_color_meta_ids = _product_color_meta_ids_csv | split: ',' | compact | uniq -%}
+{%- assign _sel_ids = __sel_ids_csv | split: ',' | compact -%}
+{%- comment -%}Normalize GIDs to numeric tails{%- endcomment -%}
+{%- assign _sel_ids_num_csv = '' -%}
+{%- for gid in _sel_ids -%}
+  {%- assign tail = gid | split: '/' | last -%}
+  {%- assign _sel_ids_num_csv = _sel_ids_num_csv | append: tail | append: ',' -%}
+{%- endfor -%}
+{%- assign selected_color_ids = _sel_ids_num_csv | split: ',' | compact -%}
 
-    <pre style="white-space:pre-wrap;font:12px/1.3 monospace;background:#111;color:#0f0;padding:8px;overflow:auto">
+{%- assign selected_color_labels = __sel_labels_csv | split: ',' | compact -%}
+{%- assign selected_color_labels_norm_csv = '' -%}
+{%- for lab in selected_color_labels -%}
+  {%- assign norm = lab | downcase | strip -%}
+  {%- assign selected_color_labels_norm_csv = selected_color_labels_norm_csv | append: norm | append: ',' -%}
+{%- endfor -%}
+{%- assign selected_color_labels = selected_color_labels_norm_csv | split: ',' | compact -%}
+
+{%- if __debug == '1' -%}
+<pre style="white-space:pre-wrap;font:12px/1.3 monospace;background:#111;color:#0f0;padding:8px;overflow:auto">
 DEBUG/snippet.product-card-variant
 product: {{ product.handle }} ({{ product.id }})
 selected_color_ids(normalized): {{ selected_color_ids | join: '|' }}
-product_variant_metafield.custom.color_variation.ids: {{ product_color_meta_ids | join: '|' }}
-    </pre>
-  {%- endif -%}
+selected_color_labels: {{ selected_color_labels | join: '|' }}
+</pre>
+{%- endif -%}
 
-  {%- assign __rendered_variant_count = 0 -%}
+{%- assign __rendered_variant_count = 0 -%}
 
-  {% for variant in product.variants %}
-    {%- assign show = true -%}
-    {%- if selected_color_ids and selected_color_ids.size > 0 -%}
-      {%- assign show = false -%}
+{%- for variant in product.variants -%}
+  {%- assign show = true -%}
 
-      {%- comment -%}DEEP DEBUG for this variant metafield{%- endcomment -%}
-      {%- if __debug == '1' -%}
-        {%- assign _cv = variant.metafields.custom.color_variation -%}
-        <pre style="white-space:pre-wrap;font:12px/1.3 monospace;background:#111;color:#0f0;padding:6px;margin:6px 0;">
-P:{{ product.handle }} V:{{ variant.id }}
-{% if _cv %}cv-present:true{% else %}cv-present:false{% endif %} | cv-type:"{% if _cv and _cv.type %}{{ _cv.type }}{% endif %}"
-raw-cv: {{ _cv | json }}
-raw-cv.value: {{ _cv.value | json }}
--- enumerate namespace "custom" --
-{%- for _mf in variant.metafields.custom -%}
-mf:key={{ _mf.first }} -> {{ _mf.last | json }}
-{%- endfor -%}
-        </pre>
-      {%- endif -%}
+  {%- if selected_color_ids.size > 0 or selected_color_labels.size > 0 -%}
+    {%- assign show = false -%}
 
-      {%- comment -%}Read variant metafield as metaobject reference(s) — with deeper debug{%- endcomment -%}
-      {%- assign color_meta_ids_csv = '' -%}
-      {%- assign _cv = variant.metafields.custom.color_variation -%}
+    {%- assign _cv = variant.metafields.custom.color_variation -%}
+    {%- assign color_meta_ids_csv = '' -%}
+    {%- assign color_labels_norm_csv = '' -%}
 
-      {%- if __debug == '1' -%}
-        <pre style="white-space:pre-wrap;font:12px/1.3 monospace;background:#111;color:#0f0;padding:6px;margin:6px 0;">
-      DBG: building color_meta_ids for variant {{ variant.id }}
-      cv.present:{% if _cv %}true{% else %}false{% endif %} | cv.type:"{% if _cv and _cv.type %}{{ _cv.type }}{% endif %}"
-      -- loop _cv.value (if any) and show each item id/handle/fields --
-        {%- if _cv and _cv.value != blank -%}
-          {%- for ref in _cv.value -%}
-            {%- assign try_id = ref.id | append: '' -%}
-            {%- assign try_id_tail = try_id | split: '/' | last -%}
-            {%- assign try_handle = ref.handle | append: '' -%}
-            item{{ forloop.index }}.id_raw:{{ try_id }}
-            item{{ forloop.index }}.id_tail:{{ try_id_tail }}
-            item{{ forloop.index }}.handle:{{ try_handle }}
-            item{{ forloop.index }}.fields: color={{ ref.color }} | color_name={{ ref.color_name }}
-          {%- endfor -%}
-        {%- else -%}
-          (no _cv.value)
+    {%- if _cv and _cv.value != blank -%}
+      {%- for ref in _cv.value -%}
+        {%- comment -%}labels path (works){%- endcomment -%}
+        {%- assign lab = ref.color_name | default: ref.title | default: ref.name -%}
+        {%- if lab != blank -%}
+          {%- assign color_labels_norm_csv = color_labels_norm_csv | append: lab | downcase | strip | append: ',' -%}
         {%- endif -%}
-      -- legacy properties preview --
-      cv.references? {% if _cv and _cv.references != blank %}yes{% else %}no{% endif %} | cv.id: {% if _cv and _cv.id %}{{ _cv.id }}{% endif %}
-        </pre>
-      {%- endif -%}
-
-      {%- if _cv -%}
-        {%- if _cv.value != blank -%}
-          {%- comment -%}Preferred: list.metaobject_reference exposes items in .value with .id{%- endcomment -%}
-          {%- for ref in _cv.value -%}
-            {%- assign _id_raw = ref.id | append: '' -%}
-            {%- if _id_raw != '' -%}
-              {%- assign _id_tail = _id_raw | split: '/' | last -%}
-              {%- assign color_meta_ids_csv = color_meta_ids_csv | append: _id_tail | append: ',' -%}
-            {%- endif -%}
-          {%- endfor -%}
-        {%- elsif _cv.references != blank -%}
-          {%- comment -%}Fallback: some themes expose .references array{%- endcomment -%}
-          {%- for ref in _cv.references -%}
-            {%- assign _id_raw = ref.id | append: '' -%}
-            {%- if _id_raw != '' -%}
-              {%- assign _id_tail = _id_raw | split: '/' | last -%}
-              {%- assign color_meta_ids_csv = color_meta_ids_csv | append: _id_tail | append: ',' -%}
-            {%- endif -%}
-          {%- endfor -%}
-        {%- elsif _cv.id != blank -%}
-          {%- comment -%}Single reference edge case{%- endcomment -%}
-          {%- assign _id_raw = _cv.id | append: '' -%}
+        {%- comment -%}ID path (often not exposed on storefront){%- endcomment -%}
+        {%- assign _id_raw = ref.id | append: '' -%}
+        {%- if _id_raw != '' -%}
           {%- assign _id_tail = _id_raw | split: '/' | last -%}
           {%- assign color_meta_ids_csv = color_meta_ids_csv | append: _id_tail | append: ',' -%}
         {%- endif -%}
-      {%- endif -%}
-
-      {%- assign color_meta_ids = color_meta_ids_csv | split: ',' | compact -%}
-
-      {%- if __debug == '1' -%}
-        <pre style="white-space:pre-wrap;font:12px/1.3 monospace;background:#111;color:#0f0;padding:4px 8px;overflow:auto">
-      P:{{ product.handle }} V:{{ variant.id }}
-      opt0:{{ variant.options[0] }} opt1:{{ variant.options[1] }}
-      color_meta_ids:[{{ color_meta_ids | join: ',' }}]
-        </pre>
-      {%- endif -%}
-
-      {%- unless match -%}{% continue %}{%- endunless -%}
+      {%- endfor -%}
+    {%- elsif _cv and _cv.references != blank -%}
+      {%- for ref in _cv.references -%}
+        {%- assign _id_raw = ref.id | append: '' -%}
+        {%- if _id_raw != '' -%}
+          {%- assign _id_tail = _id_raw | split: '/' | last -%}
+          {%- assign color_meta_ids_csv = color_meta_ids_csv | append: _id_tail | append: ',' -%}
+        {%- endif -%}
+        {%- assign lab = ref.color_name | default: ref.title | default: ref.name -%}
+        {%- if lab != blank -%}
+          {%- assign color_labels_norm_csv = color_labels_norm_csv | append: lab | downcase | strip | append: ',' -%}
+        {%- endif -%}
+      {%- endfor -%}
     {%- endif -%}
+
+    {%- assign color_meta_ids = color_meta_ids_csv | split: ',' | compact -%}
+    {%- assign color_label_norms = color_labels_norm_csv | split: ',' | compact -%}
+
+    {%- assign match = false -%}
+    {%- if selected_color_ids.size > 0 and color_meta_ids.size > 0 -%}
+      {%- for sid in selected_color_ids -%}
+        {%- if color_meta_ids contains sid -%}{%- assign match = true -%}{%- break -%}{%- endif -%}
+      {%- endfor -%}
+    {%- endif -%}
+    {%- if match == false and selected_color_labels.size > 0 and color_label_norms.size > 0 -%}
+      {%- for sl in selected_color_labels -%}
+        {%- if color_label_norms contains sl -%}{%- assign match = true -%}{%- break -%}{%- endif -%}
+      {%- endfor -%}
+    {%- endif -%}
+
+    {%- if __debug == '1' -%}
+<pre style="white-space:pre-wrap;font:12px/1.3 monospace;background:#111;color:#0f0;padding:4px 8px;overflow:auto">
+P:{{ product.handle }} V:{{ variant.id }}
+opt0:{{ variant.options[0] }} opt1:{{ variant.options[1] }}
+color_meta_ids:[{{ color_meta_ids | join: ',' }}]
+color_label_norms:[{{ color_label_norms | join: ',' }}]
+match:{{ match }}
+</pre>
+    {%- endif -%}
+
+    {%- unless match -%}{% continue %}{%- endunless -%}
+  {%- endif -%}
 
     {% if filter_metal != blank and variant.options[0] != blank and variant.options[0] != filter_metal and variant.options[1] != filter_metal %}
       {% continue %}
