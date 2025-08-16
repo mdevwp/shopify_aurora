@@ -96,7 +96,7 @@
       {%- for f in collection.filters -%}
         {%- if f.param_name == 'filter.v.m.custom.color_variation' -%}
           {%- for av in f.active_values -%}
-            {%- assign csv = _csv | append: av.value | append: ',' -%}
+            {%- assign csv = csv | append: av.value | append: ',' -%}
           {%- endfor -%}
         {%- endif -%}
       {%- endfor -%}
