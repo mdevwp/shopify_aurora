@@ -90,9 +90,86 @@
 
 {% if product.id != blank %}
 
+  {%- comment -%}Collect active color-variation filter values (IDs + labels){%- endcomment -%}
+  {%- assign __sel_ids_csv = '' -%}
+  {%- assign __sel_labels_csv = '' -%}
+  {%- if collection and collection.filters -%}
+    {%- for f in collection.filters -%}
+      {%- if f.param_name == 'filter.v.m.custom.color_variation' -%}
+        {%- for av in f.active_values -%}
+          {%- if av.value != blank -%}{%- assign __sel_ids_csv = __sel_ids_csv | append: av.value | append: ',' -%}{%- endif -%}
+          {%- if av.label != blank -%}{%- assign __sel_labels_csv = __sel_labels_csv | append: av.label | append: ',' -%}{%- endif -%}
+        {%- endfor -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endif -%}
+
+  {%- assign _sel_ids = __sel_ids_csv | split: ',' | compact -%}
+  {%- assign _sel_ids_num_csv = '' -%}
+  {%- for gid in _sel_ids -%}
+    {%- assign tail = gid | split: '/' | last -%}
+    {%- assign _sel_ids_num_csv = _sel_ids_num_csv | append: tail | append: ',' -%}
+  {%- endfor -%}
+  {%- assign selected_color_ids = _sel_ids_num_csv | split: ',' | compact -%}
+
+  {%- assign selected_color_labels = __sel_labels_csv | split: ',' | compact -%}
+  {%- assign selected_color_labels_norm_csv = '' -%}
+  {%- for lab in selected_color_labels -%}
+    {%- assign norm = lab | downcase | strip -%}
+    {%- assign selected_color_labels_norm_csv = selected_color_labels_norm_csv | append: norm | append: ',' -%}
+  {%- endfor -%}
+  {%- assign selected_color_labels = selected_color_labels_norm_csv | split: ',' | compact -%}
   
   {% for variant in product.variants %}
+    {%- comment -%}If a color-variation filter is active, only show matching variants{%- endcomment -%}
+    {%- if selected_color_ids.size > 0 or selected_color_labels.size > 0 -%}
+      {%- assign _cv = variant.metafields.custom.color_variation -%}
+      {%- assign color_meta_ids_csv = '' -%}
+      {%- assign color_labels_norm_csv = '' -%}
 
+      {%- if _cv and _cv.value != blank -%}
+        {%- for ref in _cv.value -%}
+          {%- assign lab = ref.color_name | default: ref.title | default: ref.name -%}
+          {%- if lab != blank -%}
+            {%- assign color_labels_norm_csv = color_labels_norm_csv | append: lab | downcase | strip | append: ',' -%}
+          {%- endif -%}
+          {%- assign _id_raw = ref.id | append: '' -%}
+          {%- if _id_raw != '' -%}
+            {%- assign _id_tail = _id_raw | split: '/' | last -%}
+            {%- assign color_meta_ids_csv = color_meta_ids_csv | append: _id_tail | append: ',' -%}
+          {%- endif -%}
+        {%- endfor -%}
+      {%- elsif _cv and _cv.references != blank -%}
+        {%- for ref in _cv.references -%}
+          {%- assign _id_raw = ref.id | append: '' -%}
+          {%- if _id_raw != '' -%}
+            {%- assign _id_tail = _id_raw | split: '/' | last -%}
+            {%- assign color_meta_ids_csv = color_meta_ids_csv | append: _id_tail | append: ',' -%}
+          {%- endif -%}
+          {%- assign lab = ref.color_name | default: ref.title | default: ref.name -%}
+          {%- if lab != blank -%}
+            {%- assign color_labels_norm_csv = color_labels_norm_csv | append: lab | downcase | strip | append: ',' -%}
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endif -%}
+
+      {%- assign color_meta_ids = color_meta_ids_csv | split: ',' | compact -%}
+      {%- assign color_label_norms = color_labels_norm_csv | split: ',' | compact -%}
+
+      {%- assign __match = false -%}
+      {%- if selected_color_ids.size > 0 and color_meta_ids.size > 0 -%}
+        {%- for sid in selected_color_ids -%}
+          {%- if color_meta_ids contains sid -%}{%- assign __match = true -%}{%- break -%}{%- endif -%}
+        {%- endfor -%}
+      {%- endif -%}
+      {%- if __match == false and selected_color_labels.size > 0 and color_label_norms.size > 0 -%}
+        {%- for sl in selected_color_labels -%}
+          {%- if color_label_norms contains sl -%}{%- assign __match = true -%}{%- break -%}{%- endif -%}
+        {%- endfor -%}
+      {%- endif -%}
+
+      {%- unless __match -%}{% continue %}{%- endunless -%}
+    {%- endif -%}
 
     {% if filter_metal != blank and variant.options[0] != blank and variant.options[0] != filter_metal and variant.options[1] != filter_metal %}       
       {% comment %}{% endcomment %}
