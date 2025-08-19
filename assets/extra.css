@@ -510,3 +510,6 @@ float-element#HeaderDropdownMenu-ohrringe,
 .shopify-block  button.intrada-wishlist--button.intrada-wishlist--checked .intrada-wishlist--button--when-not-added, .shopify-block  button.intrada-wishlist--button.intrada-wishlist--checked .intrada-wishlist--button--when-added {
 	color: black;
 }
+button.product-card__btn {
+  background: #000;
+}
