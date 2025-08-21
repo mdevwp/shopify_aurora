@@ -244,13 +244,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Первый прогон
   applyAll();
 
-  // На всякий — ещё раз после DOMContentLoaded
   document.addEventListener('DOMContentLoaded', () => applyAll());
 
-  // Наблюдаем за динамическими вставками (попапы, ajax)
   const obs = new MutationObserver((mutations) => {
     for (const m of mutations) {
       if (m.type === 'childList') {
@@ -268,4 +265,50 @@ document.addEventListener('DOMContentLoaded', () => {
     childList: true,
     attributes: true
   });
+})();
+
+//Оновлення варіації
+(function () { const notify = () => window.dispatchEvent(new Event('shopify:url-changed')); ['pushState','replaceState'].forEach((m) => { const orig = history[m]; history[m] = function () { const r = orig.apply(this, arguments); notify(); return r; }; }); window.addEventListener('popstate', notify); })();
+
+(function () {
+  const productJsonEl = document.querySelector('[type="application/json"][data-product]');
+  if (!productJsonEl) return;
+  const product = JSON.parse(productJsonEl.textContent);
+  const form = document.querySelector('form[action^="/cart/add"]');
+
+  function findVariantById(id){ id=String(id); return product.variants.find(v=>String(v.id)===id)||null; }
+
+  function syncFormToVariant(variant){
+    if (!variant || !form) return;
+    (variant.options||[]).forEach((val, i) => {
+      const optName = `options[${product.options[i]}]`;
+      const radio = form.querySelector(`input[type="radio"][name="${CSS.escape(optName)}"][value="${CSS.escape(val)}"]`);
+      if (radio) { radio.checked = true; radio.dispatchEvent(new Event('change',{bubbles:true})); return; }
+      const select = form.querySelector(`select[name="${CSS.escape(optName)}"]`);
+      if (select) { select.value = val; select.dispatchEvent(new Event('change',{bubbles:true})); }
+    });
+
+    document.querySelector('variant-selects')?.dispatchEvent(new Event('change', {bubbles:true}));
+  }
+
+  function updateGallery(variant){
+    if (!variant || !variant.featured_media) return;
+    const id = String(variant.featured_media.id);
+    const btn = document.querySelector(`[data-media-id="${CSS.escape(id)}"]`);
+    if (btn) { btn.click(); return; }
+    const slide = document.querySelector(`[data-media-id="${CSS.escape(id)}"], [data-gallery-media-id="${CSS.escape(id)}"]`);
+    slide?.scrollIntoView?.({block:'nearest', inline:'center'});
+  }
+
+  function applyVariantFromUrl(){
+    const v = new URLSearchParams(location.search).get('variant');
+    if (!v) return;
+    const variant = findVariantById(v);
+    if (!variant) return;
+    syncFormToVariant(variant);
+    updateGallery(variant);
+  }
+
+  document.addEventListener('DOMContentLoaded', applyVariantFromUrl);
+  window.addEventListener('shopify:url-changed', applyVariantFromUrl);
 })();
