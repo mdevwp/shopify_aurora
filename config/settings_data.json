@@ -221,11 +221,6 @@
           "position": "middle-left"
         }
       },
-      "940650814580334357": {
-        "type": "shopify://apps/product-compare/blocks/app-embed-block/2ec083cc-5677-4d10-a2af-c02464aa361b",
-        "disabled": false,
-        "settings": {}
-      },
       "3192664013427500466": {
         "type": "shopify://apps/wishcraft-ultimate-wishlist/blocks/wishlist-render/f2e93a20-20d3-4e28-9abb-b5ab07f852bf",
         "disabled": false,
@@ -249,6 +244,11 @@
           "button_vertical_position": "lowest",
           "greeting_message": ""
         }
+      },
+      "940650814580334357": {
+        "type": "shopify://apps/product-compare/blocks/app-embed-block/2ec083cc-5677-4d10-a2af-c02464aa361b",
+        "disabled": true,
+        "settings": {}
       }
     }
   },
