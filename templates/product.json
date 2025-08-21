@@ -97,8 +97,8 @@
         "wishcraft_ultimate_wishlist_inline_wishlist_button_N8wbjV": {
           "type": "shopify://apps/wishcraft-ultimate-wishlist/blocks/inline-wishlist-button/f2e93a20-20d3-4e28-9abb-b5ab07f852bf",
           "settings": {
-            "title": "Add to Wishlist",
-            "added_title": "Added to Wishlist",
+            "title": "Zur Wunschliste hinzufügen",
+            "added_title": "Zur Wunschliste hinzufügen",
             "icon": ""
           }
         },
@@ -276,7 +276,10 @@
       "blocks": {
         "judge_me_reviews_review_widget_VFCT4b": {
           "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {}
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200
+          }
         }
       },
       "block_order": [
