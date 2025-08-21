@@ -25,7 +25,6 @@
       "blocks": {
         "vendor": {
           "type": "vendor",
-          "disabled": true,
           "settings": {}
         },
         "title": {
@@ -41,6 +40,20 @@
             "show_tax_status": false,
             "show_sale_amount_badge": true,
             "highlight_sale_price": true
+          }
+        },
+        "inventory_status": {
+          "type": "inventory_status",
+          "disabled": true,
+          "settings": {
+            "show_inventory_status": "always",
+            "inventory_threshhold": 11,
+            "text_when_many_in_stock": "Verfügbarkeit: Vorrätig",
+            "text_when_few_in_stock": "Verfügbarkeit: Vorrätig",
+            "show_inventory_counter": false,
+            "high_level_indicator_color": "#00c853",
+            "low_level_indicator_color": "#00c853",
+            "color_inventory_label": false
           }
         },
         "custom_liquid_4dwLpJ": {
@@ -75,19 +88,6 @@
             "text": "",
             "page": "",
             "image_width": 60
-          }
-        },
-        "inventory_status": {
-          "type": "inventory_status",
-          "settings": {
-            "show_inventory_status": "always",
-            "inventory_threshhold": 11,
-            "text_when_many_in_stock": "Verfügbarkeit: Vorrätig",
-            "text_when_few_in_stock": "Verfügbarkeit: Vorrätig",
-            "show_inventory_counter": false,
-            "high_level_indicator_color": "#00c853",
-            "low_level_indicator_color": "#00c853",
-            "color_inventory_label": false
           }
         },
         "quantity_selector": {
@@ -133,10 +133,10 @@
         "vendor",
         "title",
         "price",
+        "inventory_status",
         "custom_liquid_4dwLpJ",
         "28586830-d855-4547-8946-94914bac9e85",
         "d3d427d0-4e7d-4f81-9057-c64f65a4f183",
-        "inventory_status",
         "quantity_selector",
         "wishcraft_ultimate_wishlist_inline_wishlist_button_N8wbjV",
         "wishcraft_ultimate_wishlist_wishlist_trigger_icon_kbtBdK",
