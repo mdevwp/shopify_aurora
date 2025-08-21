@@ -248,7 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
   applyAll();
 
   // На всякий — ещё раз после DOMContentLoaded
-  document.addEventListener('DOMContentLoaded', applyAll);
+  document.addEventListener('DOMContentLoaded', () => applyAll());
 
   // Наблюдаем за динамическими вставками (попапы, ajax)
   const obs = new MutationObserver((mutations) => {
