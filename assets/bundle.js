@@ -17454,7 +17454,7 @@ class ProductContent extends base_component_1.BaseComponent {
         });
     };
     variantChangeReload = () => {
-        location.reload();
+        //location.reload();
     };
     handleVariantChange = ({ variant }) => {
         this.currentContainers.forEach(container => {
