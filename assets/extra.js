@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-/*
+
 document.addEventListener("DOMContentLoaded", function() {
     document.body.addEventListener("click", function(event) {
         let button = event.target.closest(".basic-wishlist-button");
@@ -79,4 +79,3 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
-*/
