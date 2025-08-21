@@ -293,3 +293,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('popstate', () => reloadIfVariantChanged(location.href));
 })();
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    document.body.addEventListener("click", function(event) {
+        let button = event.target.closest(".basic-wishlist-button");
+        if (button) {
+            event.preventDefault(); 
+            let variantID = document.querySelector('[name="id"]').value;
+            let formData = new FormData();
+            formData.append("product_id", variantID); 
+
+            fetch("/apps/wishlist/add", {
+                method: "POST",
+                body: formData
+            }).then(response => response.json())
+              .then(data => console.log("Added to wishlist:", data))
+              .catch(error => console.error("Wishlist error:", error));
+        }
+    });
+});
