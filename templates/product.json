@@ -76,10 +76,18 @@
             "icon": "none"
           }
         },
-        "d3d427d0-4e7d-4f81-9057-c64f65a4f183": {
+        "variant_picker_C7EzcM": {
           "type": "variant_picker",
           "settings": {
-            "option_name": ""
+            "option_type": "button-solid",
+            "primary_swatch_option_type": "swatches",
+            "secondary_swatch_option_type": "swatches",
+            "hide_single_value_options": true,
+            "option_name": "",
+            "information_drawer_button_label": "",
+            "text": "",
+            "page": "",
+            "image_width": 60
           }
         },
         "quantity_selector": {
@@ -128,7 +136,7 @@
         "inventory_status",
         "custom_liquid_4dwLpJ",
         "28586830-d855-4547-8946-94914bac9e85",
-        "d3d427d0-4e7d-4f81-9057-c64f65a4f183",
+        "variant_picker_C7EzcM",
         "quantity_selector",
         "wishcraft_ultimate_wishlist_inline_wishlist_button_N8wbjV",
         "wishcraft_ultimate_wishlist_wishlist_trigger_icon_kbtBdK",
