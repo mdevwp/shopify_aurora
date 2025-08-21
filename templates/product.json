@@ -69,7 +69,7 @@
             "option_type": "button-solid",
             "primary_swatch_option_type": "swatches",
             "secondary_swatch_option_type": "swatches",
-            "hide_single_value_options": true,
+            "hide_single_value_options": false,
             "option_name": "",
             "information_drawer_button_label": "",
             "text": "",
