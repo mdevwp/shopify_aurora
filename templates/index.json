@@ -16,7 +16,8 @@
           "type": "image-banner",
           "settings": {
             "color_scheme": "secondary",
-            "desktop_img": "shopify://shop_images/alexascha-mix-and-match-shop-banner-2.webp",
+            "desktop_img": "shopify://shop_images/alexascha-nachhaltiger-schmuck-pureform-desktop.jpg",
+            "mobile_img": "shopify://shop_images/alexascha-nachhaltiger-schmuck-banner-pureform-mobile.jpg",
             "desktop_overlay_opacity": 12,
             "mobile_overlay_opacity": 12,
             "caption": "",
