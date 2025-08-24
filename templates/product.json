@@ -80,7 +80,7 @@
           "type": "variant_picker",
           "settings": {
             "option_type": "button-solid",
-            "primary_swatch_option_type": "swatches",
+            "primary_swatch_option_type": "variant-images",
             "secondary_swatch_option_type": "swatches",
             "hide_single_value_options": true,
             "option_name": "",
