@@ -322,158 +322,6 @@
         "section_spacing_bottom": 30
       }
     },
-    "multicolumn_DTDANp": {
-      "type": "multicolumn",
-      "blocks": {
-        "column_J6RKRQ": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/1.svg",
-            "desktop_image_width": 80,
-            "mobile_image_width": 100,
-            "image_ratio": 1,
-            "title": "",
-            "text": "<p>Haltbare Materialien</p>",
-            "link_text": "",
-            "link_url": ""
-          }
-        },
-        "column_Vkjtmr": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/2.svg",
-            "desktop_image_width": 80,
-            "mobile_image_width": 100,
-            "image_ratio": 1,
-            "title": "",
-            "text": "<p>Upcycling Technologien</p>",
-            "link_text": "",
-            "link_url": ""
-          }
-        },
-        "column_wyqE8N": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/3.svg",
-            "desktop_image_width": 80,
-            "mobile_image_width": 100,
-            "image_ratio": 1,
-            "title": "",
-            "text": "<p>Nachhaltige Verpackung</p>",
-            "link_text": "",
-            "link_url": ""
-          }
-        },
-        "column_mczD3Y": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/4.svg",
-            "desktop_image_width": 80,
-            "mobile_image_width": 100,
-            "image_ratio": 1,
-            "title": "",
-            "text": "<p>Made in Germany</p>",
-            "link_text": "",
-            "link_url": ""
-          }
-        },
-        "column_ceMdmG": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/5.svg",
-            "desktop_image_width": 80,
-            "mobile_image_width": 100,
-            "image_ratio": 1,
-            "title": "",
-            "text": "<p>Klimaneutraler Versand</p>",
-            "link_text": "",
-            "link_url": ""
-          }
-        }
-      },
-      "block_order": [
-        "column_J6RKRQ",
-        "column_Vkjtmr",
-        "column_wyqE8N",
-        "column_mczD3Y",
-        "column_ceMdmG"
-      ],
-      "custom_css": [
-        "@media screen and (max-width: 768px) {.multicolumn__column-media--image {margin-bottom: -30px; justify-content: center; }}"
-      ],
-      "settings": {
-        "color_scheme": "default",
-        "container_size": "medium",
-        "desktop_layout": "grid",
-        "mobile_layout": "slideshow",
-        "title": "",
-        "heading_size": "h2",
-        "text": "",
-        "body_size": "body0",
-        "content_alignment": "center",
-        "column_heading_size": "h6",
-        "column_body_size": "body5",
-        "column_alignment": "center",
-        "desktop_columns": 5,
-        "desktop_space_between_cards": 0,
-        "desktop_content_spacing": 20,
-        "mobile_space_between_cards": 20,
-        "mobile_content_spacing": 10,
-        "show_column_background": false,
-        "show_navigation_on_hover": false,
-        "disable_mobile_version": true,
-        "align_media_center": false,
-        "media_min_height": 0,
-        "disable_desktop": false,
-        "disable_mobile": false,
-        "btn_text": "",
-        "btn_url": "",
-        "btn_style": "outline",
-        "autoplay_mode": "disabled",
-        "autoplay_interval": 3,
-        "add_side_paddings": true,
-        "section_spacing_top": 20,
-        "section_spacing_bottom": 20
-      }
-    },
-    "featured_collection_jiFBPx": {
-      "type": "featured-collection",
-      "settings": {
-        "color_scheme": "default",
-        "container_size": "page-width",
-        "desktop_layout": "carousel",
-        "mobile_layout": "one-column",
-        "title": "BESTSELLER",
-        "heading_size": "h3",
-        "alignment": "center",
-        "collection": "",
-        "featured_products": [
-          "verstellbarer-edelstahlring-mit-kreiselementen",
-          "kleine-ohrstecker-aus-glas-10-mm",
-          "basic-creolen-clips-minimalistische-ohrringe",
-          "anhaenger-fuer-creolen-mix-match-charms",
-          "kurze-kette-mit-plaettchen-verstellbar"
-        ],
-        "img_ratio": "square",
-        "product_card_align": "center",
-        "cards_to_show": 16,
-        "desktop_columns": 5,
-        "desktop_space_between_cards": 16,
-        "mobile_space_between_cards": 16,
-        "show_navigation_on_hover": true,
-        "collection_card_position": "after-all-items",
-        "collection_card_content_position": "on-image-bottom",
-        "collection_card_content_align": "center",
-        "collection_card_heading_size": "h6",
-        "collection_card_show_product_count": true,
-        "collection_card_overlay_opacity": 15,
-        "autoplay_mode": "disabled",
-        "autoplay_interval": 3,
-        "add_side_paddings": true,
-        "section_spacing_top": 40,
-        "section_spacing_bottom": 40
-      }
-    },
     "testimonials_Mzndbn": {
       "type": "testimonials",
       "blocks": {
@@ -593,11 +441,11 @@
         "color_scheme": "default",
         "enable_background_around_container": true,
         "color_testimonials": true,
-        "container_size": "medium",
+        "container_size": "page-width",
         "desktop_layout": "bottom-carousel",
         "mobile_layout": "slideshow",
         "cards_per_slide": 3,
-        "desktop_space_between_cards": 16,
+        "desktop_space_between_cards": 20,
         "desktop_quote_alignment": "center",
         "mobile_quote_alignment": "center",
         "show_rating": true,
@@ -614,9 +462,47 @@
         "image_size": 100,
         "autoplay_mode": "disabled",
         "autoplay_interval": 3,
-        "add_side_paddings": true,
+        "add_side_paddings": false,
         "section_spacing_top": 0,
         "section_spacing_bottom": 19
+      }
+    },
+    "featured_collection_jiFBPx": {
+      "type": "featured-collection",
+      "settings": {
+        "color_scheme": "default",
+        "container_size": "page-width",
+        "desktop_layout": "carousel",
+        "mobile_layout": "one-column",
+        "title": "BESTSELLER",
+        "heading_size": "h3",
+        "alignment": "center",
+        "collection": "",
+        "featured_products": [
+          "verstellbarer-edelstahlring-mit-kreiselementen",
+          "kleine-ohrstecker-aus-glas-10-mm",
+          "basic-creolen-clips-minimalistische-ohrringe",
+          "anhaenger-fuer-creolen-mix-match-charms",
+          "kurze-kette-mit-plaettchen-verstellbar"
+        ],
+        "img_ratio": "square",
+        "product_card_align": "center",
+        "cards_to_show": 16,
+        "desktop_columns": 5,
+        "desktop_space_between_cards": 16,
+        "mobile_space_between_cards": 16,
+        "show_navigation_on_hover": true,
+        "collection_card_position": "after-all-items",
+        "collection_card_content_position": "on-image-bottom",
+        "collection_card_content_align": "center",
+        "collection_card_heading_size": "h6",
+        "collection_card_show_product_count": true,
+        "collection_card_overlay_opacity": 15,
+        "autoplay_mode": "disabled",
+        "autoplay_interval": 3,
+        "add_side_paddings": true,
+        "section_spacing_top": 40,
+        "section_spacing_bottom": 40
       }
     },
     "images_with_text_jNKQUG": {
@@ -656,6 +542,120 @@
         "add_side_paddings": true,
         "section_spacing_top": 40,
         "section_spacing_bottom": 80
+      }
+    },
+    "multicolumn_DTDANp": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_J6RKRQ": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/1.svg",
+            "desktop_image_width": 80,
+            "mobile_image_width": 100,
+            "image_ratio": 1,
+            "title": "",
+            "text": "<p>Haltbare Materialien</p>",
+            "link_text": "",
+            "link_url": ""
+          }
+        },
+        "column_Vkjtmr": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/2.svg",
+            "desktop_image_width": 80,
+            "mobile_image_width": 100,
+            "image_ratio": 1,
+            "title": "",
+            "text": "<p>Upcycling Technologien</p>",
+            "link_text": "",
+            "link_url": ""
+          }
+        },
+        "column_wyqE8N": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/3.svg",
+            "desktop_image_width": 80,
+            "mobile_image_width": 100,
+            "image_ratio": 1,
+            "title": "",
+            "text": "<p>Nachhaltige Verpackung</p>",
+            "link_text": "",
+            "link_url": ""
+          }
+        },
+        "column_mczD3Y": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/4.svg",
+            "desktop_image_width": 80,
+            "mobile_image_width": 100,
+            "image_ratio": 1,
+            "title": "",
+            "text": "<p>Made in Germany</p>",
+            "link_text": "",
+            "link_url": ""
+          }
+        },
+        "column_ceMdmG": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/5.svg",
+            "desktop_image_width": 80,
+            "mobile_image_width": 100,
+            "image_ratio": 1,
+            "title": "",
+            "text": "<p>Klimaneutraler Versand</p>",
+            "link_text": "",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_J6RKRQ",
+        "column_Vkjtmr",
+        "column_wyqE8N",
+        "column_mczD3Y",
+        "column_ceMdmG"
+      ],
+      "custom_css": [
+        "@media screen and (max-width: 768px) {.multicolumn__column-media--image {margin-bottom: -30px; justify-content: center; }}"
+      ],
+      "settings": {
+        "color_scheme": "default",
+        "container_size": "medium",
+        "desktop_layout": "grid",
+        "mobile_layout": "slideshow",
+        "title": "",
+        "heading_size": "h2",
+        "text": "",
+        "body_size": "body0",
+        "content_alignment": "center",
+        "column_heading_size": "h6",
+        "column_body_size": "body5",
+        "column_alignment": "center",
+        "desktop_columns": 5,
+        "desktop_space_between_cards": 0,
+        "desktop_content_spacing": 20,
+        "mobile_space_between_cards": 20,
+        "mobile_content_spacing": 10,
+        "show_column_background": false,
+        "show_navigation_on_hover": false,
+        "disable_mobile_version": true,
+        "align_media_center": false,
+        "media_min_height": 0,
+        "disable_desktop": false,
+        "disable_mobile": false,
+        "btn_text": "",
+        "btn_url": "",
+        "btn_style": "outline",
+        "autoplay_mode": "disabled",
+        "autoplay_interval": 3,
+        "add_side_paddings": true,
+        "section_spacing_top": 20,
+        "section_spacing_bottom": 20
       }
     },
     "images_with_text_KeREUX": {
@@ -737,10 +737,10 @@
     "multicolumn_xjFjyb",
     "three_banners_FVKz3p",
     "collection_list_B9kaQC",
-    "multicolumn_DTDANp",
-    "featured_collection_jiFBPx",
     "testimonials_Mzndbn",
+    "featured_collection_jiFBPx",
     "images_with_text_jNKQUG",
+    "multicolumn_DTDANp",
     "images_with_text_KeREUX",
     "collection_list_Ym7Vw4"
   ]
