@@ -403,7 +403,7 @@
       ],
       "settings": {
         "color_scheme": "default",
-        "container_size": "large",
+        "container_size": "medium",
         "desktop_layout": "grid",
         "mobile_layout": "slideshow",
         "title": "",
@@ -415,12 +415,12 @@
         "column_body_size": "body5",
         "column_alignment": "center",
         "desktop_columns": 5,
-        "desktop_space_between_cards": 26,
-        "desktop_content_spacing": 24,
+        "desktop_space_between_cards": 0,
+        "desktop_content_spacing": 20,
         "mobile_space_between_cards": 20,
         "mobile_content_spacing": 10,
         "show_column_background": false,
-        "show_navigation_on_hover": true,
+        "show_navigation_on_hover": false,
         "disable_mobile_version": true,
         "align_media_center": false,
         "media_min_height": 0,
@@ -442,7 +442,7 @@
         "color_scheme": "default",
         "container_size": "page-width",
         "desktop_layout": "carousel",
-        "mobile_layout": "carousel",
+        "mobile_layout": "one-column",
         "title": "BESTSELLER",
         "heading_size": "h3",
         "alignment": "center",
@@ -472,45 +472,6 @@
         "add_side_paddings": true,
         "section_spacing_top": 40,
         "section_spacing_bottom": 40
-      }
-    },
-    "images_with_text_jNKQUG": {
-      "type": "images-with-text",
-      "blocks": {
-        "image_Nd64Vi": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/alexascha-nachhaltiges-schmucklabel-alexandra-portrait.png"
-          }
-        }
-      },
-      "block_order": [
-        "image_Nd64Vi"
-      ],
-      "settings": {
-        "color_scheme": "default",
-        "container_size": "large",
-        "content_layout": "left",
-        "image_layout": "collage",
-        "img_ratio": 0.8,
-        "rotate_images": false,
-        "icon": "none",
-        "subheading": "",
-        "heading": "WAS MACHT UNS BESONDERS?",
-        "heading_size": "h3",
-        "body": "<p>Wir lieben die Welt in all ihren Farben und feiern die Vielfalt mehr als alles andere. Deswegen kreieren wir nachhaltigen Schmuck, der Deine Persönlichkeit in den Mittelpunkt stellt. Mit unserer positiven Grundeinstellung setzen wir auf Kontraste und bringen Gegensätze zusammen – denn Einschließen macht die Welt viel bunter als Ausgrenzen.</p><p></p><p>Erfahre mehr darüber, wie wir Nachhaltigkeit und Abwechslung zusammenbringen und welche Menschen hinter der Marke ALEXASCHA stehen. </p>",
-        "body_size": "body3",
-        "content_alignment": "center",
-        "desktop_content_width": 360,
-        "first_button_text": "LERNE UNS KENNEN",
-        "first_button_link": "shopify://pages/das-sind-wir",
-        "first_button_style": "solid",
-        "second_button_text": "",
-        "second_button_link": "",
-        "second_button_style": "solid",
-        "add_side_paddings": true,
-        "section_spacing_top": 40,
-        "section_spacing_bottom": 80
       }
     },
     "testimonials_Mzndbn": {
@@ -658,6 +619,45 @@
         "section_spacing_bottom": 19
       }
     },
+    "images_with_text_jNKQUG": {
+      "type": "images-with-text",
+      "blocks": {
+        "image_Nd64Vi": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/alexascha-nachhaltiges-schmucklabel-alexandra-portrait.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_Nd64Vi"
+      ],
+      "settings": {
+        "color_scheme": "default",
+        "container_size": "large",
+        "content_layout": "left",
+        "image_layout": "collage",
+        "img_ratio": 0.8,
+        "rotate_images": false,
+        "icon": "none",
+        "subheading": "",
+        "heading": "WAS MACHT UNS BESONDERS?",
+        "heading_size": "h3",
+        "body": "<p>Wir lieben die Welt in all ihren Farben und feiern die Vielfalt mehr als alles andere. Deswegen kreieren wir nachhaltigen Schmuck, der Deine Persönlichkeit in den Mittelpunkt stellt. Mit unserer positiven Grundeinstellung setzen wir auf Kontraste und bringen Gegensätze zusammen – denn Einschließen macht die Welt viel bunter als Ausgrenzen.</p><p></p><p>Erfahre mehr darüber, wie wir Nachhaltigkeit und Abwechslung zusammenbringen und welche Menschen hinter der Marke ALEXASCHA stehen. </p>",
+        "body_size": "body3",
+        "content_alignment": "center",
+        "desktop_content_width": 360,
+        "first_button_text": "LERNE UNS KENNEN",
+        "first_button_link": "shopify://pages/das-sind-wir",
+        "first_button_style": "solid",
+        "second_button_text": "",
+        "second_button_link": "",
+        "second_button_style": "solid",
+        "add_side_paddings": true,
+        "section_spacing_top": 40,
+        "section_spacing_bottom": 80
+      }
+    },
     "images_with_text_KeREUX": {
       "type": "images-with-text",
       "blocks": {
@@ -739,8 +739,8 @@
     "collection_list_B9kaQC",
     "multicolumn_DTDANp",
     "featured_collection_jiFBPx",
-    "images_with_text_jNKQUG",
     "testimonials_Mzndbn",
+    "images_with_text_jNKQUG",
     "images_with_text_KeREUX",
     "collection_list_Ym7Vw4"
   ]
