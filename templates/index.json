@@ -318,6 +318,7 @@
         },
         "text_8iaWtj": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "body": "Create urgency around sales and special offers",
             "body_size": "body3"
@@ -361,10 +362,10 @@
         "desktop_img": "shopify://shop_images/alexascha-glasscchmuck-geometrische-clip-ohrringe-ohne-ohrloch-karibikblau-safrangelb.jpg",
         "desktop_overlay_opacity": 0,
         "mobile_overlay_opacity": 0,
-        "desktop_content_position": "align-items:center;justify-content:center;",
+        "desktop_content_position": "align-items:flex-end;justify-content:center;",
         "desktop_content_align": "center",
         "content_max_width": 704,
-        "content_spacing": 116,
+        "content_spacing": 128,
         "mobile_content_position": "align-items:center;justify-content:center;",
         "mobile_content_align": "center",
         "desktop_content_background": "none",
