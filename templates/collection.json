@@ -49,7 +49,7 @@
         "color_scheme": "default",
         "container_size": "page-width",
         "enable_sorting": true,
-        "show_product_count": false,
+        "show_product_count": true,
         "show_column_count_switcher": true,
         "enable_filtering": true,
         "filters_position": "left",
