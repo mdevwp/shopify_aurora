@@ -71,88 +71,10 @@
         "section_spacing_top": 48,
         "section_spacing_bottom": 48
       }
-    },
-    "multicolumn_QXahxQ": {
-      "type": "multicolumn",
-      "blocks": {
-        "column_with_icon_VVVYAK": {
-          "type": "column_with_icon",
-          "settings": {
-            "icon": "none",
-            "icon_size": 76,
-            "title": "",
-            "text": "",
-            "link_text": "",
-            "link_url": ""
-          }
-        },
-        "column_with_icon_y6qDT3": {
-          "type": "column_with_icon",
-          "settings": {
-            "icon": "none",
-            "icon_size": 64,
-            "title": "",
-            "text": "",
-            "link_text": "",
-            "link_url": ""
-          }
-        },
-        "column_with_icon_Nkp7wQ": {
-          "type": "column_with_icon",
-          "settings": {
-            "icon": "none",
-            "icon_size": 64,
-            "title": "",
-            "text": "",
-            "link_text": "",
-            "link_url": ""
-          }
-        }
-      },
-      "block_order": [
-        "column_with_icon_VVVYAK",
-        "column_with_icon_y6qDT3",
-        "column_with_icon_Nkp7wQ"
-      ],
-      "settings": {
-        "color_scheme": "default",
-        "container_size": "large",
-        "desktop_layout": "grid",
-        "mobile_layout": "one-column-grid",
-        "title": "",
-        "heading_size": "h5",
-        "text": "",
-        "body_size": "body3",
-        "content_alignment": "left",
-        "column_heading_size": "h6",
-        "column_body_size": "body4",
-        "column_alignment": "left",
-        "desktop_columns": 3,
-        "desktop_space_between_cards": 24,
-        "desktop_content_spacing": 24,
-        "mobile_space_between_cards": 16,
-        "mobile_content_spacing": 24,
-        "show_column_background": false,
-        "show_navigation_on_hover": true,
-        "disable_mobile_version": false,
-        "align_media_center": false,
-        "media_min_height": 120,
-        "disable_desktop": false,
-        "disable_mobile": false,
-        "btn_text": "",
-        "btn_url": "",
-        "btn_style": "outline",
-        "autoplay_mode": "disabled",
-        "autoplay_interval": 3,
-        "add_side_paddings": true,
-        "section_spacing_top": 80,
-        "section_spacing_bottom": 80
-      }
     }
   },
   "order": [
     "collection-hero-banner",
-    "products",
-    "multicolumn_QXahxQ"
+    "products"
   ]
 }
