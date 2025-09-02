@@ -476,7 +476,7 @@
           "settings": {
             "rating": 5,
             "text": "<p>Liebes Alexascha-Team, vielen Dank für diesen wunderschönen Ring! Endlich ein Ring, der mega aussieht und perfekt auf meinen (leider breiteren) Finger passt! Bin wirklich begeistert!</p>",
-            "author_name": "ANDREEA",
+            "author_name": "ANDREA",
             "author_details": "",
             "quote_product": "",
             "link": ""
@@ -565,7 +565,7 @@
         "color_scheme": "default",
         "enable_background_around_container": true,
         "color_testimonials": true,
-        "container_size": "page-width",
+        "container_size": "large",
         "desktop_layout": "bottom-carousel",
         "mobile_layout": "slideshow",
         "cards_per_slide": 3,
