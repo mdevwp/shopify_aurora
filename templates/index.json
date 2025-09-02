@@ -474,35 +474,6 @@
         "section_spacing_bottom": 40
       }
     },
-    "collection_list_87MigG": {
-      "type": "collection-list",
-      "name": "t:sections.collection_list.name",
-      "settings": {
-        "color_scheme": "default",
-        "container_size": "page-width",
-        "desktop_layout": "carousel",
-        "mobile_layout": "carousel",
-        "title": "Collection list",
-        "heading_size": "h5",
-        "alignment": "center",
-        "collection_list": [],
-        "img_ratio": "default",
-        "text_style": "on-image-bottom",
-        "collection_card_content_align": "center",
-        "collection_card_heading_size": "h6",
-        "show_product_count": true,
-        "collection_card_overlay_opacity": 10,
-        "desktop_columns": 4,
-        "desktop_space_between_cards": 16,
-        "mobile_space_between_cards": 16,
-        "show_navigation_on_hover": true,
-        "autoplay_mode": "disabled",
-        "autoplay_interval": 3,
-        "add_side_paddings": true,
-        "section_spacing_top": 48,
-        "section_spacing_bottom": 48
-      }
-    },
     "testimonials_Mzndbn": {
       "type": "testimonials",
       "blocks": {
@@ -768,7 +739,6 @@
     "collection_list_B9kaQC",
     "multicolumn_DTDANp",
     "featured_collection_jiFBPx",
-    "collection_list_87MigG",
     "testimonials_Mzndbn",
     "images_with_text_jNKQUG",
     "images_with_text_KeREUX",
