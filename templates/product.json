@@ -292,6 +292,31 @@
         "section_spacing_top": 48,
         "section_spacing_bottom": 48
       }
+    },
+    "recently_viewed_XBBNJA": {
+      "type": "recently-viewed",
+      "name": "t:sections.recently_viewed.name",
+      "settings": {
+        "color_scheme": "default",
+        "container_size": "page-width",
+        "desktop_layout": "carousel",
+        "mobile_layout": "carousel",
+        "title": "KÜRZLICH ANGESEHEN",
+        "heading_size": "h6",
+        "alignment": "center",
+        "img_ratio": "fit-square",
+        "product_card_align": "left",
+        "cards_to_show": 18,
+        "desktop_columns": 4,
+        "desktop_space_between_cards": 12,
+        "mobile_space_between_cards": 16,
+        "show_navigation_on_hover": true,
+        "autoplay_mode": "disabled",
+        "autoplay_interval": 3,
+        "add_side_paddings": true,
+        "section_spacing_top": 48,
+        "section_spacing_bottom": 48
+      }
     }
   },
   "order": [
@@ -299,6 +324,7 @@
     "main",
     "product-details",
     "product-recommendations",
-    "1747656885d1cc914a"
+    "1747656885d1cc914a",
+    "recently_viewed_XBBNJA"
   ]
 }
