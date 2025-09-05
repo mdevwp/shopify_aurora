@@ -446,6 +446,52 @@
         "section_spacing_bottom": 40
       }
     },
+    "1757075299cd4f929e": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_testimonials_carousel_XNEc7C": {
+          "type": "shopify://apps/judge-me-reviews/blocks/testimonials_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "show_sample_reviews": true,
+            "reviews_selection": "all",
+            "products": [],
+            "star_rating": "5_star",
+            "max_reviews": 20,
+            "quote_marks_size": "medium",
+            "product_name_text_size": "small",
+            "verified_badge_style": "icon",
+            "card_height": "extra_tall",
+            "text_size": "small",
+            "stars_size": "large",
+            "arrows_position": "sides",
+            "max_width": 1300,
+            "corner_styling": "square",
+            "quote_marks_style": "basic",
+            "card_color": "#ffffff",
+            "stars_and_quote_marks_color": "#dbe6cd",
+            "text_color": "#000000",
+            "arrows_color": "#dbe6cd",
+            "show_border": true,
+            "border_color": "#dbe6cd",
+            "show_drop_shadow": false,
+            "transition_speed": 5,
+            "header_text": "SO KLINGT VERTRAUEN",
+            "show_average_rating": true
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_testimonials_carousel_XNEc7C"
+      ],
+      "settings": {
+        "color_scheme": "default",
+        "container_size": "large",
+        "custom_liquid": "",
+        "add_side_paddings": true,
+        "section_spacing_top": 48,
+        "section_spacing_bottom": 48
+      }
+    },
     "testimonials_Mzndbn": {
       "type": "testimonials",
       "blocks": {
@@ -560,6 +606,7 @@
         "quote_FtarUe",
         "quote_6kb8BR"
       ],
+      "disabled": true,
       "custom_css": [],
       "settings": {
         "color_scheme": "default",
@@ -826,6 +873,7 @@
     "countdown_banner_G3cP9f",
     "collection_list_B9kaQC",
     "featured_collection_jiFBPx",
+    "1757075299cd4f929e",
     "testimonials_Mzndbn",
     "images_with_text_jNKQUG",
     "images_with_text_KeREUX",
