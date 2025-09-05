@@ -62,7 +62,7 @@
             "style": "static",
             "title": "",
             "heading_size": "caption3",
-            "custom_liquid": "<span style=\"color:#52AC82; font-size: 13px;\"><i class=\"fas fa-shipping-fast\"></i> In 2-5 Tagen bei dir zu Hause\n</span>",
+            "custom_liquid": "<span style=\"color:#fb396c; font-size: 13px;\"><i class=\"fas fa-shipping-fast\"></i> In 2-5 Tagen bei Dir zu Hause\n</span>",
             "icon": "none"
           }
         },
