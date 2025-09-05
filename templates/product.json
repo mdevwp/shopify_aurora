@@ -234,7 +234,7 @@
         "enable_background_around_container": true,
         "container_size": "large",
         "style": "collapsible-rows",
-        "expand_first_collapsible_row": false,
+        "expand_first_collapsible_row": true,
         "collapse_other_rows": true,
         "add_side_paddings": true,
         "section_spacing_top": 18,
@@ -317,6 +317,17 @@
         "section_spacing_top": 48,
         "section_spacing_bottom": 48
       }
+    },
+    "17570741130143b4c6": {
+      "type": "apps",
+      "settings": {
+        "color_scheme": "default",
+        "container_size": "large",
+        "custom_liquid": "",
+        "add_side_paddings": true,
+        "section_spacing_top": 48,
+        "section_spacing_bottom": 48
+      }
     }
   },
   "order": [
@@ -325,6 +336,7 @@
     "product-details",
     "product-recommendations",
     "1747656885d1cc914a",
-    "recently_viewed_XBBNJA"
+    "recently_viewed_XBBNJA",
+    "17570741130143b4c6"
   ]
 }
