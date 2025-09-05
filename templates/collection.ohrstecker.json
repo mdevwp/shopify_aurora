@@ -148,11 +148,34 @@
         "section_spacing_top": 80,
         "section_spacing_bottom": 80
       }
+    },
+    "175707314737546457": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_featured_carousel_TKV8wa": {
+          "type": "shopify://apps/judge-me-reviews/blocks/featured_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "maxwidth": 1080
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_featured_carousel_TKV8wa"
+      ],
+      "settings": {
+        "color_scheme": "default",
+        "container_size": "large",
+        "custom_liquid": "",
+        "add_side_paddings": true,
+        "section_spacing_top": 48,
+        "section_spacing_bottom": 48
+      }
     }
   },
   "order": [
     "collection-hero-banner",
     "products",
-    "multicolumn_K3L8Nn"
+    "multicolumn_K3L8Nn",
+    "175707314737546457"
   ]
 }
