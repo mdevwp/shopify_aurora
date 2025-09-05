@@ -52,6 +52,10 @@
             "color_inventory_label": false
           }
         },
+        "judge_me_reviews_preview_badge_X4nezY": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
         "custom_liquid_4dwLpJ": {
           "type": "custom_liquid",
           "settings": {
@@ -111,24 +115,20 @@
         "product_properties_PGJA6C": {
           "type": "product_properties",
           "settings": {}
-        },
-        "judge_me_reviews_preview_badge_X4nezY": {
-          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {}
         }
       },
       "block_order": [
         "title",
         "price",
         "inventory_status",
+        "judge_me_reviews_preview_badge_X4nezY",
         "custom_liquid_4dwLpJ",
         "28586830-d855-4547-8946-94914bac9e85",
         "variant_picker_C7EzcM",
         "quantity_selector",
         "wishcraft_ultimate_wishlist_wishlist_trigger_icon_kbtBdK",
         "buy_buttons",
-        "product_properties_PGJA6C",
-        "judge_me_reviews_preview_badge_X4nezY"
+        "product_properties_PGJA6C"
       ],
       "settings": {
         "color_scheme": "default",
