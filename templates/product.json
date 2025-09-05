@@ -56,16 +56,6 @@
           "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {}
         },
-        "custom_liquid_4dwLpJ": {
-          "type": "custom_liquid",
-          "settings": {
-            "style": "static",
-            "title": "",
-            "heading_size": "caption3",
-            "custom_liquid": "<span style=\"color:#fb396c; font-size: 13px;\"><i class=\"fas fa-shipping-fast\"></i> In 2-5 Tagen bei Dir zu Hause\n</span>",
-            "icon": "none"
-          }
-        },
         "28586830-d855-4547-8946-94914bac9e85": {
           "type": "description",
           "settings": {
@@ -73,6 +63,16 @@
             "heading_size": "caption3",
             "body_size": "body4",
             "block_style": "static",
+            "icon": "none"
+          }
+        },
+        "custom_liquid_4dwLpJ": {
+          "type": "custom_liquid",
+          "settings": {
+            "style": "static",
+            "title": "",
+            "heading_size": "caption3",
+            "custom_liquid": "<span style=\"color:#fb396c; font-size: 13px;\"><i class=\"fas fa-shipping-fast\"></i> ⛟ In 2-3 Tagen bei Dir zu Hause\n</span>",
             "icon": "none"
           }
         },
@@ -122,8 +122,8 @@
         "price",
         "inventory_status",
         "judge_me_reviews_preview_badge_X4nezY",
-        "custom_liquid_4dwLpJ",
         "28586830-d855-4547-8946-94914bac9e85",
+        "custom_liquid_4dwLpJ",
         "variant_picker_C7EzcM",
         "quantity_selector",
         "wishcraft_ultimate_wishlist_wishlist_trigger_icon_kbtBdK",
