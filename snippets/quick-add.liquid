@@ -1,0 +1,15 @@
+{%- assign has_multiple_variants = product.variants.size > 1 -%}
+<div class="product-card__actions">
+  {%- if has_multiple_variants -%}
+    <a href="{{ product.url }}" class="btn btn--primary">
+      Optionen wählen
+    </a>
+  {%- else -%}
+    <form method="post" action="/cart/add" class="product-card__form">
+      <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+      <button type="submit" class="btn btn--primary" {% unless product.available %}disabled{% endunless %}>
+        {%- if product.available -%}In den Warenkorb{%- else -%}Ausverkauft{%- endif -%}
+      </button>
+    </form>
+  {%- endif -%}
+</div>
