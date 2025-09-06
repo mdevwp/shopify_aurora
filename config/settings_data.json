@@ -112,7 +112,7 @@
     "color_swatches_what_to_show": "colors-and-patterns",
     "color_swatches_when_to_show": "never",
     "show_quick_view": true,
-    "show_add_to_cart": true,
+    "show_add_to_cart": false,
     "desktop_button_style": "without_labels",
     "show_button_on_hover": false,
     "product_card_show_sale_amount_badge": false,
