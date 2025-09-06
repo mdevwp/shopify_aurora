@@ -40,7 +40,6 @@
         },
         "726aa933-7826-412d-a292-9f29cba62205": {
           "type": "in_cart_banner",
-          "disabled": true,
           "settings": {
             "hide_for_empty_cart": false,
             "color_scheme": "custom-3",
