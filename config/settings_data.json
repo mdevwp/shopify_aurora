@@ -111,6 +111,7 @@
     "img_hover": "none",
     "color_swatches_what_to_show": "colors-and-patterns",
     "color_swatches_when_to_show": "always",
+    "color_swatches_when_to_show_on_mobile": "always",
     "show_quick_view": true,
     "show_add_to_cart": true,
     "desktop_button_style": "without_labels",
