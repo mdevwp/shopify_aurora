@@ -101,7 +101,7 @@
     "custom_5_outline_button_background_color": "#d1ad5e",
     "custom_5_outline_button_text_color": "#d1ad5e",
     "custom_5_image_overlay": "#43423d",
-    "default_img_ratio": "portrait",
+    "default_img_ratio": "square",
     "show_vendor": false,
     "show_currency_code": false,
     "show_color_count": false,
