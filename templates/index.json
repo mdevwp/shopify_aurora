@@ -371,7 +371,7 @@
             "day": "15",
             "hour": "1",
             "minute": "0",
-            "hide_on_complete": true,
+            "hide_on_complete": false,
             "evergreen_unit": "day",
             "evergreen_value": 1,
             "evergreen_on_complete": "restart"
