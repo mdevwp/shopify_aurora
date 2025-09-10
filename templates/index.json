@@ -351,6 +351,7 @@
         },
         "text_bALpaR": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "body": "Create urgency around sales and special offers",
             "body_size": "body3"
