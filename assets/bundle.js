@@ -10537,7 +10537,8 @@ class ShapeSwatch extends base_component_1.BaseComponent {
                 "tannengrün": "#28401D",
                 "petrol": "#636F7B",
                 "rosenquarz": "#C38B93",
-                "schneeweiss": "#FFFFFF"
+                "schneeweiss": "#FFFFFF",
+                "chilirot": "#CD5D38"
             };
             const filteredValue = colorMap[value] || value;
             if (isValidColor) {
