@@ -10532,7 +10532,12 @@ class ShapeSwatch extends base_component_1.BaseComponent {
                 "sandrosa": "#decccb",
                 "schneeweiß": "#ffffff",
                 "sonnengelb": "#f2d665",
-                "zitronengelb": "#eadb04"
+                "zitronengelb": "#eadb04",
+                "zartrosa": "#E6D6CF",
+                "tannengrün": "#28401D",
+                "petrol": "#636F7B",
+                "rosenquarz": "#C38B93",
+                "schneeweiss": "#FFFFFF"
             };
             const filteredValue = colorMap[value] || value;
             if (isValidColor) {
