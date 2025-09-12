@@ -824,7 +824,7 @@
     "custom_css": [
       ".sticky-cart-button:before {background: #f73a6d;}",
       ".sticky-cart-button__icon {color: white;}",
-      ".product-card__btn-icon {width: 1rem; height: 1rem; color: #dce7ce;}",
+      ".product-card__btn-icon {width: 2rem; height: 2rem; color: #dce7ce;}",
       ".cart-drawer__on-side-related-products {background: #dce7ce !important;}",
       ".cart-drawer__body-aside-content svg.vertical-product-card__button-icon {width: 1rem; color: #dce7ce;}",
       "button.top.intrada-wishlist--trigger-icon.intrada-wishlist--rendered {margin-top: 0;}"
