@@ -289,17 +289,6 @@
       "name": "Three banners",
       "settings": {}
     },
-    "spacer_GBrxAT": {
-      "type": "spacer",
-      "name": "t:sections.spacer.name",
-      "settings": {
-        "color_scheme": "default",
-        "container_size": "full-screen",
-        "desktop_height": 66,
-        "mobile_height": 40,
-        "show_separator": false
-      }
-    },
     "collection_list_B9kaQC": {
       "type": "collection-list",
       "disabled": true,
@@ -331,93 +320,6 @@
         "add_side_paddings": true,
         "section_spacing_top": 0,
         "section_spacing_bottom": 30
-      }
-    },
-    "countdown_banner_TfyNq8": {
-      "type": "countdown-banner",
-      "blocks": {
-        "subheading_8edHU9": {
-          "type": "subheading",
-          "settings": {
-            "subheading": "BIS ZUM LAUNCH"
-          }
-        },
-        "heading_R8phPg": {
-          "type": "heading",
-          "settings": {
-            "heading": "DER BAUHAUS KOLLEKTION",
-            "heading_size": "h4"
-          }
-        },
-        "text_bALpaR": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "body": "Create urgency around sales and special offers",
-            "body_size": "body3"
-          }
-        },
-        "countdown_jmhckc": {
-          "type": "countdown",
-          "settings": {
-            "color_scheme": "secondary",
-            "background_type": "separate",
-            "background_style": "solid",
-            "enable_separators": false,
-            "captitalize_unit_labels": true,
-            "timer_desktop_width": 75,
-            "mode": "fixed",
-            "year": "2025",
-            "month": "september",
-            "day": "15",
-            "hour": "1",
-            "minute": "0",
-            "hide_on_complete": false,
-            "evergreen_unit": "day",
-            "evergreen_value": 1,
-            "evergreen_on_complete": "restart"
-          }
-        },
-        "buttons_YEpKWV": {
-          "type": "buttons",
-          "settings": {
-            "btn_text": "JETZT VORMERKEN",
-            "btn_url": "https://alexascha.de/collections/bauhaus-kollektion",
-            "btn_style": "solid",
-            "extra_btn_text": "",
-            "extra_btn_url": "",
-            "extra_btn_style": "solid"
-          }
-        }
-      },
-      "block_order": [
-        "subheading_8edHU9",
-        "heading_R8phPg",
-        "text_bALpaR",
-        "countdown_jmhckc",
-        "buttons_YEpKWV"
-      ],
-      "name": "t:sections.countdown_timer.name",
-      "settings": {
-        "color_scheme": "secondary",
-        "enable_background_around_container": false,
-        "container_size": "full-screen",
-        "desktop_ratio": 0.4,
-        "mobile_ratio": 1.6,
-        "desktop_img": "shopify://shop_images/alexascha-glasscchmuck-geometrische-ohrringe-azurblau-kirschrot.jpg",
-        "desktop_overlay_opacity": 0,
-        "mobile_overlay_opacity": 0,
-        "desktop_content_position": "align-items:center;justify-content:center;",
-        "desktop_content_align": "center",
-        "content_max_width": 704,
-        "content_spacing": 116,
-        "mobile_content_position": "align-items:flex-end;justify-content:center;",
-        "mobile_content_align": "center",
-        "desktop_content_background": "none",
-        "mobile_content_background": "none",
-        "add_side_paddings": true,
-        "section_spacing_top": 0,
-        "section_spacing_bottom": 0
       }
     },
     "featured_collection_jiFBPx": {
@@ -902,9 +804,7 @@
     "logo_list_LxyV4R",
     "multicolumn_xjFjyb",
     "three_banners_FVKz3p",
-    "spacer_GBrxAT",
     "collection_list_B9kaQC",
-    "countdown_banner_TfyNq8",
     "featured_collection_jiFBPx",
     "1757075299cd4f929e",
     "testimonials_Mzndbn",
