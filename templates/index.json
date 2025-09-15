@@ -262,8 +262,8 @@
         "alignment": "center",
         "collection_list": [
           "ohrringe",
-          "ringe",
-          "ketten"
+          "ketten",
+          "ringe"
         ],
         "img_ratio": "square",
         "text_style": "under-image-with-background",
