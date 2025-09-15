@@ -250,6 +250,38 @@
         "section_spacing_bottom": 30
       }
     },
+    "collection_list_RUCyW9": {
+      "type": "collection-list",
+      "settings": {
+        "color_scheme": "default",
+        "container_size": "page-width",
+        "desktop_layout": "carousel",
+        "mobile_layout": "carousel",
+        "title": "",
+        "heading_size": "h3",
+        "alignment": "center",
+        "collection_list": [
+          "ohrringe",
+          "ringe",
+          "ketten"
+        ],
+        "img_ratio": "square",
+        "text_style": "under-image-with-background",
+        "collection_card_content_align": "center",
+        "collection_card_heading_size": "caption2",
+        "show_product_count": false,
+        "collection_card_overlay_opacity": 10,
+        "desktop_columns": 3,
+        "desktop_space_between_cards": 16,
+        "mobile_space_between_cards": 16,
+        "show_navigation_on_hover": true,
+        "autoplay_mode": "disabled",
+        "autoplay_interval": 3,
+        "add_side_paddings": true,
+        "section_spacing_top": 48,
+        "section_spacing_bottom": 48
+      }
+    },
     "three_banners_FVKz3p": {
       "type": "three-banners",
       "blocks": {
@@ -803,6 +835,7 @@
     "35abde66-b33a-4178-b3ef-5bba319784ba",
     "logo_list_LxyV4R",
     "multicolumn_xjFjyb",
+    "collection_list_RUCyW9",
     "three_banners_FVKz3p",
     "collection_list_B9kaQC",
     "featured_collection_jiFBPx",
