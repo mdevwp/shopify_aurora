@@ -22,10 +22,10 @@
           "type": "on_side_cart_related",
           "settings": {
             "hide_for_empty_cart": true,
-            "color_scheme": "secondary",
+            "color_scheme": "white",
             "enable_color_background": false,
-            "in_cart_related_layout": "carousel-with-horizontal-cards",
-            "img_ratio": "square",
+            "in_cart_related_layout": "grid-with-horizontal-cards",
+            "img_ratio": "fit-square",
             "heading": "DAS KÖNNTE DIR AUCH GEFALLEN",
             "heading_size": "h7",
             "heading_alignment": "left",
