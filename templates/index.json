@@ -17,7 +17,7 @@
           "settings": {
             "color_scheme": "secondary",
             "desktop_img": "shopify://shop_images/shopbanner-bauhaus-launch.jpg",
-            "mobile_img": "shopify://shop_images/alexascha-nachhaltiger-schmuck-banner-pureform-mobile.jpg",
+            "mobile_img": "shopify://shop_images/shopbanner-bauhaus-launch.jpg",
             "desktop_overlay_opacity": 12,
             "mobile_overlay_opacity": 12,
             "caption": "NEUE KOLLEKTION",
