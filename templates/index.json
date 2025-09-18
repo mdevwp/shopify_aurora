@@ -799,7 +799,7 @@
         "collection_card_heading_size": "caption2",
         "show_product_count": false,
         "collection_card_overlay_opacity": 10,
-        "desktop_columns": 3,
+        "desktop_columns": 5,
         "desktop_space_between_cards": 16,
         "mobile_space_between_cards": 16,
         "show_navigation_on_hover": true,
