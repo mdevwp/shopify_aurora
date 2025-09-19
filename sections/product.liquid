@@ -97,17 +97,6 @@
 
 {% render 'save-section-data-in-global-scope', section: section %}
 
-<script> 
-  gtag('event', 'view_item', { 
-    'send_to': 'AW-16711737174',
-    'value': {{ product.selected_or_first_available_variant.price | money_without_currency | replace: ',', '.' }}, 
-    'items': [
-      {
-        'id': {{ product.selected_or_first_available_variant.id }}, 
-        'google_business_vertical': 'retail'
-      }] 
-  });
-</script>
 
 {% schema %}
 {

@@ -505,25 +505,6 @@
   </div>
 </cart-page>
 
-<script>
-  gtag('event', 'add_to_cart', { 
-    'send_to': 'AW-16711737174',
-    'value': [
-      {% for line_item in cart.items %}
-        {{ line_item.variant.price | money_without_currency | replace: ',', '.' }},
-      {% endfor %}
-    ],
-    'items': [ 
-      {% for line_item in cart.items %}
-        {
-          'id': {{ line_item.variant.id }}, 
-          'google_business_vertical': 'retail'
-        },
-      {% endfor %}
-    ]
-  );
-</script>
-
 {% schema %}
 {
   "name": "t:sections.cart.name",
