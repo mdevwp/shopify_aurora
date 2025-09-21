@@ -36,16 +36,6 @@
     "footer": {
       "type": "footer",
       "blocks": {
-        "footer-4": {
-          "type": "subscribe",
-          "settings": {
-            "title": "Newsletter",
-            "heading_size": "caption2",
-            "text": "<p><strong>Erhalte 5€ auf Deine erste Bestellung </strong>und bleibe auf dem Laufenden (mit dem Abonnieren stimmst Du der <a href=\"/policies/privacy-policy\" title=\"Privacy Policy\">Datenschutzerklärung</a> zu)</p>",
-            "body_size": "body4",
-            "input_style": "solid"
-          }
-        },
         "menu_RY3cYU": {
           "type": "menu",
           "settings": {
@@ -84,7 +74,6 @@
         }
       },
       "block_order": [
-        "footer-4",
         "menu_RY3cYU",
         "footer-2",
         "menu_YBECeV",
