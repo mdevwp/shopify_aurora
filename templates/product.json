@@ -293,65 +293,6 @@
         "section_spacing_bottom": 48
       }
     },
-    "newsletter_GYxrmw": {
-      "type": "newsletter",
-      "blocks": {
-        "caption_HAW8cm": {
-          "type": "caption",
-          "settings": {
-            "caption": "ABONNIERE UNSEREN"
-          }
-        },
-        "title_BaerQT": {
-          "type": "title",
-          "settings": {
-            "title": "NEWSLETTER",
-            "heading_size": "h1"
-          }
-        },
-        "text_atKbTa": {
-          "type": "text",
-          "settings": {
-            "text": "und erhalte 15% Rabatt auf Deine erste Bestellung",
-            "body_size": "body3"
-          }
-        },
-        "subscribe_p4wweY": {
-          "type": "subscribe",
-          "settings": {
-            "input_style": "solid"
-          }
-        }
-      },
-      "block_order": [
-        "caption_HAW8cm",
-        "title_BaerQT",
-        "text_atKbTa",
-        "subscribe_p4wweY"
-      ],
-      "name": "t:sections.newsletter.name",
-      "settings": {
-        "color_scheme": "default",
-        "enable_background_around_container": false,
-        "container_size": "full-screen",
-        "desktop_ratio": 0.2,
-        "mobile_ratio": 1.6,
-        "desktop_img": "shopify://shop_images/alexascha-bunte-quadratische-ringe.jpg",
-        "desktop_overlay_opacity": 0,
-        "mobile_overlay_opacity": 0,
-        "desktop_content_position": "align-items: center;justify-content:center;",
-        "desktop_content_align": "center",
-        "content_max_width": 704,
-        "content_spacing": 16,
-        "mobile_content_position": "align-items:center;justify-content:center;",
-        "mobile_content_align": "center",
-        "desktop_content_background": "none",
-        "mobile_content_background": "solid",
-        "add_side_paddings": true,
-        "section_spacing_top": 0,
-        "section_spacing_bottom": 0
-      }
-    },
     "recently_viewed_XBBNJA": {
       "type": "recently-viewed",
       "name": "t:sections.recently_viewed.name",
@@ -384,7 +325,6 @@
     "product-details",
     "product-recommendations",
     "1747656885d1cc914a",
-    "newsletter_GYxrmw",
     "recently_viewed_XBBNJA"
   ]
 }
