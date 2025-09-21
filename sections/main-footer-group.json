@@ -11,10 +11,10 @@
   "type": "footer",
   "name": "Footer Group",
   "sections": {
-    "1758466241cab593dc": {
+    "17584679332d0849f5": {
       "type": "apps",
       "blocks": {
-        "klaviyo_email_marketing_sms_form_embed_block_AL8jyf": {
+        "klaviyo_email_marketing_sms_form_embed_block_FmAHFh": {
           "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/form-embed-block/2632fe16-c075-4321-a88b-50b567f42507",
           "settings": {
             "formId": ""
@@ -22,13 +22,13 @@
         }
       },
       "block_order": [
-        "klaviyo_email_marketing_sms_form_embed_block_AL8jyf"
+        "klaviyo_email_marketing_sms_form_embed_block_FmAHFh"
       ],
       "settings": {
         "color_scheme": "default",
-        "container_size": "medium",
+        "container_size": "large",
         "custom_liquid": "<div class=\"klaviyo-form-RGrqja\"></div>",
-        "add_side_paddings": true,
+        "add_side_paddings": false,
         "section_spacing_top": 48,
         "section_spacing_bottom": 48
       }
@@ -110,7 +110,7 @@
     }
   },
   "order": [
-    "1758466241cab593dc",
+    "17584679332d0849f5",
     "footer"
   ]
 }
