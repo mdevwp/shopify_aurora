@@ -143,18 +143,18 @@
         "section_spacing_bottom": 0
       }
     },
-    "images_with_text_weagp9": {
+    "images_with_text_4RRH6h": {
       "type": "images-with-text",
       "blocks": {
-        "image_4g4pNy": {
+        "image_cFTGn8": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/alexascha-nachhaltiger-edelstahlschmuck-kollektion.jpg"
+            "image": "shopify://shop_images/alexascha-handgemachter-glas-schmuck-aus-der-bauhaus-kollektion_2493bcbe-83c5-455c-a61e-0fe44bab944a.png"
           }
         }
       },
       "block_order": [
-        "image_4g4pNy"
+        "image_cFTGn8"
       ],
       "settings": {
         "color_scheme": "default",
@@ -165,14 +165,14 @@
         "rotate_images": false,
         "icon": "none",
         "subheading": "",
-        "heading": "AVA",
+        "heading": "BAUHAUS",
         "heading_size": "h3",
-        "body": "<p>Die AVA Kollektion ist eine Hommage an die Einzigartigkeit jeder Persönlichkeit. Durch ihren schlichten, aber hochwertigen Look und die dezenten Details kann Dein Charakter strahlen. Nicht ohne Grund, haben wir der Kollektion einen besonderen Namen gegeben: AVA heißt “Die Mutige” und ist frei von der Vorstellung, wie Du sie zu tragen hast. Die dazugehörigen Ringe, Armbänder und Ketten grenzen nicht ein, sie unterstreichen. Aus Edelstahl gefertigt sind die Schmuckstücke mit klaren Formen absolut alltagstauglich, überall tragbar und grenzenlos kombinierbar.</p>",
+        "body": "<p>Formvollendet. Funktional. Farbintensiv. Unsere Bauhaus Kollektion ist eine Hommage an die Designphilosophie, die uns am meisten geprägt hat. Inspiriert von der klaren Formsprache des Bauhaus verbinden die Schmuckstücke Minimalismus mit Ausdrucksstärke. Die Kombination aus geometrischen Elementen, intensiven Farben und hochwertiger Verarbeitung schafft ein Design, das mit jeder Linie Klarheit und Charakter ausstrahlt.<br/>Ob als Ohrring oder Clip: Die Schmuckstücke der Bauhaus Kollektion sind auf das Wesentliche reduziert, aber mit klarer Präsenz. Jedes Teil ist ein Statement für bewusstes Design, gefertigt aus langlebigem Edelstahl und robustem upcyceltem Glas in 16 farbstarken Kombinationen.<br/>Für alle, die Minimalismus mit Persönlichkeit kombinieren.</p>",
         "body_size": "body3",
         "content_alignment": "left",
         "desktop_content_width": 500,
-        "first_button_text": "AVA KOLLEKTION IM SHOP",
-        "first_button_link": "shopify://collections/ava",
+        "first_button_text": "BAUHAUS KOLLEKTION IM SHOP",
+        "first_button_link": "shopify://collections/bauhaus-kollektion",
         "first_button_style": "solid",
         "second_button_text": "",
         "second_button_link": "",
@@ -260,6 +260,84 @@
         "section_spacing_bottom": 40
       }
     },
+    "images_with_text_weagp9": {
+      "type": "images-with-text",
+      "blocks": {
+        "image_4g4pNy": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/alexascha-nachhaltiger-edelstahl-schmuck-aus-unserer-mix-and-match-kollektion.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_4g4pNy"
+      ],
+      "settings": {
+        "color_scheme": "default",
+        "container_size": "large",
+        "content_layout": "left",
+        "image_layout": "collage",
+        "img_ratio": 1,
+        "rotate_images": false,
+        "icon": "none",
+        "subheading": "",
+        "heading": "MIX & MATCH",
+        "heading_size": "h3",
+        "body": "<p>Kreiere Deinen eigenen Look jeden Tag neu!</p><p>Unsere Mix & Match Kollektion bringt maximale Vielfalt in ein minimalistisches Design. Die schlichten Creolen, Clip-Creolen und Halsketten aus Edelstahl lassen sich mit austauschbaren Anhängern in 24 Farben individuell gestalten – für ein Schmuckstück, das so wandelbar ist wie Du.<br/>Ob Kirschrot, Malachitgrün oder Himmelblau – die Anhänger aus recyceltem Glas sind dezente Highlights, die Du je nach Stimmung, Outfit oder Anlass tauschen kannst. Die zurückhaltenden Formen lassen den Farben den Vortritt, während die Metallkomponenten in Silber, Gold oder Roségold für ein edles Finish sorgen.<br/>Mix & Match ist eine Einladung zum Spielen, Kombinieren und Ausprobieren. Für Individualist:innen, die Lust auf Abwechslung haben und dabei auf Nachhaltigkeit setzen.</p>",
+        "body_size": "body3",
+        "content_alignment": "left",
+        "desktop_content_width": 500,
+        "first_button_text": "MIX & MATCH KOLLEKTION IM SHOP",
+        "first_button_link": "shopify://collections/mix-and-match-ohrringe-und-ketten",
+        "first_button_style": "solid",
+        "second_button_text": "",
+        "second_button_link": "",
+        "second_button_style": "solid",
+        "add_side_paddings": true,
+        "section_spacing_top": 48,
+        "section_spacing_bottom": 47
+      }
+    },
+    "images_with_text_QzArXD": {
+      "type": "images-with-text",
+      "blocks": {
+        "image_YcfKPU": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/alexascha-nachhaltiger-edelstahlschmuck-kollektion.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "image_YcfKPU"
+      ],
+      "settings": {
+        "color_scheme": "default",
+        "container_size": "large",
+        "content_layout": "right",
+        "image_layout": "collage",
+        "img_ratio": 1,
+        "rotate_images": false,
+        "icon": "none",
+        "subheading": "",
+        "heading": "AVA",
+        "heading_size": "h3",
+        "body": "<p>Die AVA Kollektion ist eine Hommage an die Einzigartigkeit jeder Persönlichkeit. Durch ihren schlichten, aber hochwertigen Look und die dezenten Details kann Dein Charakter strahlen. Nicht ohne Grund, haben wir der Kollektion einen besonderen Namen gegeben: AVA heißt “Die Mutige” und ist frei von der Vorstellung, wie Du sie zu tragen hast. Die dazugehörigen Ringe, Armbänder und Ketten grenzen nicht ein, sie unterstreichen. Aus Edelstahl gefertigt sind die Schmuckstücke mit klaren Formen absolut alltagstauglich, überall tragbar und grenzenlos kombinierbar.</p>",
+        "body_size": "body3",
+        "content_alignment": "left",
+        "desktop_content_width": 500,
+        "first_button_text": "AVA KOLLEKTION IM SHOP",
+        "first_button_link": "shopify://collections/ava",
+        "first_button_style": "solid",
+        "second_button_text": "",
+        "second_button_link": "",
+        "second_button_style": "solid",
+        "add_side_paddings": true,
+        "section_spacing_top": 48,
+        "section_spacing_bottom": 47
+      }
+    },
     "rich_text_daG6aP": {
       "type": "rich-text",
       "blocks": {
@@ -327,9 +405,11 @@
     "image_banner_pJxJVw",
     "rich_text_fzerJW",
     "image_banner_AWUDXn",
-    "images_with_text_weagp9",
+    "images_with_text_4RRH6h",
     "images_with_text_3YaVdB",
     "images_with_text_aidcNz",
+    "images_with_text_weagp9",
+    "images_with_text_QzArXD",
     "rich_text_daG6aP"
   ]
 }
