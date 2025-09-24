@@ -175,7 +175,7 @@
         "first_button_link": "shopify://collections/bauhaus-kollektion",
         "first_button_style": "solid",
         "second_button_text": "",
-        "second_button_link": "",
+        "second_button_link": "shopify://collections/bauhaus-kollektion",
         "second_button_style": "solid",
         "add_side_paddings": true,
         "section_spacing_top": 48,
