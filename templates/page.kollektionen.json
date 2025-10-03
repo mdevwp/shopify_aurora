@@ -36,7 +36,7 @@
         "desktop_overlay_opacity": 0,
         "mobile_overlay_opacity": 0,
         "caption": "",
-        "title": "KOLLEKTIONEN",
+        "title": "STORES & HÄNDLER",
         "heading_size": "h1",
         "text": "",
         "body_size": "body0",
@@ -108,6 +108,131 @@
         "section_spacing_bottom": 64
       }
     },
+    "store_locator_R8UAVT": {
+      "type": "store-locator",
+      "blocks": {
+        "store_ryr3hd": {
+          "type": "store",
+          "settings": {
+            "store_coordinates": "48.85846067584112, 2.294469693037938",
+            "store_name": "Store name",
+            "heading_size": "caption2",
+            "store_details": "<p>345 Main Street</br>Your City, ZIP code 345345</br></br><strong>Store hours</strong></br>Sun: Closed</br>Mon-Sat: 10:00 - 16:00</p>",
+            "body_size": "body4",
+            "show_directions": false,
+            "img_ratio": 1
+          }
+        }
+      },
+      "block_order": [
+        "store_ryr3hd"
+      ],
+      "name": "t:sections.store_locator.name",
+      "settings": {
+        "color_scheme": "default",
+        "container_size": "small",
+        "expand_first_tab": false,
+        "subheading": "FIND US",
+        "heading": "Store locations",
+        "heading_size": "h2",
+        "body_richtext": "<p>Add locations of your points of sale on the map, provide store details like opening hours, interior photos, and more.</p>",
+        "body_size": "body3",
+        "content_alignment": "left",
+        "api_key": "",
+        "map_desktop_ratio": 1,
+        "map_mobile_ratio": 1,
+        "map_position": "right",
+        "map_style": "standard",
+        "map_custom_style": "",
+        "map_zoom": 10,
+        "add_side_paddings": true,
+        "section_spacing_top": 96,
+        "section_spacing_bottom": 96
+      }
+    },
+    "faq_YahQ8q": {
+      "type": "faq",
+      "blocks": {
+        "category_LLmNNy": {
+          "type": "category",
+          "settings": {
+            "title": "Category",
+            "category_heading_size": "h6",
+            "icon": "none"
+          }
+        },
+        "question_GwiE8t": {
+          "type": "question",
+          "settings": {
+            "title": "Frequently asked question",
+            "heading_size": "caption2",
+            "icon": "none",
+            "text": "<p>Brief and clear answer</p>",
+            "page": "",
+            "body_size": "body3",
+            "image_width": 100
+          }
+        },
+        "question_Ped9ir": {
+          "type": "question",
+          "settings": {
+            "title": "Frequently asked question",
+            "heading_size": "caption2",
+            "icon": "none",
+            "text": "<p>Brief and clear answer</p>",
+            "page": "",
+            "body_size": "body3",
+            "image_width": 100
+          }
+        },
+        "category_VpKwpt": {
+          "type": "category",
+          "settings": {
+            "title": "Category",
+            "category_heading_size": "h6",
+            "icon": "none"
+          }
+        },
+        "question_LTkYDd": {
+          "type": "question",
+          "settings": {
+            "title": "Frequently asked question",
+            "heading_size": "caption2",
+            "icon": "none",
+            "text": "<p>Brief and clear answer</p>",
+            "page": "",
+            "body_size": "body3",
+            "image_width": 100
+          }
+        }
+      },
+      "block_order": [
+        "category_LLmNNy",
+        "question_GwiE8t",
+        "question_Ped9ir",
+        "category_VpKwpt",
+        "question_LTkYDd"
+      ],
+      "name": "t:sections.faq.name",
+      "settings": {
+        "color_scheme": "default",
+        "enable_background_around_container": false,
+        "color_tabs": "content_tabs_separately",
+        "container_size": "xsmall",
+        "section_layout": "bottom-tabs",
+        "expand_first_tab": false,
+        "title": "FAQ",
+        "heading_size": "h5",
+        "text": "Answers to most common questions about products, orders, shipments, and payments.",
+        "body_size": "body3",
+        "btn_text": "",
+        "btn_url": "",
+        "btn_style": "solid",
+        "add_side_paddings": true,
+        "section_spacing_top": 96,
+        "section_spacing_bottom": 96
+      }
+    },
     "image_banner_AWUDXn": {
       "type": "image-banner",
       "settings": {
@@ -141,201 +266,6 @@
         "add_side_paddings": false,
         "section_spacing_top": 0,
         "section_spacing_bottom": 0
-      }
-    },
-    "images_with_text_4RRH6h": {
-      "type": "images-with-text",
-      "blocks": {
-        "image_cFTGn8": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/alexascha-handgemachter-glas-schmuck-aus-der-bauhaus-kollektion.png"
-          }
-        }
-      },
-      "block_order": [
-        "image_cFTGn8"
-      ],
-      "settings": {
-        "color_scheme": "default",
-        "container_size": "large",
-        "content_layout": "right",
-        "image_layout": "collage",
-        "img_ratio": 1,
-        "rotate_images": false,
-        "icon": "none",
-        "subheading": "",
-        "heading": "BAUHAUS",
-        "heading_size": "h3",
-        "body": "<p>Formvollendet. Funktional. Farbintensiv. Unsere Bauhaus Kollektion ist eine Hommage an die Designphilosophie, die uns am meisten geprägt hat. Inspiriert von der klaren Formsprache des Bauhaus verbinden die Schmuckstücke Minimalismus mit Ausdrucksstärke. Die Kombination aus geometrischen Elementen, intensiven Farben und hochwertiger Verarbeitung schafft ein Design, das mit jeder Linie Klarheit und Charakter ausstrahlt.<br/>Ob als Ohrring oder Clip: Die Schmuckstücke der Bauhaus Kollektion sind auf das Wesentliche reduziert, aber mit klarer Präsenz. Jedes Teil ist ein Statement für bewusstes Design, gefertigt aus langlebigem Edelstahl und robustem upcyceltem Glas in 16 farbstarken Kombinationen.<br/>Für alle, die Minimalismus mit Persönlichkeit kombinieren.</p>",
-        "body_size": "body3",
-        "content_alignment": "left",
-        "desktop_content_width": 500,
-        "first_button_text": "BAUHAUS KOLLEKTION IM SHOP",
-        "first_button_link": "shopify://collections/bauhaus-kollektion",
-        "first_button_style": "solid",
-        "second_button_text": "",
-        "second_button_link": "shopify://collections/bauhaus-kollektion",
-        "second_button_style": "solid",
-        "add_side_paddings": true,
-        "section_spacing_top": 48,
-        "section_spacing_bottom": 47
-      }
-    },
-    "images_with_text_3YaVdB": {
-      "type": "images-with-text",
-      "blocks": {
-        "image_37wAmw": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/alexascha-handgemachter-glasschmuck-pureform-kollektion.png"
-          }
-        }
-      },
-      "block_order": [
-        "image_37wAmw"
-      ],
-      "settings": {
-        "color_scheme": "default",
-        "container_size": "large",
-        "content_layout": "left",
-        "image_layout": "collage",
-        "img_ratio": 0.8,
-        "rotate_images": false,
-        "icon": "none",
-        "subheading": "",
-        "heading": "PURE FORM",
-        "heading_size": "h3",
-        "body": "<p>Minimalistisch, klar und vielseitig – das ist unsere PURE FORM Kollektion. Mit dem bunten Schmuck hat bei ALEXASCHA alles begonnen. Und wer weiß, hätte unsere Gründerin Alexandra die ausgemusterten Mosaiksteine nicht entdeckt, gäbe es unsere Marke vielleicht gar nicht.</p><p>Die Upcycling-Kollektion besteht aus nur drei Materialien: Glas, Edelstahl und Leder. Hier ist also nicht nur das Design minimalistisch, sondern auch die Zusammensetzung. Die verwendeten Mosaiksteine kommen nach einer unglücklich gelaufenen Produktion zu uns und werden mit viel Liebe zum Detail wieder aufgearbeitet. Das Ergebnis ist eine Kollektion, die von Licht und Farbe lebt. Das besondere Design und die 25 verschiedenen Farbtöne lassen das Herz jeder designaffinen Person höher schlagen.</p>",
-        "body_size": "body3",
-        "content_alignment": "left",
-        "desktop_content_width": 500,
-        "first_button_text": "PUREFORM KOLLEKTION IM SHOP",
-        "first_button_link": "shopify://collections/pureform",
-        "first_button_style": "solid",
-        "second_button_text": "",
-        "second_button_link": "",
-        "second_button_style": "solid",
-        "add_side_paddings": true,
-        "section_spacing_top": 48,
-        "section_spacing_bottom": 80
-      }
-    },
-    "images_with_text_aidcNz": {
-      "type": "images-with-text",
-      "blocks": {
-        "image_4dtVGt": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/alexascha-nachhaltiger-statement-schmuck-ronda-kollektion.jpg"
-          }
-        }
-      },
-      "block_order": [
-        "image_4dtVGt"
-      ],
-      "settings": {
-        "color_scheme": "default",
-        "container_size": "large",
-        "content_layout": "right",
-        "image_layout": "collage",
-        "img_ratio": 1,
-        "rotate_images": false,
-        "icon": "none",
-        "subheading": "",
-        "heading": "RONDA",
-        "heading_size": "h3",
-        "body": "<p>Unsere Mini-Kollektion in Maxi-Größe setzt ein Statement am Ohr!</p><p>Die RONDA Ohrringe sind inspiriert von der Bauhaus-Ästhetik des 20. Jahrhunderts und zeigen was herauskommt, wenn man sich dem Spiel von Formen und Farben hingibt. Das Design ist klar definiert: Geometrie und Größe stehen im Vordergrund. Mit den Statement Ohrringen aus robustem Titanzink kannst Du Deine Laune nach außen tragen und eine starke Aussage in dein Outfit bringen. Denn Statements setzen bedeutet laut zu werden, Dinge anders zu machen und zu sich selbst zu stehen – genau diese Message vermittelt die RONDA Kollektion.</p>",
-        "body_size": "body3",
-        "content_alignment": "left",
-        "desktop_content_width": 500,
-        "first_button_text": "RONDA KOLLEKTION IM SHOP",
-        "first_button_link": "shopify://collections/ronda",
-        "first_button_style": "solid",
-        "second_button_text": "",
-        "second_button_link": "",
-        "second_button_style": "solid",
-        "add_side_paddings": true,
-        "section_spacing_top": 0,
-        "section_spacing_bottom": 40
-      }
-    },
-    "images_with_text_weagp9": {
-      "type": "images-with-text",
-      "blocks": {
-        "image_4g4pNy": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/alexascha-nachhaltiger-edelstahl-schmuck-aus-unserer-mix-and-match-kollektion.png"
-          }
-        }
-      },
-      "block_order": [
-        "image_4g4pNy"
-      ],
-      "settings": {
-        "color_scheme": "default",
-        "container_size": "large",
-        "content_layout": "left",
-        "image_layout": "collage",
-        "img_ratio": 1,
-        "rotate_images": false,
-        "icon": "none",
-        "subheading": "",
-        "heading": "MIX & MATCH",
-        "heading_size": "h3",
-        "body": "<p>Kreiere Deinen eigenen Look jeden Tag neu!</p><p>Unsere Mix & Match Kollektion bringt maximale Vielfalt in ein minimalistisches Design. Die schlichten Creolen, Clip-Creolen und Halsketten aus Edelstahl lassen sich mit austauschbaren Anhängern in 24 Farben individuell gestalten – für ein Schmuckstück, das so wandelbar ist wie Du.<br/>Ob Kirschrot, Malachitgrün oder Himmelblau – die Anhänger aus recyceltem Glas sind dezente Highlights, die Du je nach Stimmung, Outfit oder Anlass tauschen kannst. Die zurückhaltenden Formen lassen den Farben den Vortritt, während die Metallkomponenten in Silber, Gold oder Roségold für ein edles Finish sorgen.<br/>Mix & Match ist eine Einladung zum Spielen, Kombinieren und Ausprobieren. Für Individualist:innen, die Lust auf Abwechslung haben und dabei auf Nachhaltigkeit setzen.</p>",
-        "body_size": "body3",
-        "content_alignment": "left",
-        "desktop_content_width": 500,
-        "first_button_text": "MIX & MATCH KOLLEKTION IM SHOP",
-        "first_button_link": "shopify://collections/mix-and-match-ohrringe-und-ketten",
-        "first_button_style": "solid",
-        "second_button_text": "",
-        "second_button_link": "",
-        "second_button_style": "solid",
-        "add_side_paddings": true,
-        "section_spacing_top": 48,
-        "section_spacing_bottom": 47
-      }
-    },
-    "images_with_text_QzArXD": {
-      "type": "images-with-text",
-      "blocks": {
-        "image_YcfKPU": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/alexascha-nachhaltiger-edelstahlschmuck-kollektion.jpg"
-          }
-        }
-      },
-      "block_order": [
-        "image_YcfKPU"
-      ],
-      "settings": {
-        "color_scheme": "default",
-        "container_size": "large",
-        "content_layout": "right",
-        "image_layout": "collage",
-        "img_ratio": 1,
-        "rotate_images": false,
-        "icon": "none",
-        "subheading": "",
-        "heading": "AVA",
-        "heading_size": "h3",
-        "body": "<p>Die AVA Kollektion ist eine Hommage an die Einzigartigkeit jeder Persönlichkeit. Durch ihren schlichten, aber hochwertigen Look und die dezenten Details kann Dein Charakter strahlen. Nicht ohne Grund, haben wir der Kollektion einen besonderen Namen gegeben: AVA heißt “Die Mutige” und ist frei von der Vorstellung, wie Du sie zu tragen hast. Die dazugehörigen Ringe, Armbänder und Ketten grenzen nicht ein, sie unterstreichen. Aus Edelstahl gefertigt sind die Schmuckstücke mit klaren Formen absolut alltagstauglich, überall tragbar und grenzenlos kombinierbar.</p>",
-        "body_size": "body3",
-        "content_alignment": "left",
-        "desktop_content_width": 500,
-        "first_button_text": "AVA KOLLEKTION IM SHOP",
-        "first_button_link": "shopify://collections/ava",
-        "first_button_style": "solid",
-        "second_button_text": "",
-        "second_button_link": "",
-        "second_button_style": "solid",
-        "add_side_paddings": true,
-        "section_spacing_top": 48,
-        "section_spacing_bottom": 47
       }
     },
     "rich_text_daG6aP": {
@@ -404,12 +334,9 @@
     "page",
     "image_banner_pJxJVw",
     "rich_text_fzerJW",
+    "store_locator_R8UAVT",
+    "faq_YahQ8q",
     "image_banner_AWUDXn",
-    "images_with_text_4RRH6h",
-    "images_with_text_3YaVdB",
-    "images_with_text_aidcNz",
-    "images_with_text_weagp9",
-    "images_with_text_QzArXD",
     "rich_text_daG6aP"
   ]
 }
