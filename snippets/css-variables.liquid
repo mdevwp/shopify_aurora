@@ -173,9 +173,9 @@
       --gsc-border-color: {{ settings[default_pallete_border_color_key].red }}, {{ settings[default_pallete_border_color_key].green }}, {{ settings[default_pallete_border_color_key].blue }};
       --gsc-button-background-color: {{ settings[default_pallete_button_background_color_key].red }}, {{ settings[default_pallete_button_background_color_key].green }}, {{ settings[default_pallete_button_background_color_key].blue }};
       --gsc-button-text-color: {{ settings[default_pallete_button_text_color_key].red }}, {{ settings[default_pallete_button_text_color_key].green }}, {{ settings[default_pallete_button_text_color_key].blue }};
-      --gsc-outline-button-background-color: {{ settings.[default_pallete_outline_button_background_color_key].red }}, {{ settings.[default_pallete_outline_button_background_color_key].green }}, {{ settings.[default_pallete_outline_button_background_color_key].blue }};
-      --gsc-outline-button-text-color: {{ settings.[default_pallete_outline_button_text_color_key].red }}, {{ settings.[default_pallete_outline_button_text_color_key].green }}, {{ settings.[default_pallete_outline_button_text_color_key].blue }};
-      --gsc-image-opacity-color: {{ settings.[default_pallete_image_overlay].red }}, {{ settings.[default_pallete_image_overlay].green }}, {{ settings.[default_pallete_image_overlay].blue }};
+      --gsc-outline-button-background-color: {{ settings[default_pallete_outline_button_background_color_key].red }}, {{ settings[default_pallete_outline_button_background_color_key].green }}, {{ settings[default_pallete_outline_button_background_color_key].blue }};
+      --gsc-outline-button-text-color: {{ settings[default_pallete_outline_button_text_color_key].red }}, {{ settings[default_pallete_outline_button_text_color_key].green }}, {{ settings[default_pallete_outline_button_text_color_key].blue }};
+      --gsc-image-opacity-color: {{ settings[default_pallete_image_overlay].red }}, {{ settings[default_pallete_image_overlay].green }}, {{ settings[default_pallete_image_overlay].blue }};
     }
 
     body,
@@ -278,3 +278,37 @@
 {%- endcapture -%}
 
 {%- render 'inline-css-minifier', css: css -%}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{{ settings.[default_pallete_outline_button_background_color_key].red }}"
+  to: "{{ settings[default_pallete_outline_button_background_color_key].red }}"
+  position: 12704..12775
+- from: "{{ settings.[default_pallete_outline_button_background_color_key].green }}"
+  to: "{{ settings[default_pallete_outline_button_background_color_key].green }}"
+  position: 12777..12850
+- from: "{{ settings.[default_pallete_outline_button_background_color_key].blue }}"
+  to: "{{ settings[default_pallete_outline_button_background_color_key].blue }}"
+  position: 12852..12924
+- from: "{{ settings.[default_pallete_outline_button_text_color_key].red }}"
+  to: "{{ settings[default_pallete_outline_button_text_color_key].red }}"
+  position: 12965..13030
+- from: "{{ settings.[default_pallete_outline_button_text_color_key].green }}"
+  to: "{{ settings[default_pallete_outline_button_text_color_key].green }}"
+  position: 13032..13099
+- from: "{{ settings.[default_pallete_outline_button_text_color_key].blue }}"
+  to: "{{ settings[default_pallete_outline_button_text_color_key].blue }}"
+  position: 13101..13167
+- from: "{{ settings.[default_pallete_image_overlay].red }}"
+  to: "{{ settings[default_pallete_image_overlay].red }}"
+  position: 13202..13251
+- from: "{{ settings.[default_pallete_image_overlay].green }}"
+  to: "{{ settings[default_pallete_image_overlay].green }}"
+  position: 13253..13304
+- from: "{{ settings.[default_pallete_image_overlay].blue }}"
+  to: "{{ settings[default_pallete_image_overlay].blue }}"
+  position: 13306..13356
+{% endcomment %}
